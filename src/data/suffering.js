@@ -2,8 +2,7 @@ export const suffering = {
 	truth: 'Suffering',
 	quotes: [
 		{
-			text:
-				'This is the noble truth of suffering: Rebirth is suffering; old age is suffering; illness is suffering; death is suffering; association with the disliked is suffering; separation from the liked is suffering; not getting what you wish for is suffering. In brief, the five grasping aggregates are suffering.',
+			text: 'This is the noble truth of suffering: Rebirth is suffering; old age is suffering; illness is suffering; death is suffering; association with the disliked is suffering; separation from the liked is suffering; not getting what you wish for is suffering. In brief, the five grasping aggregates are suffering.',
 			reference: 'SN 56.11'
 		}
 	],
@@ -85,7 +84,7 @@ export const suffering = {
 					id: 'S-2.4',
 					text: 'Tongue',
 					elaboration:
-						'The eye is suffering. What’s suffering is not-self. And what’s not-self should be truly seen with right understanding like this: ‘This is not mine, I am not this, this is not my self.’ Seeing this, a learned noble disciple grows disillusioned with the tongue. Being disillusioned, desire fades away. When desire fades away they’re freed. When they’re freed, they know they’re freed. They understand: ‘Rebirth is ended, the spiritual journey has been completed, what had to be done has been done, there is no return to any state of existence.”',
+						'The tongue is suffering. What’s suffering is not-self. And what’s not-self should be truly seen with right understanding like this: ‘This is not mine, I am not this, this is not my self.’ Seeing this, a learned noble disciple grows disillusioned with the tongue. Being disillusioned, desire fades away. When desire fades away they’re freed. When they’re freed, they know they’re freed. They understand: ‘Rebirth is ended, the spiritual journey has been completed, what had to be done has been done, there is no return to any state of existence.”',
 					references: ['SN 35.1']
 				},
 				{
