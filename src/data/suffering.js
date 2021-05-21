@@ -63,42 +63,42 @@ export const suffering = {
 					id: 'S-2.1',
 					text: 'Eyes',
 					elaboration:
-						'The eye is suffering. What’s suffering is not-self. And what’s not-self should be truly seen with right understanding like this: ‘This is not mine, I am not this, this is not my self.’ Seeing this, a learned noble disciple grows disillusioned with the eye. Being disillusioned, desire fades away. When desire fades away they’re freed. When they’re freed, they know they’re freed. They understand: ‘Rebirth is ended, the spiritual journey has been completed, what had to be done has been done, there is no return to any state of existence.”',
+						'The eye is suffering. What’s suffering is not-self. And what’s not-self should be truly seen with right understanding like this: ‘This is not mine, I am not this, this is not my self.’ Seeing this, a learned noble disciple grows disillusioned with the eye. Being disillusioned, desire fades away. When desire fades away they’re freed. When they’re freed, they know they’re freed.',
 					references: ['SN 35.1']
 				},
 				{
 					id: 'S-2.2',
 					text: 'Ears',
 					elaboration:
-						'The ear is suffering. What’s suffering is not-self. And what’s not-self should be truly seen with right understanding like this: ‘This is not mine, I am not this, this is not my self.’ Seeing this, a learned noble disciple grows disillusioned with the ear. Being disillusioned, desire fades away. When desire fades away they’re freed. When they’re freed, they know they’re freed. They understand: ‘Rebirth is ended, the spiritual journey has been completed, what had to be done has been done, there is no return to any state of existence.”',
+						'The ear is suffering. What’s suffering is not-self. And what’s not-self should be truly seen with right understanding like this: ‘This is not mine, I am not this, this is not my self.’ Seeing this, a learned noble disciple grows disillusioned with the ear. Being disillusioned, desire fades away. When desire fades away they’re freed. When they’re freed, they know they’re freed.',
 					references: ['SN 35.1']
 				},
 				{
 					id: 'S-2.3',
 					text: 'Nose',
 					elaboration:
-						'The nose is suffering. What’s suffering is not-self. And what’s not-self should be truly seen with right understanding like this: ‘This is not mine, I am not this, this is not my self.’ Seeing this, a learned noble disciple grows disillusioned with nose. Being disillusioned, desire fades away. When desire fades away they’re freed. When they’re freed, they know they’re freed. They understand: ‘Rebirth is ended, the spiritual journey has been completed, what had to be done has been done, there is no return to any state of existence.”',
+						'The nose is suffering. What’s suffering is not-self. And what’s not-self should be truly seen with right understanding like this: ‘This is not mine, I am not this, this is not my self.’ Seeing this, a learned noble disciple grows disillusioned with nose. Being disillusioned, desire fades away. When desire fades away they’re freed. When they’re freed, they know they’re freed.',
 					references: ['SN 35.1']
 				},
 				{
 					id: 'S-2.4',
 					text: 'Tongue',
 					elaboration:
-						'The tongue is suffering. What’s suffering is not-self. And what’s not-self should be truly seen with right understanding like this: ‘This is not mine, I am not this, this is not my self.’ Seeing this, a learned noble disciple grows disillusioned with the tongue. Being disillusioned, desire fades away. When desire fades away they’re freed. When they’re freed, they know they’re freed. They understand: ‘Rebirth is ended, the spiritual journey has been completed, what had to be done has been done, there is no return to any state of existence.”',
+						'The tongue is suffering. What’s suffering is not-self. And what’s not-self should be truly seen with right understanding like this: ‘This is not mine, I am not this, this is not my self.’ Seeing this, a learned noble disciple grows disillusioned with the tongue. Being disillusioned, desire fades away. When desire fades away they’re freed. When they’re freed, they know they’re freed.',
 					references: ['SN 35.1']
 				},
 				{
 					id: 'S-2.5',
 					text: 'Body',
 					elaboration:
-						'The body is suffering. What’s suffering is not-self. And what’s not-self should be truly seen with right understanding like this: ‘This is not mine, I am not this, this is not my self.’ Seeing this, a learned noble disciple grows disillusioned with the body. Being disillusioned, desire fades away. When desire fades away they’re freed. When they’re freed, they know they’re freed. They understand: ‘Rebirth is ended, the spiritual journey has been completed, what had to be done has been done, there is no return to any state of existence.”',
+						'The body is suffering. What’s suffering is not-self. And what’s not-self should be truly seen with right understanding like this: ‘This is not mine, I am not this, this is not my self.’ Seeing this, a learned noble disciple grows disillusioned with the body. Being disillusioned, desire fades away. When desire fades away they’re freed. When they’re freed, they know they’re freed.',
 					references: ['SN 35.1']
 				},
 				{
 					id: 'S-2.6',
 					text: 'Mind',
 					elaboration:
-						'The mind is suffering. What’s suffering is not-self. And what’s not-self should be truly seen with right understanding like this: ‘This is not mine, I am not this, this is not my self.’ Seeing this, a learned noble disciple grows disillusioned with the mind. Being disillusioned, desire fades away. When desire fades away they’re freed. When they’re freed, they know they’re freed. They understand: ‘Rebirth is ended, the spiritual journey has been completed, what had to be done has been done, there is no return to any state of existence.”',
+						'The mind is suffering. What’s suffering is not-self. And what’s not-self should be truly seen with right understanding like this: ‘This is not mine, I am not this, this is not my self.’ Seeing this, a learned noble disciple grows disillusioned with the mind. Being disillusioned, desire fades away. When desire fades away they’re freed. When they’re freed, they know they’re freed.',
 					references: ['SN 35.1']
 				}
 			]
