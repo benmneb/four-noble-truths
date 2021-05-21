@@ -32,10 +32,7 @@ const useStyles = makeStyles((theme) => ({
 	chipBox: {
 		display: 'flex',
 		alignItems: 'baseline',
-		margin: theme.spacing(2, 0),
-		'& div': {
-			marginLeft: theme.spacing(1)
-		}
+		margin: theme.spacing(2, 0)
 	}
 }));
 
