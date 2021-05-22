@@ -13,7 +13,7 @@ export default function TooltipChip({ handleClick, ...props }) {
 
 	return (
 		<Tooltip arrow title="Read this sutta on SuttaCentral.net">
-			<Chip className={styles.chip} onClick={handleClick} {...props} />
+			<Chip className={styles.chip} onClick={handleClick} variant="outlined" {...props} />
 		</Tooltip>
 	);
 }

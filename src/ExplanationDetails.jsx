@@ -33,6 +33,11 @@ const useStyles = makeStyles((theme) => ({
 		display: 'flex',
 		alignItems: 'baseline',
 		margin: theme.spacing(2, 0)
+	},
+	elaborationChipBox: {
+		display: 'flex',
+		alignItems: 'baseline',
+		margin: theme.spacing(2)
 	}
 }));
 
@@ -99,7 +104,6 @@ export default function ExplanationDetails({ source }) {
 							<TooltipChip
 								label={quote.reference}
 								handleClick={() => handleSuttaLinkClick(quote.reference)}
-								variant="outlined"
 							/>
 						</Typography>
 					</Box>
@@ -136,7 +140,7 @@ export default function ExplanationDetails({ source }) {
 											- The Buddha
 										</Typography>
 									</Box>
-									<Box className={styles.chipBox}>
+									<Box className={styles.elaborationChipBox}>
 										<Typography>See:</Typography>
 										{state.visibleElaboration.references.map((ref) => (
 											<TooltipChip
