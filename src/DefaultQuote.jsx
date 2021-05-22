@@ -1,6 +1,8 @@
 import { Box, Typography, Fade, Tooltip } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
+import { handleSuttaLinkClick } from './utils';
+
 const useStyles = makeStyles((theme) => ({
 	root: {
 		display: 'flex',
@@ -19,19 +21,11 @@ const useStyles = makeStyles((theme) => ({
 export default function DefaultQuote() {
 	const styles = useStyles();
 
-	function handleQuoteClick() {
-		return window.open(
-			`https://suttacentral.net/sn56.24/en/sujato?ref=4NobleTruths`,
-			'_blank',
-			'noopener noreferrer'
-		);
-	}
-
 	return (
 		<Fade in>
 			<Box className={styles.root} component="figure">
 				<Tooltip arrow title="Read this sutta on SuttaCentral.net">
-					<Box className={styles.quote} onClick={handleQuoteClick}>
+					<Box className={styles.quote} onClick={() => handleSuttaLinkClick('SN56.24')}>
 						<Typography component="blockquote">
 							"Whatever perfected ones, fully awakened Buddhas, truly wake up
 							<br />

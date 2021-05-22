@@ -6,7 +6,7 @@ import { TreeView, TreeItem } from '@material-ui/lab';
 import { ExpandMoreRounded, ChevronRightRounded } from '@material-ui/icons';
 
 import { Context } from './state/store';
-import TooltipChip from './utils/TooltipChip';
+import { TooltipChip, handleSuttaLinkClick } from './utils';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -40,15 +40,6 @@ const useStyles = makeStyles((theme) => ({
 		margin: theme.spacing(2)
 	}
 }));
-
-function handleSuttaLinkClick(ref) {
-	const minRef = ref.toLowerCase().replace(/\s/g, '');
-	return window.open(
-		`https://suttacentral.net/${minRef}/en/sujato?ref=4NobleTruths`,
-		'_blank',
-		'noopener noreferrer'
-	);
-}
 
 export default function ExplanationDetails({ source }) {
 	const styles = useStyles();
@@ -142,7 +133,7 @@ export default function ExplanationDetails({ source }) {
 									</Box>
 									<Box className={styles.elaborationChipBox}>
 										<Typography>See:</Typography>
-										{state.visibleElaboration.references.map((ref) => (
+										{state.visibleElaboration.references?.map((ref) => (
 											<TooltipChip
 												key={ref}
 												label={ref}

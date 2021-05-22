@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme) => ({
 	}
 }));
 
-export default function TooltipChip({ handleClick, ...props }) {
+export function TooltipChip({ handleClick, ...props }) {
 	const styles = useStyles();
 
 	return (
