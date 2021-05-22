@@ -34,6 +34,10 @@ const useStyles = makeStyles((theme) => ({
 		alignItems: 'baseline',
 		margin: theme.spacing(2, 0)
 	},
+	elaborationBox: {
+		position: 'sticky',
+		top: theme.spacing(2)
+	},
 	elaborationChipBox: {
 		display: 'flex',
 		alignItems: 'baseline',
@@ -114,7 +118,7 @@ export default function ExplanationDetails({ source }) {
 					</Grid>
 					{state.visibleElaboration && (
 						<Grid item sm={6}>
-							<Box marginTop={source.treeTitle ? 5 : 0}>
+							<Box marginTop={source.treeTitle ? 5 : 0} className={styles.elaborationBox}>
 								<Paper variant="outlined">
 									<Box margin={2} component="figure">
 										<Typography className={styles.title}>
