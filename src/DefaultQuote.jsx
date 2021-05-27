@@ -25,7 +25,7 @@ export default function DefaultQuote() {
 		<Fade in>
 			<Box className={styles.root} component="figure">
 				<Tooltip arrow title="Read this sutta on SuttaCentral.net">
-					<Box className={styles.quote} onClick={() => handleSuttaLinkClick('SN56.24')}>
+					<Box className={styles.quote} onClick={() => handleSuttaLinkClick('SN 56.24')}>
 						<Typography component="blockquote">
 							"Whatever perfected ones, fully awakened Buddhas, truly wake up
 							<br />
