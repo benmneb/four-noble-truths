@@ -1,12 +1,12 @@
 import { useContext } from 'react';
 
 import { Box, Fade, Typography, Grid, Paper } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, fade } from '@material-ui/core/styles';
 import { TreeView, TreeItem } from '@material-ui/lab';
-import { ExpandMoreRounded, ChevronRightRounded } from '@material-ui/icons';
 
 import { Context } from './state/store';
 import { TooltipChip, handleSuttaLinkClick } from './utils';
+import { MinusSquare, PlusSquare, CloseSquare } from './utils/Icons';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -28,6 +28,11 @@ const useStyles = makeStyles((theme) => ({
 	},
 	treeView: {
 		flexGrow: 1
+	},
+	treeItemGroup: {
+		marginLeft: 7,
+		paddingLeft: 18,
+		borderLeft: `1px dashed ${fade(theme.palette.text.primary, 0.4)}`
 	},
 	chipBox: {
 		display: 'flex',
@@ -74,6 +79,7 @@ export default function ExplanationDetails({ source }) {
 						nodes.spokenBy
 					)
 				}
+				classes={{ group: styles.treeItemGroup }}
 			>
 				{Array.isArray(nodes.children)
 					? nodes.children.map((node) => renderTree(node))
@@ -115,8 +121,9 @@ export default function ExplanationDetails({ source }) {
 						)}
 						<TreeView
 							className={styles.treeView}
-							defaultCollapseIcon={<ExpandMoreRounded />}
-							defaultExpandIcon={<ChevronRightRounded />}
+							defaultCollapseIcon={<MinusSquare />}
+							defaultExpandIcon={<PlusSquare />}
+							defaultEndIcon={<CloseSquare />}
 						>
 							<Tree data={source.tree} />
 						</TreeView>
