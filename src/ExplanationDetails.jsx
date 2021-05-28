@@ -49,14 +49,14 @@ export default function ExplanationDetails({ source }) {
 	const styles = useStyles();
 	const [state, dispatch] = useContext(Context);
 
-	function handleLabelClick(text, elaboration, references) {
+	function handleLabelClick(text, elaboration, references, spokenBy) {
 		dispatch({
 			type: 'CLICKED_ELABORATION',
-			clickedElaboration: { text, elaboration, references }
+			clickedElaboration: { text, elaboration, references, spokenBy }
 		});
 		dispatch({
 			type: 'VISIBLE_ELABORATION',
-			visibleElaboration: { text, elaboration, references }
+			visibleElaboration: { text, elaboration, references, spokenBy }
 		});
 	}
 
@@ -67,7 +67,12 @@ export default function ExplanationDetails({ source }) {
 				nodeId={nodes.id}
 				label={nodes.text}
 				onLabelClick={() =>
-					handleLabelClick(nodes.text, nodes.elaboration, nodes.references)
+					handleLabelClick(
+						nodes.text,
+						nodes.elaboration,
+						nodes.references,
+						nodes.spokenBy
+					)
 				}
 			>
 				{Array.isArray(nodes.children)
@@ -132,7 +137,9 @@ export default function ExplanationDetails({ source }) {
 											component="figcaption"
 											className={styles.figCaption}
 										>
-											- The Buddha
+											{state.visibleElaboration.spokenBy
+												? `- ${state.visibleElaboration.spokenBy}`
+												: '- The Buddha'}
 										</Typography>
 									</Box>
 									<Box className={styles.elaborationChipBox}>
