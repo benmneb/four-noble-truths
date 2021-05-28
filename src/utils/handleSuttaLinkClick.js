@@ -1,5 +1,5 @@
 export function handleSuttaLinkClick(reference) {
-	const modifiedReference = new RegExp(/(AN|SN)[\s][0-9]{1,3}[.]|(MN|DN)/).test(reference)
+	const modifiedReference = /(AN|SN)[\s][0-9]{1,3}[.]|(MN|DN)/.test(reference)
 		? reference.toLowerCase().replace(/\s/g, '') + '/en/sujato'
 		: reference.toLowerCase().replace(/\s/g, '');
 
