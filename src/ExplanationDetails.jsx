@@ -71,14 +71,15 @@ export default function ExplanationDetails({ source }) {
 				key={nodes.id}
 				nodeId={nodes.id}
 				label={nodes.text}
-				onLabelClick={() =>
+				onLabelClick={(e) => {
+					e.preventDefault();
 					handleLabelClick(
 						nodes.text,
 						nodes.elaboration,
 						nodes.references,
 						nodes.spokenBy
-					)
-				}
+					);
+				}}
 				classes={{ group: styles.treeItemGroup }}
 			>
 				{Array.isArray(nodes.children)
