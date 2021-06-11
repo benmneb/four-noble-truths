@@ -2,10 +2,10 @@ import { useContext } from 'react';
 
 import { Box, Fade, Typography, Grid, Paper } from '@material-ui/core';
 import { makeStyles, fade } from '@material-ui/core/styles';
-import { TreeView, TreeItem } from '@material-ui/lab';
+import { TreeView } from '@material-ui/lab';
 
 import { GlobalState } from './state/store';
-import { TooltipChip, handleSuttaLinkClick } from './utils';
+import { TooltipChip, handleSuttaLinkClick, Tree } from './utils';
 import { MinusSquare, PlusSquare, CloseSquare } from './utils/Icons';
 
 const useStyles = makeStyles((theme) => ({
@@ -54,46 +54,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function ExplanationDetails({ source }) {
 	const styles = useStyles();
-	const [state, dispatch] = useContext(GlobalState);
-
-	function handleLabelClick(text, elaboration, references, spokenBy) {
-		dispatch({
-			type: 'CLICKED_ELABORATION',
-			clickedElaboration: { text, elaboration, references, spokenBy }
-		});
-		dispatch({
-			type: 'VISIBLE_ELABORATION',
-			visibleElaboration: { text, elaboration, references, spokenBy }
-		});
-	}
-
-	function renderTree(nodes) {
-		return (
-			<TreeItem
-				key={nodes.id}
-				nodeId={nodes.id}
-				label={nodes.text}
-				onLabelClick={(e) => {
-					e.preventDefault();
-					handleLabelClick(
-						nodes.text,
-						nodes.elaboration,
-						nodes.references,
-						nodes.spokenBy
-					);
-				}}
-				classes={{ group: styles.treeItemGroup }}
-			>
-				{Array.isArray(nodes.children)
-					? nodes.children.map((node) => renderTree(node))
-					: null}
-			</TreeItem>
-		);
-	}
-
-	function Tree({ data }) {
-		return data.map((root) => renderTree(root));
-	}
+	const state = useContext(GlobalState)[0];
 
 	return (
 		<Fade in>
