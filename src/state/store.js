@@ -9,10 +9,12 @@ const initialState = {
 	visibleElaboration: { text: null, elaboration: null, references: [] }
 };
 
-export const Context = createContext(initialState);
+export const GlobalState = createContext(initialState);
 
 export function StateProvider({ children }) {
 	const [state, dispatch] = useReducer(reducer, initialState);
 
-	return <Context.Provider value={[state, dispatch]}>{children}</Context.Provider>;
+	return (
+		<GlobalState.Provider value={[state, dispatch]}>{children}</GlobalState.Provider>
+	);
 }

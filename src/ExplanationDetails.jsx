@@ -4,7 +4,7 @@ import { Box, Fade, Typography, Grid, Paper } from '@material-ui/core';
 import { makeStyles, fade } from '@material-ui/core/styles';
 import { TreeView, TreeItem } from '@material-ui/lab';
 
-import { Context } from './state/store';
+import { GlobalState } from './state/store';
 import { TooltipChip, handleSuttaLinkClick } from './utils';
 import { MinusSquare, PlusSquare, CloseSquare } from './utils/Icons';
 
@@ -37,6 +37,7 @@ const useStyles = makeStyles((theme) => ({
 	chipBox: {
 		display: 'flex',
 		alignItems: 'baseline',
+		flexWrap: 'wrap',
 		margin: theme.spacing(2, 0)
 	},
 	elaborationBox: {
@@ -46,13 +47,14 @@ const useStyles = makeStyles((theme) => ({
 	elaborationChipBox: {
 		display: 'flex',
 		alignItems: 'baseline',
+		flexWrap: 'wrap',
 		margin: theme.spacing(2)
 	}
 }));
 
 export default function ExplanationDetails({ source }) {
 	const styles = useStyles();
-	const [state, dispatch] = useContext(Context);
+	const [state, dispatch] = useContext(GlobalState);
 
 	function handleLabelClick(text, elaboration, references, spokenBy) {
 		dispatch({

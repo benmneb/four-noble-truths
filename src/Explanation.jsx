@@ -4,7 +4,7 @@ import { Paper } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 import ExplanationContents from './ExplanationContents';
-import { Context } from './state/store';
+import { GlobalState } from './state/store';
 
 const useStyles = makeStyles((theme) => ({
 	paper: {
@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Explanation() {
 	const styles = useStyles();
-	const state = useContext(Context)[0];
+	const state = useContext(GlobalState)[0];
 
 	const whatToShow = state.hoverTruth ? state.hoverTruth : state.clickedTruth;
 
