@@ -6,14 +6,14 @@ import { theme } from './assets/theme';
 import Explanation from './Explanation';
 import Footer from './Footer';
 import TruthsNav from './TruthsNav';
-import Hero from './Hero';
+import AppBar from './AppBar';
 
 export default function App() {
 	return (
 		<StateProvider>
 			<ThemeProvider theme={theme}>
 				<CssBaseline />
-				<Hero />
+				<AppBar />
 				<TruthsNav />
 				<Explanation />
 				<Footer />
