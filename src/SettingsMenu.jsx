@@ -23,9 +23,6 @@ const useStyles = makeStyles((theme) => ({
 		margin: theme.spacing(1),
 		width: 366
 	},
-	translateLabel: {
-		marginRight: theme.spacing(0.5)
-	},
 	formControlRoot: {
 		width: '48%'
 	}
@@ -38,17 +35,17 @@ export default function SettingsMenu() {
 
 	const [state, dispatch] = useContext(GlobalState);
 
-	const handleChange = (event, source) => {
+	function handleChange(event, source) {
 		return dispatch({ type: `SET_${source}`, word: event.target.value });
-	};
+	}
 
-	const handleOpenMenu = (event) => {
+	function handleOpenMenu(event) {
 		setAnchorEl(event.currentTarget);
-	};
+	}
 
-	const handleCloseMenu = () => {
+	function handleCloseMenu() {
 		setAnchorEl(null);
-	};
+	}
 
 	return (
 		<Box>
@@ -74,7 +71,7 @@ export default function SettingsMenu() {
 			>
 				<Box className={styles.menuItem}>
 					<Box>
-						<Typography component="span" className={styles.translateLabel}>
+						<Typography component="span">
 							Translate{' '}
 							<Box component="span" fontStyle="italic">
 								samadhi
@@ -98,7 +95,7 @@ export default function SettingsMenu() {
 				</Box>
 				<Box className={styles.menuItem}>
 					<Box>
-						<Typography component="span" className={styles.translateLabel}>
+						<Typography component="span">
 							Translate{' '}
 							<Box component="span" fontStyle="italic">
 								sankhara
@@ -120,7 +117,7 @@ export default function SettingsMenu() {
 				</Box>
 				<Box className={styles.menuItem}>
 					<Box>
-						<Typography component="span" className={styles.translateLabel}>
+						<Typography component="span">
 							Translate{' '}
 							<Box component="span" fontStyle="italic">
 								vedana
@@ -142,7 +139,7 @@ export default function SettingsMenu() {
 				</Box>
 				<Box className={styles.menuItem}>
 					<Box>
-						<Typography component="span" className={styles.translateLabel}>
+						<Typography component="span">
 							Translate{' '}
 							<Box component="span" fontStyle="italic">
 								namarupa
