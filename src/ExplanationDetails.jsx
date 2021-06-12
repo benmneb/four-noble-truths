@@ -4,8 +4,9 @@ import { Box, Fade, Typography, Grid, Paper } from '@material-ui/core';
 import { makeStyles, fade } from '@material-ui/core/styles';
 import { TreeView } from '@material-ui/lab';
 
+import Tree from './Tree';
 import { GlobalState } from './state/store';
-import { TooltipChip, handleSuttaLinkClick, Tree } from './utils';
+import { TooltipChip, handleSuttaLinkClick } from './utils';
 import { MinusSquare, PlusSquare, CloseSquare } from './utils/Icons';
 
 const useStyles = makeStyles((theme) => ({
