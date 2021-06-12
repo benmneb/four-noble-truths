@@ -7,7 +7,8 @@ import {
 	Select,
 	Menu,
 	MenuItem,
-	Typography
+	Typography,
+	Tooltip
 } from '@material-ui/core';
 import { SettingsRounded } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles';
@@ -51,16 +52,18 @@ export default function SettingsMenu() {
 
 	return (
 		<Box>
-			<IconButton
-				edge="end"
-				color="inherit"
-				aria-label="settings"
-				aria-controls="settings-menu"
-				aria-haspopup="true"
-				onClick={handleOpenMenu}
-			>
-				<SettingsRounded />
-			</IconButton>
+			<Tooltip title="Edit translation settings">
+				<IconButton
+					edge="end"
+					color="inherit"
+					aria-label="settings"
+					aria-controls="settings-menu"
+					aria-haspopup="true"
+					onClick={handleOpenMenu}
+				>
+					<SettingsRounded />
+				</IconButton>
+			</Tooltip>
 			<Menu
 				id="settings-menu"
 				variant="menu"
