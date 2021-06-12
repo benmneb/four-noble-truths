@@ -8,6 +8,14 @@ export default function reducer(state, action) {
 			return { ...state, clickedElaboration: action.clickedElaboration };
 		case 'VISIBLE_ELABORATION':
 			return { ...state, visibleElaboration: action.visibleElaboration };
+		case 'SET_SAMADHI':
+			return { ...state, translations: { ...state.translations, samadhi: action.word } };
+		case 'SET_SANKHARA':
+			return { ...state, translations: { ...state.translations, sankhara: action.word } };
+		case 'SET_VEDANA':
+			return { ...state, translations: { ...state.translations, vedana: action.word } };
+		case 'SET_NAMARUPA':
+			return { ...state, translations: { ...state.translations, namarupa: action.word } };
 		default:
 			return state;
 	}

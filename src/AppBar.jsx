@@ -5,8 +5,9 @@ import {
 	Typography,
 	IconButton
 } from '@material-ui/core';
-import { InfoRounded, SettingsRounded } from '@material-ui/icons';
+import { InfoRounded } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles';
+import SettingsMenu from './SettingsMenu';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -32,9 +33,7 @@ export default function AppBar() {
 					<Typography variant="h6" component="h1" className={styles.title}>
 						The Four Noble Truths
 					</Typography>
-					<IconButton edge="end" color="inherit" aria-label="settings">
-						<SettingsRounded />
-					</IconButton>
+					<SettingsMenu />
 				</Toolbar>
 			</Appbar>
 		</Box>
