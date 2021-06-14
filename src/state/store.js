@@ -7,6 +7,7 @@ const initialState = {
 	clickedTruth: 0,
 	clickedElaboration: { text: null, elaboration: null, references: [] },
 	visibleElaboration: { text: null, elaboration: null, references: [] },
+	showElaborationDrawer: false,
 	translations: {
 		samadhi: 'stillness',
 		sankhara: 'volitional formations',

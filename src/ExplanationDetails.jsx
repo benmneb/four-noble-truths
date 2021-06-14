@@ -1,13 +1,15 @@
 import { useContext } from 'react';
 
-import { Box, Fade, Typography, Grid, Paper } from '@material-ui/core';
+import { Box, Fade, Typography, Grid, Hidden } from '@material-ui/core';
 import { makeStyles, fade } from '@material-ui/core/styles';
 import { TreeView } from '@material-ui/lab';
 
-import Tree from './Tree';
 import { GlobalState } from './state/store';
 import { TooltipChip, handleSuttaLinkClick } from './utils';
 import { MinusSquare, PlusSquare, CloseSquare } from './utils/Icons';
+import Tree from './Tree';
+import Elaboration from './Elaboration';
+import ElaborationDrawer from './ElaborationDrawer';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -44,12 +46,6 @@ const useStyles = makeStyles((theme) => ({
 	elaborationBox: {
 		position: 'sticky',
 		top: theme.spacing(2)
-	},
-	elaborationChipBox: {
-		display: 'flex',
-		alignItems: 'baseline',
-		flexWrap: 'wrap',
-		margin: theme.spacing(2)
 	}
 }));
 
@@ -93,41 +89,21 @@ export default function ExplanationDetails({ source }) {
 							<Tree data={source.tree} />
 						</TreeView>
 					</Grid>
-					{state.visibleElaboration && (
-						<Grid item sm={6}>
-							<Box marginTop={source.treeTitle ? 5 : 0} className={styles.elaborationBox}>
-								<Paper variant="outlined">
-									<Box margin={2} component="figure">
-										<Typography className={styles.title}>
-											{state.visibleElaboration.text}
-										</Typography>
-										<Typography component="blockquote">
-											"{state.visibleElaboration.elaboration}"
-										</Typography>
-										<Typography
-											variant="subtitle2"
-											component="figcaption"
-											className={styles.figCaption}
-										>
-											{state.visibleElaboration.spokenBy
-												? `- ${state.visibleElaboration.spokenBy}`
-												: '- The Buddha'}
-										</Typography>
-									</Box>
-									<Box className={styles.elaborationChipBox}>
-										<Typography>See:</Typography>
-										{state.visibleElaboration.references?.map((ref) => (
-											<TooltipChip
-												key={ref}
-												label={ref}
-												handleClick={() => handleSuttaLinkClick(ref)}
-											/>
-										))}
-									</Box>
-								</Paper>
-							</Box>
-						</Grid>
-					)}
+					<Hidden xsDown>
+						{state.visibleElaboration && (
+							<Grid item sm={6}>
+								<Box
+									marginTop={source.treeTitle ? 5 : 0}
+									className={styles.elaborationBox}
+								>
+									<Elaboration />
+								</Box>
+							</Grid>
+						)}
+					</Hidden>
+					<Hidden smUp>
+						<ElaborationDrawer />
+					</Hidden>
 				</Grid>
 				<Box className={styles.chipBox}>
 					<Typography>See:</Typography>

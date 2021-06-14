@@ -16,6 +16,8 @@ export default function reducer(state, action) {
 			return { ...state, translations: { ...state.translations, vedana: action.word } };
 		case 'SET_NAMARUPA':
 			return { ...state, translations: { ...state.translations, namarupa: action.word } };
+		case 'TOGGLE_ELABORATION_DRAWER':
+			return { ...state, showElaborationDrawer: action.showElaborationDrawer };
 		default:
 			return state;
 	}

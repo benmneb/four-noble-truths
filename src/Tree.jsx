@@ -26,6 +26,10 @@ export default function Tree({ data }) {
 			type: 'VISIBLE_ELABORATION',
 			visibleElaboration: { text, elaboration, references, spokenBy }
 		});
+		dispatch({
+			type: 'TOGGLE_ELABORATION_DRAWER',
+			showElaborationDrawer: true
+		});
 	}
 
 	function renderTree(nodes) {
