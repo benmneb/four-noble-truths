@@ -11,7 +11,13 @@ const useStyles = makeStyles((theme) => ({
 		alignItems: 'center',
 		justifyContent: 'space-between',
 		margin: theme.spacing(1),
-		width: 366
+		width: 366,
+		maxWidth: `calc(100% - ${theme.spacing(2)}px)`
+	},
+	leftBox: {
+		textOverflow: 'ellipsis',
+		overflow: 'hidden',
+		whiteSpace: 'nowrap'
 	},
 	formControlRoot: {
 		width: '48%'
@@ -25,7 +31,7 @@ const SettingsMenuItem = forwardRef((props, ref) => {
 
 	return (
 		<Box ref={ref} className={styles.menuItem}>
-			<Box>
+			<Box className={styles.leftBox}>
 				<Typography component="span">
 					Translate{' '}
 					<Box component="span" fontWeight="fontWeightBold">
