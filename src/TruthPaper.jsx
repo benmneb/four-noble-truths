@@ -1,6 +1,6 @@
 import { useContext, useState } from 'react';
 
-import { Paper, Typography } from '@material-ui/core';
+import { Box, Paper, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 import { GlobalState } from './state/store';
@@ -16,17 +16,18 @@ const useStyles = makeStyles((theme) => ({
 		alignItems: 'center',
 		cursor: 'pointer'
 	},
+	numberBox: {
+		position: 'absolute',
+		display: 'flex',
+		alignItems: 'center',
+		justifyContent: 'center'
+	},
 	number: {
 		fontSize: '8rem',
 		color: theme.palette.background.default,
-		zIndex: 100,
-		position: 'absolute',
-		textAlign: 'center',
-		display: 'flex',
-		justifyContent: 'center',
-		alignItems: 'center',
 		fontWeight: theme.typography.fontWeightBold,
 		lineHeight: 1,
+		zIndex: 100,
 		webkitTouchCallout: 'none',
 		webkitUserSelect: 'none',
 		khtmlUserSelect: 'none',
@@ -82,7 +83,9 @@ export default function TruthPaper({ number, children }) {
 			onMouseLeave={handleMouseLeave}
 			onClick={handleClick}
 		>
-			<Typography className={styles.number}>{number}</Typography>
+			<Box className={styles.numberBox}>
+				<Typography className={styles.number}>{number}</Typography>
+			</Box>
 			<Typography className={styles.text}>{children}</Typography>
 		</Paper>
 	);
