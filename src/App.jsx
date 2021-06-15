@@ -7,6 +7,7 @@ import Explanation from './Explanation';
 import Footer from './Footer';
 import TruthsNav from './TruthsNav';
 import TopBar from './TopBar';
+import InfoDrawer from './InfoDrawer';
 
 export default function App() {
 	return (
@@ -17,6 +18,7 @@ export default function App() {
 				<TruthsNav />
 				<Explanation />
 				<Footer />
+				<InfoDrawer />
 			</ThemeProvider>
 		</StateProvider>
 	);

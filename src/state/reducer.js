@@ -18,6 +18,8 @@ export default function reducer(state, action) {
 			return { ...state, translations: { ...state.translations, namarupa: action.word } };
 		case 'TOGGLE_ELABORATION_DRAWER':
 			return { ...state, showElaborationDrawer: action.showElaborationDrawer };
+		case 'TOGGLE_INFO_DRAWER':
+			return { ...state, showInfoDrawer: action.showInfoDrawer };
 		default:
 			return state;
 	}
