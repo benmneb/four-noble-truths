@@ -1,6 +1,6 @@
 import { useContext, useState } from 'react';
 
-import { Box, IconButton, Menu, Tooltip } from '@material-ui/core';
+import { Box, IconButton, Menu, Tooltip, Typography } from '@material-ui/core';
 import { SettingsRounded } from '@material-ui/icons';
 
 import SettingsMenuItem from './SettingsMenuItem';
@@ -45,6 +45,9 @@ export default function SettingsMenu() {
 				open={Boolean(anchorEl)}
 				onClose={handleCloseMenu}
 			>
+				<Box margin={1} marginBottom={2} textAlign="center">
+					<Typography>Pali/English Translation Settings</Typography>
+				</Box>
 				<SettingsMenuItem
 					paliWord="samadhi"
 					englishOptions={['stillness', 'immersion', 'concentration']}
