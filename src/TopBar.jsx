@@ -1,12 +1,7 @@
-import {
-	AppBar as Appbar,
-	Box,
-	Toolbar,
-	Typography,
-	IconButton
-} from '@material-ui/core';
+import { AppBar, Box, Toolbar, Typography, IconButton } from '@material-ui/core';
 import { InfoRounded } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles';
+
 import SettingsMenu from './SettingsMenu';
 
 const useStyles = makeStyles((theme) => ({
@@ -20,12 +15,12 @@ const useStyles = makeStyles((theme) => ({
 	}
 }));
 
-export default function AppBar() {
+export default function TopBar() {
 	const styles = useStyles();
 
 	return (
 		<Box className={styles.root}>
-			<Appbar position="static" color="inherit">
+			<AppBar position="static" color="inherit">
 				<Toolbar>
 					<IconButton edge="start" color="inherit" aria-label="about">
 						<InfoRounded />
@@ -35,7 +30,7 @@ export default function AppBar() {
 					</Typography>
 					<SettingsMenu />
 				</Toolbar>
-			</Appbar>
+			</AppBar>
 		</Box>
 	);
 }
