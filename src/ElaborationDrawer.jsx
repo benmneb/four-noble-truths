@@ -12,7 +12,7 @@ const useStyles = makeStyles({
 
 export default function ElaborationDrawer() {
 	const styles = useStyles();
-	const [state, dispatch] = useGlobalState;
+	const [state, dispatch] = useGlobalState();
 
 	function toggleDrawer() {
 		dispatch({
