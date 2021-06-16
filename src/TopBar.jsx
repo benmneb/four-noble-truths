@@ -1,4 +1,4 @@
-import { AppBar, Box, Toolbar, Typography, IconButton } from '@material-ui/core';
+import { AppBar, Box, Toolbar, Tooltip, Typography, IconButton } from '@material-ui/core';
 import { InfoRounded } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -31,14 +31,16 @@ export default function TopBar() {
 		<Box className={styles.root}>
 			<AppBar position="static" color="inherit">
 				<Toolbar>
-					<IconButton
-						edge="start"
-						color="inherit"
-						aria-label="about"
-						onClick={showInfoDrawer}
-					>
-						<InfoRounded />
-					</IconButton>
+					<Tooltip title="About this site">
+						<IconButton
+							edge="start"
+							color="inherit"
+							aria-label="about"
+							onClick={showInfoDrawer}
+						>
+							<InfoRounded />
+						</IconButton>
+					</Tooltip>
 					<Typography variant="h6" component="h1" className={styles.title}>
 						The Four Noble Truths
 					</Typography>
