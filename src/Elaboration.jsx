@@ -1,10 +1,8 @@
-import { useContext } from 'react';
-
 import { Box, Paper, Typography, useMediaQuery } from '@material-ui/core';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 
 import { TooltipChip, handleSuttaLinkClick } from './utils';
-import { GlobalState } from './state/store';
+import { useGlobalState } from './state/store';
 
 const useStyles = makeStyles((theme) => ({
 	figCaption: {
@@ -31,7 +29,7 @@ export default function Elaboration() {
 	const theme = useTheme();
 	const smUp = useMediaQuery(theme.breakpoints.up('sm'));
 
-	const state = useContext(GlobalState)[0];
+	const state = useGlobalState()[0];
 
 	return (
 		<Paper variant={smUp ? 'outlined' : 'elevation'} elevation={0}>

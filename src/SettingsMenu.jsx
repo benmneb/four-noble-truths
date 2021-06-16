@@ -1,15 +1,15 @@
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 
 import { Box, IconButton, Menu, Tooltip, Typography } from '@material-ui/core';
 import { SettingsRounded } from '@material-ui/icons';
 
 import SettingsMenuItem from './SettingsMenuItem';
-import { GlobalState } from './state/store';
+import { useGlobalState } from './state/store';
 
 export default function SettingsMenu() {
 	const [anchorEl, setAnchorEl] = useState(null);
 
-	const [state, dispatch] = useContext(GlobalState);
+	const [state, dispatch] = useGlobalState();
 
 	function handleChangeTranslation(event, source) {
 		return dispatch({ type: `SET_${source}`, word: event.target.value });

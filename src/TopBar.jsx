@@ -1,11 +1,9 @@
-import { useContext } from 'react';
-
 import { AppBar, Box, Toolbar, Typography, IconButton } from '@material-ui/core';
 import { InfoRounded } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles';
 
 import SettingsMenu from './SettingsMenu';
-import { GlobalState } from './state/store';
+import { useGlobalState } from './state/store';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -20,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function TopBar() {
 	const styles = useStyles();
-	const [state, dispatch] = useContext(GlobalState);
+	const [state, dispatch] = useGlobalState();
 
 	function showInfoDrawer() {
 		dispatch({

@@ -1,9 +1,9 @@
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 
 import { Box, Paper, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
-import { GlobalState } from './state/store';
+import { useGlobalState } from './state/store';
 
 const useStyles = makeStyles((theme) => ({
 	paper: {
@@ -43,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function TruthPaper({ number, children }) {
 	const styles = useStyles();
-	const [state, dispatch] = useContext(GlobalState);
+	const [state, dispatch] = useGlobalState();
 	const [isHovering, setIsHovering] = useState(false);
 
 	function handleMouseEnter() {

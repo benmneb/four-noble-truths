@@ -1,9 +1,7 @@
-import { useContext } from 'react';
-
 import { makeStyles, fade } from '@material-ui/core/styles';
 import { TreeItem } from '@material-ui/lab';
 
-import { GlobalState } from './state/store';
+import { useGlobalState } from './state/store';
 
 const useStyles = makeStyles((theme) => ({
 	treeItemGroup: {
@@ -15,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Tree({ data }) {
 	const styles = useStyles();
-	const dispatch = useContext(GlobalState)[1];
+	const dispatch = useGlobalState()[1];
 
 	function handleLabelClick(text, elaboration, references, spokenBy) {
 		dispatch({

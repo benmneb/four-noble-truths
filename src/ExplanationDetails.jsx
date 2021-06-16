@@ -1,10 +1,8 @@
-import { useContext } from 'react';
-
 import { Box, Fade, Typography, Grid, Hidden } from '@material-ui/core';
 import { makeStyles, fade } from '@material-ui/core/styles';
 import { TreeView } from '@material-ui/lab';
 
-import { GlobalState } from './state/store';
+import { useGlobalState } from './state/store';
 import { TooltipChip, handleSuttaLinkClick } from './utils';
 import { MinusSquare, PlusSquare, CloseSquare } from './utils/Icons';
 import Tree from './Tree';
@@ -51,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function ExplanationDetails({ source }) {
 	const styles = useStyles();
-	const state = useContext(GlobalState)[0];
+	const state = useGlobalState()[0];
 
 	return (
 		<Fade in>

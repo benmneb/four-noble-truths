@@ -1,9 +1,7 @@
-import { useContext } from 'react';
-
 import { SwipeableDrawer } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
-import { GlobalState } from './state/store';
+import { useGlobalState } from './state/store';
 
 const useStyles = makeStyles({
 	drawerPaper: {
@@ -14,7 +12,7 @@ const useStyles = makeStyles({
 
 export default function InfoDrawer() {
 	const styles = useStyles();
-	const [state, dispatch] = useContext(GlobalState);
+	const [state, dispatch] = useGlobalState();
 
 	function toggleInfoDrawer() {
 		dispatch({
