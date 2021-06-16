@@ -89,10 +89,40 @@ export const suffering = {
 			children: [
 				{
 					id: 'S-10.1',
-					text: 'Form/physical matter',
+					text: 'Form',
 					elaboration:
 						'What is form? The four primary elements, and form derived from the four primary elements. This is called form. Form originates from food. When food ceases, form ceases. The practice that leads to the cessation of form is simply this noble eightfold path.',
-					references: ['SN 22.56', 'SN 22.57']
+					references: ['SN 22.56', 'SN 22.57', 'MN 28'],
+					children: [
+						{
+							id: 'S-10.1.1',
+							text: 'Earth element',
+							references: ['MN 28', 'MN 62'],
+							elaboration:
+								'What is the earth element? The earth element may be interior or exterior. And what is the interior earth element? Anything hard, solid, and appropriated that’s internal, pertaining to an individual. This includes: head hair, body hair, nails, teeth, skin, flesh, sinews, bones, bone marrow, kidneys, heart, liver, diaphragm, spleen, lungs, intestines, mesentery, undigested food, feces, or anything else hard, solid, and appropriated that’s internal, pertaining to an individual. This is called the interior earth element. The interior earth element and the exterior earth element are just the earth element. This should be truly seen with right understanding like this: ‘This is not mine, I am not this, this is not my self.’ When you truly see with right understanding, you grow disillusioned with the earth element, detaching the mind from the earth element.'
+						},
+						{
+							id: 'S-10.1.2',
+							text: 'Water element',
+							references: ['MN 28', 'MN 62'],
+							elaboration:
+								'What is the water element? The water element may be interior or exterior. And what is the interior water element? Anything that’s water, watery, and appropriated that’s internal, pertaining to an individual. This includes: bile, phlegm, pus, blood, sweat, fat, tears, grease, saliva, snot, synovial fluid, urine, or anything else that’s water, watery, and appropriated that’s internal, pertaining to an individual. This is called the interior water element. The interior water element and the exterior water element are just the water element. This should be truly seen with right understanding like this: ‘This is not mine, I am not this, this is not my self.’ When you truly see with right understanding, you grow disillusioned with the water element, detaching the mind from the water element.'
+						},
+						{
+							id: 'S-10.1.3',
+							text: 'Fire element',
+							references: ['MN 28', 'MN 62'],
+							elaboration:
+								'What is the fire element? The fire element may be interior or exterior. And what is the interior fire element? Anything that’s fire, fiery, and appropriated that’s internal, pertaining to an individual. This includes: that which warms, that which ages, that which heats you up when feverish, that which properly digests food and drink, or anything else that’s fire, fiery, and appropriated that’s internal, pertaining to an individual. This is called the interior fire element. The interior fire element and the exterior fire element are just the fire element. This should be truly seen with right understanding like this: ‘This is not mine, I am not this, this is not my self.’ When you truly see with right understanding, you grow disillusioned with the fire element, detaching the mind from the fire element.'
+						},
+						{
+							id: 'S-10.1.4',
+							text: 'Air element',
+							references: ['MN 28', 'MN 62'],
+							elaboration:
+								'What is the air element? The air element may be interior or exterior. And what is the interior air element? Anything that’s wind, windy, and appropriated that’s internal, pertaining to an individual. This includes: winds that go up or down, winds in the belly or the bowels, winds that flow through the limbs, in-breaths and out-breaths, or anything else that’s wind, windy, and appropriated that’s internal, pertaining to an individual. This is called the interior air element. The interior air element and the exterior air element are just the air element. This should be truly seen with right understanding like this: ‘This is not mine, I am not this, this is not my self.’ When you truly see with right understanding, you reject the air element, detaching the mind from the air element.'
+						}
+					]
 				},
 				{
 					id: 'S-10.2',
