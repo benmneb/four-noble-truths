@@ -7,8 +7,10 @@ export function handleSuttaLinkClick(reference) {
 		? `${reference.toLowerCase().replace(/\s/g, '')}/en/${translator}`
 		: `${reference.toLowerCase().replace(/\s/g, '')}`;
 
+	const referrer = window.location.href;
+
 	return window.open(
-		`https://suttacentral.net/${modifiedReference}?ref=4NobleTruths`,
+		`https://suttacentral.net/${modifiedReference}?ref=${referrer}`,
 		'_blank',
 		'noopener'
 	);
