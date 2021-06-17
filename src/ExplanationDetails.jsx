@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
 		'& > *': {
 			marginTop: theme.spacing(2)
 		},
-		'& figure:first-of-type': {
+		'& .quoteBox:first-of-type': {
 			marginTop: theme.spacing(5)
 		}
 	},
@@ -61,7 +61,7 @@ export default function ExplanationDetails({ source }) {
 					{source.truth}
 				</Typography>
 				{source.quotes.map((quote) => (
-					<Box key={quote.reference} component="figure">
+					<Box key={quote.reference} component="figure" className="quoteBox">
 						<Typography component="blockquote">"{quote.text}"</Typography>
 						<Typography
 							className={styles.figCaption}
