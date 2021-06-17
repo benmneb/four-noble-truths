@@ -15,6 +15,9 @@ const useStyles = makeStyles((theme) => ({
 		margin: theme.spacing(0, 2),
 		'& > *': {
 			marginTop: theme.spacing(2)
+		},
+		'& figure:first-of-type': {
+			marginTop: theme.spacing(5)
 		}
 	},
 	figCaption: {
