@@ -10,6 +10,6 @@ export function handleSuttaLinkClick(reference) {
 	return window.open(
 		`https://suttacentral.net/${modifiedReference}?ref=4NobleTruths`,
 		'_blank',
-		'noopener noreferrer'
+		'noopener'
 	);
 }
