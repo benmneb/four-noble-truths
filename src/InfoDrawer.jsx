@@ -2,11 +2,17 @@ import { Box, Link, SwipeableDrawer, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 import { useGlobalState } from './state/store';
+import { handleSuttaLinkClick, TooltipChip } from './utils';
 
 const useStyles = makeStyles({
 	drawerPaper: {
 		width: 290,
 		maxWidth: '80vw'
+	},
+	figCaption: {
+		display: 'flex',
+		alignItems: 'baseline',
+		justifyContent: 'end'
 	}
 });
 
@@ -41,6 +47,26 @@ export default function InfoDrawer() {
 					If the Four Noble Truths are what is realised at enlightenment, then the
 					entirity of the Buddhas teachings would stem from the Four Noble Truths, right?
 				</Typography>
+				<Box component="figure" margin={2}>
+					<Typography component="blockquote">
+						"The footprints of all creatures that walk can fit inside an elephant’s
+						footprint, so an elephant’s footprint is said to be the biggest of them all.
+						In the same way, all skillful qualities can be included in the four noble
+						truths."
+					</Typography>
+					<Typography
+						paragraph
+						variant="subtitle2"
+						component="figcaption"
+						className={styles.figCaption}
+					>
+						- Ven. Sariputta
+						<TooltipChip
+							label="MN 28"
+							handleClick={() => handleSuttaLinkClick('MN 28')}
+						/>
+					</Typography>
+				</Box>
 				<Typography paragraph>
 					This site is my attempt to illustrate this, while helping me research the suttas
 					of the Pali Canon.
