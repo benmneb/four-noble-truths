@@ -1,7 +1,7 @@
 import { Box, Paper, Typography, useMediaQuery } from '@material-ui/core';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 
-import { TooltipChip, handleSuttaLinkClick } from './utils';
+import { TooltipChip } from './utils';
 import { useGlobalState } from './state/store';
 
 const useStyles = makeStyles((theme) => ({
@@ -51,11 +51,7 @@ export default function Elaboration() {
 			<Box className={styles.elaborationChipBox}>
 				<Typography>See:</Typography>
 				{state.visibleElaboration.references?.map((ref) => (
-					<TooltipChip
-						key={ref}
-						label={ref}
-						handleClick={() => handleSuttaLinkClick(ref)}
-					/>
+					<TooltipChip key={ref} sutta={ref} />
 				))}
 			</Box>
 		</Paper>

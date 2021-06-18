@@ -3,7 +3,7 @@ import { makeStyles, fade } from '@material-ui/core/styles';
 import { TreeView } from '@material-ui/lab';
 
 import { useGlobalState } from './state/store';
-import { TooltipChip, handleSuttaLinkClick } from './utils';
+import { TooltipChip } from './utils';
 import { MinusSquare, PlusSquare, CloseSquare } from './utils/Icons';
 import Tree from './Tree';
 import Elaboration from './Elaboration';
@@ -69,10 +69,7 @@ export default function ExplanationDetails({ source }) {
 							component="figcaption"
 						>
 							- The Buddha
-							<TooltipChip
-								label={quote.reference}
-								handleClick={() => handleSuttaLinkClick(quote.reference)}
-							/>
+							<TooltipChip sutta={quote.reference} />
 						</Typography>
 					</Box>
 				))}
@@ -109,11 +106,7 @@ export default function ExplanationDetails({ source }) {
 				<Box className={styles.chipBox}>
 					<Typography>See:</Typography>
 					{source.seeMore.map((ref) => (
-						<TooltipChip
-							key={ref}
-							label={ref}
-							handleClick={() => handleSuttaLinkClick(ref)}
-						/>
+						<TooltipChip key={ref} sutta={ref} />
 					))}
 				</Box>
 			</Box>

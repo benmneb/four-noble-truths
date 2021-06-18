@@ -2,7 +2,7 @@ import { Box, Link, SwipeableDrawer, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 import { useGlobalState } from './state/store';
-import { handleSuttaLinkClick, TooltipChip } from './utils';
+import { TooltipChip } from './utils';
 
 const useStyles = makeStyles({
 	drawerPaper: {
@@ -60,10 +60,7 @@ export default function InfoDrawer() {
 						className={styles.figCaption}
 					>
 						- The Buddha
-						<TooltipChip
-							label="DN 16"
-							handleClick={() => handleSuttaLinkClick('DN 16')}
-						/>
+						<TooltipChip sutta="DN 16" />
 					</Typography>
 				</Box>
 				<Typography paragraph>
@@ -84,10 +81,7 @@ export default function InfoDrawer() {
 						className={styles.figCaption}
 					>
 						- Ven. Sariputta
-						<TooltipChip
-							label="MN 28"
-							handleClick={() => handleSuttaLinkClick('MN 28')}
-						/>
+						<TooltipChip sutta="MN 28" />
 					</Typography>
 				</Box>
 				<Typography paragraph>
