@@ -44,8 +44,31 @@ export default function InfoDrawer() {
 					</Typography>
 				</Box>
 				<Typography paragraph>
-					If the Four Noble Truths are what is realised at enlightenment, then the
-					entirity of the Buddhas teachings would stem from the Four Noble Truths, right?
+					If the Four Noble Truths are what is realised at enlightenment...
+				</Typography>
+				<Box component="figure" margin={2}>
+					<Typography component="blockquote">
+						"Because of not truly seeing the four noble truths, we have transmigrated for
+						a long time from one rebirth to the next. But now that these truths have been
+						seen, the attachment to rebirth is eradicated. The root of suffering is cut
+						off, now there are no more future lives."
+					</Typography>
+					<Typography
+						paragraph
+						variant="subtitle2"
+						component="figcaption"
+						className={styles.figCaption}
+					>
+						- The Buddha
+						<TooltipChip
+							label="DN 16"
+							handleClick={() => handleSuttaLinkClick('DN 16')}
+						/>
+					</Typography>
+				</Box>
+				<Typography paragraph>
+					...then the entirity of the Buddhas teachings would stem from the Four Noble
+					Truths, right?
 				</Typography>
 				<Box component="figure" margin={2}>
 					<Typography component="blockquote">
@@ -68,8 +91,8 @@ export default function InfoDrawer() {
 					</Typography>
 				</Box>
 				<Typography paragraph>
-					This site is my attempt to illustrate this, while helping me study the suttas of
-					the Pali Canon.
+					This site is my attempt to illustrate and organise this, while helping me study
+					the suttas of the Pali Canon.
 				</Typography>
 				<Typography paragraph>
 					Any corrections or additions please{' '}
