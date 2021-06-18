@@ -18,19 +18,31 @@ export const origin = {
 			children: [
 				{
 					id: 'DO-1.1',
-					text: 'Not knowing suffering'
+					text: 'Not knowing suffering',
+					references: ['SN 56.11'],
+					elaboration:
+						'Now this is the noble truth of suffering. Rebirth is suffering; old age is suffering; illness is suffering; death is suffering; association with the disliked is suffering; separation from the liked is suffering; not getting what you wish for is suffering. In brief, the five grasping aggregates are suffering.'
 				},
 				{
 					id: 'DO-1.2',
-					text: 'Not knowing the origin of suffering'
+					text: 'Not knowing the origin of suffering',
+					references: ['SN 56.11'],
+					elaboration:
+						'Now this is the noble truth of the origin of suffering. It’s the craving that leads to future rebirth, mixed up with relishing and greed, taking pleasure in various different realms. That is, craving for sensual pleasures, craving to continue existence, and craving to end existence.'
 				},
 				{
 					id: 'DO-1.3',
-					text: 'Not knowing the cessation of suffering'
+					text: 'Not knowing the cessation of suffering',
+					references: ['SN 56.11'],
+					elaboration:
+						'Now this is the noble truth of the cessation of suffering. It’s the fading away and cessation of that very same craving with nothing left over; giving it away, letting it go, releasing it, and not adhering to it.'
 				},
 				{
 					id: 'DO-1.4',
-					text: 'Not knowing the path leading to the cessation of suffering'
+					text: 'Not knowing the path leading to the cessation of suffering',
+					references: ['SN 56.11'],
+					elaboration:
+						'Now this is the noble truth of the practice that leads to the cessation of suffering. It is simply this noble eightfold path, that is: right view, right thought, right speech, right action, right livelihood, right effort, right mindfulness, and right concentration.'
 				}
 			]
 		},
@@ -303,21 +315,33 @@ export const origin = {
 		{
 			id: 'DO-10',
 			text: 'Continued existence',
-			references: ['SN 12.2'],
+			references: ['SN 12.2', 'AN 3.76', 'MN 120'],
 			elaboration:
 				'What is continued existence? There are these three states of existence. Existence in the sensual realm, the realm of luminous form, and the formless realm. This is called continued existence.',
 			children: [
 				{
 					id: 'DO-10.1',
-					text: 'Existence in the sensual realm'
+					text: 'Existence in the sensual realm',
+					references: ['MN 43', 'AN 9.24'],
+					elaboration:
+						'It’s because of sentient beings—hindered by ignorance and fettered by craving—taking pleasure in various different realms. That’s how there is rebirth into a new state of existence in the future. It’s when ignorance fades away, knowledge arises, and craving ceases. That’s how there is no rebirth into a new state of existence in the future.',
+					spokenBy: 'Ven. Sariputta'
 				},
 				{
 					id: 'DO-10.2',
-					text: 'Existence in the realm of luminous form'
+					text: 'Existence in the realm of luminous form',
+					references: ['MN 43', 'AN 4.123', 'AN 9.24'],
+					elaboration:
+						'It’s because of sentient beings—hindered by ignorance and fettered by craving—taking pleasure in various different realms. That’s how there is rebirth into a new state of existence in the future. It’s when ignorance fades away, knowledge arises, and craving ceases. That’s how there is no rebirth into a new state of existence in the future.',
+					spokenBy: 'Ven. Sariputta'
 				},
 				{
 					id: 'DO-10.3',
-					text: 'Existence in the formless realm'
+					text: 'Existence in the formless realm',
+					references: ['MN 43', 'AN 9.24'],
+					elaboration:
+						'It’s because of sentient beings—hindered by ignorance and fettered by craving—taking pleasure in various different realms. That’s how there is rebirth into a new state of existence in the future. It’s when ignorance fades away, knowledge arises, and craving ceases. That’s how there is no rebirth into a new state of existence in the future.',
+					spokenBy: 'Ven. Sariputta'
 				}
 			]
 		},
