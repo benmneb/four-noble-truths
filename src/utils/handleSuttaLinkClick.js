@@ -7,7 +7,7 @@ export function handleSuttaLinkClick(reference) {
 		? `${reference.toLowerCase().replace(/\s/g, '')}/en/${translator}`
 		: `${reference.toLowerCase().replace(/\s/g, '')}`;
 
-	const referrer = window.location.href;
+	const referrer = window.location.host;
 
 	return window.open(
 		`https://suttacentral.net/${modifiedReference}?ref=${referrer}`,
