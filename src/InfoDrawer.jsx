@@ -44,7 +44,7 @@ export default function InfoDrawer() {
 					</Typography>
 				</Box>
 				<Typography paragraph>
-					If the Four Noble Truths are what is realised at enlightenment...
+					If the Four Noble Truths are what is realised by arahants...
 				</Typography>
 				<Box component="figure" margin={2}>
 					<Typography component="blockquote">
