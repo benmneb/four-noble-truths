@@ -1,7 +1,7 @@
 export function handleSuttaLinkClick(reference) {
 	const translator = /^SNP/.test(reference) ? 'mills' : 'sujato';
 
-	const modifiedReference = /^(AN|SN)[\s][0-9]{1,3}[.]|^(MN|DN|ITI|DHP|SNP)/.test(
+	const modifiedReference = /^(AN|SN)[\s][0-9]{1,3}[.]|^(MN|DN|ITI|DHP|SNP|THAG)/.test(
 		reference
 	)
 		? `${reference.toLowerCase().replace(/\s/g, '')}/en/${translator}`
