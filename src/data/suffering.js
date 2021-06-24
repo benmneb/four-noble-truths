@@ -83,7 +83,7 @@ export const suffering = {
 		{
 			id: 'S-10',
 			text: 'The five grasping aggregates',
-			references: ['SN 56.13', 'SN 22'],
+			references: ['SN 56.13', 'SN 22.104', 'SN 22'],
 			elaboration:
 				'What is the noble truth of suffering? You should say: ‘The five grasping aggregates’. That is: form, feeling, perception, choices, and consciousness. This is called the noble truth of suffering.',
 			children: [
