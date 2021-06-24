@@ -1321,7 +1321,7 @@ export const path = {
 						{
 							id: 'P-7.4.3',
 							text: 'The 6 Sense Fields',
-							references: ['MN 10', 'DN 22'],
+							references: ['MN 10', 'DN 22', 'MN 149'],
 							elaboration:
 								'Furthermore, a mendicant meditates by observing an aspect of principles with respect to the six interior and exterior sense fields. And so they meditate observing an aspect of principles internally, externally, and both internally and externally. They meditate observing the principles as liable to originate, as liable to vanish, and as liable to both originate and vanish. Or mindfulness is established that principles exist, to the extent necessary for knowledge and mindfulness. They meditate independent, not grasping at anything in the world. That’s how a mendicant meditates by observing an aspect of principles with respect to the six interior and exterior sense fields.',
 							children: [
@@ -1463,6 +1463,44 @@ export const path = {
 										'And what is the noble truth of the practice that leads to the cessation of suffering? It is simply this noble eightfold path, that is: right view, right thought, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion. This is called the noble truth of the practice that leads to the cessation of suffering.'
 								}
 							]
+						},
+						{
+							id: 'P-7.4.6',
+							text: 'The 3 Characteristics of Existence',
+							references: ['AN 3.136', 'DHP 273-289', 'AN 7.49'],
+							elaboration:
+								'Whether Realized Ones arise or not, these laws of nature persist, this regularity of natural principles, this invariance of natural principles: all conditions are impermanent, all conditions are suffering, all things are not-self. A Realized One understands this and comprehends it, then he explains, teaches, asserts, establishes, clarifies, analyzes, and reveals it: ‘All conditions are impermanent, all conditions are suffering, all things are not-self.’',
+							children: [
+								{
+									id: 'P-7.4.6.1',
+									text: 'Impermanence',
+									references: [
+										'AN 10.60',
+										'SN 22.83',
+										'ITI 85',
+										'THAG 1.111',
+										'AN 7.16',
+										'SN 22.40',
+										'SN 22.147'
+									],
+									elaboration:
+										'And what is the perception of impermanence? It’s when a mendicant has gone to a wilderness, or to the root of a tree, or to an empty hut, and reflects like this: ‘Form, feeling, perception, choices, and consciousness are impermanent.’ And so they meditate observing impermanence in the five grasping aggregates. This is called the perception of impermanence.'
+								},
+								{
+									id: 'P-7.4.6.2',
+									text: 'Suffering',
+									references: ['SN 22.148', 'AN 7.17', 'SN 22.41'],
+									elaboration:
+										'When a gentleman has gone forth out of faith, this is what’s in line with the teachings. They should live observing suffering in form, feeling, perception, choices, and consciousness. Completely understanding form, feeling, perception, choices, and consciousness, they’re freed from these things. They’re freed from rebirth, old age, and death, from sorrow, lamentation, pain, sadness, and distress. They’re freed from suffering, I say.'
+								},
+								{
+									id: 'P-7.4.6.3',
+									text: 'Not-self',
+									references: ['AN 10.60', 'SN 22.99', 'MN 148', 'SN 22.42'],
+									elaboration:
+										'And what is the perception of not-self? It’s when a mendicant has gone to a wilderness, or to the root of a tree, or to an empty hut, and reflects like this: ‘The eye and sights, ear and sounds, nose and smells, tongue and tastes, body and touches, and mind and thoughts are not-self.’ And so they meditate observing not-self in the six interior and exterior sense fields. This is called the perception of not-self.'
+								}
+							]
 						}
 					]
 				}
@@ -1477,7 +1515,8 @@ export const path = {
 			children: [
 				{
 					id: 'P-8.1',
-					text: 'First jhana'
+					text: 'First jhana',
+					references: ['MN 43 - factors']
 				},
 				{
 					id: 'P-8.2',
