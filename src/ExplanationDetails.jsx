@@ -104,7 +104,7 @@ export default function ExplanationDetails({ source }) {
 					</Hidden>
 				</Grid>
 				<Box className={styles.chipBox}>
-					<Typography>See:</Typography>
+					<Typography variant="body2">See:</Typography>
 					{source.seeMore.map((ref) => (
 						<TooltipChip key={ref} sutta={ref} />
 					))}

@@ -59,7 +59,7 @@ export default function Elaboration() {
 					[styles.displayNone]: state.visibleElaboration?.references?.length < 2
 				})}
 			>
-				<Typography>Also:</Typography>
+				<Typography variant="body2">Also:</Typography>
 				{state.visibleElaboration?.references?.slice(1).map((ref) => (
 					<TooltipChip key={ref} sutta={ref} />
 				))}
