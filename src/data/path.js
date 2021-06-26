@@ -520,35 +520,35 @@ export const path = {
 		{
 			id: 'P-6',
 			text: 'Right Effort',
-			references: ['SN 49.1-12', 'AN 4.14', 'MN 117', 'MN 2'],
+			references: ['SN 49.1-12', 'AN 4.14', 'AN 4.69', 'MN 117', 'MN 2', 'DN 33'],
 			elaboration:
 				'There are these four right efforts. What four? It’s when a mendicant generates enthusiasm, tries, makes an effort, exerts the mind, and strives so that bad, unskillful qualities don’t arise; so that bad, unskillful qualities that have arisen are given up; so that skillful qualities arise; so that skillful qualities that have arisen remain, are not lost, but increase, mature, and are completed by development. These are the four right efforts.',
 			children: [
 				{
 					id: 'P-6.1',
 					text: 'Restrain unarisen unskillful states of mind',
-					references: ['AN 4.14', 'MN 20'],
+					references: ['AN 4.14', 'AN 4.69', 'MN 20'],
 					elaboration:
 						'And what is the effort to restrain? When a mendicant sees a sight with their eyes, they don’t get caught up in the features and details. If the faculty of sight were left unrestrained, bad unskillful qualities of desire and aversion would become overwhelming. For this reason, they practice restraint, protecting the faculty of sight, and achieving its restraint. When they hear a sound with their ears … When they smell an odor with their nose … When they taste a flavor with their tongue … When they feel a touch with their body … When they know a thought with their mind, they don’t get caught up in the features and details. If the faculty of mind were left unrestrained, bad unskillful qualities of desire and aversion would become overwhelming. For this reason, they practice restraint, protecting the faculty of mind, and achieving its restraint. This is called the effort to restrain.'
 				},
 				{
 					id: 'P-6.2',
 					text: 'Give up arisen unskillful states of mind',
-					references: ['AN 4.14', 'AN 2.11-20'],
+					references: ['AN 4.14', 'AN 4.69', 'AN 2.11-20'],
 					elaboration:
 						'And what is the effort to give up? It’s when a mendicant doesn’t tolerate a sensual, malicious, or cruel thought that’s arisen, but gives it up, gets rid of it, eliminates it, and obliterates it. They don’t tolerate any bad, unskillful qualities that have arisen, but give them up, get rid of them, eliminate them, and obliterate them. This is called the effort to give up.'
 				},
 				{
 					id: 'P-6.3',
 					text: 'Develop unarisen skillful states of mind',
-					references: ['AN 4.14', 'AN 2.11-20'],
+					references: ['AN 4.14', 'AN 4.69', 'AN 2.11-20'],
 					elaboration:
 						'And what is the effort to develop? It’s when a mendicant develops the awakening factors of mindfulness, investigation of principles, energy, rapture, tranquility, immersion, and equanimity, which rely on seclusion, fading away, and cessation, and ripen as letting go. This is called the effort to develop.'
 				},
 				{
 					id: 'P-6.4',
 					text: 'Preserve arisen skillful states of mind',
-					references: ['AN 4.14', 'AN 2.11-20'],
+					references: ['AN 4.14', 'AN 4.69', 'AN 2.11-20'],
 					elaboration:
 						'And what is the effort to preserve? It’s when a mendicant preserves a meditation subject that’s a fine foundation of immersion: the perception of a skeleton, a worm-infested corpse, a livid corpse, a split open corpse, or a bloated corpse. This is called the effort to preserve.'
 				}
