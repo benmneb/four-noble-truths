@@ -76,12 +76,14 @@ export default function TruthsNav() {
 
 	function handleMobileNavChange(number) {
 		dispatch({ type: 'HOVER_TRUTH', number: 0 });
+
 		if (number !== state.clickedTruth) {
 			dispatch({ type: 'CLICKED_TRUTH', number });
 		} else {
 			dispatch({ type: 'CLICKED_TRUTH', number: 0 });
 		}
-		// TODO: add scrollToTop()
+
+		window.scrollTo({ top: 0, behavior: 'smooth' });
 	}
 
 	return (
