@@ -1,3 +1,5 @@
+import clsx from 'clsx';
+
 import { Box, Paper, Typography, useMediaQuery } from '@material-ui/core';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 
@@ -20,6 +22,9 @@ const useStyles = makeStyles((theme) => ({
 		alignItems: 'baseline',
 		flexWrap: 'wrap',
 		margin: theme.spacing(2)
+	},
+	displayNone: {
+		display: 'none'
 	}
 }));
 
@@ -46,12 +51,16 @@ export default function Elaboration() {
 					{state.visibleElaboration?.spokenBy
 						? `- ${state.visibleElaboration?.spokenBy}`
 						: '- The Buddha'}
-					<TooltipChip sutta={state.visibleElaboration?.references[0]} />
+					<TooltipChip sutta={state.visibleElaboration?.references?.[0]} />
 				</Typography>
 			</Box>
-			<Box className={styles.elaborationChipBox}>
-				<Typography>See:</Typography>
-				{state.visibleElaboration?.references.slice(1).map((ref) => (
+			<Box
+				className={clsx(styles.elaborationChipBox, {
+					[styles.displayNone]: state.visibleElaboration?.references?.length < 2
+				})}
+			>
+				<Typography>Also:</Typography>
+				{state.visibleElaboration?.references?.slice(1).map((ref) => (
 					<TooltipChip key={ref} sutta={ref} />
 				))}
 			</Box>
