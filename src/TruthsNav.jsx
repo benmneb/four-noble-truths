@@ -75,15 +75,16 @@ export default function TruthsNav() {
 	const [state, dispatch] = useGlobalState();
 
 	function handleMobileNavChange(number) {
-		dispatch({ type: 'HOVER_TRUTH', number: 0 });
+		if (state.hoverTruth !== 0) {
+			dispatch({ type: 'HOVER_TRUTH', number: 0 });
+		}
 
 		if (number !== state.clickedTruth) {
+			window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
 			dispatch({ type: 'CLICKED_TRUTH', number });
 		} else {
 			dispatch({ type: 'CLICKED_TRUTH', number: 0 });
 		}
-
-		window.scrollTo({ top: 0, behavior: 'smooth' });
 	}
 
 	return (
