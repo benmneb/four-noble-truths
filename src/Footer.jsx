@@ -6,7 +6,10 @@ const useStyles = makeStyles((theme) => ({
 		height: theme.spacing(5),
 		display: 'flex',
 		alignItems: 'center',
-		justifyContent: 'center'
+		justifyContent: 'center',
+		[theme.breakpoints.only('xs')]: {
+			marginBottom: theme.mixins.toolbar.minHeight
+		}
 	}
 }));
 
