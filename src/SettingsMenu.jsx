@@ -11,8 +11,8 @@ export default function SettingsMenu() {
 
 	const [state, dispatch] = useGlobalState();
 
-	function handleChangeTranslation(event, source) {
-		return dispatch({ type: `SET_${source}`, word: event.target.value });
+	function handleChangeTranslation(word, source) {
+		return dispatch({ type: `SET_${source}`, word });
 	}
 
 	function handleOpenMenu(event) {
@@ -49,28 +49,34 @@ export default function SettingsMenu() {
 					<Typography>Pali/English Translation Settings</Typography>
 				</Box>
 				<SettingsMenuItem
-					paliWord="samadhi"
+					paliWord="samādhi"
 					englishOptions={['stillness', 'immersion', 'concentration']}
 					value={state.translations.samadhi}
-					handleChange={(event) => handleChangeTranslation(event, 'SAMADHI')}
+					handleChange={(e) => handleChangeTranslation(e.target.value, 'SAMADHI')}
 				/>
 				<SettingsMenuItem
-					paliWord="sankhara"
+					paliWord="sankhāra"
 					englishOptions={['volitional formations', 'choices']}
 					value={state.translations.sankhara}
-					handleChange={(event) => handleChangeTranslation(event, 'SANKHARA')}
+					handleChange={(e) => handleChangeTranslation(e.target.value, 'SANKHARA')}
 				/>
 				<SettingsMenuItem
-					paliWord="vedana"
+					paliWord="vedanā"
 					englishOptions={['sensation', 'feeling']}
 					value={state.translations.vedana}
-					handleChange={(event) => handleChangeTranslation(event, 'VEDANA')}
+					handleChange={(e) => handleChangeTranslation(e.target.value, 'VEDANA')}
 				/>
 				<SettingsMenuItem
-					paliWord="namarupa"
+					paliWord="nāmarūpa"
 					englishOptions={['mind and matter', 'name and form']}
 					value={state.translations.namarupa}
-					handleChange={(event) => handleChangeTranslation(event, 'NAMARUPA')}
+					handleChange={(e) => handleChangeTranslation(e.target.value, 'NAMARUPA')}
+				/>
+				<SettingsMenuItem
+					paliWord="jhāna"
+					englishOptions={['jhāna', 'absorption']}
+					value={state.translations.jhana}
+					handleChange={(e) => handleChangeTranslation(e.target.value, 'JHANA')}
 				/>
 			</Menu>
 		</Box>

@@ -13,7 +13,8 @@ const initialState = {
 		samadhi: 'stillness',
 		sankhara: 'volitional formations',
 		vedana: 'sensation',
-		namarupa: 'mind and matter'
+		namarupa: 'mind and matter',
+		jhana: 'absorption'
 	}
 };
 
