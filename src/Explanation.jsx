@@ -1,12 +1,17 @@
-import { Paper } from '@material-ui/core';
+import { Box, Paper } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 import ExplanationContents from './ExplanationContents';
 import { useGlobalState } from './state/store';
 
 const useStyles = makeStyles((theme) => ({
+	root: {
+		display: 'flex',
+		justifyContent: 'center'
+	},
 	paper: {
 		width: '90vw',
+		maxWidth: theme.breakpoints.values.md,
 		minHeight: '70vh',
 		margin: `${theme.spacing(4)}px 5vw 0 5vw`,
 		display: 'flex',
@@ -21,8 +26,10 @@ export default function Explanation() {
 	const whatToShow = state.hoverTruth ? state.hoverTruth : state.clickedTruth;
 
 	return (
-		<Paper className={styles.paper} variant="outlined" component="section">
-			<ExplanationContents show={whatToShow} />
-		</Paper>
+		<Box className={styles.root}>
+			<Paper className={styles.paper} variant="outlined" component="section">
+				<ExplanationContents show={whatToShow} />
+			</Paper>
+		</Box>
 	);
 }
