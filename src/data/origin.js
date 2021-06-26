@@ -129,7 +129,7 @@ export const origin = {
 				},
 				{
 					id: 'O-4.6',
-					text: 'The four primary elements and the form derived from them',
+					text: 'Form',
 					children: [
 						{
 							id: 'O-4.6.1',
