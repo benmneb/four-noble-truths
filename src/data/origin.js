@@ -226,30 +226,43 @@ export const origin = {
 			children: [
 				{
 					id: 'DO-7.1',
-					text: 'Pleasant sensations/feelings'
+					text: 'Pleasant sensations/feelings',
+					references: ['MN 44'],
+					elaboration:
+						'Anything felt physically or mentally as pleasant or enjoyable. This is pleasant feeling. Pleasant feeling is pleasant when it remains and painful when it perishes. The underlying tendency for greed underlies pleasant feeling. The underlying tendency to greed should be given up when it comes to pleasant feeling.  Take a mendicant who, quite secluded from sensual pleasures, secluded from unskillful qualities, enters and remains in the first absorption, which has the rapture and bliss born of seclusion, while placing the mind and keeping it connected. With this they give up greed, and the underlying tendency to greed does not lie within that.',
+					spokenBy: 'Ven. Dhammadinnā'
 				},
 				{
 					id: 'DO-7.2',
-					text: 'Unpleasant sensations/feelings'
+					text: 'Painful sensations/feelings',
+					references: ['MN 44'],
+					elaboration:
+						'Anything felt physically or mentally as painful or unpleasant. This is painful feeling. Painful feeling is painful when it remains and pleasant when it perishes. The underlying tendency for repulsion underlies painful feeling. The underlying tendency to repulsion should be given up when it comes to painful feeling. Take a mendicant who reflects: ‘Oh, when will I enter and remain in the same dimension that the noble ones enter and remain in today?’ Nursing such a longing for the supreme liberations gives rise to sadness due to longing. With this they give up repulsion, and the underlying tendency to repulsion does not lie within that.',
+					spokenBy: 'Ven. Dhammadinnā'
 				},
 				{
 					id: 'DO-7.3',
-					text: 'Neutral sensations/feelings'
+					text: 'Neutral sensations/feelings',
+					references: ['MN 44'],
+					elaboration:
+						'Anything felt physically or mentally as neither pleasurable nor painful. This is neutral feeling. Neutral feeling is pleasant when there is knowledge, and painful when there is ignorance. The underlying tendency for ignorance underlies neutral feeling. The underlying tendency to ignorance should be given up when it comes to neutral feeling. Take a mendicant who, giving up pleasure and pain, and ending former happiness and sadness, enters and remains in the fourth absorption, without pleasure or pain, with pure equanimity and mindfulness. With this they give up ignorance, and the underlying tendency to ignorance does not lie within that.',
+					spokenBy: 'Ven. Dhammadinnā'
 				}
 			]
 		},
 		{
 			id: 'DO-8',
 			text: 'Craving/thirst',
-			references: ['SN 12.2', 'TODO'],
+			references: ['SN 45.170', 'AN 6.106', 'SN 38.10', 'SN 22.31'],
 			elaboration:
-				'What is craving? There are these six classes of craving. Craving for sights, sounds, smells, tastes, touches, and thoughts. This is called craving.',
+				'There are these three cravings. What three? Craving for sensual pleasures, craving to continue existence, and craving to end existence. These are the three cravings.',
 			children: [
 				{
 					id: 'DO-8.1',
-					text: 'Craving for sense pleasures',
-					references: ['SN 12.2'],
-					elaboration: '',
+					text: 'Craving for sensual pleasures',
+					references: ['MN 75', 'AN 4.10', 'AN 4.184'],
+					elaboration:
+						'All the ascetics or brahmins of the past, future, or present who live rid of thirst, their minds peaceful inside, do so after truly understanding the origin, ending, gratification, drawback, and escape of sensual pleasures, and after giving up craving and dispelling passion for sensual pleasures.',
 					children: [
 						{
 							id: 'DO-8.1.1',
@@ -279,36 +292,69 @@ export const origin = {
 				},
 				{
 					id: 'DO-8.2',
-					text: 'Craving to continue existence'
+					text: 'Craving to continue existence',
+					references: ['AN 10.62', 'AN 4.10'],
+					elaboration:
+						'It’s like when it rains heavily on a mountain top, and the water flows downhill to fill the hollows, crevices, and creeks. As they become full, they fill up the pools. The pools fill up the lakes, the lakes fill up the streams, and the streams fill up the rivers. And as the rivers become full, they fill up the ocean. That’s the fuel for the ocean, and that’s how it’s filled up. In the same way, when the factor of associating with bad people is fulfilled, it fulfills the factor of listening to an untrue teaching. When the factor of listening to an untrue teaching is fulfilled, it fulfills the factor of lack of faith … improper attention … lack of mindfulness and situational awareness … lack of sense restraint …the three kinds of misconduct … the five hindrances … ignorance. When ignorance is fulfilled, it fulfills craving for continued existence. That’s the fuel for craving for continued existence, and that’s how it’s fulfilled.'
 				},
 				{
 					id: 'DO-8.3',
-					text: 'Craving to end existence'
+					text: 'Craving to end existence',
+					references: [''],
+					elaboration: ''
 				}
 			]
 		},
 		{
 			id: 'DO-9',
-			text: 'Grasping/taking up',
-			references: ['SN 12.2'],
+			text: 'Grasping',
+			references: ['SN 12.2', 'SN 12.52', 'SN 49.173', 'MN 11'],
 			elaboration:
 				'What is grasping? There are these four kinds of grasping. Grasping at sensual pleasures, views, precepts and observances, and theories of a self. This is called grasping.',
 			children: [
 				{
 					id: 'DO-9.1',
-					text: 'Grasping at sensual pleasures'
+					text: 'Grasping at sensual pleasures',
+					references: ['SN 12.52', 'MN 74'],
+					elaboration:
+						'Suppose a bonfire was burning with ten, twenty, thirty, or forty loads of wood. And from time to time someone would toss in dry grass, cow dung, or wood. Fueled and sustained by that, the bonfire would burn for a long time. In the same way, there are things that are prone to being grasped. When you concentrate on the gratification provided by these things, your craving grows. Craving is a condition for grasping. Grasping is a condition for continued existence. Continued existence is a condition for rebirth. Rebirth is a condition for old age and death, sorrow, lamentation, pain, sadness, and distress to come to be. That is how this entire mass of suffering originates.'
 				},
 				{
 					id: 'DO-9.2',
-					text: 'Grasping at views'
+					text: 'Grasping at views',
+					references: ['SN 22.80', 'SN 12.52', 'MN 11'],
+					elaboration:
+						'There are these two views. Views favoring continued existence and views favoring ending existence. A noble disciple reflects on this: ‘Is there anything in the world that I could grasp without fault?’ They understand: ‘There’s nothing in the world that I could grasp without fault. For in grasping I would grasp only at form, feeling, perception, choices, or consciousness. That grasping of mine would be a condition for continued existence. Continued existence is a condition for rebirth. Rebirth is a condition that gives rise to old age and death, sorrow, lamentation, pain, sadness, and distress. That is how this entire mass of suffering originates.',
+					children: [
+						{
+							id: 'DO-9.2.1',
+							text: 'Views favoring continued existence',
+							references: ['MN 11'],
+							elaboration:
+								'Any ascetics or brahmins who cling, hold, and attach to a view favoring continued existence will oppose a view favoring ending existence. There are some ascetics and brahmins who don’t truly understand these two views’ origin, ending, gratification, drawback, and escape. They’re greedy, hateful, delusional, craving, grasping, and ignorant. They favor and oppose, and they enjoy proliferation. They’re not freed from rebirth, old age, and death, from sorrow, lamentation, pain, sadness, and distress. They’re not freed from suffering, I say.'
+						},
+						{
+							id: 'DO-9.2.2',
+							text: 'Views favoring ending existence',
+							references: ['MN 11'],
+							elaboration:
+								'Any ascetics or brahmins who cling, hold, and attach to a view favoring ending existence will oppose a view favoring continued existence. There are some ascetics and brahmins who don’t truly understand these two views’ origin, ending, gratification, drawback, and escape. They’re greedy, hateful, delusional, craving, grasping, and ignorant. They favor and oppose, and they enjoy proliferation. They’re not freed from rebirth, old age, and death, from sorrow, lamentation, pain, sadness, and distress. They’re not freed from suffering, I say.'
+						}
+					]
 				},
 				{
 					id: 'DO-9.3',
-					text: 'Grasping at precepts and observences'
+					text: 'Grasping at precepts and observences',
+					references: ['SN 12.52', 'AN 3.78'],
+					elaboration:
+						'Suppose a bonfire was burning with ten, twenty, thirty, or forty loads of wood. And from time to time someone would toss in dry grass, cow dung, or wood. Fueled and sustained by that, the bonfire would burn for a long time. In the same way, there are things that are prone to being grasped. When you concentrate on the gratification provided by these things, your craving grows. Craving is a condition for grasping. Grasping is a condition for continued existence. Continued existence is a condition for rebirth. Rebirth is a condition for old age and death, sorrow, lamentation, pain, sadness, and distress to come to be. That is how this entire mass of suffering originates.'
 				},
 				{
 					id: 'DO-9.4',
-					text: 'Grasping at theories of a self'
+					text: 'Grasping at theories of a self',
+					references: ['SN 12.52'],
+					elaboration:
+						'Suppose a bonfire was burning with ten, twenty, thirty, or forty loads of wood. And from time to time someone would toss in dry grass, cow dung, or wood. Fueled and sustained by that, the bonfire would burn for a long time. In the same way, there are things that are prone to being grasped. When you concentrate on the gratification provided by these things, your craving grows. Craving is a condition for grasping. Grasping is a condition for continued existence. Continued existence is a condition for rebirth. Rebirth is a condition for old age and death, sorrow, lamentation, pain, sadness, and distress to come to be. That is how this entire mass of suffering originates.'
 				}
 			]
 		},
