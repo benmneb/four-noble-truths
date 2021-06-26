@@ -46,11 +46,12 @@ export default function Elaboration() {
 					{state.visibleElaboration?.spokenBy
 						? `- ${state.visibleElaboration?.spokenBy}`
 						: '- The Buddha'}
+					<TooltipChip sutta={state.visibleElaboration?.references[0]} />
 				</Typography>
 			</Box>
 			<Box className={styles.elaborationChipBox}>
 				<Typography>See:</Typography>
-				{state.visibleElaboration?.references?.map((ref) => (
+				{state.visibleElaboration?.references.slice(1).map((ref) => (
 					<TooltipChip key={ref} sutta={ref} />
 				))}
 			</Box>
