@@ -88,7 +88,7 @@ export default function ExplanationDetails({ source }) {
 						</TreeView>
 					</Grid>
 					<Hidden xsDown>
-						{state.visibleElaboration && (
+						<Fade in={state.visibleElaboration}>
 							<Grid item sm={6}>
 								<Box
 									marginTop={source.treeTitle ? 5 : 0}
@@ -97,7 +97,7 @@ export default function ExplanationDetails({ source }) {
 									<Elaboration />
 								</Box>
 							</Grid>
-						)}
+						</Fade>
 					</Hidden>
 					<Hidden smUp>
 						<ElaborationDrawer />

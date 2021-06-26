@@ -34,23 +34,23 @@ export default function Elaboration() {
 	return (
 		<Paper variant={smUp ? 'outlined' : 'elevation'} elevation={0}>
 			<Box margin={2} component="figure">
-				<Typography className={styles.title}>{state.visibleElaboration.text}</Typography>
+				<Typography className={styles.title}>{state.visibleElaboration?.text}</Typography>
 				<Typography component="blockquote">
-					"{state.visibleElaboration.elaboration}"
+					"{state.visibleElaboration?.elaboration}"
 				</Typography>
 				<Typography
 					variant="subtitle2"
 					component="figcaption"
 					className={styles.figCaption}
 				>
-					{state.visibleElaboration.spokenBy
-						? `- ${state.visibleElaboration.spokenBy}`
+					{state.visibleElaboration?.spokenBy
+						? `- ${state.visibleElaboration?.spokenBy}`
 						: '- The Buddha'}
 				</Typography>
 			</Box>
 			<Box className={styles.elaborationChipBox}>
 				<Typography>See:</Typography>
-				{state.visibleElaboration.references?.map((ref) => (
+				{state.visibleElaboration?.references?.map((ref) => (
 					<TooltipChip key={ref} sutta={ref} />
 				))}
 			</Box>
