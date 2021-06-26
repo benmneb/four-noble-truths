@@ -46,12 +46,13 @@ const useStyles = makeStyles((theme) => ({
 	},
 	elaborationBox: {
 		position: 'sticky',
-		top: theme.spacing(2)
+		top: theme.spacing(2),
+		margin: (source) => theme.spacing(source.treeTitle ? 5 : 0, 0, 2)
 	}
 }));
 
 export default function ExplanationDetails({ source }) {
-	const styles = useStyles();
+	const styles = useStyles(source);
 	const state = useGlobalState()[0];
 
 	return (
@@ -86,15 +87,18 @@ export default function ExplanationDetails({ source }) {
 						>
 							<Tree data={source.tree} />
 						</TreeView>
+						<Box className={styles.chipBox}>
+							<Typography variant="body2">See:</Typography>
+							{source.seeMore.map((ref) => (
+								<TooltipChip key={ref} sutta={ref} />
+							))}
+						</Box>
 					</Grid>
 					<Hidden xsDown>
 						{state.visibleElaboration && (
 							<Fade in={Boolean(state.visibleElaboration)}>
 								<Grid item sm={6}>
-									<Box
-										marginTop={source.treeTitle ? 5 : 0}
-										className={styles.elaborationBox}
-									>
+									<Box className={styles.elaborationBox}>
 										<Elaboration />
 									</Box>
 								</Grid>
@@ -105,12 +109,6 @@ export default function ExplanationDetails({ source }) {
 						<ElaborationDrawer />
 					</Hidden>
 				</Grid>
-				<Box className={styles.chipBox}>
-					<Typography variant="body2">See:</Typography>
-					{source.seeMore.map((ref) => (
-						<TooltipChip key={ref} sutta={ref} />
-					))}
-				</Box>
 			</Box>
 		</Fade>
 	);
