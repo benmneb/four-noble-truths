@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import clsx from 'clsx';
+import PropTypes from 'prop-types';
 
 import { Box, Paper, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
@@ -37,11 +39,15 @@ const useStyles = makeStyles((theme) => ({
 	},
 	text: {
 		margin: theme.spacing(0.5),
-		zIndex: 101
+		zIndex: 101,
+		transition: `color ${theme.transitions.duration.standard}ms ${theme.transitions.easing.easeInOut}`
+	},
+	selectedTruth: {
+		color: theme.palette.primary.main
 	}
 }));
 
-export default function TruthPaper({ number, children }) {
+export default function TruthPaper({ number, label }) {
 	const styles = useStyles();
 	const [state, dispatch] = useGlobalState();
 	const [isHovering, setIsHovering] = useState(false);
@@ -86,7 +92,19 @@ export default function TruthPaper({ number, children }) {
 			<Box className={styles.numberBox}>
 				<Typography className={styles.number}>{number}</Typography>
 			</Box>
-			<Typography className={styles.text}>{children}</Typography>
+			<Typography
+				className={clsx(
+					styles.text,
+					state.clickedTruth === number && styles.selectedTruth
+				)}
+			>
+				{label}
+			</Typography>
 		</Paper>
 	);
 }
+
+TruthPaper.propTypes = {
+	label: PropTypes.string.isRequired,
+	number: PropTypes.number.isRequired
+};
