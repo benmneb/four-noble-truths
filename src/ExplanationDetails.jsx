@@ -88,16 +88,18 @@ export default function ExplanationDetails({ source }) {
 						</TreeView>
 					</Grid>
 					<Hidden xsDown>
-						<Fade in={Boolean(state.visibleElaboration)}>
-							<Grid item sm={6}>
-								<Box
-									marginTop={source.treeTitle ? 5 : 0}
-									className={styles.elaborationBox}
-								>
-									<Elaboration />
-								</Box>
-							</Grid>
-						</Fade>
+						{state.visibleElaboration && (
+							<Fade in={Boolean(state.visibleElaboration)}>
+								<Grid item sm={6}>
+									<Box
+										marginTop={source.treeTitle ? 5 : 0}
+										className={styles.elaborationBox}
+									>
+										<Elaboration />
+									</Box>
+								</Grid>
+							</Fade>
+						)}
 					</Hidden>
 					<Hidden smUp>
 						<ElaborationDrawer />
