@@ -71,11 +71,7 @@ export default function ElaborationContents({ hasContents }) {
 				<Box component="span" fontWeight="fontWeightBold">
 					{state.visibleElaboration.text.toLowerCase()}
 				</Box>{' '}
-				from the{' '}
-				<Link href="https://suttacentral.net/pitaka/sutta" target="_blank" rel="noopener">
-					suttas
-				</Link>{' '}
-				of the Pali Canon?
+				from the suttas of the Pali Canon?
 			</Typography>
 			<Typography>
 				If so,{' '}
