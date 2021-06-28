@@ -1,36 +1,10 @@
-import clsx from 'clsx';
+import { Paper, useMediaQuery } from '@material-ui/core';
+import { useTheme } from '@material-ui/core/styles';
 
-import { Box, Paper, Typography, useMediaQuery } from '@material-ui/core';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
-
-import { TooltipChip } from './utils';
+import ElaborationContents from './ElaborationContents';
 import { useGlobalState } from './state/store';
 
-const useStyles = makeStyles((theme) => ({
-	figCaption: {
-		marginTop: theme.spacing(1),
-		display: 'flex',
-		alignItems: 'baseline',
-		justifyContent: 'flex-end'
-	},
-	title: {
-		fontWeight: theme.typography.fontWeightMedium,
-		marginBottom: theme.spacing(2)
-	},
-	elaborationChipBox: {
-		display: 'flex',
-		alignItems: 'baseline',
-		flexWrap: 'wrap',
-		margin: theme.spacing(2)
-	},
-	displayNone: {
-		display: 'none'
-	}
-}));
-
 export default function Elaboration() {
-	const styles = useStyles();
-
 	const theme = useTheme();
 	const smUp = useMediaQuery(theme.breakpoints.up('sm'));
 
@@ -38,32 +12,7 @@ export default function Elaboration() {
 
 	return (
 		<Paper variant={smUp ? 'outlined' : 'elevation'} elevation={0}>
-			<Box margin={2} component="figure">
-				<Typography className={styles.title}>{state.visibleElaboration?.text}</Typography>
-				<Typography component="blockquote">
-					"{state.visibleElaboration?.elaboration}"
-				</Typography>
-				<Typography
-					variant="subtitle2"
-					component="figcaption"
-					className={styles.figCaption}
-				>
-					{state.visibleElaboration?.spokenBy
-						? `- ${state.visibleElaboration?.spokenBy}`
-						: '- The Buddha'}
-					<TooltipChip sutta={state.visibleElaboration?.references?.[0]} />
-				</Typography>
-			</Box>
-			<Box
-				className={clsx(styles.elaborationChipBox, {
-					[styles.displayNone]: state.visibleElaboration?.references?.length < 2
-				})}
-			>
-				<Typography variant="body2">Also:</Typography>
-				{state.visibleElaboration?.references?.slice(1).map((ref) => (
-					<TooltipChip key={ref} sutta={ref} />
-				))}
-			</Box>
+			<ElaborationContents hasContents={Boolean(state.visibleElaboration.elaboration)} />
 		</Paper>
 	);
 }
