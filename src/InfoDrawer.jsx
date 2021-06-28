@@ -12,7 +12,7 @@ const useStyles = makeStyles({
 	figCaption: {
 		display: 'flex',
 		alignItems: 'baseline',
-		justifyContent: 'end'
+		justifyContent: 'flex-end'
 	}
 });
 

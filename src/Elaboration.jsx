@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
 		marginTop: theme.spacing(1),
 		display: 'flex',
 		alignItems: 'baseline',
-		justifyContent: 'end'
+		justifyContent: 'flex-end'
 	},
 	title: {
 		fontWeight: theme.typography.fontWeightMedium,
