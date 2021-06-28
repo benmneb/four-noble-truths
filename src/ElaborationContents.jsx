@@ -67,7 +67,7 @@ export default function ElaborationContents({ hasContents }) {
 	) : (
 		<Box margin={2}>
 			<Typography paragraph>
-				Do you know an appropriate reference for{' '}
+				Do you know an appropriate reference elaborating on{' '}
 				<Box component="span" fontWeight="fontWeightBold">
 					{state.visibleElaboration.text.toLowerCase()}
 				</Box>{' '}
