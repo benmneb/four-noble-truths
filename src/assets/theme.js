@@ -10,6 +10,9 @@ export const theme = responsiveFontSizes(
 		},
 		typography: {
 			fontFamily: ['Inter', 'sans-serif'].join(',')
+		},
+		shape: {
+			borderRadius: 16
 		}
 	})
 );
