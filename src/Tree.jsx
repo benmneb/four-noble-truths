@@ -8,6 +8,9 @@ const useStyles = makeStyles((theme) => ({
 		marginLeft: 7,
 		paddingLeft: 18,
 		borderLeft: `1px dashed ${fade(theme.palette.text.primary, 0.4)}`
+	},
+	treeItemLabel: {
+		borderRadius: theme.spacing(0, 2, 2, 0)
 	}
 }));
 
@@ -45,7 +48,7 @@ export default function Tree({ data }) {
 						nodes.spokenBy
 					);
 				}}
-				classes={{ group: styles.treeItemGroup }}
+				classes={{ group: styles.treeItemGroup, label: styles.treeItemLabel }}
 			>
 				{Array.isArray(nodes.children)
 					? nodes.children.map((node) => renderTree(node))
