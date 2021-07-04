@@ -2,12 +2,9 @@ import { Box, Fade, Typography, Grid, Hidden } from '@material-ui/core';
 import { makeStyles, fade } from '@material-ui/core/styles';
 import { TreeView } from '@material-ui/lab';
 
-import { useGlobalState } from './state/store';
-import { TooltipChip } from './utils';
-import { MinusSquare, PlusSquare, CloseSquare } from './utils/Icons';
-import Tree from './Tree';
-import Elaboration from './Elaboration';
-import ElaborationDrawer from './ElaborationDrawer';
+import { useGlobalState } from '../state';
+import { TooltipChip, MinusSquare, PlusSquare, CloseSquare } from '../utils';
+import { Tree, Elaboration, ElaborationDrawer } from './index';
 
 const useStyles = makeStyles((theme) => ({
 	root: {

@@ -3,8 +3,8 @@ import { useState } from 'react';
 import { Box, IconButton, Menu, Tooltip, Typography } from '@material-ui/core';
 import { SettingsRounded } from '@material-ui/icons';
 
-import SettingsMenuItem from './SettingsMenuItem';
-import { useGlobalState } from './state/store';
+import { SettingsMenuItem } from './index';
+import { useGlobalState } from '../state/';
 
 export default function SettingsMenu() {
 	const [anchorEl, setAnchorEl] = useState(null);

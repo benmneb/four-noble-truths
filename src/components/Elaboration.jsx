@@ -1,8 +1,8 @@
 import { Paper, useMediaQuery } from '@material-ui/core';
 import { useTheme } from '@material-ui/core/styles';
 
-import ElaborationContents from './ElaborationContents';
-import { useGlobalState } from './state/store';
+import { ElaborationContents } from './index';
+import { useGlobalState } from '../state';
 
 export default function Elaboration() {
 	const theme = useTheme();

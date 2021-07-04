@@ -2,8 +2,8 @@ import { AppBar, Box, Toolbar, Tooltip, Typography, IconButton } from '@material
 import { InfoRounded } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles';
 
-import SettingsMenu from './SettingsMenu';
-import { useGlobalState } from './state/store';
+import { SettingsMenu } from './index';
+import { useGlobalState } from '../state';
 
 const useStyles = makeStyles((theme) => ({
 	root: {

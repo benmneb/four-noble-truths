@@ -1,8 +1,8 @@
 import { BottomNavigation, BottomNavigationAction, Box, Hidden } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
-import { useGlobalState } from './state/store';
-import TruthPaper from './TruthPaper';
+import { useGlobalState } from '../state';
+import { TruthPaper } from './index';
 
 const useStyles = makeStyles((theme) => ({
 	root: {

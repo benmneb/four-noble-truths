@@ -1,7 +1,6 @@
-import * as truths from './data/index';
+import * as truths from '../data';
 
-import DefaultQuote from './DefaultQuote';
-import ExplanationDetails from './ExplanationDetails';
+import { DefaultQuote, ExplanationDetails } from './index';
 
 export default function ExplanationContents({ show }) {
 	switch (show) {

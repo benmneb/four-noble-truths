@@ -1,8 +1,8 @@
 import { Box, Paper } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
-import ExplanationContents from './ExplanationContents';
-import { useGlobalState } from './state/store';
+import { ExplanationContents } from './index';
+import { useGlobalState } from '../state';
 
 const useStyles = makeStyles((theme) => ({
 	root: {

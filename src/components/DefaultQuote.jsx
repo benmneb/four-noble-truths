@@ -1,7 +1,7 @@
 import { Box, Typography, Fade, Tooltip } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
-import { handleSuttaLinkClick } from './utils';
+import { handleSuttaLinkClick } from '../utils';
 
 const useStyles = makeStyles((theme) => ({
 	root: {

@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { Box, Paper, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
-import { useGlobalState } from './state/store';
+import { useGlobalState } from '../state';
 
 const useStyles = makeStyles((theme) => ({
 	paper: {

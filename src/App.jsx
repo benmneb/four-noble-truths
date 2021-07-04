@@ -3,11 +3,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 
 import { StateProvider } from './state/store';
 import { theme } from './assets/theme';
-import Explanation from './Explanation';
-import Footer from './Footer';
-import TruthsNav from './TruthsNav';
-import TopBar from './TopBar';
-import InfoDrawer from './InfoDrawer';
+import { Explanation, Footer, TruthsNav, TopBar, InfoDrawer } from './components';
 
 export default function App() {
 	return (

@@ -3,8 +3,8 @@ import clsx from 'clsx';
 import { Box, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
-import { Link, TooltipChip } from './utils';
-import { useGlobalState } from './state/store';
+import { Link, TooltipChip } from '../utils';
+import { useGlobalState } from '../state';
 
 const useStyles = makeStyles((theme) => ({
 	figCaption: {

@@ -1,7 +1,7 @@
 import { makeStyles, fade } from '@material-ui/core/styles';
 import { TreeItem } from '@material-ui/lab';
 
-import { useGlobalState } from './state/store';
+import { useGlobalState } from '../state';
 
 const useStyles = makeStyles((theme) => ({
 	treeItemGroup: {
