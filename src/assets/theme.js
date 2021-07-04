@@ -7,6 +7,9 @@ export const theme = responsiveFontSizes(
 			primary: {
 				main: '#FF9933'
 			}
+		},
+		typography: {
+			fontFamily: ['Inter', 'sans-serif'].join(',')
 		}
 	})
 );
