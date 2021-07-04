@@ -2,24 +2,19 @@ export const cessation = {
 	truth: 'The Cessation of Suffering',
 	quotes: [
 		{
-			text: 'This is the noble truth of the cessation of suffering: It’s the remainderless cessation of craving.',
+			text: 'This is the noble truth of the cessation of suffering: It’s the fading away and cessation of that very same craving with nothing left over; giving it away, letting it go, releasing it, and not adhering to it.',
 			reference: 'SN 56.11'
-		},
-		{
-			text: 'When ignorance fades away and ceases with nothing left over... That is how this entire mass of suffering ceases.',
-			reference: 'SN 12.1'
-		},
-		{
-			text: 'Trust me on this; be convinced. Have no doubts or uncertainties in this matter. Just this is the end of suffering.',
-			reference: 'SN 12.51'
 		}
 	],
-	seeMore: ['SN 12', 'SN 12.1', 'SN 12.23', 'SN 12.51', 'AN 10.92'],
+	seeMore: ['SN 12', 'SN 12.1', 'SN 12.23', 'SN 12.51', 'SN 12.65', 'AN 10.92', 'DN 15'],
 	treeTitle: 'Dependent Cessation',
 	tree: [
 		{
 			id: 'C-1',
-			text: 'The cessation of ignorance'
+			text: 'The cessation of ignorance',
+			references: ['SN 12.1'],
+			elaboration:
+				'When ignorance fades away and ceases with nothing left over, choices cease. When choices cease, consciousness ceases. When consciousness ceases, name and form cease. When name and form cease, the six sense fields cease. When the six sense fields cease, contact ceases. When contact ceases, feeling ceases. When feeling ceases, craving ceases. When craving ceases, grasping ceases. When grasping ceases, continued existence ceases. When continued existence ceases, rebirth ceases. When rebirth ceases, old age and death, sorrow, lamentation, pain, sadness, and distress cease. That is how this entire mass of suffering ceases.'
 		},
 		{
 			id: 'C-2',
