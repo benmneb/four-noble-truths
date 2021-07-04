@@ -2,11 +2,20 @@ export const origin = {
 	truth: 'The Origin of Suffering',
 	quotes: [
 		{
-			text: 'This is the noble truth of the origin of suffering: It’s the craving that leads to future rebirth, accompanied by relishing and greed, seeking delight here and there.',
+			text: 'This is the noble truth of the origin of suffering: It’s the craving that leads to future rebirth, mixed up with relishing and greed, taking pleasure in various different realms.',
 			reference: 'SN 56.11'
 		}
 	],
-	seeMore: ['SN 12', 'SN 12.2', 'SN 12.23', 'SN 12.51', 'AN 10.92'],
+	seeMore: [
+		'SN 12',
+		'SN 12.1',
+		'SN 12.2',
+		'SN 12.23',
+		'SN 12.51',
+		'SN 12.65',
+		'AN 10.92',
+		'DN 15'
+	],
 	treeTitle: 'Dependent Origination',
 	tree: [
 		{
