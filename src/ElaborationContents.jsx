@@ -1,9 +1,9 @@
 import clsx from 'clsx';
 
-import { Box, Link, Typography } from '@material-ui/core';
+import { Box, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
-import { TooltipChip } from './utils';
+import { Link, TooltipChip } from './utils';
 import { useGlobalState } from './state/store';
 
 const useStyles = makeStyles((theme) => ({

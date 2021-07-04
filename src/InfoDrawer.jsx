@@ -1,8 +1,8 @@
-import { Box, Link, SwipeableDrawer, Typography } from '@material-ui/core';
+import { Box, SwipeableDrawer, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 import { useGlobalState } from './state/store';
-import { TooltipChip } from './utils';
+import { Link, TooltipChip } from './utils';
 
 const useStyles = makeStyles({
 	drawerPaper: {
