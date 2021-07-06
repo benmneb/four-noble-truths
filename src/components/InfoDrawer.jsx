@@ -86,7 +86,7 @@ export default function InfoDrawer() {
 				</Box>
 				<Typography paragraph>
 					This site is my attempt to illustrate and organise this, while helping me study
-					the suttas of the Pali Canon.
+					the suttas of the Pali Canon and practice web development.
 				</Typography>
 				<Typography paragraph>
 					Any corrections or additions please{' '}
