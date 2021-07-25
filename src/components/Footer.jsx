@@ -2,23 +2,23 @@ import { Box, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
-	root: {
-		height: theme.spacing(5),
-		display: 'flex',
-		alignItems: 'center',
-		justifyContent: 'center',
-		[theme.breakpoints.only('xs')]: {
-			marginBottom: theme.mixins.toolbar.minHeight
-		}
-	}
+  root: {
+    height: theme.spacing(5),
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    [theme.breakpoints.only('xs')]: {
+      marginBottom: theme.mixins.toolbar.minHeight,
+    },
+  },
 }));
 
 export default function Footer() {
-	const styles = useStyles();
+  const styles = useStyles();
 
-	return (
-		<Box className={styles.root}>
-			<Typography>&copy; {new Date().getFullYear()} benmneb</Typography>
-		</Box>
-	);
+  return (
+    <Box className={styles.root}>
+      <Typography>&copy; {new Date().getFullYear()} benmneb</Typography>
+    </Box>
+  );
 }
