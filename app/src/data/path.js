@@ -1,16 +1,12 @@
 import { origin } from './index';
 
 export const path = {
-  truth: 'The Path Leading to the Cessation of Suffering',
-  quotes: [
-    {
-      text: 'This is the noble truth of the practice that leads to the cessation of suffering: It is simply this noble eightfold path.',
-      reference: 'SN 56.11',
-    },
-  ],
-  seeMore: ['SN 45.8', 'MN 117', 'SN 45.49'],
+  text: 'The Path Leading to the Cessation of Suffering',
+  elaboration:
+    'This is the noble truth of the practice that leads to the cessation of suffering: It is simply this noble eightfold path.',
+  references: ['SN 56.11', 'SN 45.8', 'MN 117', 'SN 45.49'],
   treeTitle: 'The Noble Eightfold Path',
-  tree: [
+  children: [
     {
       id: 'P-1',
       text: 'Right View',
@@ -233,7 +229,7 @@ export const path = {
           references: ['SN 12.2', 'SN 12.15', 'MN 9'],
           elaboration:
             'What is dependent origination? Ignorance is a condition for volitional formations. Volitional formations are a condition for consciousness. Consciousness is a condition for mind and matter. Mind and matter are conditions for the six sense fields. The six sense fields are conditions for contact. Contact is a condition for feeling. Feeling is a condition for craving. Craving is a condition for grasping. Grasping is a condition for continued existence. Continued existence is a condition for rebirth. Rebirth is a condition for old age and death, sorrow, lamentation, pain, sadness, and distress to come to be. That is how this entire mass of suffering originates.',
-          children: [...origin.tree],
+          children: [...origin.children],
         },
         {
           id: 'P-1.5',

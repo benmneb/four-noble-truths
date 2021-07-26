@@ -56,21 +56,19 @@ export default function ExplanationDetails({ source }) {
     <Fade in>
       <Box component="article" className={styles.root}>
         <Typography variant="h4" component="h1">
-          {source.truth}
+          {source.text}
         </Typography>
-        {source.quotes.map((quote) => (
-          <Box key={quote.reference} component="figure" className="quoteBox">
-            <Typography component="blockquote">"{quote.text}"</Typography>
-            <Typography
-              className={styles.figCaption}
-              variant="subtitle2"
-              component="figcaption"
-            >
-              - The Buddha
-              <TooltipChip sutta={quote.reference} />
-            </Typography>
-          </Box>
-        ))}
+        <Box key={source.references[0]} component="figure" className="quoteBox">
+          <Typography component="blockquote">"{source.elaboration}"</Typography>
+          <Typography
+            className={styles.figCaption}
+            variant="subtitle2"
+            component="figcaption"
+          >
+            - The Buddha
+            <TooltipChip sutta={source?.references[0]} />
+          </Typography>
+        </Box>
         <Grid container spacing={2}>
           <Grid item xs={12} sm={6}>
             {source.treeTitle && (
@@ -84,11 +82,11 @@ export default function ExplanationDetails({ source }) {
               defaultExpandIcon={<PlusSquare />}
               defaultEndIcon={<CloseSquare />}
             >
-              <Tree data={source.tree} />
+              <Tree data={source.children} />
             </TreeView>
             <Box className={styles.chipBox}>
               <Typography variant="body2">See:</Typography>
-              {source.seeMore.map((ref) => (
+              {source.references.map((ref) => (
                 <TooltipChip key={ref} sutta={ref} />
               ))}
             </Box>

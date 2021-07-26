@@ -1,13 +1,9 @@
 export const suffering = {
-  truth: 'Suffering',
-  quotes: [
-    {
-      text: 'This is the noble truth of suffering: Rebirth is suffering; old age is suffering; illness is suffering; death is suffering; association with the disliked is suffering; separation from the liked is suffering; not getting what you wish for is suffering. In brief, the five grasping aggregates are suffering.',
-      reference: 'SN 56.11',
-    },
-  ],
-  seeMore: ['SN 56.11', 'SN 56.13', 'SN 56.14', 'SN 35.28', 'AN 6.63'],
-  tree: [
+  text: 'Suffering',
+  elaboration:
+    'This is the noble truth of suffering: Rebirth is suffering; old age is suffering; illness is suffering; death is suffering; association with the disliked is suffering; separation from the liked is suffering; not getting what you wish for is suffering. In brief, the five grasping aggregates are suffering.',
+  references: ['SN 56.11', 'SN 56.13', 'SN 56.14', 'SN 35.28', 'AN 6.63'],
+  children: [
     {
       id: 'S-1',
       text: 'Rebirth',

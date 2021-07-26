@@ -1,12 +1,9 @@
 export const cessation = {
-  truth: 'The Cessation of Suffering',
-  quotes: [
-    {
-      text: 'This is the noble truth of the cessation of suffering: It’s the fading away and cessation of that very same craving with nothing left over; giving it away, letting it go, releasing it, and not adhering to it.',
-      reference: 'SN 56.11',
-    },
-  ],
-  seeMore: [
+  text: 'The Cessation of Suffering',
+  elaboration:
+    'This is the noble truth of the cessation of suffering: It’s the fading away and cessation of that very same craving with nothing left over; giving it away, letting it go, releasing it, and not adhering to it.',
+  references: [
+    'SN 56.11',
     'SN 12',
     'SN 12.1',
     'SN 12.23',
@@ -16,7 +13,7 @@ export const cessation = {
     'DN 15',
   ],
   treeTitle: 'Dependent Cessation',
-  tree: [
+  children: [
     {
       id: 'C-1',
       text: 'The cessation of ignorance',
