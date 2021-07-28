@@ -6,7 +6,9 @@ import {
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
-import { useGlobalState } from '../state';
+import { useSelector, useDispatch } from 'react-redux';
+import { setClickedTruth, setHoverTruth } from '../state';
+
 import { TruthPaper } from './index';
 
 const useStyles = makeStyles((theme) => ({
@@ -28,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
     boxShadow:
       '0px -2px 4px -1px rgba(0,0,0,0.2),0px -4px 5px 0px rgba(0,0,0,0.14),0px -1px 10px 0px rgba(0,0,0,0.12)',
   },
-  // below for BottomNavLabel()
+  // below is for BottomNavLabel()
   paper: {
     textAlign: 'center',
     display: 'flex',
@@ -77,18 +79,21 @@ function BottomNavLabel({ label, number }) {
 
 export default function TruthsNav() {
   const styles = useStyles();
-  const [state, dispatch] = useGlobalState();
+  const dispatch = useDispatch();
+
+  const hoverTruth = useSelector((state) => state.hoverTruth);
+  const clickedTruth = useSelector((state) => state.clickedTruth);
 
   function handleMobileNavChange(number) {
-    if (state.hoverTruth !== 0) {
-      dispatch({ type: 'HOVER_TRUTH', number: 0 });
+    if (hoverTruth !== 0) {
+      dispatch(setHoverTruth(0));
     }
 
-    if (number !== state.clickedTruth) {
+    if (number !== clickedTruth) {
       window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-      dispatch({ type: 'CLICKED_TRUTH', number });
+      dispatch(setClickedTruth(number));
     } else {
-      dispatch({ type: 'CLICKED_TRUTH', number: 0 });
+      dispatch(setClickedTruth(0));
     }
   }
 
@@ -97,7 +102,7 @@ export default function TruthsNav() {
       <Hidden smUp>
         <BottomNavigation
           className={styles.bottomNav}
-          value={state.clickedTruth}
+          value={clickedTruth}
           onChange={(event, value) => handleMobileNavChange(value)}
           showLabels
         >

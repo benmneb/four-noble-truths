@@ -3,8 +3,9 @@ import clsx from 'clsx';
 import { Box, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
+import { useSelector } from 'react-redux';
+
 import { Link, TooltipChip } from '../utils';
-import { useGlobalState } from '../state';
 
 const useStyles = makeStyles((theme) => ({
   figCaption: {
@@ -28,40 +29,42 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ElaborationContents({ hasContents }) {
+export default function ElaborationContents(props) {
+  const { hasContents } = props;
+
   const styles = useStyles();
 
-  const state = useGlobalState()[0];
+  const visibleElaboration = useSelector((state) => state.visibleElaboration);
 
   return hasContents ? (
     <Box>
       <Box margin={2} component="figure">
         <Typography className={styles.title}>
-          {state.visibleElaboration?.text}
+          {visibleElaboration?.text}
         </Typography>
         <Typography component="blockquote">
-          "{state.visibleElaboration?.elaboration}"
+          "{visibleElaboration?.elaboration}"
         </Typography>
         <Typography
           variant="subtitle2"
           component="figcaption"
           className={styles.figCaption}
         >
-          {state.visibleElaboration?.spokenBy
-            ? `- ${state.visibleElaboration?.spokenBy}`
+          {visibleElaboration?.spokenBy
+            ? `- ${visibleElaboration?.spokenBy}`
             : '- The Buddha'}
-          <TooltipChip sutta={state.visibleElaboration?.references?.[0]} />
+          <TooltipChip sutta={visibleElaboration?.references?.[0]} />
         </Typography>
       </Box>
       <Box
         className={clsx(styles.elaborationChipBox, {
           [styles.displayNone]:
-            state.visibleElaboration?.references?.length < 2 ||
-            !state.visibleElaboration?.references,
+            visibleElaboration?.references?.length < 2 ||
+            !visibleElaboration?.references,
         })}
       >
         <Typography variant="body2">Also:</Typography>
-        {state.visibleElaboration?.references?.slice(1).map((ref) => (
+        {visibleElaboration?.references?.slice(1).map((ref) => (
           <TooltipChip key={ref} sutta={ref} />
         ))}
       </Box>
@@ -71,7 +74,7 @@ export default function ElaborationContents({ hasContents }) {
       <Typography paragraph>
         Do you know an appropriate reference elaborating on{' '}
         <Box component="span" fontWeight="fontWeightBold">
-          {state.visibleElaboration.text.toLowerCase()}
+          {visibleElaboration?.text.toLowerCase()}
         </Box>{' '}
         from the suttas of the Pali Canon?
       </Typography>

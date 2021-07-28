@@ -1,12 +1,19 @@
 import { StrictMode } from 'react';
 import { render } from 'react-dom';
+
+import { Provider } from 'react-redux';
+import { store } from './state';
+
 import App from './App';
+
 import reportWebVitals from './reportWebVitals';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 
 render(
   <StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </StrictMode>,
   document.getElementById('root')
 );

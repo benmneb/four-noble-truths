@@ -1,1 +1,3 @@
-export { useGlobalState, StateProvider } from './store';
+export { store } from './store';
+export { reducer } from './reducer';
+export * from './actions';

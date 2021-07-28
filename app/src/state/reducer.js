@@ -1,42 +1,69 @@
-export default function reducer(state, action) {
+const initialState = {
+  hoverTruth: 0,
+  clickedTruth: 0,
+  clickedElaboration: {
+    text: null,
+    elaboration: null,
+    references: [],
+    spokenBy: '',
+  },
+  visibleElaboration: {
+    text: null,
+    elaboration: null,
+    references: [],
+    spokenBy: '',
+  },
+  showElaborationDrawer: false,
+  showAboutDrawer: false,
+  translations: {
+    samadhi: 'stillness',
+    sankhara: 'volitional formations',
+    vedana: 'sensation',
+    namarupa: 'mind and matter',
+    jhana: 'jhāna',
+  },
+};
+
+export function reducer(state = initialState, action) {
   switch (action.type) {
-    case 'HOVER_TRUTH':
-      return { ...state, hoverTruth: action.number };
-    case 'CLICKED_TRUTH':
-      return { ...state, clickedTruth: action.number };
-    case 'CLICKED_ELABORATION':
-      return { ...state, clickedElaboration: action.clickedElaboration };
-    case 'VISIBLE_ELABORATION':
-      return { ...state, visibleElaboration: action.visibleElaboration };
-    case 'SET_SAMADHI':
+    case 'SET_HOVER_TRUTH':
       return {
         ...state,
-        translations: { ...state.translations, samadhi: action.word },
+        hoverTruth: action.number,
       };
-    case 'SET_SANKHARA':
+    case 'SET_CLICKED_TRUTH':
       return {
         ...state,
-        translations: { ...state.translations, sankhara: action.word },
+        clickedTruth: action.number,
       };
-    case 'SET_VEDANA':
+    case 'SET_CLICKED_ELABORATION':
       return {
         ...state,
-        translations: { ...state.translations, vedana: action.word },
+        clickedElaboration: action.elaboration,
       };
-    case 'SET_NAMARUPA':
+    case 'SET_VISIBLE_ELABORATION':
       return {
         ...state,
-        translations: { ...state.translations, namarupa: action.word },
+        visibleElaboration: action.elaboration,
       };
-    case 'SET_JHANA':
+    case 'SET_TRANSLATION':
       return {
         ...state,
-        translations: { ...state.translations, jhana: action.word },
+        translations: {
+          ...state.translations,
+          [action.pali]: action.english,
+        },
       };
     case 'TOGGLE_ELABORATION_DRAWER':
-      return { ...state, showElaborationDrawer: action.showElaborationDrawer };
-    case 'TOGGLE_INFO_DRAWER':
-      return { ...state, showInfoDrawer: action.showInfoDrawer };
+      return {
+        ...state,
+        showElaborationDrawer: !state.showElaborationDrawer,
+      };
+    case 'TOGGLE_ABOUT_DRAWER':
+      return {
+        ...state,
+        showAboutDrawer: !state.showAboutDrawer,
+      };
     default:
       return state;
   }

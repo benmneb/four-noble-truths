@@ -2,7 +2,8 @@ import { Box, Fade, Typography, Grid, Hidden } from '@material-ui/core';
 import { makeStyles, fade } from '@material-ui/core/styles';
 import { TreeView } from '@material-ui/lab';
 
-import { useGlobalState } from '../state';
+import { useSelector } from 'react-redux';
+
 import { TooltipChip, MinusSquare, PlusSquare, CloseSquare } from '../utils';
 import { Tree, Elaboration, ElaborationDrawer } from './index';
 
@@ -48,9 +49,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ExplanationDetails({ source }) {
+export default function ExplanationDetails(props) {
+  const { source } = props;
+
   const styles = useStyles(source);
-  const state = useGlobalState()[0];
+
+  const visibleElaboration = useSelector((state) => state.visibleElaboration);
 
   return (
     <Fade in>
@@ -92,8 +96,8 @@ export default function ExplanationDetails({ source }) {
             </Box>
           </Grid>
           <Hidden xsDown>
-            {state.visibleElaboration && (
-              <Fade in={Boolean(state.visibleElaboration)}>
+            {visibleElaboration && (
+              <Fade in={Boolean(visibleElaboration)}>
                 <Grid item sm={6}>
                   <Box className={styles.elaborationBox}>
                     <Elaboration />

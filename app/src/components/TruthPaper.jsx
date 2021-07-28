@@ -1,11 +1,18 @@
 import { useState } from 'react';
+
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 
 import { Box, Paper, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
-import { useGlobalState } from '../state';
+import { useSelector, useDispatch } from 'react-redux';
+import {
+  setHoverTruth,
+  setClickedTruth,
+  setVisibleElaboration,
+  setClickedElaboration,
+} from '../state';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -47,37 +54,40 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function TruthPaper({ number, label }) {
+export default function TruthPaper(props) {
+  const { number, label } = props;
+
   const styles = useStyles();
-  const [state, dispatch] = useGlobalState();
+  const dispatch = useDispatch();
+
+  const clickedTruth = useSelector((state) => state.clickedTruth);
+  const clickedElaboration = useSelector((state) => state.clickedElaboration);
+
   const [isHovering, setIsHovering] = useState(false);
 
   function handleMouseEnter() {
-    if (number !== state.clickedTruth) {
-      dispatch({ type: 'HOVER_TRUTH', number });
-      dispatch({ type: 'VISIBLE_ELABORATION', visibleElaboration: null });
+    if (number !== clickedTruth) {
+      dispatch(setHoverTruth(number));
+      dispatch(setVisibleElaboration(null));
       setIsHovering(true);
     }
   }
 
   function handleMouseLeave() {
-    if (number !== state.clickedTruth) {
-      dispatch({ type: 'HOVER_TRUTH', number: 0 });
-      dispatch({
-        type: 'VISIBLE_ELABORATION',
-        visibleElaboration: state.clickedElaboration,
-      });
+    if (number !== clickedTruth) {
+      dispatch(setHoverTruth(0));
+      dispatch(setVisibleElaboration(clickedElaboration));
       setIsHovering(false);
     }
   }
 
   function handleClick() {
-    if (number !== state.clickedTruth) {
-      dispatch({ type: 'CLICKED_TRUTH', number });
-      dispatch({ type: 'VISIBLE_ELABORATION', visibleElaboration: null });
-      dispatch({ type: 'CLICKED_ELABORATION', clickedElaboration: null });
+    if (number !== clickedTruth) {
+      dispatch(setClickedTruth(number));
+      dispatch(setVisibleElaboration(null));
+      dispatch(setClickedElaboration(null));
     } else {
-      dispatch({ type: 'CLICKED_TRUTH', number: 0 });
+      dispatch(setClickedTruth(0));
     }
   }
 
@@ -95,7 +105,7 @@ export default function TruthPaper({ number, label }) {
       <Typography
         className={clsx(
           styles.text,
-          state.clickedTruth === number && styles.selectedTruth
+          clickedTruth === number && styles.selectedTruth
         )}
       >
         {label}

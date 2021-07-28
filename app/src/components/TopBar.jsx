@@ -9,8 +9,10 @@ import {
 import { InfoRounded } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles';
 
+import { useDispatch } from 'react-redux';
+
 import { SettingsMenu } from './index';
-import { useGlobalState } from '../state';
+import { toggleAboutDrawer } from '../state';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -25,14 +27,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function TopBar() {
   const styles = useStyles();
-  const [state, dispatch] = useGlobalState();
-
-  function showInfoDrawer() {
-    dispatch({
-      type: 'TOGGLE_INFO_DRAWER',
-      showInfoDrawer: !state.showInfoDrawer,
-    });
-  }
+  const dispatch = useDispatch();
 
   return (
     <Box className={styles.root}>
@@ -43,7 +38,7 @@ export default function TopBar() {
               edge="start"
               color="inherit"
               aria-label="about"
-              onClick={showInfoDrawer}
+              onClick={() => dispatch(toggleAboutDrawer())}
             >
               <InfoRounded />
             </IconButton>

@@ -1,7 +1,9 @@
 import { Box, SwipeableDrawer, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
-import { useGlobalState } from '../state';
+import { useSelector, useDispatch } from 'react-redux';
+import { toggleAboutDrawer } from '../state';
+
 import { Link, TooltipChip } from '../utils';
 
 const useStyles = makeStyles({
@@ -16,16 +18,11 @@ const useStyles = makeStyles({
   },
 });
 
-export default function InfoDrawer() {
+export default function AboutDrawer() {
   const styles = useStyles();
-  const [state, dispatch] = useGlobalState();
+  const dispatch = useDispatch();
 
-  function toggleInfoDrawer() {
-    dispatch({
-      type: 'TOGGLE_INFO_DRAWER',
-      showInfoDrawer: !state.showInfoDrawer,
-    });
-  }
+  const showAboutDrawer = useSelector((state) => state.showAboutDrawer);
 
   return (
     <SwipeableDrawer
@@ -33,9 +30,9 @@ export default function InfoDrawer() {
       anchor="left"
       disableDiscovery
       disableSwipeToOpen
-      open={state.showInfoDrawer}
-      onClose={toggleInfoDrawer}
-      onOpen={toggleInfoDrawer}
+      open={showAboutDrawer}
+      onClose={() => dispatch(toggleAboutDrawer())}
+      onOpen={() => dispatch(toggleAboutDrawer())}
     >
       <Box component="section" margin={2}>
         <Box component="header" fontWeight="fontWeightBold">

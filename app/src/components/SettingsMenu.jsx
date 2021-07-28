@@ -3,17 +3,17 @@ import { useState } from 'react';
 import { Box, IconButton, Menu, Tooltip, Typography } from '@material-ui/core';
 import { SettingsRounded } from '@material-ui/icons';
 
+import { useSelector, useDispatch } from 'react-redux';
+
 import { SettingsMenuItem } from './index';
-import { useGlobalState } from '../state/';
+import { setTranslation } from '../state';
 
 export default function SettingsMenu() {
+  const dispatch = useDispatch();
+
+  const translations = useSelector((state) => state.translations);
+
   const [anchorEl, setAnchorEl] = useState(null);
-
-  const [state, dispatch] = useGlobalState();
-
-  function handleChangeTranslation(word, source) {
-    return dispatch({ type: `SET_${source}`, word });
-  }
 
   function handleOpenMenu(event) {
     setAnchorEl(event.currentTarget);
@@ -51,40 +51,42 @@ export default function SettingsMenu() {
         <SettingsMenuItem
           paliWord="samādhi"
           englishOptions={['stillness', 'immersion', 'concentration']}
-          value={state.translations.samadhi}
+          value={translations.samadhi}
           handleChange={(e) =>
-            handleChangeTranslation(e.target.value, 'SAMADHI')
+            dispatch(setTranslation('samadhi', e.target.value))
           }
         />
         <SettingsMenuItem
           paliWord="sankhāra"
           englishOptions={['volitional formations', 'choices']}
-          value={state.translations.sankhara}
+          value={translations.sankhara}
           handleChange={(e) =>
-            handleChangeTranslation(e.target.value, 'SANKHARA')
+            dispatch(setTranslation('sankhara', e.target.value))
           }
         />
         <SettingsMenuItem
           paliWord="vedanā"
           englishOptions={['sensation', 'feeling']}
-          value={state.translations.vedana}
+          value={translations.vedana}
           handleChange={(e) =>
-            handleChangeTranslation(e.target.value, 'VEDANA')
+            dispatch(setTranslation('vedana', e.target.value))
           }
         />
         <SettingsMenuItem
           paliWord="nāmarūpa"
           englishOptions={['mind and matter', 'name and form']}
-          value={state.translations.namarupa}
+          value={translations.namarupa}
           handleChange={(e) =>
-            handleChangeTranslation(e.target.value, 'NAMARUPA')
+            dispatch(setTranslation('namarupa', e.target.value))
           }
         />
         <SettingsMenuItem
           paliWord="jhāna"
           englishOptions={['jhāna', 'absorption']}
-          value={state.translations.jhana}
-          handleChange={(e) => handleChangeTranslation(e.target.value, 'JHANA')}
+          value={translations.jhana}
+          handleChange={(e) =>
+            dispatch(setTranslation('jhana', e.target.value))
+          }
         />
       </Menu>
     </Box>

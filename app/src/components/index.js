@@ -6,7 +6,7 @@ export { default as Explanation } from './Explanation';
 export { default as ExplanationContents } from './ExplanationContents';
 export { default as ExplanationDetails } from './ExplanationDetails';
 export { default as Footer } from './Footer';
-export { default as InfoDrawer } from './InfoDrawer';
+export { default as AboutDrawer } from './AboutDrawer';
 export { default as SettingsMenu } from './SettingsMenu';
 export { default as SettingsMenuItem } from './SettingsMenuItem';
 export { default as TopBar } from './TopBar';

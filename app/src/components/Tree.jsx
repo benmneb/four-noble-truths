@@ -1,7 +1,12 @@
 import { makeStyles, fade } from '@material-ui/core/styles';
 import { TreeItem } from '@material-ui/lab';
 
-import { useGlobalState } from '../state';
+import { useDispatch } from 'react-redux';
+import {
+  toggleElaborationDrawer,
+  setClickedElaboration,
+  setVisibleElaboration,
+} from '../state';
 
 const useStyles = makeStyles((theme) => ({
   treeItemGroup: {
@@ -14,23 +19,20 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Tree({ data }) {
+export default function Tree(props) {
+  const { data } = props;
+
   const styles = useStyles();
-  const dispatch = useGlobalState()[1];
+  const dispatch = useDispatch();
 
   function handleLabelClick(text, elaboration, references, spokenBy) {
-    dispatch({
-      type: 'CLICKED_ELABORATION',
-      clickedElaboration: { text, elaboration, references, spokenBy },
-    });
-    dispatch({
-      type: 'VISIBLE_ELABORATION',
-      visibleElaboration: { text, elaboration, references, spokenBy },
-    });
-    dispatch({
-      type: 'TOGGLE_ELABORATION_DRAWER',
-      showElaborationDrawer: true,
-    });
+    dispatch(
+      setClickedElaboration({ text, elaboration, references, spokenBy })
+    );
+    dispatch(
+      setVisibleElaboration({ text, elaboration, references, spokenBy })
+    );
+    dispatch(toggleElaborationDrawer());
   }
 
   function renderTree(nodes) {
