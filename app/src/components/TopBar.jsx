@@ -18,6 +18,9 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     marginBottom: theme.spacing(4),
+    [theme.breakpoints.only('xs')]: {
+      marginBottom: theme.spacing(3),
+    },
   },
   title: {
     flexGrow: 1,

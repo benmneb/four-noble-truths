@@ -14,9 +14,12 @@ const useStyles = makeStyles((theme) => ({
     width: '90vw',
     maxWidth: theme.breakpoints.values.md,
     minHeight: '70vh',
-    margin: `${theme.spacing(4)}px 5vw 0 5vw`,
+    margin: theme.spacing(4, 3, 0, 3),
     display: 'flex',
     justifyContent: 'center',
+    [theme.breakpoints.only('xs')]: {
+      marginTop: 0,
+    },
   },
 }));
 
