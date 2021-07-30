@@ -8,6 +8,7 @@ import {
   TextField,
   Typography,
 } from '@material-ui/core';
+import { Autocomplete } from '@material-ui/lab';
 import { makeStyles } from '@material-ui/core/styles';
 
 import { useSelector, useDispatch } from 'react-redux';
@@ -30,6 +31,9 @@ const useStyles = makeStyles((theme) => ({
       display: 'flex',
       columnGap: theme.spacing(2),
       '& .MuiTextField-root': {
+        width: '100%',
+      },
+      '& .MuiAutocomplete-root': {
         width: '100%',
       },
     },
@@ -120,7 +124,20 @@ export default function ElaborationAdd() {
                 </MenuItem>
               ))}
           </TextField>
-          <TextField
+          <Autocomplete
+            openOnFocus
+            options={book && Object.values(suttas[book])}
+            disabled={!book}
+            renderInput={(params) => (
+              <TextField
+                {...params}
+                label="Sutta"
+                variant="outlined"
+                helperText="Select the sutta"
+              />
+            )}
+          />
+          {/* <TextField
             select
             label="Sutta"
             value={sutta}
@@ -131,23 +148,16 @@ export default function ElaborationAdd() {
           >
             {book ? (
               Object.values(
-                suttas[book]
-                  .filter(
-                    (obj, index, self) =>
-                      index === self.findIndex((el) => el === obj)
-                  )
-                  .map((each) => each.replace(/[A-Za-z]*/, ''))
-                  .sort((a, b) => a - b)
-                  .map((each) => (
-                    <MenuItem key={each} value={each}>
-                      {each}
-                    </MenuItem>
-                  ))
+                suttas[book].map((each) => (
+                  <MenuItem key={each} value={each}>
+                    {each}
+                  </MenuItem>
+                ))
               )
             ) : (
               <MenuItem></MenuItem>
             )}
-          </TextField>
+          </TextField> */}
         </Box>
         <TextField
           label="Quote"
