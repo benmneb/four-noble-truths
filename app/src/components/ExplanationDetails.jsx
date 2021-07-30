@@ -63,7 +63,7 @@ export default function ExplanationDetails(props) {
         <Typography variant="h4" component="h1">
           {source.text}
         </Typography>
-        <Box key={source.references[0]} component="figure" className="quoteBox">
+        <Box key={source.seeMore[0]} component="figure" className="quoteBox">
           <Typography component="blockquote">"{source.explanation}"</Typography>
           <Typography
             className={styles.figCaption}
@@ -71,7 +71,7 @@ export default function ExplanationDetails(props) {
             component="figcaption"
           >
             - The Buddha
-            <TooltipChip sutta={source?.references[0]} />
+            <TooltipChip sutta={source?.seeMore[0]} />
           </Typography>
         </Box>
         <Grid container spacing={2}>
@@ -91,7 +91,7 @@ export default function ExplanationDetails(props) {
             </TreeView>
             <Box className={styles.chipBox}>
               <Typography variant="body2">See:</Typography>
-              {source.references.map((ref) => (
+              {source.seeMore.map((ref) => (
                 <TooltipChip key={ref} sutta={ref} />
               ))}
             </Box>
