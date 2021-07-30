@@ -105,8 +105,6 @@ export default function Elaboration() {
         >
           <Typography variant="subtitle2">Know another good quote?</Typography>
           <Button
-            size="small"
-            variant="outlined"
             color="primary"
             onClick={() => dispatch(toggleAddElaboration())}
           >
