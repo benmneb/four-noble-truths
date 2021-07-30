@@ -54,7 +54,8 @@ export default function ExplanationDetails(props) {
 
   const styles = useStyles(source);
 
-  const visibleElaboration = useSelector((state) => state.visibleElaboration);
+  const clickedNode = useSelector((state) => state.clickedNode);
+  const loading = useSelector((state) => state.loading);
 
   return (
     <Fade in>
@@ -63,7 +64,7 @@ export default function ExplanationDetails(props) {
           {source.text}
         </Typography>
         <Box key={source.references[0]} component="figure" className="quoteBox">
-          <Typography component="blockquote">"{source.elaboration}"</Typography>
+          <Typography component="blockquote">"{source.explanation}"</Typography>
           <Typography
             className={styles.figCaption}
             variant="subtitle2"
@@ -96,8 +97,8 @@ export default function ExplanationDetails(props) {
             </Box>
           </Grid>
           <Hidden xsDown>
-            {visibleElaboration && (
-              <Fade in={Boolean(visibleElaboration)}>
+            {Boolean(clickedNode.text) && !loading && (
+              <Fade in>
                 <Grid item sm={6}>
                   <Box className={styles.elaborationBox}>
                     <Elaboration />

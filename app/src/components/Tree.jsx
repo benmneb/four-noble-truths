@@ -1,3 +1,4 @@
+import { useMediaQuery } from '@material-ui/core';
 import { makeStyles, fade } from '@material-ui/core/styles';
 import { TreeItem } from '@material-ui/lab';
 
@@ -6,7 +7,11 @@ import {
   toggleElaborationDrawer,
   setClickedElaboration,
   setVisibleElaboration,
+  setClickedNode,
+  setLoading,
 } from '../state';
+
+import { mongo } from '../assets';
 
 const useStyles = makeStyles((theme) => ({
   treeItemGroup: {
@@ -24,36 +29,40 @@ export default function Tree(props) {
 
   const styles = useStyles();
   const dispatch = useDispatch();
+  const onlyXs = useMediaQuery((theme) => theme.breakpoints.only('xs'));
 
-  function handleLabelClick(text, elaboration, references, spokenBy) {
-    dispatch(
-      setClickedElaboration({ text, elaboration, references, spokenBy })
-    );
-    dispatch(
-      setVisibleElaboration({ text, elaboration, references, spokenBy })
-    );
-    dispatch(toggleElaborationDrawer());
+  async function handleLabelClick(e, id, text, additionalRefs) {
+    e.preventDefault();
+    dispatch(setClickedNode(id, text, additionalRefs));
+    dispatch(setLoading(true));
+    try {
+      const response = await mongo.get(id);
+      const data = await response.data;
+      dispatch(setLoading(false));
+      dispatch(setClickedElaboration(data));
+      dispatch(setVisibleElaboration(data));
+      if (onlyXs) dispatch(toggleElaborationDrawer());
+    } catch (error) {
+      dispatch(setLoading(false));
+      dispatch(setClickedElaboration(null));
+      dispatch(setVisibleElaboration(null));
+      if (onlyXs) dispatch(toggleElaborationDrawer());
+    }
   }
 
   function renderTree(nodes) {
+    const { id, text, references, children } = nodes;
+
     return (
       <TreeItem
-        key={nodes.id}
-        nodeId={nodes.id}
-        label={nodes.text}
-        onLabelClick={(e) => {
-          e.preventDefault();
-          handleLabelClick(
-            nodes.text,
-            nodes.elaboration,
-            nodes.references,
-            nodes.spokenBy
-          );
-        }}
+        key={id}
+        nodeId={id}
+        label={text}
+        onLabelClick={(e) => handleLabelClick(e, id, text, references)}
         classes={{ group: styles.treeItemGroup, label: styles.treeItemLabel }}
       >
-        {Array.isArray(nodes.children)
-          ? nodes.children.map((node) => renderTree(node))
+        {Array.isArray(children)
+          ? children.map((node) => renderTree(node))
           : null}
       </TreeItem>
     );
