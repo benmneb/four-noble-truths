@@ -4,7 +4,10 @@ const useStyles = makeStyles((theme) => ({
   link: {
     textDecoration: 'none',
     color: theme.palette.text.primary,
-    boxShadow: `inset 0 -3px 0 ${theme.palette.primary.main}`,
+    boxShadow: (props) =>
+      `inset 0 ${props.footerLink ? 0 : '-3px'} 0 ${
+        theme.palette.primary.main
+      }`,
     transition: `all ${theme.transitions.duration.standard}ms ${theme.transitions.easing.easeInOut}`,
     '&:hover': {
       color:
@@ -17,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export function Link({ children, ...props }) {
-  const styles = useStyles();
+  const styles = useStyles({ ...props });
 
   return (
     <a className={styles.link} {...props}>
