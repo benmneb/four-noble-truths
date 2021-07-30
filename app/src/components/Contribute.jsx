@@ -137,27 +137,6 @@ export default function ElaborationAdd() {
               />
             )}
           />
-          {/* <TextField
-            select
-            label="Sutta"
-            value={sutta}
-            onChange={(e) => setSutta(e.target.value)}
-            helperText="Select the sutta"
-            variant="outlined"
-            disabled={!book}
-          >
-            {book ? (
-              Object.values(
-                suttas[book].map((each) => (
-                  <MenuItem key={each} value={each}>
-                    {each}
-                  </MenuItem>
-                ))
-              )
-            ) : (
-              <MenuItem></MenuItem>
-            )}
-          </TextField> */}
         </Box>
         <TextField
           label="Quote"
