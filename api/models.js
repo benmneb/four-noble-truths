@@ -11,8 +11,8 @@ export const Elaboration = mongoose.model(
       text: {
         type: String,
       },
-      references: {
-        type: [String],
+      reference: {
+        type: String,
         required: true,
       },
       spokenBy: {
