@@ -12,6 +12,7 @@ import {
   setClickedTruth,
   setVisibleElaboration,
   setClickedElaboration,
+  setClickedNode,
 } from '../state';
 
 const useStyles = makeStyles((theme) => ({
@@ -86,6 +87,8 @@ export default function TruthPaper(props) {
       dispatch(setClickedTruth(number));
       dispatch(setVisibleElaboration(null));
       dispatch(setClickedElaboration(null));
+      dispatch(setClickedNode(null));
+      dispatch(setHoverTruth(0));
     } else {
       dispatch(setClickedTruth(0));
     }
