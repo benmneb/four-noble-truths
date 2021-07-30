@@ -16,10 +16,7 @@ export async function get(req, res) {
       });
     }
 
-    return res.status(200).json({
-      success: true,
-      data,
-    });
+    return res.status(200).json(data);
   }).catch((err) => console.log(err));
 }
 
@@ -57,6 +54,41 @@ export async function add(req, res) {
         message: 'Could not create elaboration',
       });
     });
+}
+
+export async function addMany(req, res) {
+  const body = req.body;
+
+  if (!body) {
+    return res.status(400).json({
+      success: false,
+      error: 'No elaboration body',
+    });
+  }
+
+  console.log(body);
+
+  const addBody = new Promise((res, rej) => {
+    body.map((elab) => {
+      new Elaboration(elab).save();
+    });
+
+    res('It worked!'), rej('It didnt work!');
+  });
+
+  return addBody
+    .then((message) =>
+      res.status(201).json({
+        success: true,
+        message,
+      })
+    )
+    .catch((error) =>
+      res.status(400).json({
+        success: false,
+        error,
+      })
+    );
 }
 
 export async function update(req, res) {
