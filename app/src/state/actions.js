@@ -12,6 +12,15 @@ export function setClickedTruth(number) {
   };
 }
 
+export function setClickedNode(id, text, additionalRefs) {
+  return {
+    type: 'SET_CLICKED_NODE',
+    id,
+    text,
+    additionalRefs,
+  };
+}
+
 export function setClickedElaboration(elaboration) {
   return {
     type: 'SET_CLICKED_ELABORATION',
@@ -43,5 +52,18 @@ export function toggleElaborationDrawer() {
 export function toggleAboutDrawer() {
   return {
     type: 'TOGGLE_ABOUT_DRAWER',
+  };
+}
+
+export function toggleAddElaboration() {
+  return {
+    type: 'TOGGLE_ADD_ELABORATION',
+  };
+}
+
+export function setLoading(state) {
+  return {
+    type: 'SET_LOADING',
+    state,
   };
 }
