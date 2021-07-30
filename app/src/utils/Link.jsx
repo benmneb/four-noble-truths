@@ -19,11 +19,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export function Link({ children, ...props }) {
-  const styles = useStyles({ ...props });
+export function Link(props) {
+  const { children, footerLink, ...other } = props;
+
+  const styles = useStyles(props);
 
   return (
-    <a className={styles.link} {...props}>
+    <a className={styles.link} {...other}>
       {children}
     </a>
   );
