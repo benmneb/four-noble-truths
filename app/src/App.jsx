@@ -1,13 +1,14 @@
 import { ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
-import { theme } from './assets/theme';
+import { theme } from './assets';
 import {
   Explanation,
   Footer,
   TruthsNav,
   TopBar,
   AboutDrawer,
+  Contribute,
 } from './components';
 
 export default function App() {
@@ -19,6 +20,7 @@ export default function App() {
       <Explanation />
       <Footer />
       <AboutDrawer />
+      <Contribute />
     </ThemeProvider>
   );
 }
