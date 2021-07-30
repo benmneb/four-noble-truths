@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 import {
   Box,
   Button,
@@ -10,6 +8,8 @@ import {
 } from '@material-ui/core';
 import { Autocomplete } from '@material-ui/lab';
 import { makeStyles } from '@material-ui/core/styles';
+
+import { useForm } from 'react-hook-form';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { toggleAddElaboration } from '../state';
@@ -36,6 +36,10 @@ const useStyles = makeStyles((theme) => ({
       '& .MuiAutocomplete-root': {
         width: '100%',
       },
+      '& .MuiAutocomplete-inputRoot[class*="MuiOutlinedInput-root"] .MuiAutocomplete-endAdornment':
+        {
+          columnGap: 0,
+        },
     },
   },
 }));
@@ -47,41 +51,41 @@ export default function ElaborationAdd() {
   const showAddElaboration = useSelector((state) => state.showAddElaboration);
   const clickedNode = useSelector((state) => state.clickedNode);
 
-  const [book, setBook] = useState('');
-  const [sutta, setSutta] = useState('');
-  const [quote, setQuote] = useState('');
-  const [attribution, setAttribution] = useState('');
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
+  const {
+    register,
+    handleSubmit,
+    watch,
+    reset,
+    formState: { errors },
+  } = useForm();
 
-  async function handleSubmit() {
+  const book = watch('book', '');
+  const sutta = watch('sutta', '');
+
+  async function submitForm(data) {
     console.log({
       for: clickedNode.for,
-      reference: `${book} ${sutta}`,
-      text: quote,
-      spokenBy: attribution,
-      ...(name && { submittedBy: name }),
+      reference: `${data.book} ${data.sutta}`,
+      text: data.quote,
+      spokenBy: data.attribution,
+      ...(data.name && { submittedBy: data.name }),
     });
     try {
       await mongo.add({
         for: clickedNode.for,
-        reference: `${book} ${sutta}`,
-        text: quote,
-        spokenBy: attribution,
-        ...(name && { submittedBy: name }),
+        reference: `${data.book} ${data.sutta}`,
+        text: data.quote,
+        spokenBy: data.attribution,
+        ...(data.name && { submittedBy: data.name }),
       });
+      reset();
     } catch (error) {
       console.log(error);
     }
   }
 
   function handleCancel() {
-    setBook('');
-    setSutta('');
-    setQuote('');
-    setAttribution('');
-    setName('');
-    setEmail('');
+    reset();
     dispatch(toggleAddElaboration());
   }
 
@@ -106,15 +110,20 @@ export default function ElaborationAdd() {
           <i>{clickedNode.text}</i>
         </Box>
       </Typography>
-      <Box component="form" className={styles.form}>
+      <Box
+        component="form"
+        className={styles.form}
+        onSubmit={handleSubmit(submitForm)}
+      >
         <Box>
           <TextField
             select
             label="Book"
-            value={book}
-            onChange={(e) => setBook(e.target.value)}
+            value={book ? book : ''}
             helperText="Select the book"
             variant="outlined"
+            {...register('book', { required: true })}
+            error={Boolean(errors.book)}
           >
             {Object.keys(suttas)
               .sort()
@@ -126,14 +135,17 @@ export default function ElaborationAdd() {
           </TextField>
           <Autocomplete
             openOnFocus
-            options={book && Object.values(suttas[book])}
-            disabled={!book}
+            options={Boolean(book) ? Object.values(suttas[book]) : []}
+            disabled={!Boolean(book)}
             renderInput={(params) => (
               <TextField
                 {...params}
                 label="Sutta"
                 variant="outlined"
                 helperText="Select the sutta"
+                value={sutta ? sutta : []}
+                {...register('sutta', { required: true })}
+                error={Boolean(errors.sutta)}
               />
             )}
           />
@@ -143,37 +155,63 @@ export default function ElaborationAdd() {
           variant="outlined"
           multiline
           rows={4}
-          helperText="Paste the sutta quote here"
-          value={quote}
-          onChange={(e) => setQuote(e.target.value)}
+          helperText={
+            errors.quote ? errors.quote.message : 'Paste the sutta quote here'
+          }
+          {...register('quote', {
+            required: 'Please enter a quote',
+            minLength: { value: 25, message: 'Minimum 25 characters' },
+          })}
+          error={Boolean(errors.quote)}
         />
         <TextField
           label="Attribution"
           variant="outlined"
-          helperText="Who is being quoted?"
-          value={attribution}
-          onChange={(e) => setAttribution(e.target.value)}
+          helperText={
+            Boolean(errors.attribution)
+              ? errors.attribution.message
+              : 'Who is being quoted?'
+          }
+          {...register('attribution', {
+            required: 'Please enter the person who is being quoted',
+            minLength: { value: 3, message: 'Please enter a longer name' },
+            maxLength: { value: 50, message: 'Please enter a shorter name' },
+          })}
+          error={Boolean(errors.attribution)}
         />
         <TextField
           label="Your name (optional)"
           variant="outlined"
-          helperText="Your name is publically displayed"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
+          helperText={
+            Boolean(errors.name)
+              ? errors.name.message
+              : 'Your name is publically displayed'
+          }
+          {...register('name', {
+            minLength: { value: 3, message: 'Please enter a longer name' },
+            maxLength: { value: 50, message: 'Please enter a shorter name' },
+          })}
+          error={Boolean(errors.name)}
         />
         <TextField
           label="Your email"
           variant="outlined"
-          helperText="Your email is for verification purposes only. It's not publically displayed or stored in any way"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          helperText={
+            Boolean(errors.email)
+              ? errors.email.message
+              : "Your email is for verification purposes only. It's not publically displayed"
+          }
+          {...register('email', {
+            required:
+              "Please enter your email for verification purposes. It won't be publically displayed",
+            pattern: {
+              value: /\S+@\S+\.\S+/,
+              message: 'Please enter a valid email',
+            },
+          })}
+          error={Boolean(errors.email)}
         />
-        <Button
-          size="large"
-          color="primary"
-          variant="contained"
-          onClick={handleSubmit}
-        >
+        <Button size="large" color="primary" variant="contained" type="submit">
           Submit
         </Button>
         <Button onClick={handleCancel}>Cancel</Button>
