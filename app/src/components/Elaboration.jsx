@@ -101,9 +101,9 @@ export default function Elaboration() {
           margin={2}
           display="flex"
           justifyContent="space-between"
-          alignItems="baseline"
+          alignItems="center"
         >
-          <Typography variant="subtitle2">Know another good quote?</Typography>
+          <Typography variant="subtitle2">Know another sutta quote?</Typography>
           <Button
             color="primary"
             onClick={() => dispatch(toggleAddElaboration())}
