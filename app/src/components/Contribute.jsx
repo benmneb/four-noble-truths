@@ -12,7 +12,11 @@ import { makeStyles } from '@material-ui/core/styles';
 import { useForm } from 'react-hook-form';
 
 import { useSelector, useDispatch } from 'react-redux';
-import { toggleAddElaboration } from '../state';
+import {
+  getElaborations,
+  toggleAddElaboration,
+  toggleSnackbar,
+} from '../state';
 
 import { suttas } from '../data';
 import { mongo } from '../assets';
@@ -63,13 +67,6 @@ export default function ElaborationAdd() {
   const sutta = watch('sutta', '');
 
   async function submitForm(data) {
-    console.log({
-      for: clickedNode.for,
-      reference: `${data.book} ${data.sutta}`,
-      text: data.quote,
-      spokenBy: data.attribution,
-      ...(data.name && { submittedBy: data.name }),
-    });
     try {
       await mongo.add({
         for: clickedNode.for,
@@ -78,13 +75,15 @@ export default function ElaborationAdd() {
         spokenBy: data.attribution,
         ...(data.name && { submittedBy: data.name }),
       });
-      reset();
+      dispatch(toggleSnackbar());
+      dispatch(getElaborations(clickedNode.for));
+      handleClose();
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   }
 
-  function handleCancel() {
+  function handleClose() {
     reset();
     dispatch(toggleAddElaboration());
   }
@@ -100,7 +99,7 @@ export default function ElaborationAdd() {
       disableDiscovery
       disableSwipeToOpen
       open={showAddElaboration}
-      onClose={handleCancel}
+      onClose={handleClose}
       onOpen={toggleDrawer}
     >
       <Typography component="div">
@@ -214,7 +213,7 @@ export default function ElaborationAdd() {
         <Button size="large" color="primary" variant="contained" type="submit">
           Submit
         </Button>
-        <Button onClick={handleCancel}>Cancel</Button>
+        <Button onClick={handleClose}>Cancel</Button>
       </Box>
     </SwipeableDrawer>
   );

@@ -1,3 +1,5 @@
+import { mongo } from '../assets';
+
 export function setHoverTruth(number) {
   return {
     type: 'SET_HOVER_TRUTH',
@@ -65,5 +67,27 @@ export function setLoading(state) {
   return {
     type: 'SET_LOADING',
     state,
+  };
+}
+
+export function toggleSnackbar() {
+  return {
+    type: 'TOGGLE_SNACKBAR',
+  };
+}
+
+export function getElaborations(id) {
+  return async (dispatch) => {
+    try {
+      const response = await mongo.get(id);
+      const data = await response.data;
+      dispatch(setLoading(false));
+      dispatch(setClickedElaboration(data));
+      dispatch(setVisibleElaboration(data));
+    } catch (error) {
+      dispatch(setLoading(false));
+      dispatch(setClickedElaboration(null));
+      dispatch(setVisibleElaboration(null));
+    }
   };
 }
