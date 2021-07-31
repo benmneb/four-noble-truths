@@ -15,39 +15,32 @@ export const path = {
         {
           id: 'P-1.1',
           text: 'The 4 Noble Truths',
-          spokenBy: 'Ven. Sariputta',
           children: [
             {
               id: 'P-1.1.1',
               text: 'Suffering',
-              spokenBy: 'Ven. Sariputta',
             },
             {
               id: 'P-1.1.2',
               text: 'The origin of suffering',
-              spokenBy: 'Ven. Sariputta',
             },
             {
               id: 'P-1.1.3',
               text: 'The cessation of suffering',
-              spokenBy: 'Ven. Sariputta',
             },
             {
               id: 'P-1.1.4',
               text: 'The path leading to the cessation of suffering',
-              spokenBy: 'Ven. Sariputta',
             },
           ],
         },
         {
           id: 'P-1.2',
           text: 'The unskillful and the skillful',
-          spokenBy: 'Ven. Sariputta',
           children: [
             {
               id: 'P-1.2.1',
               text: 'The unskillful',
-              spokenBy: 'Ven. Sariputta',
               children: [
                 {
                   id: 'P-1.2.1.1',
@@ -82,7 +75,6 @@ export const path = {
             {
               id: 'P-1.2.2',
               text: 'The root of the unskillful',
-              spokenBy: 'Ven. Sariputta',
               children: [
                 {
                   id: 'P-1.2.2.1',
@@ -101,7 +93,6 @@ export const path = {
             {
               id: 'P-1.2.3',
               text: 'The skillful',
-              spokenBy: 'Ven. Sariputta',
               children: [
                 {
                   id: 'P-1.2.3.1',
@@ -136,7 +127,6 @@ export const path = {
             {
               id: 'P-1.2.4',
               text: 'The root of the skillful',
-              spokenBy: 'Ven. Sariputta',
               children: [
                 {
                   id: 'P-1.2.4.1',
@@ -190,22 +180,18 @@ export const path = {
         {
           id: 'P-1.5',
           text: 'Defilement',
-          spokenBy: 'Ven. Sariputta',
           children: [
             {
               id: 'P-1.5.1',
               text: 'Sensual desire',
-              spokenBy: 'Ven. Sariputta',
             },
             {
               id: 'P-1.5.2',
               text: 'Desire to be reborn',
-              spokenBy: 'Ven. Sariputta',
             },
             {
               id: 'P-1.5.3',
               text: 'Ignorance',
-              spokenBy: 'Ven. Sariputta',
             },
           ],
         },
