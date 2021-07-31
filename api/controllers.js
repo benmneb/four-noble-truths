@@ -66,8 +66,6 @@ export async function addMany(req, res) {
     });
   }
 
-  console.log(body);
-
   const addBody = new Promise((res, rej) => {
     body.map((elab) => {
       new Elaboration(elab).save();
