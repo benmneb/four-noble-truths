@@ -9,6 +9,7 @@ import {
   TopBar,
   AboutDrawer,
   Contribute,
+  Snackbar,
 } from './components';
 
 export default function App() {
@@ -21,6 +22,7 @@ export default function App() {
       <Footer />
       <AboutDrawer />
       <Contribute />
+      <Snackbar />
     </ThemeProvider>
   );
 }

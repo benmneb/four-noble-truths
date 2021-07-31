@@ -21,6 +21,7 @@ const initialState = {
   showElaborationDrawer: false,
   showAboutDrawer: false,
   showAddElaboration: false,
+  showSnackbar: false,
   translations: {
     samadhi: 'stillness',
     sankhara: 'volitional formations',
@@ -88,6 +89,11 @@ export function reducer(state = initialState, action) {
       return {
         ...state,
         loading: action.state,
+      };
+    case 'TOGGLE_SNACKBAR':
+      return {
+        ...state,
+        showSnackbar: !state.showSnackbar,
       };
     default:
       return state;
