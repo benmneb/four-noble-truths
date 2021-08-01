@@ -75,6 +75,7 @@ export default function Elaboration() {
                   variant="subtitle2"
                   component="figcaption"
                   className={styles.figCaption}
+                  gutterBottom
                 >
                   {elaboration.spokenBy
                     ? `- ${elaboration.spokenBy}`
