@@ -70,10 +70,18 @@ export function setLoading(state) {
   };
 }
 
-export function toggleSnackbar(newContributionId) {
+export function setSnackPack(message, newContributionId) {
   return {
-    type: 'TOGGLE_SNACKBAR',
+    type: 'SET_SNACK_PACK',
+    message,
     newContributionId,
+    key: new Date().getTime(),
+  };
+}
+
+export function sliceSnackPack() {
+  return {
+    type: 'SLICE_SNACK_PACK',
   };
 }
 

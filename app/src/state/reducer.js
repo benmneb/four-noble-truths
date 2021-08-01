@@ -21,7 +21,7 @@ const initialState = {
   showElaborationDrawer: false,
   showAboutDrawer: false,
   showAddElaboration: false,
-  showSnackbar: false,
+  snackPack: [],
   translations: {
     samadhi: 'stillness',
     sankhara: 'volitional formations',
@@ -90,12 +90,22 @@ export function reducer(state = initialState, action) {
         ...state,
         loading: action.state,
       };
-    case 'TOGGLE_SNACKBAR':
+    case 'SET_SNACK_PACK':
       return {
         ...state,
-        showSnackbar: action.newContributionId
-          ? action.newContributionId
-          : !state.showSnackbar,
+        snackPack: [
+          ...state.snackPack,
+          {
+            message: action.message,
+            newContributionId: action.newContributionId,
+            key: action.key,
+          },
+        ],
+      };
+    case 'SLICE_SNACK_PACK':
+      return {
+        ...state,
+        snackPack: state.snackPack.slice(1),
       };
     default:
       return state;

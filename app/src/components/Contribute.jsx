@@ -12,11 +12,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { useForm } from 'react-hook-form';
 
 import { useSelector, useDispatch } from 'react-redux';
-import {
-  getElaborations,
-  toggleAddElaboration,
-  toggleSnackbar,
-} from '../state';
+import { getElaborations, toggleAddElaboration, setSnackPack } from '../state';
 
 import { suttas } from '../data';
 import { mongo } from '../assets';
@@ -76,7 +72,7 @@ export default function ElaborationAdd() {
         ...(data.name && { submittedBy: data.name }),
       });
       const addedId = await response.data.id;
-      dispatch(toggleSnackbar(addedId));
+      dispatch(setSnackPack('Contribution received', addedId));
       dispatch(getElaborations(clickedNode.for));
       handleClose();
     } catch (error) {

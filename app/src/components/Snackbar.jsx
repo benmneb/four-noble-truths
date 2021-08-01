@@ -1,43 +1,83 @@
+import { useState, useEffect } from 'react';
+
 import { Button, IconButton, Snackbar as MuiSnackbar } from '@material-ui/core';
 import { Alert } from '@material-ui/lab';
 import { CloseRounded } from '@material-ui/icons';
 
 import { useDispatch, useSelector } from 'react-redux';
 
-import { getElaborations, toggleSnackbar } from '../state';
+import { getElaborations, setSnackPack, sliceSnackPack } from '../state';
 import { mongo } from '../assets';
 
 export default function Snackbar() {
   const dispatch = useDispatch();
 
-  const showSnackbar = useSelector((state) => state.showSnackbar);
+  const snackPack = useSelector((state) => state.snackPack);
   const clickedNodeId = useSelector((state) => state.clickedNode.for);
+
+  const [show, setShow] = useState(false);
+  const [latestSnack, setLatestSnack] = useState(undefined);
+
+  useEffect(() => {
+    if (snackPack.length && !latestSnack) {
+      // Set a new snack when we don't have an active one
+      setLatestSnack({ ...snackPack[0] });
+      dispatch(sliceSnackPack());
+      setShow(true);
+    } else if (snackPack.length && latestSnack && show) {
+      // Close an active snack when a new one is added
+      setShow(false);
+    }
+  }, [snackPack, latestSnack, show, dispatch]);
 
   function handleClose(event, reason) {
     if (reason !== 'clickaway') {
-      dispatch(toggleSnackbar());
+      setShow(false);
     }
   }
 
   async function handleUndo() {
     try {
-      await mongo.remove(showSnackbar);
+      await mongo.remove(latestSnack.newContributionId);
       dispatch(getElaborations(clickedNodeId));
+      dispatch(setSnackPack('Contribution removed'));
       handleClose();
     } catch (error) {
       console.error(error);
     }
   }
 
+  function handleExited() {
+    setLatestSnack(undefined);
+  }
+
+  const key = latestSnack ? latestSnack.key : undefined;
+  const severity = latestSnack?.newContributionId ? 'success' : 'info';
+  const message = latestSnack ? latestSnack?.message : undefined;
+  const actions = [
+    ...(latestSnack?.newContributionId
+      ? [
+          <Button key="1" color="inherit" size="small" onClick={handleUndo}>
+            UNDO
+          </Button>,
+        ]
+      : []),
+    <IconButton key="2" size="small" onClick={handleClose}>
+      <CloseRounded fontSize="small" />
+    </IconButton>,
+  ];
+
   return (
     <MuiSnackbar
+      key={key}
       anchorOrigin={{
         vertical: 'bottom',
         horizontal: 'left',
       }}
-      open={Boolean(showSnackbar)}
-      autoHideDuration={5000}
+      open={show}
+      autoHideDuration={6000}
       onClose={handleClose}
+      onExited={handleExited}
       ContentProps={{
         'aria-describedby': 'message-id',
       }}
@@ -46,17 +86,10 @@ export default function Snackbar() {
         id="message-id"
         elevation={6}
         variant="filled"
-        severity="success"
-        action={[
-          <Button key="1" color="inherit" size="small" onClick={handleUndo}>
-            UNDO
-          </Button>,
-          <IconButton key="2" size="small" onClick={handleClose}>
-            <CloseRounded fontSize="small" />
-          </IconButton>,
-        ]}
+        severity={severity}
+        action={actions}
       >
-        Contribution received
+        {message}
       </Alert>
     </MuiSnackbar>
   );
