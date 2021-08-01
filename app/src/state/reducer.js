@@ -93,7 +93,9 @@ export function reducer(state = initialState, action) {
     case 'TOGGLE_SNACKBAR':
       return {
         ...state,
-        showSnackbar: !state.showSnackbar,
+        showSnackbar: action.newContributionId
+          ? action.newContributionId
+          : !state.showSnackbar,
       };
     default:
       return state;

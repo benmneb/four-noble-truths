@@ -68,14 +68,15 @@ export default function ElaborationAdd() {
 
   async function submitForm(data) {
     try {
-      await mongo.add({
+      const response = await mongo.add({
         for: clickedNode.for,
         reference: `${data.book} ${data.sutta}`,
         text: data.quote,
         spokenBy: data.attribution,
         ...(data.name && { submittedBy: data.name }),
       });
-      dispatch(toggleSnackbar());
+      const addedId = await response.data.id;
+      dispatch(toggleSnackbar(addedId));
       dispatch(getElaborations(clickedNode.for));
       handleClose();
     } catch (error) {

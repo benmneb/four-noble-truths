@@ -17,7 +17,7 @@ export async function get(req, res) {
     }
 
     return res.status(200).json(data);
-  }).catch((err) => console.log(err));
+  }).catch((err) => console.error(err));
 }
 
 export async function add(req, res) {
@@ -50,6 +50,7 @@ export async function add(req, res) {
     })
     .catch((error) => {
       return res.status(400).json({
+        success: false,
         error,
         message: 'Could not create elaboration',
       });
@@ -137,9 +138,16 @@ export async function remove(req, res) {
       });
     }
 
+    if (res.status === 404) {
+      return res.status(404).json({
+        success: false,
+        error,
+      });
+    }
+
     return res.status(200).json({
       success: true,
       data,
     });
-  }).catch((err) => console.log(err));
+  }).catch((err) => console.error(err));
 }

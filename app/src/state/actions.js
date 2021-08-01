@@ -70,9 +70,10 @@ export function setLoading(state) {
   };
 }
 
-export function toggleSnackbar() {
+export function toggleSnackbar(newContributionId) {
   return {
     type: 'TOGGLE_SNACKBAR',
+    newContributionId,
   };
 }
 
