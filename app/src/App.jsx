@@ -1,7 +1,7 @@
 import { ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
-import { theme } from './assets';
+import { useTheme } from './assets';
 import {
   Explanation,
   Footer,
@@ -13,6 +13,8 @@ import {
 } from './components';
 
 export default function App() {
+  const theme = useTheme();
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />

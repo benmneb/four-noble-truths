@@ -1,2 +1,2 @@
 export { mongo } from './api';
-export { theme } from './theme';
+export { useTheme } from './theme';

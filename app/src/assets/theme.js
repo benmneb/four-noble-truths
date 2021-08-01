@@ -1,18 +1,24 @@
 import { createMuiTheme, responsiveFontSizes } from '@material-ui/core/styles';
 
-export const theme = responsiveFontSizes(
-  createMuiTheme({
-    palette: {
-      type: 'dark',
-      primary: {
-        main: '#FF9933',
+import { useSelector } from 'react-redux';
+
+export function useTheme() {
+  const themeType = useSelector((state) => state.themeType);
+
+  return responsiveFontSizes(
+    createMuiTheme({
+      palette: {
+        type: themeType,
+        primary: {
+          main: '#FF9933',
+        },
       },
-    },
-    typography: {
-      fontFamily: ['Inter', 'sans-serif'].join(','),
-    },
-    shape: {
-      borderRadius: 16,
-    },
-  })
-);
+      typography: {
+        fontFamily: ['Inter', 'sans-serif'].join(','),
+      },
+      shape: {
+        borderRadius: 16,
+      },
+    })
+  );
+}

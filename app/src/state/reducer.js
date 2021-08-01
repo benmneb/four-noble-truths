@@ -29,6 +29,7 @@ const initialState = {
     namarupa: 'mind and matter',
     jhana: 'jhāna',
   },
+  themeType: 'dark',
 };
 
 export function reducer(state = initialState, action) {
@@ -106,6 +107,11 @@ export function reducer(state = initialState, action) {
       return {
         ...state,
         snackPack: state.snackPack.slice(1),
+      };
+    case 'TOGGLE_THEME_TYPE':
+      return {
+        ...state,
+        themeType: state.themeType === 'dark' ? 'light' : 'dark',
       };
     default:
       return state;

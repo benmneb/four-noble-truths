@@ -34,10 +34,14 @@ const useStyles = makeStyles((theme) => ({
   },
   number: {
     fontSize: '8rem',
-    color: theme.palette.background.default,
+    color:
+      theme.palette.type === 'dark'
+        ? theme.palette.background.default
+        : theme.palette.grey[300],
     fontWeight: theme.typography.fontWeightBold,
     lineHeight: 1,
     zIndex: 100,
+    transition: `color ${theme.transitions.duration.standard}ms ${theme.transitions.easing.easeInOut}`,
     webkitTouchCallout: 'none',
     webkitUserSelect: 'none',
     khtmlUserSelect: 'none',
@@ -50,8 +54,14 @@ const useStyles = makeStyles((theme) => ({
     zIndex: 101,
     transition: `color ${theme.transitions.duration.standard}ms ${theme.transitions.easing.easeInOut}`,
   },
-  selectedTruth: {
-    color: theme.palette.primary.main,
+  selectedText: {
+    color:
+      theme.palette.type === 'dark'
+        ? theme.palette.primary.main
+        : theme.palette.text.primary,
+  },
+  selectedNumber: {
+    color: theme.palette.type === 'light' && theme.palette.primary.light,
   },
 }));
 
@@ -103,13 +113,18 @@ export default function TruthPaper(props) {
       onClick={handleClick}
     >
       <Box className={styles.numberBox}>
-        <Typography className={styles.number}>{number}</Typography>
+        <Typography
+          className={clsx(styles.number, {
+            [styles.selectedNumber]: clickedTruth === number,
+          })}
+        >
+          {number}
+        </Typography>
       </Box>
       <Typography
-        className={clsx(
-          styles.text,
-          clickedTruth === number && styles.selectedTruth
-        )}
+        className={clsx(styles.text, {
+          [styles.selectedText]: clickedTruth === number,
+        })}
       >
         {label}
       </Typography>

@@ -1,3 +1,5 @@
+import clsx from 'clsx';
+
 import {
   BottomNavigation,
   BottomNavigationAction,
@@ -30,6 +32,10 @@ const useStyles = makeStyles((theme) => ({
     boxShadow:
       '0px -2px 4px -1px rgba(0,0,0,0.2),0px -4px 5px 0px rgba(0,0,0,0.14),0px -1px 10px 0px rgba(0,0,0,0.12)',
   },
+  selectedBottomNav: {
+    color: theme.palette.text.primary,
+    fontWeight: theme.typography.fontWeightMedium,
+  },
   // below is for BottomNavLabel()
   paper: {
     textAlign: 'center',
@@ -45,9 +51,13 @@ const useStyles = makeStyles((theme) => ({
   },
   number: {
     fontSize: '3rem',
-    color: theme.palette.background.default,
+    color:
+      theme.palette.type === 'dark'
+        ? theme.palette.background.default
+        : theme.palette.grey[300],
     fontWeight: theme.typography.fontWeightBold,
     lineHeight: 1,
+    transition: `color ${theme.transitions.duration.standard}ms ${theme.transitions.easing.easeInOut}`,
     webkitTouchCallout: 'none',
     webkitUserSelect: 'none',
     khtmlUserSelect: 'none',
@@ -57,20 +67,39 @@ const useStyles = makeStyles((theme) => ({
   },
   text: {
     zIndex: theme.zIndex.mobileStepper,
+    transition: `color ${theme.transitions.duration.standard}ms ${theme.transitions.easing.easeInOut}`,
+  },
+  selectedText: {
+    color: theme.palette.type === 'dark' && theme.palette.primary.main,
+  },
+  selectedNumber: {
+    color: theme.palette.type === 'light' && theme.palette.primary.light,
   },
 }));
 
 function BottomNavLabel({ label, number }) {
   const styles = useStyles();
 
+  const clickedTruth = useSelector((state) => state.clickedTruth);
+
   return (
     <Box component="span" className={styles.paper}>
       <Box className={styles.numberBox}>
-        <Box component="span" className={styles.number}>
+        <Box
+          component="span"
+          className={clsx(styles.number, {
+            [styles.selectedNumber]: clickedTruth === number,
+          })}
+        >
           {number}
         </Box>
       </Box>
-      <Box component="span" className={styles.text}>
+      <Box
+        component="span"
+        className={clsx(styles.text, {
+          [styles.selectedText]: clickedTruth === number,
+        })}
+      >
         {label}
       </Box>
     </Box>
@@ -107,18 +136,22 @@ export default function TruthsNav() {
           showLabels
         >
           <BottomNavigationAction
+            classes={{ selected: styles.selectedBottomNav }}
             label={<BottomNavLabel label="Suffering" number={1} />}
             value={1}
           />
           <BottomNavigationAction
+            classes={{ selected: styles.selectedBottomNav }}
             label={<BottomNavLabel label="Origin" number={2} />}
             value={2}
           />
           <BottomNavigationAction
+            classes={{ selected: styles.selectedBottomNav }}
             label={<BottomNavLabel label="Cessation" number={3} />}
             value={3}
           />
           <BottomNavigationAction
+            classes={{ selected: styles.selectedBottomNav }}
             label={<BottomNavLabel label="Path" number={4} />}
             value={4}
           />

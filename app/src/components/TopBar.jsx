@@ -6,13 +6,16 @@ import {
   Typography,
   IconButton,
 } from '@material-ui/core';
-import { InfoRounded } from '@material-ui/icons';
+import {
+  InfoRounded,
+  Brightness3Rounded,
+  BrightnessHighRounded,
+} from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles';
 
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { SettingsMenu } from './index';
-import { toggleAboutDrawer } from '../state';
+import { toggleThemeType, toggleAboutDrawer } from '../state';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -32,6 +35,11 @@ export default function TopBar() {
   const styles = useStyles();
   const dispatch = useDispatch();
 
+  const themeType = useSelector((state) => state.themeType);
+
+  const tooltip =
+    themeType === 'dark' ? 'Switch off dark mode' : 'Switch on dark mode';
+
   return (
     <Box className={styles.root}>
       <AppBar position="static" color="inherit">
@@ -49,7 +57,20 @@ export default function TopBar() {
           <Typography variant="h6" component="h1" className={styles.title}>
             The Four Noble Truths
           </Typography>
-          <SettingsMenu />
+          <Tooltip title={tooltip}>
+            <IconButton
+              edge="start"
+              color="inherit"
+              aria-label={tooltip}
+              onClick={() => dispatch(toggleThemeType())}
+            >
+              {themeType === 'dark' ? (
+                <BrightnessHighRounded />
+              ) : (
+                <Brightness3Rounded />
+              )}
+            </IconButton>
+          </Tooltip>
         </Toolbar>
       </AppBar>
     </Box>

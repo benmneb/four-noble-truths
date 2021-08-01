@@ -100,3 +100,9 @@ export function getElaborations(id) {
     }
   };
 }
+
+export function toggleThemeType() {
+  return {
+    type: 'TOGGLE_THEME_TYPE',
+  };
+}
