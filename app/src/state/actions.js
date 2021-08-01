@@ -93,6 +93,7 @@ export function getElaborations(id) {
       dispatch(setLoading(false));
       dispatch(setClickedElaboration(data));
       dispatch(setVisibleElaboration(data));
+      dispatch(toggleElaborationDrawer());
     } catch (error) {
       dispatch(setLoading(false));
       dispatch(setClickedElaboration(null));
