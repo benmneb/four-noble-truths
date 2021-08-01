@@ -98,6 +98,7 @@ export function getElaborations(id) {
       dispatch(setLoading(false));
       dispatch(setClickedElaboration(null));
       dispatch(setVisibleElaboration(null));
+      dispatch(toggleElaborationDrawer());
     }
   };
 }
