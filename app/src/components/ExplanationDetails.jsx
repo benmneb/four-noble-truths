@@ -55,7 +55,6 @@ export default function ExplanationDetails(props) {
   const styles = useStyles(source);
 
   const clickedNode = useSelector((state) => state.clickedNode);
-  const loading = useSelector((state) => state.loading);
 
   return (
     <Fade in>
@@ -97,7 +96,7 @@ export default function ExplanationDetails(props) {
             </Box>
           </Grid>
           <Hidden xsDown>
-            {Boolean(clickedNode.text) && !loading && (
+            {Boolean(clickedNode.text) && (
               <Fade in>
                 <Grid item sm={6}>
                   <Box className={styles.elaborationBox}>

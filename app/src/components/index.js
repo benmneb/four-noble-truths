@@ -1,5 +1,8 @@
 export { default as DefaultQuote } from './DefaultQuote';
 export { default as Elaboration } from './Elaboration';
+export { default as ElaborationContents } from './ElaborationContents';
+export { default as ElaborationNoContents } from './ElaborationNoContents';
+export { default as ElaborationSkeleton } from './ElaborationSkeleton';
 export { default as ElaborationDrawer } from './ElaborationDrawer';
 export { default as Contribute } from './Contribute';
 export { default as Explanation } from './Explanation';

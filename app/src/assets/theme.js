@@ -19,6 +19,21 @@ export function useTheme() {
       shape: {
         borderRadius: 16,
       },
+      props: {
+        MuiSkeleton: {
+          animation: 'wave',
+        },
+      },
+      overrides: {
+        MuiSkeleton: {
+          text: {
+            borderRadius: 8,
+          },
+          rect: {
+            borderRadius: 8,
+          },
+        },
+      },
     })
   );
 }

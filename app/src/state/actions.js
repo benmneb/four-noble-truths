@@ -90,15 +90,13 @@ export function getElaborations(id) {
     try {
       const response = await mongo.get(id);
       const data = await response.data;
-      dispatch(setLoading(false));
       dispatch(setClickedElaboration(data));
       dispatch(setVisibleElaboration(data));
-      dispatch(toggleElaborationDrawer());
-    } catch (error) {
       dispatch(setLoading(false));
+    } catch (error) {
       dispatch(setClickedElaboration(null));
       dispatch(setVisibleElaboration(null));
-      dispatch(toggleElaborationDrawer());
+      dispatch(setLoading(false));
     }
   };
 }

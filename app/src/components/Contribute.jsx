@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import {
   Box,
   Button,
@@ -12,8 +14,14 @@ import { makeStyles } from '@material-ui/core/styles';
 import { useForm } from 'react-hook-form';
 
 import { useSelector, useDispatch } from 'react-redux';
-import { getElaborations, toggleAddElaboration, setSnackPack } from '../state';
+import {
+  getElaborations,
+  toggleAddElaboration,
+  setSnackPack,
+  setLoading,
+} from '../state';
 
+import { LoadingButton } from '../utils';
 import { suttas } from '../data';
 import { mongo } from '../assets';
 
@@ -51,6 +59,8 @@ export default function ElaborationAdd() {
   const showAddElaboration = useSelector((state) => state.showAddElaboration);
   const clickedNode = useSelector((state) => state.clickedNode);
 
+  const [pending, setPending] = useState(false);
+
   const {
     register,
     handleSubmit,
@@ -63,8 +73,9 @@ export default function ElaborationAdd() {
   const sutta = watch('sutta', '');
 
   async function submitForm(data) {
+    setPending(true);
     try {
-      const response = await mongo.add({
+      const response = await mongo.post(null, {
         for: clickedNode.for,
         reference: `${data.book} ${data.sutta}`,
         text: data.quote,
@@ -74,6 +85,7 @@ export default function ElaborationAdd() {
       const addedId = await response.data.id;
       dispatch(setSnackPack('Contribution received', addedId));
       dispatch(getElaborations(clickedNode.for));
+      dispatch(setLoading(true));
       handleClose();
     } catch (error) {
       console.error(error);
@@ -83,6 +95,9 @@ export default function ElaborationAdd() {
   function handleClose() {
     reset();
     dispatch(toggleAddElaboration());
+    setTimeout(() => {
+      setPending(false);
+    }, 300);
   }
 
   function toggleDrawer() {
@@ -207,9 +222,15 @@ export default function ElaborationAdd() {
           })}
           error={Boolean(errors.email)}
         />
-        <Button size="large" color="primary" variant="contained" type="submit">
+        <LoadingButton
+          size="large"
+          color="primary"
+          variant="contained"
+          type="submit"
+          pending={pending}
+        >
           Submit
-        </Button>
+        </LoadingButton>
         <Button onClick={handleClose}>Cancel</Button>
       </Box>
     </SwipeableDrawer>

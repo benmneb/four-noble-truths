@@ -1,8 +1,9 @@
+import { useMediaQuery } from '@material-ui/core';
 import { makeStyles, fade } from '@material-ui/core/styles';
 import { TreeItem } from '@material-ui/lab';
 
 import { useDispatch } from 'react-redux';
-import { setClickedNode, setLoading, getElaborations } from '../state';
+import { toggleElaborationDrawer, setClickedNode } from '../state';
 
 const useStyles = makeStyles((theme) => ({
   treeItemGroup: {
@@ -20,12 +21,12 @@ export default function Tree(props) {
 
   const styles = useStyles();
   const dispatch = useDispatch();
+  const onlyXs = useMediaQuery((theme) => theme.breakpoints.only('xs'));
 
   async function handleLabelClick(e, id, text, additionalRefs) {
     e.preventDefault();
     dispatch(setClickedNode(id, text, additionalRefs));
-    dispatch(setLoading(true));
-    dispatch(getElaborations(id));
+    if (onlyXs) dispatch(toggleElaborationDrawer());
   }
 
   function renderTree(nodes) {

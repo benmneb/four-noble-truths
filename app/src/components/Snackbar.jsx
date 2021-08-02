@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-import { Button, IconButton, Snackbar as MuiSnackbar } from '@material-ui/core';
+import { IconButton, Snackbar as MuiSnackbar } from '@material-ui/core';
 import { Alert } from '@material-ui/lab';
 import { CloseRounded } from '@material-ui/icons';
 
@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { getElaborations, setSnackPack, sliceSnackPack } from '../state';
 import { mongo } from '../assets';
+import { LoadingButton } from '../utils';
 
 export default function Snackbar() {
   const dispatch = useDispatch();
@@ -17,6 +18,7 @@ export default function Snackbar() {
 
   const [show, setShow] = useState(false);
   const [latestSnack, setLatestSnack] = useState(undefined);
+  const [pending, setPending] = useState(false);
 
   useEffect(() => {
     if (snackPack.length && !latestSnack) {
@@ -37,8 +39,9 @@ export default function Snackbar() {
   }
 
   async function handleUndo() {
+    setPending(true);
     try {
-      await mongo.remove(latestSnack.newContributionId);
+      await mongo.delete(latestSnack.newContributionId);
       dispatch(getElaborations(clickedNodeId));
       dispatch(setSnackPack('Contribution removed'));
       handleClose();
@@ -49,6 +52,7 @@ export default function Snackbar() {
 
   function handleExited() {
     setLatestSnack(undefined);
+    setPending(false);
   }
 
   const key = latestSnack ? latestSnack.key : undefined;
@@ -57,9 +61,15 @@ export default function Snackbar() {
   const actions = [
     ...(latestSnack?.newContributionId
       ? [
-          <Button key="1" color="inherit" size="small" onClick={handleUndo}>
+          <LoadingButton
+            key="1"
+            color="inherit"
+            size="small"
+            onClick={handleUndo}
+            pending={pending}
+          >
             UNDO
-          </Button>,
+          </LoadingButton>,
         ]
       : []),
     <IconButton key="2" size="small" onClick={handleClose}>
