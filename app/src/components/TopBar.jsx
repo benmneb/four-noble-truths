@@ -35,14 +35,13 @@ export default function TopBar() {
   const styles = useStyles();
   const dispatch = useDispatch();
 
-  const themeType = useSelector((state) => state.themeType);
+  const darkTheme = useSelector((state) => state.themeType === 'dark');
 
-  const tooltip =
-    themeType === 'dark' ? 'Switch off dark mode' : 'Switch on dark mode';
+  const tooltip = darkTheme ? 'Switch off dark mode' : 'Switch on dark mode';
 
   return (
     <Box className={styles.root}>
-      <AppBar position="static" color="inherit">
+      <AppBar position="static" color={darkTheme ? 'inherit' : 'primary'}>
         <Toolbar>
           <Tooltip title="About this site">
             <IconButton
@@ -64,11 +63,7 @@ export default function TopBar() {
               aria-label={tooltip}
               onClick={() => dispatch(toggleThemeType())}
             >
-              {themeType === 'dark' ? (
-                <BrightnessHighRounded />
-              ) : (
-                <Brightness3Rounded />
-              )}
+              {darkTheme ? <BrightnessHighRounded /> : <Brightness3Rounded />}
             </IconButton>
           </Tooltip>
         </Toolbar>
