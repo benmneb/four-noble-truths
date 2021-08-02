@@ -87,7 +87,7 @@ export default function AboutDrawer() {
           This site is my attempt to illustrate and organise this, while helping
           me study the suttas of the Pali Canon and practice web development.
         </Typography>
-        <Box display="flex" justifyContent="space-around">
+        <Box display="flex" justifyContent="space-around" marginBottom={2}>
           <Button
             startIcon={<MailOutlineRounded />}
             onClick={() => {
@@ -106,6 +106,9 @@ export default function AboutDrawer() {
             GitHub
           </Button>
         </Box>
+        <Typography paragraph>
+          <i>Made with metta while I should have been meditating.</i>
+        </Typography>
       </Box>
     </SwipeableDrawer>
   );
