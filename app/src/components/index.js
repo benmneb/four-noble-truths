@@ -15,3 +15,4 @@ export { default as Tree } from './Tree';
 export { default as TruthPaper } from './TruthPaper';
 export { default as TruthsNav } from './TruthsNav';
 export { default as Snackbar } from './Snackbar';
+export { default as Contact } from './Contact';

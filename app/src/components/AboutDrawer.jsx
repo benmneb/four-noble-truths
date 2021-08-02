@@ -1,10 +1,11 @@
-import { Box, SwipeableDrawer, Typography } from '@material-ui/core';
+import { Box, Button, SwipeableDrawer, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import { MailOutlineRounded, GitHub } from '@material-ui/icons';
 
 import { useSelector, useDispatch } from 'react-redux';
-import { toggleAboutDrawer } from '../state';
+import { toggleAboutDrawer, toggleContact } from '../state';
 
-import { Link, TooltipChip } from '../utils';
+import { TooltipChip } from '../utils';
 
 const useStyles = makeStyles({
   drawerPaper: {
@@ -86,17 +87,25 @@ export default function AboutDrawer() {
           This site is my attempt to illustrate and organise this, while helping
           me study the suttas of the Pali Canon and practice web development.
         </Typography>
-        <Typography paragraph>
-          Any corrections or additions please{' '}
-          <Link
+        <Box display="flex" justifyContent="space-around">
+          <Button
+            startIcon={<MailOutlineRounded />}
+            onClick={() => {
+              dispatch(toggleAboutDrawer());
+              dispatch(toggleContact());
+            }}
+          >
+            Contact
+          </Button>
+          <Button
             href="https://github.com/benmneb/four-noble-truths"
             target="_blank"
             rel="noopener"
+            startIcon={<GitHub />}
           >
-            file an issue or make a pull request on GitHub
-          </Link>
-          .
-        </Typography>
+            GitHub
+          </Button>
+        </Box>
       </Box>
     </SwipeableDrawer>
   );

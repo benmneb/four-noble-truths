@@ -1,14 +1,18 @@
-import { Box, Typography } from '@material-ui/core';
+import { Box, IconButton, Typography } from '@material-ui/core';
+import { MailOutlineRounded, GitHub } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles';
 
+import { useDispatch } from 'react-redux';
+
+import { toggleContact } from '../state';
 import { Link } from '../utils';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    height: theme.spacing(5),
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    padding: theme.spacing(2, 2, 1, 2),
     [theme.breakpoints.only('xs')]: {
       marginBottom: theme.mixins.toolbar.minHeight,
     },
@@ -17,10 +21,11 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Footer() {
   const styles = useStyles();
+  const dispatch = useDispatch();
 
   return (
     <Box className={styles.root} component="footer">
-      <Typography>
+      <Typography component="div">
         <Link
           footerLink
           rel="license noopener noreferrer"
@@ -37,6 +42,18 @@ export default function Footer() {
         >
           benmneb
         </Link>
+        <Box display="flex" justifyContent="space-around">
+          <IconButton onClick={() => dispatch(toggleContact())}>
+            <MailOutlineRounded />
+          </IconButton>
+          <IconButton
+            href="https://github.com/benmneb/four-noble-truths"
+            target="_blank"
+            rel="noopener"
+          >
+            <GitHub />
+          </IconButton>
+        </Box>
       </Typography>
     </Box>
   );

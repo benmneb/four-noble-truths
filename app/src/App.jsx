@@ -10,6 +10,7 @@ import {
   AboutDrawer,
   Contribute,
   Snackbar,
+  Contact,
 } from './components';
 
 export default function App() {
@@ -25,6 +26,7 @@ export default function App() {
       <AboutDrawer />
       <Contribute />
       <Snackbar />
+      <Contact />
     </ThemeProvider>
   );
 }

@@ -11,8 +11,8 @@ mongoose
   .then(() => {
     console.log('✅ MongoDB connected');
   })
-  .catch((e) => {
-    console.error('❌ MongoDB connection error:', e.message);
+  .catch((error) => {
+    console.error('❌ MongoDB connection error:', error);
   });
 
 export const db = mongoose.connection;
