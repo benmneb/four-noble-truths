@@ -198,7 +198,7 @@ export default function ElaborationAdd() {
           {...register('attribution', {
             required: 'Please enter the person who is being quoted',
             minLength: { value: 3, message: 'Please enter a longer name' },
-            maxLength: { value: 50, message: 'Please enter a shorter name' },
+            maxLength: { value: 25, message: 'Please enter a shorter name' },
           })}
           error={Boolean(errors.attribution)}
         />
@@ -212,7 +212,11 @@ export default function ElaborationAdd() {
           }
           {...register('name', {
             minLength: { value: 3, message: 'Please enter a longer name' },
-            maxLength: { value: 50, message: 'Please enter a shorter name' },
+            maxLength: { value: 25, message: 'Please enter a shorter name' },
+            pattern: {
+              value: /^((?!benmneb).)*$/gi,
+              message: 'Please enter your own name',
+            },
           })}
           error={Boolean(errors.name)}
         />
