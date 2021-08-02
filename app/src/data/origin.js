@@ -215,7 +215,7 @@ export const origin = {
     },
     {
       id: 'O-8',
-      text: 'Craving/thirst',
+      text: 'Craving',
       seeMore: ['AN 6.106', 'SN 38.10', 'SN 22.31'],
       children: [
         {
