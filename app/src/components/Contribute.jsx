@@ -158,7 +158,15 @@ export default function ElaborationAdd() {
           </TextField>
           <Autocomplete
             openOnFocus
-            options={Boolean(book) ? Object.values(suttas[book]) : []}
+            options={
+              Boolean(book)
+                ? Object.values(
+                    suttas[book].sort(
+                      (a, b) => a.replace(/-.*/g, '') - b.replace(/-.*/g, '')
+                    )
+                  )
+                : []
+            }
             disabled={!Boolean(book)}
             renderInput={(params) => (
               <TextField
