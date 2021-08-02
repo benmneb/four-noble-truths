@@ -3,6 +3,9 @@
 *.psd
 TODO.txt
 
+# environental variables
+.env
+
 # dependencies
 */node_modules
 */.pnp
