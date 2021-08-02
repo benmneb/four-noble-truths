@@ -68,11 +68,11 @@ export function setLoading(state) {
   };
 }
 
-export function setSnackPack(message, newContributionId) {
+export function setSnackPack(message, settings) {
   return {
     type: 'SET_SNACK_PACK',
     message,
-    newContributionId,
+    ...settings,
     key: new Date().getTime(),
   };
 }

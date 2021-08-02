@@ -79,6 +79,7 @@ export function reducer(state = initialState, action) {
           ...state.snackPack,
           {
             message: action.message,
+            severity: action.severity,
             newContributionId: action.newContributionId,
             key: action.key,
           },

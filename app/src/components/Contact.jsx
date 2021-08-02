@@ -16,7 +16,7 @@ import { useForm } from 'react-hook-form';
 
 import { useSelector, useDispatch } from 'react-redux';
 
-import { toggleContact } from '../state';
+import { setSnackPack, toggleContact } from '../state';
 import { mongo } from '../assets';
 import { LoadingButton } from '../utils';
 
@@ -45,14 +45,26 @@ export default function FormDialog() {
       });
 
       if (response.data.success) {
-        console.log('success!!', response.data);
+        dispatch(
+          setSnackPack('Message sent successfully', { severity: 'success' })
+        );
+        handleClose();
       } else {
-        console.warn('failure', response.data);
+        setPending(false);
+        dispatch(
+          setSnackPack('Could not send, please try again soon', {
+            severity: 'error',
+          })
+        );
       }
     } catch (error) {
-      console.error(error);
-    } finally {
-      handleClose();
+      console.error(error.message);
+      setPending(false);
+      dispatch(
+        setSnackPack('Could not send, please try again soon', {
+          severity: 'error',
+        })
+      );
     }
   }
 

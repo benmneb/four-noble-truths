@@ -84,12 +84,23 @@ export default function ElaborationAdd() {
         email: data.email,
       });
       const addedId = await response.data.id;
-      dispatch(setSnackPack('Contribution received', addedId));
+      dispatch(
+        setSnackPack('Contribution received', {
+          severity: 'success',
+          newContributionId: addedId,
+        })
+      );
       dispatch(getElaborations(clickedNode.for));
       dispatch(setLoading(true));
       handleClose();
     } catch (error) {
-      console.error(error);
+      console.error(error.message);
+      setPending(false);
+      dispatch(
+        setSnackPack("Something wen't wrong, please try again", {
+          severity: 'error',
+        })
+      );
     }
   }
 

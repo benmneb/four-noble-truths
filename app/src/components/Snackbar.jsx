@@ -46,7 +46,12 @@ export default function Snackbar() {
       dispatch(setSnackPack('Contribution removed'));
       handleClose();
     } catch (error) {
-      console.error(error);
+      console.error(error.message);
+      dispatch(
+        setSnackPack('Could not remove, something went wrong', {
+          severity: 'error',
+        })
+      );
     }
   }
 
@@ -56,7 +61,7 @@ export default function Snackbar() {
   }
 
   const key = latestSnack ? latestSnack.key : undefined;
-  const severity = latestSnack?.newContributionId ? 'success' : 'info';
+  const severity = latestSnack?.severity ? latestSnack.severity : 'info';
   const message = latestSnack ? latestSnack?.message : undefined;
   const actions = [
     ...(latestSnack?.newContributionId
