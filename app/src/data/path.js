@@ -785,52 +785,52 @@ export const path = {
         },
         {
           id: 'P-7.2',
-          text: 'Mindfulness of sensations/feeling',
+          text: 'Mindfulness of feeling',
           seeMore: ['DN 22', 'SN 36.31'],
           children: [
             {
               id: 'P-7.2.1',
-              text: 'Pleasant sensations/feeling',
+              text: 'Pleasant feeling',
               seeMore: ['DN 22'],
             },
             {
               id: 'P-7.2.2',
-              text: 'Painful sensations/feeling',
+              text: 'Painful feeling',
               seeMore: ['DN 22'],
             },
             {
               id: 'P-7.2.3',
-              text: 'Neutral sensations/feeling',
+              text: 'Neutral feeling',
               seeMore: ['DN 22'],
             },
             {
               id: 'P-7.2.4',
-              text: 'Pleasant material sensations/feeling',
+              text: 'Pleasant material feeling',
               seeMore: [],
             },
             {
               id: 'P-7.2.5',
-              text: 'Pleasant spiritual sensations/feeling',
+              text: 'Pleasant spiritual feeling',
               seeMore: [],
             },
             {
               id: 'P-7.2.6',
-              text: 'Painful material sensations/feeling',
+              text: 'Painful material feeling',
               seeMore: ['DN 22'],
             },
             {
               id: 'P-7.2.7',
-              text: 'Painful spiritual sensations/feeling',
+              text: 'Painful spiritual feeling',
               seeMore: ['DN 22'],
             },
             {
               id: 'P-7.2.8',
-              text: 'Neutral material sensations/feeling',
+              text: 'Neutral material feeling',
               seeMore: ['DN 22'],
             },
             {
               id: 'P-7.2.9',
-              text: 'Neutral spiritual sensations/feeling',
+              text: 'Neutral spiritual feeling',
               seeMore: ['DN 22'],
             },
           ],
@@ -931,7 +931,7 @@ export const path = {
                 },
                 {
                   id: 'P-7.4.2.2',
-                  text: 'Sensation/feeling',
+                  text: 'Feeling',
                   seeMore: ['DN 22'],
                 },
                 {
@@ -941,7 +941,7 @@ export const path = {
                 },
                 {
                   id: 'P-7.4.2.4',
-                  text: 'Volitional formations',
+                  text: 'Choices',
                   seeMore: ['DN 22'],
                 },
                 {
@@ -1020,7 +1020,7 @@ export const path = {
                 },
                 {
                   id: 'P-7.4.4.6',
-                  text: 'Concentration/immersion',
+                  text: 'Immersion',
                   seeMore: ['DN 22'],
                 },
                 {
@@ -1089,25 +1089,28 @@ export const path = {
     },
     {
       id: 'P-8',
-      text: 'Right Concentration',
-      seeMore: ['SN 34', 'AN 5.28'],
+      text: 'Right Immersion',
+      seeMore: ['SN 34', 'DN 22', 'MN 141'],
       children: [
         {
           id: 'P-8.1',
-          text: 'First jhana',
-          seeMore: ['MN 43 - factors'],
+          text: 'First absorption',
+          seeMore: ['DN 2', 'DN 10', 'MN 39', 'MN 77', 'MN 119'],
         },
         {
           id: 'P-8.2',
-          text: 'Second jhana',
+          text: 'Second absorption',
+          seeMore: ['DN 2', 'DN 10', 'MN 39', 'MN 77', 'MN 119'],
         },
         {
           id: 'P-8.3',
-          text: 'Third jhana',
+          text: 'Third absorption',
+          seeMore: ['DN 2', 'DN 10', 'MN 39', 'MN 77', 'MN 119'],
         },
         {
           id: 'P-8.4',
-          text: 'Fourth jhana',
+          text: 'Fourth absorption',
+          seeMore: ['DN 2', 'DN 10', 'MN 39', 'MN 77', 'MN 119'],
         },
       ],
     },

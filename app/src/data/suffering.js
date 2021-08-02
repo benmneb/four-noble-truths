@@ -74,7 +74,7 @@ export const suffering = {
         },
         {
           id: 'S-10.2',
-          text: 'Sensation/feeling',
+          text: 'Feeling',
           seeMore: ['SN 22.57'],
         },
         {
@@ -84,7 +84,7 @@ export const suffering = {
         },
         {
           id: 'S-10.4',
-          text: 'Volitional formations',
+          text: 'Choices',
           seeMore: ['SN 22.57'],
         },
         {

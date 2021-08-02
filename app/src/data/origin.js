@@ -40,7 +40,7 @@ export const origin = {
     },
     {
       id: 'O-2',
-      text: 'Volitional formations',
+      text: 'Choices',
       seeMore: ['AN 3.23'],
       children: [
         {
@@ -89,11 +89,11 @@ export const origin = {
     },
     {
       id: 'O-4',
-      text: 'Mind & matter',
+      text: 'Name and form',
       children: [
         {
           id: 'O-4.1',
-          text: 'Sensation/feeling',
+          text: 'Feeling',
         },
         {
           id: 'O-4.2',
@@ -197,19 +197,19 @@ export const origin = {
     },
     {
       id: 'O-7',
-      text: 'Sensation/feeling',
+      text: 'Feeling',
       children: [
         {
           id: 'O-7.1',
-          text: 'Pleasant sensations/feelings',
+          text: 'Pleasant feelings',
         },
         {
           id: 'O-7.2',
-          text: 'Painful sensations/feelings',
+          text: 'Painful feelings',
         },
         {
           id: 'O-7.3',
-          text: 'Neutral sensations/feelings',
+          text: 'Neutral feelings',
         },
       ],
     },

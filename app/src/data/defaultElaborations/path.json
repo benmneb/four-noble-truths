@@ -109,7 +109,7 @@
     "for": "P-1.4",
     "submittedBy": "benmneb",
     "reference": "SN 12.2",
-    "text": "What is dependent origination? Ignorance is a condition for volitional formations. Volitional formations are a condition for consciousness. Consciousness is a condition for mind and matter. Mind and matter are conditions for the six sense fields. The six sense fields are conditions for contact. Contact is a condition for feeling. Feeling is a condition for craving. Craving is a condition for grasping. Grasping is a condition for continued existence. Continued existence is a condition for rebirth. Rebirth is a condition for old age and death, sorrow, lamentation, pain, sadness, and distress to come to be. That is how this entire mass of suffering originates."
+    "text": "What is dependent origination? Ignorance is a condition for choices. Choices are a condition for consciousness. Consciousness is a condition for name and form. Name and form are conditions for the six sense fields. The six sense fields are conditions for contact. Contact is a condition for feeling. Feeling is a condition for craving. Craving is a condition for grasping. Grasping is a condition for continued existence. Continued existence is a condition for rebirth. Rebirth is a condition for old age and death, sorrow, lamentation, pain, sadness, and distress to come to be. That is how this entire mass of suffering originates."
   },
   {
     "for": "P-1.5",
@@ -989,7 +989,7 @@
     "for": "P-7.4.2.4",
     "submittedBy": "benmneb",
     "reference": "MN 10",
-    "text": "And how does a mendicant meditate observing an aspect of principles with respect to the five grasping aggregates? Such are volitional formations, such is the origin of volitional formations, such is the ending of volitional formations. That’s how a mendicant meditates by observing an aspect of principles with respect to the five grasping aggregates."
+    "text": "And how does a mendicant meditate observing an aspect of principles with respect to the five grasping aggregates? Such are choices, such is the origin of choices, such is the ending of choices. That’s how a mendicant meditates by observing an aspect of principles with respect to the five grasping aggregates."
   },
   {
     "for": "P-7.4.2.5",
@@ -1078,7 +1078,7 @@
   {
     "for": "P-7.4.4.6",
     "submittedBy": "benmneb",
-    "text": "And how does a mendicant meditate observing an aspect of principles with respect to the seven awakening factors? It’s when a mendicant who has the awakening factor of concentration/immersion in them understands: ‘I have the awakening factor of concentration/immersion in me.’ When they don’t have the awakening factor of concentration/immersion in them, they understand: ‘I don’t have the awakening factor of concentration/immersion in me.’ They understand how the awakening factor of concentration/immersion that has not arisen comes to arise; and how the awakening factor of concentration/immersion that has arisen becomes fulfilled by development.",
+    "text": "And how does a mendicant meditate observing an aspect of principles with respect to the seven awakening factors? It’s when a mendicant who has the awakening factor of immersion in them understands: ‘I have the awakening factor of immersion in me.’ When they don’t have the awakening factor of immersion in them, they understand: ‘I don’t have the awakening factor of immersion in me.’ They understand how the awakening factor of immersion that has not arisen comes to arise; and how the awakening factor of immersion that has arisen becomes fulfilled by development.",
     "reference": "MN 10"
   },
   {
@@ -1145,6 +1145,30 @@
     "for": "P-8",
     "submittedBy": "benmneb",
     "reference": "SN 45.8",
-    "text": "What is right concentration? It’s when a mendicant, quite secluded from sensual pleasures, secluded from unskillful qualities, enters and remains in the first absorption, which has the rapture and bliss born of seclusion, while placing the mind and keeping it connected. As the placing of the mind and keeping it connected are stilled, they enter and remain in the second absorption, which has the rapture and bliss born of concentration, with internal clarity and confidence, and unified mind, without placing the mind and keeping it connected. And with the fading away of rapture, they enter and remain in the third absorption, where they meditate with equanimity, mindful and aware, personally experiencing the bliss of which the noble ones declare, ‘Equanimous and mindful, one meditates in bliss.’ Giving up pleasure and pain, and ending former happiness and sadness, they enter and remain in the fourth absorption, without pleasure or pain, with pure equanimity and mindfulness. This is called right concentration.”"
+    "text": "What is right immersion? It’s when a mendicant, quite secluded from sensual pleasures, secluded from unskillful qualities, enters and remains in the first absorption, which has the rapture and bliss born of seclusion, while placing the mind and keeping it connected. As the placing of the mind and keeping it connected are stilled, they enter and remain in the second absorption, which has the rapture and bliss born of immersion, with internal clarity and confidence, and unified mind, without placing the mind and keeping it connected. And with the fading away of rapture, they enter and remain in the third absorption, where they meditate with equanimity, mindful and aware, personally experiencing the bliss of which the noble ones declare, ‘Equanimous and mindful, one meditates in bliss.’ Giving up pleasure and pain, and ending former happiness and sadness, they enter and remain in the fourth absorption, without pleasure or pain, with pure equanimity and mindfulness. This is called right immersion.”"
+  },
+  {
+    "for": "P-8.1",
+    "submittedBy": "benmneb",
+    "reference": "AN 5.28",
+    "text": "Firstly, a mendicant, quite secluded from sensual pleasures, secluded from unskillful qualities, enters and remains in the first absorption. It has the rapture and bliss born of seclusion, while placing the mind and keeping it connected. They drench, steep, fill, and spread their body with rapture and bliss born of seclusion. There’s no part of the body that’s not spread with rapture and bliss born of seclusion. It’s like when a deft bathroom attendant or their apprentice pours bath powder into a bronze dish, sprinkling it little by little with water. They knead it until the ball of bath powder is soaked and saturated with moisture, spread through inside and out; yet no moisture oozes out. In the same way, a mendicant drenches, steeps, fills, and spreads their body with rapture and bliss born of seclusion. There’s no part of the body that’s not spread with rapture and bliss born of seclusion. This is the first way to develop noble right immersion."
+  },
+  {
+    "for": "P-8.2",
+    "submittedBy": "benmneb",
+    "reference": "AN 5.28",
+    "text": "Furthermore, as the placing of the mind and keeping it connected are stilled, a mendicant enters and remains in the second absorption. It has the rapture and bliss born of immersion, with internal clarity and confidence, and unified mind, without placing the mind and keeping it connected. They drench, steep, fill, and spread their body with rapture and bliss born of immersion. There’s no part of the body that’s not spread with rapture and bliss born of immersion. It’s like a deep lake fed by spring water. There’s no inlet to the east, west, north, or south, and no rainfall to replenish it from time to time. But the stream of cool water welling up in the lake drenches, steeps, fills, and spreads throughout the lake. There’s no part of the lake that’s not spread through with cool water. In the same way, a mendicant drenches, steeps, fills, and spreads their body with rapture and bliss born of immersion. There’s no part of the body that’s not spread with rapture and bliss born of immersion. This is the second way to develop noble right immersion."
+  },
+  {
+    "for": "P-8.3",
+    "submittedBy": "benmneb",
+    "reference": "AN 5.28",
+    "text": "Furthermore, with the fading away of rapture, a mendicant enters and remains in the third absorption. They meditate with equanimity, mindful and aware, personally experiencing the bliss of which the noble ones declare, ‘Equanimous and mindful, one meditates in bliss.’ They drench, steep, fill, and spread their body with bliss free of rapture. There’s no part of the body that’s not spread with bliss free of rapture. It’s like a pool with blue water lilies, or pink or white lotuses. Some of them sprout and grow in the water without rising above it, thriving underwater. From the tip to the root they’re drenched, steeped, filled, and soaked with cool water. There’s no part of them that’s not spread through with cool water. In the same way, a mendicant drenches, steeps, fills, and spreads their body with bliss free of rapture. There’s no part of the body that’s not spread with bliss free of rapture. This is the third way to develop noble right immersion."
+  },
+  {
+    "for": "P-8.4",
+    "submittedBy": "benmneb",
+    "reference": "AN 5.28",
+    "text": "Furthermore, giving up pleasure and pain, and ending former happiness and sadness, a mendicant enters and remains in the fourth absorption. It is without pleasure or pain, with pure equanimity and mindfulness. They sit spreading their body through with pure bright mind. There’s no part of the body that’s not spread with pure bright mind. It’s like someone sitting wrapped from head to foot with white cloth. There’s no part of the body that’s not spread over with white cloth. In the same way, they sit spreading their body through with pure bright mind. There’s no part of the body that’s not spread with pure bright mind. This is the fourth way to develop noble right immersion."
   }
 ]

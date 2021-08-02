@@ -21,15 +21,15 @@ export const cessation = {
     },
     {
       id: 'C-2',
-      text: 'The cessation of volitional formations',
+      text: 'The cessation of choices',
     },
     {
       id: 'C-3',
-      text: 'The cessation of consciousnesss',
+      text: 'The cessation of consciousness',
     },
     {
       id: 'C-4',
-      text: 'The cessation of mind and matter',
+      text: 'The cessation of name and form',
     },
     {
       id: 'C-5',
@@ -41,7 +41,7 @@ export const cessation = {
     },
     {
       id: 'C-7',
-      text: 'The cessation of sensations',
+      text: 'The cessation of feeling',
     },
     {
       id: 'C-8',
