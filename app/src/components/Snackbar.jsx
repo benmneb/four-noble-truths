@@ -72,7 +72,7 @@ export default function Snackbar() {
           </LoadingButton>,
         ]
       : []),
-    <IconButton key="2" size="small" onClick={handleClose}>
+    <IconButton key="2" size="small" color="inherit" onClick={handleClose}>
       <CloseRounded fontSize="small" />
     </IconButton>,
   ];
