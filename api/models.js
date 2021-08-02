@@ -10,6 +10,7 @@ export const Elaboration = mongoose.model(
       },
       text: {
         type: String,
+        required: true,
       },
       reference: {
         type: String,
@@ -17,11 +18,15 @@ export const Elaboration = mongoose.model(
       },
       spokenBy: {
         type: String,
-        default: 'The Buddha',
+        required: true,
       },
       submittedBy: {
         type: String,
         default: 'anonymous',
+      },
+      email: {
+        type: String,
+        required: true,
       },
     },
     { timestamps: true }

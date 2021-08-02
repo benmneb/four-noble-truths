@@ -81,6 +81,7 @@ export default function ElaborationAdd() {
         text: data.quote,
         spokenBy: data.attribution,
         ...(data.name && { submittedBy: data.name }),
+        email: data.email,
       });
       const addedId = await response.data.id;
       dispatch(setSnackPack('Contribution received', addedId));
