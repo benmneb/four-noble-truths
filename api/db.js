@@ -1,12 +1,18 @@
 import mongoose from 'mongoose';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 mongoose
-  .connect('mongodb://127.0.0.1:27017/4NT', {
+  .connect(process.env.MONGO_CONNECTION_STRING, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
+  .then(() => {
+    console.log('✅ MongoDB connected');
+  })
   .catch((e) => {
-    console.error('❌ Connection error', e.message);
+    console.error('❌ MongoDB connection error:', e.message);
   });
 
 export const db = mongoose.connection;
