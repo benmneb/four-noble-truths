@@ -1,8 +1,8 @@
 import nodemailer from 'nodemailer';
 
-import { Elaboration } from './models.js';
+import { Elaboration } from '../models/index.js';
 
-import { accessToken } from './googleAuth.js';
+import { accessToken } from '../utils/index.js';
 
 export async function get(req, res) {
   await Elaboration.find({ for: req.params.for }, (error, data) => {

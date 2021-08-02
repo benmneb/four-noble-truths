@@ -1,6 +1,6 @@
 import express from 'express';
 
-import { get, add, remove, contact } from './controllers.js';
+import { get, add, remove, contact } from '../controllers/index.js';
 
 export const router = express.Router();
 
