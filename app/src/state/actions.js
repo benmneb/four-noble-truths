@@ -37,14 +37,6 @@ export function setVisibleElaboration(elaboration) {
   };
 }
 
-export function setTranslation(pali, english) {
-  return {
-    type: 'SET_TRANSLATION',
-    pali,
-    english,
-  };
-}
-
 export function toggleElaborationDrawer() {
   return {
     type: 'TOGGLE_ELABORATION_DRAWER',

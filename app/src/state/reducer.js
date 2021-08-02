@@ -12,13 +12,6 @@ const initialState = {
   showAboutDrawer: false,
   showAddElaboration: false,
   snackPack: [],
-  translations: {
-    samadhi: 'stillness',
-    sankhara: 'volitional formations',
-    vedana: 'sensation',
-    namarupa: 'mind and matter',
-    jhana: 'jhāna',
-  },
   themeType: 'dark',
 };
 
@@ -52,14 +45,6 @@ export function reducer(state = initialState, action) {
       return {
         ...state,
         visibleElaboration: action.elaboration,
-      };
-    case 'SET_TRANSLATION':
-      return {
-        ...state,
-        translations: {
-          ...state.translations,
-          [action.pali]: action.english,
-        },
       };
     case 'TOGGLE_ELABORATION_DRAWER':
       return {
