@@ -1,4 +1,4 @@
-import { Box, IconButton, Typography } from '@material-ui/core';
+import { Box, IconButton, Tooltip, Typography } from '@material-ui/core';
 import { MailOutlineRounded, GitHub } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -43,16 +43,20 @@ export default function Footer() {
           benmneb
         </Link>
         <Box display="flex" justifyContent="space-around">
-          <IconButton onClick={() => dispatch(toggleContact())}>
-            <MailOutlineRounded />
-          </IconButton>
-          <IconButton
-            href="https://github.com/benmneb/four-noble-truths"
-            target="_blank"
-            rel="noopener"
-          >
-            <GitHub />
-          </IconButton>
+          <Tooltip title="Contact" placement="left">
+            <IconButton onClick={() => dispatch(toggleContact())}>
+              <MailOutlineRounded />
+            </IconButton>
+          </Tooltip>
+          <Tooltip title="View source" placement="right">
+            <IconButton
+              href="https://github.com/benmneb/four-noble-truths"
+              target="_blank"
+              rel="noopener"
+            >
+              <GitHub />
+            </IconButton>
+          </Tooltip>
         </Box>
       </Typography>
     </Box>
