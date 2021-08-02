@@ -33,6 +33,11 @@ export function useTheme() {
             borderRadius: 8,
           },
         },
+        MuiDialogActions: {
+          root: {
+            padding: 16,
+          },
+        },
       },
     })
   );
