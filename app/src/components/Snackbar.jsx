@@ -101,7 +101,7 @@ export default function Snackbar() {
       <Alert
         id="message-id"
         elevation={6}
-        variant="filled"
+        variant="standard"
         severity={severity}
         action={actions}
       >
