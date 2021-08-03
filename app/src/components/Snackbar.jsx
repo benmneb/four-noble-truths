@@ -63,6 +63,7 @@ export default function Snackbar() {
   const key = latestSnack ? latestSnack.key : undefined;
   const severity = latestSnack?.severity ? latestSnack.severity : 'info';
   const message = latestSnack ? latestSnack?.message : undefined;
+  const autoHideDuration = latestSnack?.disableHide ? null : 6000;
   const actions = [
     ...(latestSnack?.newContributionId
       ? [
@@ -90,7 +91,7 @@ export default function Snackbar() {
         horizontal: 'left',
       }}
       open={show}
-      autoHideDuration={6000}
+      autoHideDuration={autoHideDuration}
       onClose={handleClose}
       onExited={handleExited}
       ContentProps={{

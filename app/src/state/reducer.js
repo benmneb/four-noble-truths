@@ -80,6 +80,7 @@ export function reducer(state = initialState, action) {
           {
             message: action.message,
             severity: action.severity,
+            disableHide: action.disableHide,
             newContributionId: action.newContributionId,
             key: action.key,
           },

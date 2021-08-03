@@ -2,13 +2,24 @@ import { Fragment } from 'react';
 
 import clsx from 'clsx';
 
-import { Box, Button, Divider, Typography } from '@material-ui/core';
+import {
+  Box,
+  Button,
+  Divider,
+  IconButton,
+  Tooltip,
+  Typography,
+} from '@material-ui/core';
+import { FlagRounded } from '@material-ui/icons/';
 import { makeStyles } from '@material-ui/core/styles';
 
+import { useConfirm } from 'material-ui-confirm';
+
 import { useSelector, useDispatch } from 'react-redux';
-import { toggleAddElaboration } from '../state';
+import { setSnackPack, toggleAddElaboration } from '../state';
 
 import { TooltipChip, getTimeAgo } from '../utils';
+import { mongo } from '../assets';
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -35,9 +46,46 @@ const useStyles = makeStyles((theme) => ({
 export default function ElaborationContents() {
   const styles = useStyles();
   const dispatch = useDispatch();
+  const confirm = useConfirm();
 
   const visibleElaboration = useSelector((state) => state.visibleElaboration);
   const clickedNode = useSelector((state) => state.clickedNode);
+
+  async function sendFlag(flaggedElaboration) {
+    dispatch(
+      setSnackPack('Letting admin know... Please wait... ⏳', {
+        disableHide: true,
+      })
+    );
+    try {
+      const request = await mongo.put('/flag', flaggedElaboration);
+      const response = await request.data;
+      if (response.success) {
+        dispatch(setSnackPack(response.message, { severity: 'success' }));
+      }
+    } catch (error) {
+      console.error('sendFlag error:', error);
+      dispatch(
+        setSnackPack('Could not flag. Please try again soon', {
+          severity: 'error',
+        })
+      );
+    }
+  }
+
+  function handleFlagClick(flaggedElaboration) {
+    confirm({
+      title: 'Flag as inappropriate',
+      description:
+        'Are you sure you want to flag this elaboration as spam, off-topic, or otherwise inappropriate?',
+      confirmationText: 'Confirm',
+      confirmationButtonProps: {
+        variant: 'outlined',
+      },
+    })
+      .then(() => sendFlag(flaggedElaboration))
+      .catch(() => console.log('cancelled'));
+  }
 
   return (
     <Box>
@@ -58,14 +106,26 @@ export default function ElaborationContents() {
                   : '- The Buddha'}
                 <TooltipChip sutta={elaboration.reference} />
               </Typography>
-              <Typography
-                color="textSecondary"
-                variant="subtitle2"
-                component="p"
+              <Box
+                display="flex"
+                alignItems="center"
+                justifyContent="space-between"
               >
-                Added by <b>{elaboration.submittedBy}</b>{' '}
-                {getTimeAgo(new Date(elaboration.createdAt))}
-              </Typography>
+                <Typography color="textSecondary" variant="subtitle2">
+                  Added by <b>{elaboration.submittedBy}</b>{' '}
+                  {getTimeAgo(new Date(elaboration.createdAt))}
+                </Typography>
+                {elaboration.submittedBy !== 'benmneb' && (
+                  <Tooltip title="Flag as inappropriate" placement="left">
+                    <IconButton
+                      size="small"
+                      onClick={() => handleFlagClick(elaboration)}
+                    >
+                      <FlagRounded fontSize="small" />
+                    </IconButton>
+                  </Tooltip>
+                )}
+              </Box>
             </Box>
             {visibleElaboration.length > 1 &&
               visibleElaboration.length - 1 > index && (

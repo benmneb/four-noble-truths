@@ -1,8 +1,6 @@
-import nodemailer from 'nodemailer';
-
 import { Elaboration } from '../models/index.js';
 
-import { accessToken } from '../utils/index.js';
+import { transporter } from '../utils/index.js';
 
 export async function get(req, res) {
   await Elaboration.find({ for: req.params.for }, (error, data) => {
@@ -92,20 +90,6 @@ export async function contact(req, res) {
     <p>from ${email ? email : '<i>anonymous</i>'}</p>
     `;
 
-  const transporter = nodemailer.createTransport({
-    host: 'smtp.gmail.com',
-    port: 465,
-    secure: true,
-    auth: {
-      type: 'OAuth2',
-      user: process.env.GMAIL_USER,
-      clientId: process.env.GOOGLE_CLIENT_ID,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-      refreshToken: process.env.GOOGLE_OAUTH_REFRESH_TOKEN,
-      accessToken,
-    },
-  });
-
   try {
     const info = await transporter.sendMail({
       from: process.env.GMAIL_USER,
@@ -117,6 +101,39 @@ export async function contact(req, res) {
     res.status(200).json({
       success: true,
       messageId: info.messageId,
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({
+      success: false,
+      error: error.message,
+    });
+  }
+}
+
+export async function flag(req, res) {
+  try {
+    const update = await Elaboration.findByIdAndUpdate(
+      { _id: req.body._id },
+      {
+        $inc: { flagCount: 1 },
+        flaggedLast: new Date(),
+      },
+      { new: true }
+    );
+
+    const email = await transporter.sendMail({
+      from: process.env.GMAIL_USER,
+      to: process.env.GMAIL_USER,
+      subject: 'New flag/report from 4NT 😵',
+      html: JSON.stringify(update, null, 2),
+    });
+
+    res.status(200).json({
+      success: true,
+      message: 'Succesfully flagged',
+      emailMessageId: email.messageId,
+      flagCount: update.flagCount,
     });
   } catch (error) {
     console.error(error);

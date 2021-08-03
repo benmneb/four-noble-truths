@@ -1,1 +1,1 @@
-export { accessToken } from './googleAuth.js';
+export { transporter } from './transporter.js';

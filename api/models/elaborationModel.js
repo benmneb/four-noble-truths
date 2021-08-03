@@ -28,6 +28,12 @@ export const Elaboration = mongoose.model(
         type: String,
         required: true,
       },
+      flagCount: {
+        type: Number,
+      },
+      flaggedLast: {
+        type: Date,
+      },
     },
     { timestamps: true }
   )
