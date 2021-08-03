@@ -11,6 +11,9 @@ import {
 import { Autocomplete } from '@material-ui/lab';
 import { makeStyles } from '@material-ui/core/styles';
 
+import parse from 'autosuggest-highlight/parse';
+import match from 'autosuggest-highlight/match';
+
 import { useForm } from 'react-hook-form';
 
 import { useSelector, useDispatch } from 'react-redux';
@@ -21,8 +24,8 @@ import {
   setLoading,
 } from '../state';
 
-import { LoadingButton } from '../utils';
-import { suttas } from '../data';
+import { LoadingButton, ListboxComponent, renderGroup } from '../utils';
+import { suttas, names } from '../data';
 import { mongo } from '../assets';
 
 const useStyles = makeStyles((theme) => ({
@@ -48,6 +51,13 @@ const useStyles = makeStyles((theme) => ({
         {
           columnGap: 0,
         },
+    },
+  },
+  listbox: {
+    boxSizing: 'border-box',
+    '& ul': {
+      padding: 0,
+      margin: 0,
     },
   },
 }));
@@ -195,20 +205,46 @@ export default function ElaborationAdd() {
           })}
           error={Boolean(errors.quote)}
         />
-        <TextField
-          label="Attribution"
-          variant="outlined"
-          helperText={
-            Boolean(errors.attribution)
-              ? errors.attribution.message
-              : 'Who is being quoted?'
-          }
-          {...register('attribution', {
-            required: 'Please enter the person who is being quoted',
-            minLength: { value: 3, message: 'Please enter a longer name' },
-            maxLength: { value: 25, message: 'Please enter a shorter name' },
-          })}
-          error={Boolean(errors.attribution)}
+        <Autocomplete
+          disableListWrap
+          classes={{ listbox: styles.listbox }}
+          ListboxComponent={ListboxComponent}
+          renderGroup={renderGroup}
+          options={names}
+          getOptionLabel={(option) => option}
+          renderInput={(params) => (
+            <TextField
+              {...params}
+              label="Attribution"
+              variant="outlined"
+              error={Boolean(errors.attribution)}
+              helperText={
+                Boolean(errors.attribution)
+                  ? errors.attribution.message
+                  : 'Who is being quoted?'
+              }
+              {...register('attribution', {
+                required: 'Please enter the person who is being quoted',
+              })}
+            />
+          )}
+          renderOption={(option, { inputValue }) => {
+            const matches = match(option, inputValue);
+            const parts = parse(option, matches);
+
+            return (
+              <div>
+                {parts.map((part, index) => (
+                  <span
+                    key={index}
+                    style={{ fontWeight: part.highlight ? 700 : 400 }}
+                  >
+                    {part.text}
+                  </span>
+                ))}
+              </div>
+            );
+          }}
         />
         <TextField
           label="Your name (optional)"
