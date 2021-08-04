@@ -40,4 +40,4 @@ If the Four Noble Truths are what is realised by arahants...
 
 This app is my attempt to illustrate and organise this, while helping me study the suttas of the Pali Canon and practice web development.
 
-_Made with metta while I should have been meditating._
+_Made with metta at [Bodhinyana Monastery](https://bswa.org/location/bodhinyana-monastery/) while I should have been meditating._
