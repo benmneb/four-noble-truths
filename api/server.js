@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 import app from './app.js';
 
-const apiPort = 5000;
+const apiPort = process.env.PORT || 5000;
 
 app.listen(apiPort, () =>
   console.log(

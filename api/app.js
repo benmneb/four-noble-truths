@@ -30,8 +30,8 @@ app.use(xss());
 app.use(hpp());
 app.use('/api', router);
 
-app.get('/', (req, res) => {
-  res.send('Hello World!');
+app.get('*', (req, res) => {
+  res.send('Hello World!!1 🤓');
 });
 
 export default app;
