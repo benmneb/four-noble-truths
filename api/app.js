@@ -1,12 +1,13 @@
-import express from 'express';
 import cors from 'cors';
+import express from 'express';
+import mongoSanitize from 'express-mongo-sanitize';
 import rateLimit from 'express-rate-limit';
 import helmet from 'helmet';
-import mongoSanitize from 'express-mongo-sanitize';
-import xss from 'xss-clean';
 import hpp from 'hpp';
+import xss from 'xss-clean';
 
 import { router } from './routes/index.js';
+import { auth } from './utils/auth.js';
 
 const app = express();
 
@@ -28,6 +29,7 @@ app.use(express.json());
 app.use(mongoSanitize());
 app.use(xss());
 app.use(hpp());
+app.use(auth());
 app.use('/api', router);
 
 app.get('*', (req, res) => {
