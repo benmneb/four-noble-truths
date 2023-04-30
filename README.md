@@ -6,7 +6,7 @@
 
 ![MongoDB](https://img.shields.io/badge/express-111111.svg?style=for-the-badge&logo=express) ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
 
-## [`Launch app ↗️`](https://four-noble-truths.vercel.app)
+#### [`Launch app ↗️`](https://four-noble-truths.vercel.app)
 
 My first MERN stack app 🤓
 
