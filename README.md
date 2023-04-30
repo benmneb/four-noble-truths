@@ -1,28 +1,20 @@
-# 🔢 Four Noble Truths
+# Four Noble Truths 🔢
 
-**<https://four-noble-truths.vercel.app/>**
+## [`Launch app ↗️`](https://four-noble-truths.vercel.app)
+
+[![GitHub deployments](https://img.shields.io/github/deployments/benmneb/four-noble-truths/production?label=vercel&logo=vercel&logoColor=white&style=for-the-badge)](https://vercel.com/benmneb/four-noble-truths/deployments)
+
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white) ![PWA](https://img.shields.io/badge/PWA-yellow?style=for-the-badge&logo=pwa) ![MUI](https://img.shields.io/badge/MUI-%230081CB.svg?style=for-the-badge&logo=mui&logoColor=white)
+
+![MongoDB](https://img.shields.io/badge/express-111111.svg?style=for-the-badge&logo=express) ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
 
 My first MERN stack app 🤓
 
-- Front-end
+Some data scraped from [Sutta Central](https://suttacentral.net/) 🙏 using [Webscraper.io](https://webscraper.io/)
 
-  - Hosted on [Vercel](https://vercel.com)
-  - Bootstrapped with [Create-React-App](https://create-react-app.dev/)
-  - Made with [Material-UI](https://material-ui.com/)
-  - State handled in [Redux](https://redux.js.org/)/[React-Redux](https://react-redux.js.org/)/[Redux-Thunk](https://github.com/reduxjs/redux-thunk)
-  - Some data scraped from [Sutta Central](https://suttacentral.net/) using [Webscraper.io](https://webscraper.io/)
-  - Form validation made easy with [React-Hook-Form](https://github.com/react-hook-form/react-hook-form#readme)
-  - App icons and favicon from the awesome [RealFaviconGenerator](https://realfavicongenerator.net/)
-  - API called with [Axios](https://axios-http.com/)
-  - [see more](https://github.com/benmneb/four-noble-truths/blob/master/app/package.json)
+Server hosted on [Fly.io](https://fly.io)
 
-- Back-end
-  - Hosted on [Heroku](https://www.heroku.com/) (hence the slow initial server request, while it "wakes up")
-  - Made with [ExpressJS](https://expressjs.com/)
-  - Objects modelled with [Mongoose](https://mongoosejs.com/)
-  - Data hosted on [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
-  - Emails sent with [Nodemailer](https://nodemailer.com/about/)
-  - [see more](https://github.com/benmneb/four-noble-truths/blob/master/api/package.json)
+_Made with metta at [Bodhinyana Monastery](https://bswa.org/location/bodhinyana-monastery/) while I should have been meditating._
 
 ## About
 
@@ -40,4 +32,10 @@ If the Four Noble Truths are what is realised by arahants...
 
 This app is my attempt to illustrate and organise this, while helping me study the suttas of the Pali Canon and practice web development.
 
-_Made with metta at [Bodhinyana Monastery](https://bswa.org/location/bodhinyana-monastery/) while I should have been meditating._
+---
+
+[![Copyright](https://img.shields.io/badge/no%20copyright-benmneb-important?style=for-the-badge)](https://github.com/benmneb) [![Lisence](https://img.shields.io/badge/license-CC0%201.0-informational?style=for-the-badge)](https://creativecommons.org/publicdomain/zero/1.0/)
+
+    This work is dedicated to the public domain via Creative Commons Zero (CC0).
+
+    You are free to copy or modify it as you see fit. Attribution is appreciated but not legally required.
