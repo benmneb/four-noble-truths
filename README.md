@@ -1,12 +1,12 @@
 # Four Noble Truths 🔢
 
-## [`Launch app ↗️`](https://four-noble-truths.vercel.app)
-
 [![GitHub deployments](https://img.shields.io/github/deployments/benmneb/four-noble-truths/production?label=vercel&logo=vercel&logoColor=white&style=for-the-badge)](https://vercel.com/benmneb/four-noble-truths/deployments)
 
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white) ![PWA](https://img.shields.io/badge/PWA-yellow?style=for-the-badge&logo=pwa) ![MUI](https://img.shields.io/badge/MUI-%230081CB.svg?style=for-the-badge&logo=mui&logoColor=white)
 
 ![MongoDB](https://img.shields.io/badge/express-111111.svg?style=for-the-badge&logo=express) ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
+
+## [`Launch app ↗️`](https://four-noble-truths.vercel.app)
 
 My first MERN stack app 🤓
 
