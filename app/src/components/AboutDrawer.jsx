@@ -1,11 +1,11 @@
 import { Box, Button, SwipeableDrawer, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import { MailOutlineRounded, GitHub } from '@material-ui/icons';
+import { GitHub, MailOutlineRounded } from '@material-ui/icons';
 
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { toggleAboutDrawer, toggleContact } from '../state';
 
-import { TooltipChip } from '../utils';
+import { Link, TooltipChip } from '../utils';
 
 const useStyles = makeStyles({
   drawerPaper: {
@@ -64,7 +64,7 @@ export default function AboutDrawer() {
         </Box>
         <Typography paragraph>
           ...then the entirity of the Buddhas teachings would stem from the Four
-          Noble Truths, right?
+          Noble Truths...
         </Typography>
         <Box component="figure" margin={2}>
           <Typography component="blockquote">
@@ -107,7 +107,18 @@ export default function AboutDrawer() {
           </Button>
         </Box>
         <Typography paragraph>
-          <i>Made with metta while I should have been meditating.</i>
+          <i>
+            Made with metta at{' '}
+            <Link
+              footerLink
+              href="https://bswa.org/location/bodhinyana-monastery/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Bodhinyana Monastery
+            </Link>{' '}
+            while I should have been meditating.
+          </i>
         </Typography>
       </Box>
     </SwipeableDrawer>
