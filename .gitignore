@@ -2,6 +2,7 @@
 
 *.psd
 TODO.txt
+TODO.md
 
 # environental variables
 .env
