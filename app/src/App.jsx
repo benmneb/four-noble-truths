@@ -7,7 +7,6 @@ import { useTheme } from './assets';
 import {
   AboutDrawer,
   Contact,
-  Contribute,
   Explanation,
   Footer,
   Snackbar,
@@ -27,7 +26,6 @@ export default function App() {
         <Explanation />
         <Footer />
         <AboutDrawer />
-        <Contribute />
         <Snackbar />
         <Contact />
       </ConfirmProvider>

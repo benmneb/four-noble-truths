@@ -1,8 +1,9 @@
 import { Box, Button, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
-import { useSelector, useDispatch } from 'react-redux';
-import { toggleAddElaboration } from '../state';
+import { useSelector } from 'react-redux';
+
+import { handleContributeClick } from '../utils';
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -16,8 +17,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function ElaborationNoContents() {
   const styles = useStyles();
-  const dispatch = useDispatch();
-
   const clickedNode = useSelector((state) => state.clickedNode);
 
   return (
@@ -34,7 +33,7 @@ export default function ElaborationNoContents() {
         <Button
           variant="outlined"
           color="primary"
-          onClick={() => dispatch(toggleAddElaboration())}
+          onClick={() => handleContributeClick(clickedNode)}
         >
           Contribute
         </Button>

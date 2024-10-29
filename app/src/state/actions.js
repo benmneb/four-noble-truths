@@ -49,12 +49,6 @@ export function toggleAboutDrawer() {
   };
 }
 
-export function toggleAddElaboration() {
-  return {
-    type: 'TOGGLE_ADD_ELABORATION',
-  };
-}
-
 export function toggleContact() {
   return {
     type: 'TOGGLE_CONTACT',

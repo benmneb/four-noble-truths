@@ -5,8 +5,8 @@ import clsx from 'clsx';
 import { Box, Button, Divider, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
-import { useDispatch, useSelector } from 'react-redux';
-import { toggleAddElaboration } from '../state';
+import { useSelector } from 'react-redux';
+import { handleContributeClick } from '../utils';
 
 import { TooltipChip } from '../utils';
 
@@ -34,7 +34,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function ElaborationContents() {
   const styles = useStyles();
-  const dispatch = useDispatch();
 
   const visibleElaboration = useSelector((state) => state.visibleElaboration);
   const clickedNode = useSelector((state) => state.clickedNode);
@@ -96,7 +95,7 @@ export default function ElaborationContents() {
         <Typography variant="subtitle2">Know another sutta quote?</Typography>
         <Button
           color="primary"
-          onClick={() => dispatch(toggleAddElaboration())}
+          onClick={() => handleContributeClick(clickedNode)}
         >
           Contribute
         </Button>
