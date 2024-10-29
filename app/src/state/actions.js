@@ -1,5 +1,3 @@
-import { mongo } from '../assets';
-
 export function setHoverTruth(number) {
   return {
     type: 'SET_HOVER_TRUTH',
@@ -53,22 +51,6 @@ export function setLoading(state) {
   return {
     type: 'SET_LOADING',
     state,
-  };
-}
-
-export function getElaborations(id) {
-  return async (dispatch) => {
-    try {
-      const response = await mongo.get(id);
-      const data = await response.data;
-      dispatch(setClickedElaboration(data));
-      dispatch(setVisibleElaboration(data));
-      dispatch(setLoading(false));
-    } catch (error) {
-      dispatch(setClickedElaboration(null));
-      dispatch(setVisibleElaboration(null));
-      dispatch(setLoading(false));
-    }
   };
 }
 

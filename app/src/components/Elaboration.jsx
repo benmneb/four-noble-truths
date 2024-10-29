@@ -7,7 +7,6 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import { useDispatch, useSelector } from 'react-redux';
 
-import { axios } from '../assets';
 import {
   setClickedElaboration,
   setLoading,
@@ -39,7 +38,6 @@ export default function Elaboration() {
   const loading = useSelector((state) => state.loading);
 
   useEffect(() => {
-    const source = axios.CancelToken.source();
     let isMounted = true;
     dispatch(setLoading(true));
 
@@ -62,17 +60,12 @@ export default function Elaboration() {
         dispatch(setVisibleElaboration(null));
         dispatch(setLoading(false));
 
-        if (axios.isCancel(error)) {
-          console.log('Axios was cancelled:', error.message);
-        } else {
-          console.log('Error:', error.message);
-        }
+        console.log('Error:', error.message);
       }
     })();
 
     return () => {
       isMounted = false;
-      source.cancel('Axios source.cancelled');
       dispatch(setClickedElaboration(null));
       dispatch(setVisibleElaboration(null));
       dispatch(setLoading(false));
