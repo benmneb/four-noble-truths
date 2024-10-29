@@ -6,11 +6,7 @@ import { Paper, useMediaQuery } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 import { useStore } from '../store';
-import {
-  ElaborationContents,
-  ElaborationNoContents,
-  ElaborationSkeleton,
-} from './index';
+import { ElaborationContents, ElaborationNoContents } from './index';
 
 import { elaborations } from '../data';
 
@@ -34,49 +30,30 @@ export default function Elaboration() {
   );
   const hoverTruth = useStore((state) => state.hoverTruth);
   const clickedNode = useStore((state) => state.clickedNode);
-  const loading = useStore((state) => state.loading);
-  const setLoading = useStore((state) => state.setLoading);
 
   useEffect(() => {
     let isMounted = true;
-    setLoading(true);
 
-    (async function () {
-      try {
-        const elaboration = elaborations.find(
-          (el) => el.for === clickedNode.for
-        );
-        if (!elaboration) throw new Error('Elaboration not found');
-        const data = Array.isArray(elaboration) ? elaboration : [elaboration];
-        if (isMounted) {
-          setClickedElaboration(data);
-          setVisibleElaboration(data);
-          setLoading(false);
-        }
-      } catch (error) {
-        if (!isMounted) return;
-
-        setClickedElaboration(null);
-        setVisibleElaboration(null);
-        setLoading(false);
-
-        console.log('Error:', error.message);
-      }
-    })();
+    try {
+      const elaboration = elaborations.find((el) => el.for === clickedNode.for);
+      if (!elaboration) throw new Error('Elaboration not found');
+      const data = Array.isArray(elaboration) ? elaboration : [elaboration];
+      if (!isMounted) return;
+      setClickedElaboration(data);
+      setVisibleElaboration(data);
+    } catch (error) {
+      if (!isMounted) return;
+      setClickedElaboration(null);
+      setVisibleElaboration(null);
+      console.log('Error:', error.message);
+    }
 
     return () => {
       isMounted = false;
       setClickedElaboration(null);
       setVisibleElaboration(null);
-      setLoading(false);
     };
-  }, [
-    clickedNode,
-    smUp,
-    setClickedElaboration,
-    setVisibleElaboration,
-    setLoading,
-  ]);
+  }, [clickedNode, smUp, setClickedElaboration, setVisibleElaboration]);
 
   return (
     <Paper
@@ -87,9 +64,8 @@ export default function Elaboration() {
           hoverTruth || (!Boolean(clickedNode.text) && !visibleElaboration),
       })}
     >
-      {loading && <ElaborationSkeleton />}
-      {!loading && visibleElaboration && <ElaborationContents />}
-      {!loading && !visibleElaboration && <ElaborationNoContents />}
+      {visibleElaboration && <ElaborationContents />}
+      {!visibleElaboration && <ElaborationNoContents />}
     </Paper>
   );
 }

@@ -11,7 +11,6 @@ export const useStore = create((set) => ({
   visibleElaboration: null,
   showElaborationDrawer: false,
   showAboutDrawer: false,
-  loading: false,
   themeType: 'dark',
 
   setHoverTruth: (hoverTruth) => set(() => ({ hoverTruth })),
@@ -34,7 +33,6 @@ export const useStore = create((set) => ({
     set((state) => ({ showElaborationDrawer: !state.showElaborationDrawer })),
   toggleAboutDrawer: () =>
     set((state) => ({ showAboutDrawer: !state.showAboutDrawer })),
-  setLoading: (loading) => set(() => ({ loading })),
   toggleThemeType: () =>
     set((state) => ({
       themeType: state.themeType === 'dark' ? 'light' : 'dark',
