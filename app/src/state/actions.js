@@ -56,21 +56,6 @@ export function setLoading(state) {
   };
 }
 
-export function setSnackPack(message, settings) {
-  return {
-    type: 'SET_SNACK_PACK',
-    message,
-    ...settings,
-    key: new Date().getTime(),
-  };
-}
-
-export function sliceSnackPack() {
-  return {
-    type: 'SLICE_SNACK_PACK',
-  };
-}
-
 export function getElaborations(id) {
   return async (dispatch) => {
     try {

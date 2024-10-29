@@ -8,7 +8,6 @@ import {
   AboutDrawer,
   Explanation,
   Footer,
-  Snackbar,
   TopBar,
   TruthsNav,
 } from './components';
@@ -25,7 +24,6 @@ export default function App() {
         <Explanation />
         <Footer />
         <AboutDrawer />
-        <Snackbar />
       </ConfirmProvider>
     </ThemeProvider>
   );

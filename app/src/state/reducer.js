@@ -10,7 +10,6 @@ const initialState = {
   visibleElaboration: null,
   showElaborationDrawer: false,
   showAboutDrawer: false,
-  snackPack: [],
   themeType: 'dark',
 };
 
@@ -59,25 +58,6 @@ export function reducer(state = initialState, action) {
       return {
         ...state,
         loading: action.state,
-      };
-    case 'SET_SNACK_PACK':
-      return {
-        ...state,
-        snackPack: [
-          ...state.snackPack,
-          {
-            message: action.message,
-            severity: action.severity,
-            disableHide: action.disableHide,
-            newContributionId: action.newContributionId,
-            key: action.key,
-          },
-        ],
-      };
-    case 'SLICE_SNACK_PACK':
-      return {
-        ...state,
-        snackPack: state.snackPack.slice(1),
       };
     case 'TOGGLE_THEME_TYPE':
       return {
