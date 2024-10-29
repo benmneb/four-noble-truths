@@ -2,24 +2,13 @@ import { Fragment } from 'react';
 
 import clsx from 'clsx';
 
-import {
-  Box,
-  Button,
-  Divider,
-  IconButton,
-  Tooltip,
-  Typography,
-} from '@material-ui/core';
-import { FlagRounded } from '@material-ui/icons/';
+import { Box, Button, Divider, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
-import { useConfirm } from 'material-ui-confirm';
+import { useDispatch, useSelector } from 'react-redux';
+import { toggleAddElaboration } from '../state';
 
-import { useSelector, useDispatch } from 'react-redux';
-import { setSnackPack, toggleAddElaboration } from '../state';
-
-import { TooltipChip, getTimeAgo } from '../utils';
-import { mongo } from '../assets';
+import { TooltipChip } from '../utils';
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -46,53 +35,16 @@ const useStyles = makeStyles((theme) => ({
 export default function ElaborationContents() {
   const styles = useStyles();
   const dispatch = useDispatch();
-  const confirm = useConfirm();
 
   const visibleElaboration = useSelector((state) => state.visibleElaboration);
   const clickedNode = useSelector((state) => state.clickedNode);
-
-  async function sendFlag(flaggedElaboration) {
-    dispatch(
-      setSnackPack('Letting admin know... Please wait... ⏳', {
-        disableHide: true,
-      })
-    );
-    try {
-      const request = await mongo.put('/flag', flaggedElaboration);
-      const response = await request.data;
-      if (response.success) {
-        dispatch(setSnackPack(response.message, { severity: 'success' }));
-      }
-    } catch (error) {
-      console.error('sendFlag error:', error);
-      dispatch(
-        setSnackPack('Could not flag. Please try again soon', {
-          severity: 'error',
-        })
-      );
-    }
-  }
-
-  function handleFlagClick(flaggedElaboration) {
-    confirm({
-      title: 'Flag as inappropriate',
-      description:
-        'Are you sure you want to flag this elaboration as spam, off-topic, or otherwise inappropriate?',
-      confirmationText: 'Confirm',
-      confirmationButtonProps: {
-        variant: 'outlined',
-      },
-    })
-      .then(() => sendFlag(flaggedElaboration))
-      .catch(() => console.log('cancelled'));
-  }
 
   return (
     <Box>
       <Box margin={2} component="figure">
         <Typography className={styles.title}>{clickedNode?.text}</Typography>
         {visibleElaboration?.map((elaboration, index) => (
-          <Fragment key={elaboration._id}>
+          <Fragment key={elaboration.for}>
             <Box marginY={2}>
               <Typography component="blockquote">{elaboration.text}</Typography>
               <Typography
@@ -106,7 +58,8 @@ export default function ElaborationContents() {
                   : '- The Buddha'}
                 <TooltipChip sutta={elaboration.reference} />
               </Typography>
-              <Box
+              {/* Removing this for now cause it's not needed. */}
+              {/* <Box
                 display="flex"
                 alignItems="center"
                 justifyContent="space-between"
@@ -115,23 +68,23 @@ export default function ElaborationContents() {
                   Added by <b>{elaboration.submittedBy}</b>{' '}
                   {getTimeAgo(new Date(elaboration.createdAt))}
                 </Typography>
-                {elaboration.submittedBy !== 'benmneb' && (
-                  <Tooltip title="Flag as inappropriate" placement="left">
-                    <IconButton
-                      size="small"
-                      onClick={() => handleFlagClick(elaboration)}
-                    >
-                      <FlagRounded fontSize="small" />
-                    </IconButton>
-                  </Tooltip>
-                )}
-              </Box>
+              </Box> */}
             </Box>
             {visibleElaboration.length > 1 &&
               visibleElaboration.length - 1 > index && (
                 <Divider variant="middle" />
               )}
           </Fragment>
+        ))}
+      </Box>
+      <Box
+        className={clsx(styles.elaborationChipBox, {
+          [styles.displayNone]: !clickedNode?.additionalRefs,
+        })}
+      >
+        <Typography variant="body2">See also:</Typography>
+        {clickedNode?.additionalRefs?.map((ref) => (
+          <TooltipChip key={ref} sutta={ref} />
         ))}
       </Box>
       <Box
@@ -147,16 +100,6 @@ export default function ElaborationContents() {
         >
           Contribute
         </Button>
-      </Box>
-      <Box
-        className={clsx(styles.elaborationChipBox, {
-          [styles.displayNone]: !clickedNode?.additionalRefs,
-        })}
-      >
-        <Typography variant="body2">See also:</Typography>
-        {clickedNode?.additionalRefs?.map((ref) => (
-          <TooltipChip key={ref} sutta={ref} />
-        ))}
       </Box>
     </Box>
   );

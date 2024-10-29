@@ -7,17 +7,19 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import { useDispatch, useSelector } from 'react-redux';
 
-import {
-  ElaborationContents,
-  ElaborationNoContents,
-  ElaborationSkeleton,
-} from './index';
+import { axios } from '../assets';
 import {
   setClickedElaboration,
   setLoading,
   setVisibleElaboration,
 } from '../state';
-import { mongo, axios } from '../assets';
+import {
+  ElaborationContents,
+  ElaborationNoContents,
+  ElaborationSkeleton,
+} from './index';
+
+import { elaborations } from '../data';
 
 const useStyles = makeStyles((theme) => ({
   displayNone: {
@@ -43,8 +45,11 @@ export default function Elaboration() {
 
     (async function () {
       try {
-        const response = await mongo.get(clickedNode.for, source.token);
-        const data = await response.data;
+        const elaboration = elaborations.find(
+          (el) => el.for === clickedNode.for
+        );
+        if (!elaboration) throw new Error('Elaboration not found');
+        const data = Array.isArray(elaboration) ? elaboration : [elaboration];
         if (isMounted) {
           dispatch(setClickedElaboration(data));
           dispatch(setVisibleElaboration(data));
