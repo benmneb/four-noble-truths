@@ -1,8 +1,6 @@
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { ThemeProvider } from '@material-ui/core/styles';
 
-import { ConfirmProvider } from 'material-ui-confirm';
-
 import { useTheme } from './assets';
 import {
   AboutDrawer,
@@ -17,14 +15,12 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <ConfirmProvider>
-        <CssBaseline />
-        <TopBar />
-        <TruthsNav />
-        <Explanation />
-        <Footer />
-        <AboutDrawer />
-      </ConfirmProvider>
+      <CssBaseline />
+      <TopBar />
+      <TruthsNav />
+      <Explanation />
+      <Footer />
+      <AboutDrawer />
     </ThemeProvider>
   );
 }
