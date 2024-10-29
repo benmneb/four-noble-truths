@@ -10,7 +10,6 @@ const initialState = {
   visibleElaboration: null,
   showElaborationDrawer: false,
   showAboutDrawer: false,
-  showContact: false,
   snackPack: [],
   themeType: 'dark',
 };
@@ -55,11 +54,6 @@ export function reducer(state = initialState, action) {
       return {
         ...state,
         showAboutDrawer: !state.showAboutDrawer,
-      };
-    case 'TOGGLE_CONTACT':
-      return {
-        ...state,
-        showContact: !state.showContact,
       };
     case 'SET_LOADING':
       return {

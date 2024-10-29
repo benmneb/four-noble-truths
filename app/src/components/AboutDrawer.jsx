@@ -1,9 +1,9 @@
 import { Box, Button, SwipeableDrawer, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import { GitHub, MailOutlineRounded } from '@material-ui/icons';
+import { GitHub } from '@material-ui/icons';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { toggleAboutDrawer, toggleContact } from '../state';
+import { toggleAboutDrawer } from '../state';
 
 import { Link, TooltipChip } from '../utils';
 
@@ -89,21 +89,12 @@ export default function AboutDrawer() {
         </Typography>
         <Box display="flex" justifyContent="space-around" marginBottom={2}>
           <Button
-            startIcon={<MailOutlineRounded />}
-            onClick={() => {
-              dispatch(toggleAboutDrawer());
-              dispatch(toggleContact());
-            }}
-          >
-            Contact
-          </Button>
-          <Button
             href="https://github.com/benmneb/four-noble-truths"
             target="_blank"
             rel="noopener"
             startIcon={<GitHub />}
           >
-            GitHub
+            View source
           </Button>
         </Box>
         <Typography paragraph>

@@ -49,12 +49,6 @@ export function toggleAboutDrawer() {
   };
 }
 
-export function toggleContact() {
-  return {
-    type: 'TOGGLE_CONTACT',
-  };
-}
-
 export function setLoading(state) {
   return {
     type: 'SET_LOADING',

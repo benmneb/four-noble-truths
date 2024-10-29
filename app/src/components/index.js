@@ -1,5 +1,4 @@
 export { default as AboutDrawer } from './AboutDrawer';
-export { default as Contact } from './Contact';
 export { default as DefaultQuote } from './DefaultQuote';
 export { default as Elaboration } from './Elaboration';
 export { default as ElaborationContents } from './ElaborationContents';

@@ -6,7 +6,6 @@ import { ConfirmProvider } from 'material-ui-confirm';
 import { useTheme } from './assets';
 import {
   AboutDrawer,
-  Contact,
   Explanation,
   Footer,
   Snackbar,
@@ -27,7 +26,6 @@ export default function App() {
         <Footer />
         <AboutDrawer />
         <Snackbar />
-        <Contact />
       </ConfirmProvider>
     </ThemeProvider>
   );
