@@ -8,8 +8,7 @@ import {
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
-import { useSelector, useDispatch } from 'react-redux';
-import { setClickedTruth, setHoverTruth } from '../state';
+import { useStore } from '../store';
 
 import { TruthPaper } from './index';
 
@@ -80,7 +79,7 @@ const useStyles = makeStyles((theme) => ({
 function BottomNavLabel({ label, number }) {
   const styles = useStyles();
 
-  const clickedTruth = useSelector((state) => state.clickedTruth);
+  const clickedTruth = useStore((state) => state.clickedTruth);
 
   return (
     <Box component="span" className={styles.paper}>
@@ -108,21 +107,22 @@ function BottomNavLabel({ label, number }) {
 
 export default function TruthsNav() {
   const styles = useStyles();
-  const dispatch = useDispatch();
 
-  const hoverTruth = useSelector((state) => state.hoverTruth);
-  const clickedTruth = useSelector((state) => state.clickedTruth);
+  const hoverTruth = useStore((state) => state.hoverTruth);
+  const setHoverTruth = useStore((state) => state.setHoverTruth);
+  const clickedTruth = useStore((state) => state.clickedTruth);
+  const setClickedTruth = useStore((state) => state.setClickedTruth);
 
   function handleMobileNavChange(number) {
     if (hoverTruth !== 0) {
-      dispatch(setHoverTruth(0));
+      setHoverTruth(0);
     }
 
     if (number !== clickedTruth) {
       window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-      dispatch(setClickedTruth(number));
+      setClickedTruth(number);
     } else {
-      dispatch(setClickedTruth(0));
+      setClickedTruth(0);
     }
   }
 

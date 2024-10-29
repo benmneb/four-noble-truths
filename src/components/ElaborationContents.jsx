@@ -5,10 +5,8 @@ import clsx from 'clsx';
 import { Box, Button, Divider, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
-import { useSelector } from 'react-redux';
-import { handleContributeClick } from '../utils';
-
-import { TooltipChip } from '../utils';
+import { useStore } from '../store';
+import { handleContributeClick, TooltipChip } from '../utils';
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -35,8 +33,8 @@ const useStyles = makeStyles((theme) => ({
 export default function ElaborationContents() {
   const styles = useStyles();
 
-  const visibleElaboration = useSelector((state) => state.visibleElaboration);
-  const clickedNode = useSelector((state) => state.clickedNode);
+  const visibleElaboration = useStore((state) => state.visibleElaboration);
+  const clickedNode = useStore((state) => state.clickedNode);
 
   return (
     <Box>

@@ -2,8 +2,7 @@ import { Box, Button, SwipeableDrawer, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { GitHub } from '@material-ui/icons';
 
-import { useDispatch, useSelector } from 'react-redux';
-import { toggleAboutDrawer } from '../state';
+import { useStore } from '../store';
 
 import { Link, TooltipChip } from '../utils';
 
@@ -21,9 +20,9 @@ const useStyles = makeStyles({
 
 export default function AboutDrawer() {
   const styles = useStyles();
-  const dispatch = useDispatch();
 
-  const showAboutDrawer = useSelector((state) => state.showAboutDrawer);
+  const showAboutDrawer = useStore((state) => state.showAboutDrawer);
+  const toggleAboutDrawer = useStore((state) => state.toggleAboutDrawer);
 
   return (
     <SwipeableDrawer
@@ -32,8 +31,8 @@ export default function AboutDrawer() {
       disableDiscovery
       disableSwipeToOpen
       open={showAboutDrawer}
-      onClose={() => dispatch(toggleAboutDrawer())}
-      onOpen={() => dispatch(toggleAboutDrawer())}
+      onClose={toggleAboutDrawer}
+      onOpen={toggleAboutDrawer}
     >
       <Box component="section" margin={2}>
         <Box component="header" fontWeight="fontWeightBold">
@@ -63,7 +62,7 @@ export default function AboutDrawer() {
           </Typography>
         </Box>
         <Typography paragraph>
-          ...then the entirity of the Buddhas teachings would stem from the Four
+          ...then the entirety of the Buddhas teachings would stem from the Four
           Noble Truths...
         </Typography>
         <Box component="figure" margin={2}>

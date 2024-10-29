@@ -1,9 +1,7 @@
 import { SwipeableDrawer } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
-import { useSelector, useDispatch } from 'react-redux';
-import { toggleElaborationDrawer } from '../state';
-
+import { useStore } from '../store';
 import { Elaboration } from './index';
 
 const useStyles = makeStyles({
@@ -14,15 +12,13 @@ const useStyles = makeStyles({
 
 export default function ElaborationDrawer() {
   const styles = useStyles();
-  const dispatch = useDispatch();
 
-  const showElaborationDrawer = useSelector(
+  const showElaborationDrawer = useStore(
     (state) => state.showElaborationDrawer
   );
-
-  function toggleDrawer() {
-    dispatch(toggleElaborationDrawer());
-  }
+  const toggleElaborationDrawer = useStore(
+    (state) => state.toggleElaborationDrawer
+  );
 
   return (
     <SwipeableDrawer
@@ -31,8 +27,8 @@ export default function ElaborationDrawer() {
       disableDiscovery
       disableSwipeToOpen
       open={showElaborationDrawer}
-      onClose={toggleDrawer}
-      onOpen={toggleDrawer}
+      onClose={toggleElaborationDrawer}
+      onOpen={toggleElaborationDrawer}
     >
       <Elaboration />
     </SwipeableDrawer>

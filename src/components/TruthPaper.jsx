@@ -6,14 +6,7 @@ import PropTypes from 'prop-types';
 import { Box, Paper, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
-import { useSelector, useDispatch } from 'react-redux';
-import {
-  setHoverTruth,
-  setClickedTruth,
-  setVisibleElaboration,
-  setClickedElaboration,
-  setClickedNode,
-} from '../state';
+import { useStore } from '../store';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -69,38 +62,46 @@ export default function TruthPaper(props) {
   const { number, label } = props;
 
   const styles = useStyles();
-  const dispatch = useDispatch();
 
-  const clickedTruth = useSelector((state) => state.clickedTruth);
-  const clickedElaboration = useSelector((state) => state.clickedElaboration);
+  const clickedTruth = useStore((state) => state.clickedTruth);
+  const clickedElaboration = useStore((state) => state.clickedElaboration);
+  const setHoverTruth = useStore((state) => state.setHoverTruth);
+  const setVisibleElaboration = useStore(
+    (state) => state.setVisibleElaboration
+  );
+  const setClickedTruth = useStore((state) => state.setClickedTruth);
+  const setClickedElaboration = useStore(
+    (state) => state.setClickedElaboration
+  );
+  const setClickedNode = useStore((state) => state.setClickedNode);
 
   const [isHovering, setIsHovering] = useState(false);
 
   function handleMouseEnter() {
     if (number !== clickedTruth) {
-      dispatch(setHoverTruth(number));
-      dispatch(setVisibleElaboration(null));
+      setHoverTruth(number);
+      setVisibleElaboration(null);
       setIsHovering(true);
     }
   }
 
   function handleMouseLeave() {
     if (number !== clickedTruth) {
-      dispatch(setHoverTruth(0));
-      dispatch(setVisibleElaboration(clickedElaboration));
+      setHoverTruth(0);
+      setVisibleElaboration(clickedElaboration);
       setIsHovering(false);
     }
   }
 
   function handleClick() {
     if (number !== clickedTruth) {
-      dispatch(setClickedTruth(number));
-      dispatch(setVisibleElaboration(null));
-      dispatch(setClickedElaboration(null));
-      dispatch(setClickedNode(null));
-      dispatch(setHoverTruth(0));
+      setClickedTruth(number);
+      setVisibleElaboration(null);
+      setClickedElaboration(null);
+      setClickedNode(null);
+      setHoverTruth(0);
     } else {
-      dispatch(setClickedTruth(0));
+      setClickedTruth(0);
     }
   }
 

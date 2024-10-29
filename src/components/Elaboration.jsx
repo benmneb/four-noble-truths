@@ -5,13 +5,7 @@ import clsx from 'clsx';
 import { Paper, useMediaQuery } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
-import { useDispatch, useSelector } from 'react-redux';
-
-import {
-  setClickedElaboration,
-  setLoading,
-  setVisibleElaboration,
-} from '../state';
+import { useStore } from '../store';
 import {
   ElaborationContents,
   ElaborationNoContents,
@@ -28,18 +22,24 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Elaboration() {
   const styles = useStyles();
-  const dispatch = useDispatch();
 
   const smUp = useMediaQuery((theme) => theme.breakpoints.up('sm'));
 
-  const visibleElaboration = useSelector((state) => state.visibleElaboration);
-  const hoverTruth = useSelector((state) => state.hoverTruth);
-  const clickedNode = useSelector((state) => state.clickedNode);
-  const loading = useSelector((state) => state.loading);
+  const visibleElaboration = useStore((state) => state.visibleElaboration);
+  const setClickedElaboration = useStore(
+    (state) => state.setClickedElaboration
+  );
+  const setVisibleElaboration = useStore(
+    (state) => state.setVisibleElaboration
+  );
+  const hoverTruth = useStore((state) => state.hoverTruth);
+  const clickedNode = useStore((state) => state.clickedNode);
+  const loading = useStore((state) => state.loading);
+  const setLoading = useStore((state) => state.setLoading);
 
   useEffect(() => {
     let isMounted = true;
-    dispatch(setLoading(true));
+    setLoading(true);
 
     (async function () {
       try {
@@ -49,16 +49,16 @@ export default function Elaboration() {
         if (!elaboration) throw new Error('Elaboration not found');
         const data = Array.isArray(elaboration) ? elaboration : [elaboration];
         if (isMounted) {
-          dispatch(setClickedElaboration(data));
-          dispatch(setVisibleElaboration(data));
-          dispatch(setLoading(false));
+          setClickedElaboration(data);
+          setVisibleElaboration(data);
+          setLoading(false);
         }
       } catch (error) {
         if (!isMounted) return;
 
-        dispatch(setClickedElaboration(null));
-        dispatch(setVisibleElaboration(null));
-        dispatch(setLoading(false));
+        setClickedElaboration(null);
+        setVisibleElaboration(null);
+        setLoading(false);
 
         console.log('Error:', error.message);
       }
@@ -66,11 +66,17 @@ export default function Elaboration() {
 
     return () => {
       isMounted = false;
-      dispatch(setClickedElaboration(null));
-      dispatch(setVisibleElaboration(null));
-      dispatch(setLoading(false));
+      setClickedElaboration(null);
+      setVisibleElaboration(null);
+      setLoading(false);
     };
-  }, [clickedNode, dispatch, smUp]);
+  }, [
+    clickedNode,
+    smUp,
+    setClickedElaboration,
+    setVisibleElaboration,
+    setLoading,
+  ]);
 
   return (
     <Paper

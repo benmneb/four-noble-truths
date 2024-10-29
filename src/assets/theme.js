@@ -1,9 +1,9 @@
 import { createMuiTheme, responsiveFontSizes } from '@material-ui/core/styles';
 
-import { useSelector } from 'react-redux';
+import { useStore } from '../store';
 
 export function useTheme() {
-  const themeType = useSelector((state) => state.themeType);
+  const themeType = useStore((state) => state.themeType);
 
   return responsiveFontSizes(
     createMuiTheme({

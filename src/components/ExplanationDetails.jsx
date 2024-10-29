@@ -1,11 +1,10 @@
-import { Box, Fade, Typography, Grid, Hidden } from '@material-ui/core';
-import { makeStyles, fade } from '@material-ui/core/styles';
+import { Box, Fade, Grid, Hidden, Typography } from '@material-ui/core';
+import { fade, makeStyles } from '@material-ui/core/styles';
 import { TreeView } from '@material-ui/lab';
 
-import { useSelector } from 'react-redux';
-
-import { TooltipChip, MinusSquare, PlusSquare, CloseSquare } from '../utils';
-import { Tree, Elaboration, ElaborationDrawer } from './index';
+import { useStore } from '../store';
+import { CloseSquare, MinusSquare, PlusSquare, TooltipChip } from '../utils';
+import { Elaboration, ElaborationDrawer, Tree } from './index';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -54,7 +53,7 @@ export default function ExplanationDetails(props) {
 
   const styles = useStyles(source);
 
-  const clickedNode = useSelector((state) => state.clickedNode);
+  const clickedNode = useStore((state) => state.clickedNode);
 
   return (
     <Fade in>

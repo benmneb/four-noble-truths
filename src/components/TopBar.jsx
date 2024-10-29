@@ -1,21 +1,19 @@
 import {
   AppBar,
   Box,
+  IconButton,
   Toolbar,
   Tooltip,
   Typography,
-  IconButton,
 } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
 import {
-  InfoRounded,
   Brightness3Rounded,
   BrightnessHighRounded,
+  InfoRounded,
 } from '@material-ui/icons';
-import { makeStyles } from '@material-ui/core/styles';
 
-import { useDispatch, useSelector } from 'react-redux';
-
-import { toggleThemeType, toggleAboutDrawer } from '../state';
+import { useStore } from '../store';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -33,9 +31,10 @@ const useStyles = makeStyles((theme) => ({
 
 export default function TopBar() {
   const styles = useStyles();
-  const dispatch = useDispatch();
 
-  const darkTheme = useSelector((state) => state.themeType === 'dark');
+  const darkTheme = useStore((state) => state.themeType === 'dark');
+  const toggleThemeType = useStore((state) => state.toggleThemeType);
+  const toggleAboutDrawer = useStore((state) => state.toggleAboutDrawer);
 
   const tooltip = darkTheme ? 'Switch off dark mode' : 'Switch on dark mode';
 
@@ -48,7 +47,7 @@ export default function TopBar() {
               edge="start"
               color="inherit"
               aria-label="about"
-              onClick={() => dispatch(toggleAboutDrawer())}
+              onClick={toggleAboutDrawer}
             >
               <InfoRounded />
             </IconButton>
@@ -61,7 +60,7 @@ export default function TopBar() {
               edge="start"
               color="inherit"
               aria-label={tooltip}
-              onClick={() => dispatch(toggleThemeType())}
+              onClick={toggleThemeType}
             >
               {darkTheme ? <BrightnessHighRounded /> : <Brightness3Rounded />}
             </IconButton>

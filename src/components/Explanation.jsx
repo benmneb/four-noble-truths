@@ -1,8 +1,7 @@
 import { Box, Paper } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
-import { useSelector } from 'react-redux';
-
+import { useStore } from '../store';
 import { ExplanationContents } from './index';
 
 const useStyles = makeStyles((theme) => ({
@@ -26,8 +25,8 @@ const useStyles = makeStyles((theme) => ({
 export default function Explanation() {
   const styles = useStyles();
 
-  const hoverTruth = useSelector((state) => state.hoverTruth);
-  const clickedTruth = useSelector((state) => state.clickedTruth);
+  const hoverTruth = useStore((state) => state.hoverTruth);
+  const clickedTruth = useStore((state) => state.clickedTruth);
 
   const whatToShow = hoverTruth ? hoverTruth : clickedTruth;
 
