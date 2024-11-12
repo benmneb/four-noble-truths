@@ -33,16 +33,16 @@ const useStyles = makeStyles((theme) => ({
 export default function ElaborationContents() {
   const styles = useStyles();
 
-  const visibleElaboration = useStore((state) => state.visibleElaboration);
   const clickedNode = useStore((state) => state.clickedNode);
-  // TODO: change from clickedNode to url params
-  console.log('visibleElaboration', visibleElaboration);
+
+  if (!clickedNode) return null;
+
   return (
     <Box>
       <Box margin={2} component="figure">
         <Typography className={styles.title}>{clickedNode?.text}</Typography>
-        {visibleElaboration?.map((elaboration, index) => (
-          <Fragment key={elaboration.for}>
+        {clickedNode.elaborations?.map((elaboration, index) => (
+          <Fragment key={elaboration.id || index}>
             <Box marginY={2}>
               <Typography component="blockquote">{elaboration.text}</Typography>
               <Typography
@@ -56,20 +56,9 @@ export default function ElaborationContents() {
                   : '- The Buddha'}
                 <TooltipChip sutta={elaboration.reference} />
               </Typography>
-              {/* Removing this for now cause it's not needed. */}
-              {/* <Box
-                display="flex"
-                alignItems="center"
-                justifyContent="space-between"
-              >
-                <Typography color="textSecondary" variant="subtitle2">
-                  Added by <b>{elaboration.submittedBy}</b>{' '}
-                  {getTimeAgo(new Date(elaboration.createdAt))}
-                </Typography>
-              </Box> */}
             </Box>
-            {visibleElaboration.length > 1 &&
-              visibleElaboration.length - 1 > index && (
+            {clickedNode?.elaboration?.length > 1 &&
+              clickedNode?.elaboration?.length - 1 > index && (
                 <Divider variant="middle" />
               )}
           </Fragment>

@@ -68,23 +68,14 @@ export default function TruthPaper(props) {
   const navigate = useNavigate();
 
   const clickedTruth = useStore((state) => state.clickedTruth);
-  const clickedElaboration = useStore((state) => state.clickedElaboration);
   const setHoverTruth = useStore((state) => state.setHoverTruth);
-  const setVisibleElaboration = useStore(
-    (state) => state.setVisibleElaboration
-  );
   const setClickedTruth = useStore((state) => state.setClickedTruth);
-  const setClickedElaboration = useStore(
-    (state) => state.setClickedElaboration
-  );
-  const setClickedNode = useStore((state) => state.setClickedNode);
 
   const [isHovering, setIsHovering] = useState(false);
 
   function handleMouseEnter() {
     if (id !== clickedTruth) {
       setHoverTruth(id);
-      setVisibleElaboration(null);
       setIsHovering(true);
     }
   }
@@ -92,7 +83,6 @@ export default function TruthPaper(props) {
   function handleMouseLeave() {
     if (id !== clickedTruth) {
       setHoverTruth(0);
-      setVisibleElaboration(clickedElaboration);
       setIsHovering(false);
     }
   }
@@ -100,9 +90,6 @@ export default function TruthPaper(props) {
   function handleClick() {
     if (id !== clickedTruth) {
       setClickedTruth(id);
-      setVisibleElaboration(null);
-      setClickedElaboration(null);
-      setClickedNode(null);
       setHoverTruth(0);
       navigate(`/${id}`);
     } else {

@@ -31,22 +31,22 @@ export default function Tree(props) {
     (state) => state.toggleElaborationDrawer
   );
 
-  async function handleLabelClick(e, id, text, additionalRefs) {
+  async function handleLabelClick(e, node) {
     e.preventDefault();
-    setClickedNode(id, text, additionalRefs);
-    navigate(`/${clickedTruth}/${urlify(text)}`);
+    setClickedNode(node);
+    navigate(`/${clickedTruth}/${urlify(node.text)}`);
     if (onlyXs) toggleElaborationDrawer();
   }
 
-  function renderTree(nodes) {
-    const { id, text, seeMore, children } = nodes;
-
+  function renderTree({ id, text, children, ...props }) {
     return (
       <TreeItem
         key={id}
         nodeId={id}
         label={text}
-        onLabelClick={(e) => handleLabelClick(e, id, text, seeMore)}
+        onLabelClick={(e) =>
+          handleLabelClick(e, { id, text, ...(props || []) })
+        }
         classes={{ group: styles.treeItemGroup, label: styles.treeItemLabel }}
       >
         {Array.isArray(children)

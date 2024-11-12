@@ -8,7 +8,6 @@ export default function ExplanationContents() {
   const params = useParams();
 
   const hoverTruth = useStore((state) => state.hoverTruth);
-  // const clickedTruth = useStore((state) => state.clickedTruth); // TODO: delete all these
 
   const whatToShow = hoverTruth ? hoverTruth : params?.truth;
 
