@@ -10,6 +10,8 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import { useStore } from '../store';
 
+import { useNavigate } from 'react-router-dom';
+import { TruthHelpers } from '../utils';
 import { TruthPaper } from './index';
 
 const useStyles = makeStyles((theme) => ({
@@ -96,7 +98,8 @@ function BottomNavLabel({ label, number }) {
       <Box
         component="span"
         className={clsx(styles.text, {
-          [styles.selectedText]: clickedTruth === number,
+          [styles.selectedText]:
+            clickedTruth === TruthHelpers.numberToWord(number),
         })}
       >
         {label}
@@ -107,22 +110,23 @@ function BottomNavLabel({ label, number }) {
 
 export default function TruthsNav() {
   const styles = useStyles();
+  const navigate = useNavigate();
 
   const hoverTruth = useStore((state) => state.hoverTruth);
   const setHoverTruth = useStore((state) => state.setHoverTruth);
   const clickedTruth = useStore((state) => state.clickedTruth);
   const setClickedTruth = useStore((state) => state.setClickedTruth);
 
-  function handleMobileNavChange(number) {
-    if (hoverTruth !== 0) {
-      setHoverTruth(0);
-    }
+  function handleMobileNavChange(value) {
+    if (hoverTruth !== 0) setHoverTruth(0);
 
-    if (number !== clickedTruth) {
+    if (value !== clickedTruth) {
       window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-      setClickedTruth(number);
+      setClickedTruth(value);
+      navigate(`/${value}`);
     } else {
       setClickedTruth(0);
+      navigate('/');
     }
   }
 
@@ -138,32 +142,32 @@ export default function TruthsNav() {
           <BottomNavigationAction
             classes={{ selected: styles.selectedBottomNav }}
             label={<BottomNavLabel label="Suffering" number={1} />}
-            value={1}
+            value="suffering"
           />
           <BottomNavigationAction
             classes={{ selected: styles.selectedBottomNav }}
             label={<BottomNavLabel label="Origin" number={2} />}
-            value={2}
+            value="origin"
           />
           <BottomNavigationAction
             classes={{ selected: styles.selectedBottomNav }}
             label={<BottomNavLabel label="Cessation" number={3} />}
-            value={3}
+            value="cessation"
           />
           <BottomNavigationAction
             classes={{ selected: styles.selectedBottomNav }}
             label={<BottomNavLabel label="Path" number={4} />}
-            value={4}
+            value="path"
           />
         </BottomNavigation>
       </Hidden>
       <Hidden xsDown>
-        <TruthPaper label="Suffering" number={1} />
-        <TruthPaper label="The Origin of Suffering" number={2} />
-        <TruthPaper label="The Cessation of Suffering" number={3} />
+        <TruthPaper label="Suffering" id="suffering" />
+        <TruthPaper label="The Origin of Suffering" id="origin" />
+        <TruthPaper label="The Cessation of Suffering" id="cessation" />
         <TruthPaper
           label="The Path Leading to the Cessation of Suffering"
-          number={4}
+          id="path"
         />
       </Hidden>
     </Box>

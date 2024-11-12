@@ -1,7 +1,6 @@
 import { Box, Paper } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
-import { useStore } from '../store';
 import { ExplanationContents } from './index';
 
 const useStyles = makeStyles((theme) => ({
@@ -25,15 +24,11 @@ const useStyles = makeStyles((theme) => ({
 export default function Explanation() {
   const styles = useStyles();
 
-  const hoverTruth = useStore((state) => state.hoverTruth);
-  const clickedTruth = useStore((state) => state.clickedTruth);
-
-  const whatToShow = hoverTruth ? hoverTruth : clickedTruth;
-
   return (
     <Box className={styles.root}>
       <Paper className={styles.paper} variant="outlined" component="section">
-        <ExplanationContents show={whatToShow} />
+        <ExplanationContents />
+        {/* <Outlet /> */}
       </Paper>
     </Box>
   );

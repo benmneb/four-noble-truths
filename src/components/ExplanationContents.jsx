@@ -1,22 +1,19 @@
+import { useParams } from 'react-router-dom';
 import * as truths from '../data';
 
+import { useStore } from '../store';
 import { DefaultQuote, ExplanationDetails } from './index';
 
-export default function ExplanationContents({ show }) {
-  switch (show) {
-    case 0:
-      return <DefaultQuote />;
-    case 1:
-      return <ExplanationDetails source={truths.suffering} />;
-    case 2:
-      return <ExplanationDetails source={truths.origin} />;
-    case 3:
-      return <ExplanationDetails source={truths.cessation} />;
-    case 4:
-      return <ExplanationDetails source={truths.path} />;
-    default:
-      return console.warn(
-        '"Default" ExplanationContents switch statement reached'
-      );
-  }
+export default function ExplanationContents() {
+  const params = useParams();
+
+  const hoverTruth = useStore((state) => state.hoverTruth);
+  // const clickedTruth = useStore((state) => state.clickedTruth); // TODO: delete all these
+
+  const whatToShow = hoverTruth ? hoverTruth : params?.truth;
+
+  if (truths?.[whatToShow])
+    return <ExplanationDetails source={truths[whatToShow]} />;
+
+  return <DefaultQuote />;
 }

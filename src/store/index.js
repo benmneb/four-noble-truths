@@ -14,7 +14,7 @@ export const useStore = create((set) => ({
   themeType: 'dark',
 
   setHoverTruth: (hoverTruth) => set(() => ({ hoverTruth })),
-  setClickedTruth: (clickedTruth) => set(() => ({ clickedTruth })),
+  setClickedTruth: (clickedTruth) => set(() => ({ clickedTruth })), // TODO: Deprecate this, it's in the URL now
   setClickedNode: (id, text, additionalRefs) => {
     if (!id) return;
     set(() => ({
@@ -24,11 +24,11 @@ export const useStore = create((set) => ({
         additionalRefs,
       },
     }));
-  },
+  }, // TODO: Deprecate this?? It's in the URL now
   setClickedElaboration: (clickedElaboration) =>
-    set(() => ({ clickedElaboration })),
+    set(() => ({ clickedElaboration })), // TODO: Restructure data, then can remove this, i'll be in the URL
   setVisibleElaboration: (visibleElaboration) =>
-    set(() => ({ visibleElaboration })),
+    set(() => ({ visibleElaboration })), // TODO: Can delete this, if `hoverTruth !== clickedTruth` should do it
   toggleElaborationDrawer: () =>
     set((state) => ({ showElaborationDrawer: !state.showElaborationDrawer })),
   toggleAboutDrawer: () =>

@@ -6,7 +6,10 @@ import PropTypes from 'prop-types';
 import { Box, Paper, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
+import { useNavigate } from 'react-router-dom';
+
 import { useStore } from '../store';
+import { TruthHelpers } from '../utils';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -59,9 +62,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function TruthPaper(props) {
-  const { number, label } = props;
+  const { id, label } = props;
 
   const styles = useStyles();
+  const navigate = useNavigate();
 
   const clickedTruth = useStore((state) => state.clickedTruth);
   const clickedElaboration = useStore((state) => state.clickedElaboration);
@@ -78,15 +82,15 @@ export default function TruthPaper(props) {
   const [isHovering, setIsHovering] = useState(false);
 
   function handleMouseEnter() {
-    if (number !== clickedTruth) {
-      setHoverTruth(number);
+    if (id !== clickedTruth) {
+      setHoverTruth(id);
       setVisibleElaboration(null);
       setIsHovering(true);
     }
   }
 
   function handleMouseLeave() {
-    if (number !== clickedTruth) {
+    if (id !== clickedTruth) {
       setHoverTruth(0);
       setVisibleElaboration(clickedElaboration);
       setIsHovering(false);
@@ -94,13 +98,15 @@ export default function TruthPaper(props) {
   }
 
   function handleClick() {
-    if (number !== clickedTruth) {
-      setClickedTruth(number);
+    if (id !== clickedTruth) {
+      setClickedTruth(id);
       setVisibleElaboration(null);
       setClickedElaboration(null);
       setClickedNode(null);
       setHoverTruth(0);
+      navigate(`/${id}`);
     } else {
+      navigate('/');
       setClickedTruth(0);
     }
   }
@@ -116,15 +122,15 @@ export default function TruthPaper(props) {
       <Box className={styles.numberBox}>
         <Typography
           className={clsx(styles.number, {
-            [styles.selectedNumber]: clickedTruth === number,
+            [styles.selectedNumber]: clickedTruth === id,
           })}
         >
-          {number}
+          {TruthHelpers.wordToNumber(id)}
         </Typography>
       </Box>
       <Typography
         className={clsx(styles.text, {
-          [styles.selectedText]: clickedTruth === number,
+          [styles.selectedText]: clickedTruth === id,
         })}
       >
         {label}

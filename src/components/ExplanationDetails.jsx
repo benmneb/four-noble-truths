@@ -2,7 +2,7 @@ import { Box, Fade, Grid, Hidden, Typography } from '@material-ui/core';
 import { fade, makeStyles } from '@material-ui/core/styles';
 import { TreeView } from '@material-ui/lab';
 
-import { useStore } from '../store';
+import { useParams } from 'react-router-dom';
 import { CloseSquare, MinusSquare, PlusSquare, TooltipChip } from '../utils';
 import { Elaboration, ElaborationDrawer, Tree } from './index';
 
@@ -52,8 +52,7 @@ export default function ExplanationDetails(props) {
   const { source } = props;
 
   const styles = useStyles(source);
-
-  const clickedNode = useStore((state) => state.clickedNode);
+  const params = useParams();
 
   return (
     <Fade in>
@@ -95,7 +94,7 @@ export default function ExplanationDetails(props) {
             </Box>
           </Grid>
           <Hidden xsDown>
-            {Boolean(clickedNode.text) && (
+            {!!params.explanation && (
               <Fade in>
                 <Grid item sm={6}>
                   <Box className={styles.elaborationBox}>

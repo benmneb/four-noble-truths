@@ -35,7 +35,8 @@ export default function ElaborationContents() {
 
   const visibleElaboration = useStore((state) => state.visibleElaboration);
   const clickedNode = useStore((state) => state.clickedNode);
-
+  // TODO: change from clickedNode to url params
+  console.log('visibleElaboration', visibleElaboration);
   return (
     <Box>
       <Box margin={2} component="figure">

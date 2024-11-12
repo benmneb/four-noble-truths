@@ -2,7 +2,10 @@ import { useMediaQuery } from '@material-ui/core';
 import { fade, makeStyles } from '@material-ui/core/styles';
 import { TreeItem } from '@material-ui/lab';
 
+import { useNavigate } from 'react-router-dom';
 import { useStore } from '../store';
+
+import { urlify } from '../utils';
 
 const useStyles = makeStyles((theme) => ({
   treeItemGroup: {
@@ -19,7 +22,10 @@ export default function Tree(props) {
   const { data } = props;
 
   const styles = useStyles();
+  const navigate = useNavigate();
   const onlyXs = useMediaQuery((theme) => theme.breakpoints.only('xs'));
+
+  const clickedTruth = useStore((state) => state.clickedTruth);
   const setClickedNode = useStore((state) => state.setClickedNode);
   const toggleElaborationDrawer = useStore(
     (state) => state.toggleElaborationDrawer
@@ -28,6 +34,7 @@ export default function Tree(props) {
   async function handleLabelClick(e, id, text, additionalRefs) {
     e.preventDefault();
     setClickedNode(id, text, additionalRefs);
+    navigate(`/${clickedTruth}/${urlify(text)}`);
     if (onlyXs) toggleElaborationDrawer();
   }
 

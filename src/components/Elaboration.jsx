@@ -5,10 +5,12 @@ import clsx from 'clsx';
 import { Paper, useMediaQuery } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
-import { useStore } from '../store';
-import { ElaborationContents, ElaborationNoContents } from './index';
+import { useParams } from 'react-router-dom';
 
-import { elaborations } from '../data';
+import { cessation, elaborations, origin, path, suffering } from '../data';
+import { useStore } from '../store';
+import { findDataByText } from '../utils/findObjectByValue';
+import { ElaborationContents, ElaborationNoContents } from './index';
 
 const useStyles = makeStyles((theme) => ({
   displayNone: {
@@ -16,8 +18,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const truthsData = { suffering, origin, cessation, path };
+
 export default function Elaboration() {
   const styles = useStyles();
+  const params = useParams();
 
   const smUp = useMediaQuery((theme) => theme.breakpoints.up('sm'));
 
@@ -35,7 +40,11 @@ export default function Elaboration() {
     let isMounted = true;
 
     try {
-      const elaboration = elaborations.find((el) => el.for === clickedNode.for);
+      const { id } = findDataByText(
+        truthsData[params.truth],
+        params.explanation
+      );
+      const elaboration = elaborations.find((el) => el.for === id);
       if (!elaboration) throw new Error('Elaboration not found');
       const data = Array.isArray(elaboration) ? elaboration : [elaboration];
       if (!isMounted) return;
@@ -45,7 +54,7 @@ export default function Elaboration() {
       if (!isMounted) return;
       setClickedElaboration(null);
       setVisibleElaboration(null);
-      console.log('Error:', error.message);
+      console.error(error);
     }
 
     return () => {
@@ -53,7 +62,7 @@ export default function Elaboration() {
       setClickedElaboration(null);
       setVisibleElaboration(null);
     };
-  }, [clickedNode, smUp, setClickedElaboration, setVisibleElaboration]);
+  }, [clickedNode, smUp, params, setClickedElaboration, setVisibleElaboration]);
 
   return (
     <Paper
