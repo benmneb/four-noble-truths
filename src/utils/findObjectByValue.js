@@ -2,6 +2,7 @@ import { urlify } from './urlify';
 
 /**
  * Find explanation object by the text on the screen.
+ * Deep search nested objects by the value of any key.
  * @returns The object that contains the value searched for
  */
 export function findDataByText(obj, value) {

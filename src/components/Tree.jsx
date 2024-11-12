@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+
 import { useMediaQuery } from '@material-ui/core';
 import { fade, makeStyles } from '@material-ui/core/styles';
 import { TreeItem } from '@material-ui/lab';
@@ -30,6 +32,10 @@ export default function Tree(props) {
   const toggleElaborationDrawer = useStore(
     (state) => state.toggleElaborationDrawer
   );
+
+  useEffect(() => {
+    // TODO: if it needs to, on page load, sync tree state with URL
+  }, []);
 
   async function handleLabelClick(e, node) {
     e.preventDefault();

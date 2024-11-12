@@ -1,4 +1,5 @@
 export { default as CC0 } from './CC0';
+export { findDataByText } from './findObjectByValue';
 export { handleContributeClick } from './handleContributeClick';
 export { handleSuttaLinkClick } from './handleSuttaLinkClick';
 export { CloseSquare, MinusSquare, PlusSquare } from './Icons';

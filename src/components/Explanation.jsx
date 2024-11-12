@@ -7,7 +7,7 @@ import { useParams } from 'react-router-dom';
 
 import * as truths from '../data';
 import { useStore } from '../store';
-import { TruthHelpers, urlify } from '../utils';
+import { findDataByText, TruthHelpers } from '../utils';
 import { ExplanationContents } from './index';
 
 const useStyles = makeStyles((theme) => ({
@@ -44,13 +44,10 @@ export default function Explanation() {
     const confirmedTruth = TruthHelpers.wordToNumber(truth);
     if (!clickedTruth && truth && confirmedTruth)
       setClickedTruth(confirmedTruth);
-    const nodeData = truths?.[truth]?.children?.find(
-      (n) => urlify(n.text) === explanation
-    );
+    const nodeData = findDataByText(truths[truth], explanation);
     console.log('nodeData', nodeData);
     if (!clickedNode.id && explanation && nodeData) setClickedNode(nodeData);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <Box className={styles.root}>
