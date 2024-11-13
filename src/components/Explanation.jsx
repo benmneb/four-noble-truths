@@ -45,7 +45,6 @@ export default function Explanation() {
     if (!clickedTruth && truth && confirmedTruth)
       setClickedTruth(confirmedTruth);
     const nodeData = findDataByText(truths[truth], explanation);
-    console.log('nodeData', nodeData);
     if (!clickedNode.id && explanation && nodeData) setClickedNode(nodeData);
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
