@@ -18,7 +18,10 @@ export default function ErrorPage() {
   return (
     <Fade in>
       <Box className={styles.root}>
-        <Typography paragraph>Page not found.</Typography>
+        <Typography paragraph>No page found.</Typography>
+        <Typography paragraph variant="subtitle2">
+          Check the URL and try again.
+        </Typography>
         <Button
           href="/"
           variant="outlined"
