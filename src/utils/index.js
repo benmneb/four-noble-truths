@@ -10,3 +10,4 @@ export { getTimeAgo } from './timeAgo';
 export { TooltipChip } from './TooltipChip';
 export * as TruthHelpers from './truthHelpers';
 export { urlify } from './urlify';
+export { useParamsData } from './useParamsData';

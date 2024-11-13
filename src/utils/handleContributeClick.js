@@ -6,7 +6,7 @@ export function handleContributeClick(clickedNode) {
       ' ',
       '+'
     )}+${
-      clickedNode?.for
+      clickedNode?.id
     }&body=Please+add+sutta+reference+and+the+quote+here&labels=enhancement`
   );
 }

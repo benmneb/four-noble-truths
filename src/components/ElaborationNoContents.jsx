@@ -1,8 +1,7 @@
 import { Box, Button, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
-import { useStore } from '../store';
-import { handleContributeClick } from '../utils';
+import { handleContributeClick, useParamsData } from '../utils';
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -16,15 +15,15 @@ const useStyles = makeStyles((theme) => ({
 
 export default function ElaborationNoContents() {
   const styles = useStyles();
-  const clickedNode = useStore((state) => state.clickedNode);
+  const { node } = useParamsData();
 
   return (
     <Box margin={2}>
-      <Typography className={styles.title}>{clickedNode.text}</Typography>
+      <Typography className={styles.title}>{node.text}</Typography>
       <Typography paragraph>
         Do you know an appropriate reference elaborating on{' '}
         <Box component="span" fontStyle="italic">
-          {clickedNode?.text?.toLowerCase()}
+          {node?.text?.toLowerCase()}
         </Box>{' '}
         from the suttas of the Pali Canon?
       </Typography>
@@ -32,7 +31,7 @@ export default function ElaborationNoContents() {
         <Button
           variant="outlined"
           color="primary"
-          onClick={() => handleContributeClick(clickedNode)}
+          onClick={() => handleContributeClick(node)}
         >
           Contribute
         </Button>

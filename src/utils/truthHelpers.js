@@ -11,6 +11,7 @@ export function wordToNumber(word) {
   console.error(
     `Word must be 'suffering' | 'origin' | 'cessation' | 'path', received ${word}`
   );
+  return false;
 }
 
 /**
@@ -24,4 +25,5 @@ export function numberToWord(number) {
   if (number === 3) return 'cessation';
   if (number === 4) return 'path';
   console.error(`Number 1-4 not found, found: ${number}`);
+  return false;
 }

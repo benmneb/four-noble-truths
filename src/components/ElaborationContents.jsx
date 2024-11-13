@@ -5,8 +5,7 @@ import clsx from 'clsx';
 import { Box, Button, Divider, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
-import { useStore } from '../store';
-import { handleContributeClick, TooltipChip } from '../utils';
+import { handleContributeClick, TooltipChip, useParamsData } from '../utils';
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -33,15 +32,15 @@ const useStyles = makeStyles((theme) => ({
 export default function ElaborationContents() {
   const styles = useStyles();
 
-  const clickedNode = useStore((state) => state.clickedNode);
+  const { node } = useParamsData();
 
-  if (!clickedNode) return null;
+  if (!node) return null;
 
   return (
     <Box>
       <Box margin={2} component="figure">
-        <Typography className={styles.title}>{clickedNode?.text}</Typography>
-        {clickedNode.elaborations?.map((elaboration, index) => (
+        <Typography className={styles.title}>{node?.text}</Typography>
+        {node.elaborations?.map((elaboration, index) => (
           <Fragment key={elaboration.id || index}>
             <Box marginY={2}>
               <Typography component="blockquote">{elaboration.text}</Typography>
@@ -57,8 +56,8 @@ export default function ElaborationContents() {
                 <TooltipChip sutta={elaboration.reference} />
               </Typography>
             </Box>
-            {clickedNode?.elaboration?.length > 1 &&
-              clickedNode?.elaboration?.length - 1 > index && (
+            {node?.elaboration?.length > 1 &&
+              node?.elaboration?.length - 1 > index && (
                 <Divider variant="middle" />
               )}
           </Fragment>
@@ -66,11 +65,11 @@ export default function ElaborationContents() {
       </Box>
       <Box
         className={clsx(styles.elaborationChipBox, {
-          [styles.displayNone]: !clickedNode?.additionalRefs,
+          [styles.displayNone]: !node?.additionalRefs,
         })}
       >
         <Typography variant="body2">See also:</Typography>
-        {clickedNode?.additionalRefs?.map((ref) => (
+        {node?.additionalRefs?.map((ref) => (
           <TooltipChip key={ref} sutta={ref} />
         ))}
       </Box>
@@ -81,10 +80,7 @@ export default function ElaborationContents() {
         alignItems="center"
       >
         <Typography variant="subtitle2">Know another sutta quote?</Typography>
-        <Button
-          color="primary"
-          onClick={() => handleContributeClick(clickedNode)}
-        >
+        <Button color="primary" onClick={() => handleContributeClick(node)}>
           Contribute
         </Button>
       </Box>

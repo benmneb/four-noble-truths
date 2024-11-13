@@ -5,6 +5,7 @@ import { TreeItem } from '@material-ui/lab';
 import { useNavigate } from 'react-router-dom';
 import { useStore } from '../store';
 
+import { useParams } from 'react-router-dom';
 import { urlify } from '../utils';
 
 const useStyles = makeStyles((theme) => ({
@@ -23,18 +24,16 @@ export default function Tree(props) {
 
   const styles = useStyles();
   const navigate = useNavigate();
+  const { truth } = useParams();
   const onlyXs = useMediaQuery((theme) => theme.breakpoints.only('xs'));
 
-  const clickedTruth = useStore((state) => state.clickedTruth);
-  const setClickedNode = useStore((state) => state.setClickedNode);
   const toggleElaborationDrawer = useStore(
     (state) => state.toggleElaborationDrawer
   );
 
   async function handleLabelClick(e, node) {
     e.preventDefault();
-    setClickedNode(node);
-    navigate(`/${clickedTruth}/${urlify(node.text)}`);
+    navigate(`/${truth}/${urlify(node.text)}`);
     if (onlyXs) toggleElaborationDrawer();
   }
 
