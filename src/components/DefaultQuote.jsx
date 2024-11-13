@@ -24,7 +24,7 @@ export default function DefaultQuote() {
   return (
     <Fade in>
       <Box className={styles.root} component="figure">
-        <Tooltip arrow title="Read this sutta on SuttaCentral.net">
+        <Tooltip arrow title="Read on SuttaCentral.net">
           <Box
             className={styles.quote}
             onClick={() => handleSuttaLinkClick('SN 56.24')}
