@@ -1,9 +1,7 @@
-import { useMediaQuery } from '@material-ui/core';
 import { fade, makeStyles } from '@material-ui/core/styles';
 import { TreeItem } from '@material-ui/lab';
 
 import { useNavigate } from 'react-router-dom';
-import { useStore } from '../store';
 
 import { useParams } from 'react-router-dom';
 import { urlify } from '../utils';
@@ -25,16 +23,10 @@ export default function Tree(props) {
   const styles = useStyles();
   const navigate = useNavigate();
   const { truth } = useParams();
-  const onlyXs = useMediaQuery((theme) => theme.breakpoints.only('xs'));
-
-  const toggleElaborationDrawer = useStore(
-    (state) => state.toggleElaborationDrawer
-  );
 
   async function handleLabelClick(e, node) {
     e.preventDefault();
     navigate(`/${truth}/${urlify(node.text)}`);
-    if (onlyXs) toggleElaborationDrawer();
   }
 
   function renderTree({ id, text, children, ...props }) {
