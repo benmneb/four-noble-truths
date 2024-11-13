@@ -26,7 +26,7 @@ export default function Tree({ data, expandedNodes }) {
 
   async function handleLabelClick(e, node) {
     // Open tree automatically on node click, but don't close it.
-    if (expandedNodes.includes(node.id)) return e.preventDefault();
+    if (expandedNodes.includes(node.id)) e.preventDefault();
     navigate(`/${truth}/${urlify(node.text)}`);
   }
 
