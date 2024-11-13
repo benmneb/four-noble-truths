@@ -15,7 +15,7 @@ export default function ElaborationDrawer() {
   const styles = useStyles();
   const navigate = useNavigate();
   const { truth } = useParamsData();
-  const { explanation } = useParams();
+  const { elaboration } = useParams();
 
   function handleClose() {
     navigate(`/${truth}`);
@@ -27,7 +27,7 @@ export default function ElaborationDrawer() {
       anchor="right"
       disableDiscovery
       disableSwipeToOpen
-      open={!!explanation}
+      open={!!elaboration}
       onClose={handleClose}
     >
       <Elaboration />

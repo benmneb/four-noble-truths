@@ -18,13 +18,13 @@ const useStyles = makeStyles((theme) => ({
 export default function ElaborationNoContents() {
   const styles = useStyles();
   const { truth, node } = useParamsData();
-  const { explanation } = useParams();
+  const { elaboration } = useParams();
 
   if (!node?.id)
     return (
       <Box margin={2}>
         <Typography paragraph>
-          No elaboration found for "<code>{explanation}</code>".
+          No elaboration found for "<code>{elaboration}</code>".
         </Typography>
         <Typography paragraph>You probably followed a bad link.</Typography>
         <Box display="flex" justifyContent="flex-end">

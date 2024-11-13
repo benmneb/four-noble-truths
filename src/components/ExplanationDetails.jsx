@@ -52,7 +52,7 @@ export default function ExplanationDetails(props) {
   const { source } = props;
 
   const styles = useStyles(source);
-  const params = useParams();
+  const { elaboration } = useParams();
 
   return (
     <Fade in>
@@ -96,7 +96,7 @@ export default function ExplanationDetails(props) {
             </Box>
           </Grid>
           <Hidden xsDown>
-            {!!params.explanation && (
+            {!!elaboration && (
               <Fade in>
                 <Grid item sm={6}>
                   <Box className={styles.elaborationBox}>

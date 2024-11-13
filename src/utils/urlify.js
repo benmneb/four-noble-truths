@@ -1,5 +1,5 @@
 /**
- * @param {string} text The explanation title to convert to be URL friendly
+ * @param {string} text The elaboration title to convert to be URL friendly
  * @returns The URL friendly text
  */
 export function urlify(text) {

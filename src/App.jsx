@@ -15,7 +15,7 @@ import {
 
 const router = createBrowserRouter([
   {
-    path: '/:truth?/:explanation?',
+    path: '/:truth?/:elaboration?',
     element: (
       <>
         <TruthsNav />

@@ -7,13 +7,13 @@ import * as truths from '../data';
  * Get truth and node-data based on the URL.
  */
 export function useParamsData() {
-  const { truth, explanation } = useParams();
+  const { truth, elaboration } = useParams();
 
   const confirmedTruth = truth && TruthHelpers.wordToNumber(truth);
-  const nodeData = findDataByText(truths[truth], explanation);
+  const nodeData = findDataByText(truths[truth], elaboration);
 
   return {
     truth: truth && confirmedTruth ? truth : null,
-    node: explanation && nodeData ? nodeData : null,
+    node: elaboration && nodeData ? nodeData : null,
   };
 }
