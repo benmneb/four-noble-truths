@@ -9,7 +9,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { useNavigate } from 'react-router-dom';
 
 import { useStore } from '../store';
-import { TruthHelpers } from '../utils';
+import { TruthHelpers, useParamsData } from '../utils';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -67,34 +67,30 @@ export default function TruthPaper(props) {
   const styles = useStyles();
   const navigate = useNavigate();
 
-  const clickedTruth = useStore((state) => state.clickedTruth);
   const setHoverTruth = useStore((state) => state.setHoverTruth);
-  const setClickedTruth = useStore((state) => state.setClickedTruth);
-
+  const { truth } = useParamsData();
   const [isHovering, setIsHovering] = useState(false);
 
   function handleMouseEnter() {
-    if (id !== clickedTruth) {
+    if (id !== truth) {
       setHoverTruth(id);
       setIsHovering(true);
     }
   }
 
   function handleMouseLeave() {
-    if (id !== clickedTruth) {
+    if (id !== truth) {
       setHoverTruth(0);
       setIsHovering(false);
     }
   }
 
   function handleClick() {
-    if (id !== clickedTruth) {
-      setClickedTruth(id);
+    if (id !== truth) {
       setHoverTruth(0);
       navigate(`/${id}`);
     } else {
       navigate('/');
-      setClickedTruth(0);
     }
   }
 
@@ -109,7 +105,7 @@ export default function TruthPaper(props) {
       <Box className={styles.numberBox}>
         <Typography
           className={clsx(styles.number, {
-            [styles.selectedNumber]: clickedTruth === id,
+            [styles.selectedNumber]: truth === id,
           })}
         >
           {TruthHelpers.wordToNumber(id)}
@@ -117,7 +113,7 @@ export default function TruthPaper(props) {
       </Box>
       <Typography
         className={clsx(styles.text, {
-          [styles.selectedText]: clickedTruth === id,
+          [styles.selectedText]: truth === id,
         })}
       >
         {label}

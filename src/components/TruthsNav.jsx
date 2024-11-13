@@ -11,7 +11,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { useStore } from '../store';
 
 import { useNavigate } from 'react-router-dom';
-import { TruthHelpers } from '../utils';
+import { TruthHelpers, useParamsData } from '../utils';
 import { TruthPaper } from './index';
 
 const useStyles = makeStyles((theme) => ({
@@ -80,8 +80,7 @@ const useStyles = makeStyles((theme) => ({
 
 function BottomNavLabel({ label, number }) {
   const styles = useStyles();
-
-  const clickedTruth = useStore((state) => state.clickedTruth);
+  const { truth } = useParamsData();
 
   return (
     <Box component="span" className={styles.paper}>
@@ -89,7 +88,8 @@ function BottomNavLabel({ label, number }) {
         <Box
           component="span"
           className={clsx(styles.number, {
-            [styles.selectedNumber]: clickedTruth === number,
+            [styles.selectedNumber]:
+              truth === TruthHelpers.numberToWord(number),
           })}
         >
           {number}
@@ -98,8 +98,7 @@ function BottomNavLabel({ label, number }) {
       <Box
         component="span"
         className={clsx(styles.text, {
-          [styles.selectedText]:
-            clickedTruth === TruthHelpers.numberToWord(number),
+          [styles.selectedText]: truth === TruthHelpers.numberToWord(number),
         })}
       >
         {label}
@@ -112,20 +111,17 @@ export default function TruthsNav() {
   const styles = useStyles();
   const navigate = useNavigate();
 
+  const { truth } = useParamsData();
   const hoverTruth = useStore((state) => state.hoverTruth);
   const setHoverTruth = useStore((state) => state.setHoverTruth);
-  const clickedTruth = useStore((state) => state.clickedTruth);
-  const setClickedTruth = useStore((state) => state.setClickedTruth);
 
   function handleMobileNavChange(value) {
     if (hoverTruth !== 0) setHoverTruth(0);
 
-    if (value !== clickedTruth) {
+    if (value !== truth) {
       window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-      setClickedTruth(value);
       navigate(`/${value}`);
     } else {
-      setClickedTruth(0);
       navigate('/');
     }
   }
@@ -135,7 +131,7 @@ export default function TruthsNav() {
       <Hidden smUp>
         <BottomNavigation
           className={styles.bottomNav}
-          value={clickedTruth}
+          value={truth}
           onChange={(event, value) => handleMobileNavChange(value)}
           showLabels
         >
