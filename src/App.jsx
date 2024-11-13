@@ -7,7 +7,6 @@ import { useTheme } from './assets';
 import {
   AboutDrawer,
   Explanation,
-  ExplanationContents,
   Footer,
   TopBar,
   TruthsNav,
@@ -15,31 +14,13 @@ import {
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: '/:truth?/:explanation?',
     element: (
       <>
         <TruthsNav />
         <Explanation />
       </>
     ),
-    // errorElement: <ErrorPage />,
-  },
-  {
-    path: '/:truth',
-    element: (
-      <>
-        <TruthsNav />
-        <Explanation />
-      </>
-    ),
-    // errorElement: <ErrorPage />,
-    children: [
-      {
-        path: '/:truth/:explanation',
-        element: <ExplanationContents />,
-        // errorElement: <ErrorPage />,
-      },
-    ],
   },
 ]);
 
@@ -51,8 +32,6 @@ export default function App() {
       <CssBaseline />
       <TopBar />
       <RouterProvider router={router} />
-      {/* <TruthsNav />
-      <Explanation /> */}
       <Footer />
       <AboutDrawer />
     </ThemeProvider>

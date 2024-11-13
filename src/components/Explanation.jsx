@@ -28,7 +28,6 @@ export default function Explanation() {
     <Box className={styles.root}>
       <Paper className={styles.paper} variant="outlined" component="section">
         <ExplanationContents />
-        {/* <Outlet /> */}
       </Paper>
     </Box>
   );

@@ -9,7 +9,7 @@ import * as truths from '../data';
 export function useParamsData() {
   const { truth, explanation } = useParams();
 
-  const confirmedTruth = TruthHelpers.wordToNumber(truth);
+  const confirmedTruth = truth && TruthHelpers.wordToNumber(truth);
   const nodeData = findDataByText(truths[truth], explanation);
 
   return {
