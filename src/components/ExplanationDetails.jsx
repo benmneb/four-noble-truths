@@ -78,14 +78,16 @@ export default function ExplanationDetails(props) {
                 {source.treeTitle}:
               </Typography>
             )}
-            <TreeView
-              className={styles.treeView}
-              defaultCollapseIcon={<MinusSquare />}
-              defaultExpandIcon={<PlusSquare />}
-              defaultEndIcon={<CloseSquare />}
-            >
-              <Tree data={source.children} />
-            </TreeView>
+            <nav>
+              <TreeView
+                className={styles.treeView}
+                defaultCollapseIcon={<MinusSquare />}
+                defaultExpandIcon={<PlusSquare />}
+                defaultEndIcon={<CloseSquare />}
+              >
+                <Tree data={source.children} />
+              </TreeView>
+            </nav>
             <Box className={styles.chipBox}>
               <Typography variant="body2">See:</Typography>
               {source.seeMore.map((ref) => (
