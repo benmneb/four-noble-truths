@@ -119,7 +119,7 @@ export default function ExplanationDetails(props) {
                 className={styles.treeView}
                 defaultCollapseIcon={<MinusSquare />}
                 defaultExpandIcon={<PlusSquare />}
-                defaultEndIcon={<CloseSquare />}
+                defaultEndIcon={<CloseSquare color="disabled" />}
                 onNodeToggle={handleToggle}
               >
                 <Tree data={source.children} expandedNodes={expandedNodes} />
