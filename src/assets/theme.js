@@ -14,7 +14,17 @@ export function useTheme() {
         },
       },
       typography: {
-        fontFamily: ['Inter', 'sans-serif'].join(','),
+        fontFamily: [
+          'system-ui',
+          'Segoe UI',
+          'Roboto',
+          'Helvetica',
+          'Arial',
+          'sans-serif',
+          'Apple Color Emoji',
+          'Segoe UI Emoji',
+          'Segoe UI Symbol',
+        ].join(','),
       },
       shape: {
         borderRadius: 16,
