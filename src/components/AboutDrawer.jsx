@@ -8,7 +8,7 @@ import { Link, TooltipChip } from '../utils';
 
 const useStyles = makeStyles({
   drawerPaper: {
-    width: 290,
+    width: 'max(30vw, 290px)',
     maxWidth: '80vw',
   },
   figCaption: {

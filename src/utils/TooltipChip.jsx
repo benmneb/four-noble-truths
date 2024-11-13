@@ -7,6 +7,7 @@ import { handleSuttaLinkClick } from './index';
 
 const useStyles = makeStyles((theme) => ({
   chip: {
+    padding: theme.spacing(1, 0),
     margin: theme.spacing(1, 0, 0, 1),
   },
 }));
@@ -17,7 +18,7 @@ export function TooltipChip({ sutta }) {
   const themeType = useStore((state) => state.themeType);
 
   return (
-    <Tooltip arrow title="Read this sutta on SuttaCentral.net">
+    <Tooltip arrow title="Read on SuttaCentral.net">
       <Chip
         className={styles.chip}
         variant={themeType === 'dark' ? 'outlined' : 'default'}
