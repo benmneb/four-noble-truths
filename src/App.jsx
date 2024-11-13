@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { useTheme } from './assets';
 import {
   AboutDrawer,
+  ErrorPage,
   Explanation,
   Footer,
   TopBar,
@@ -21,6 +22,7 @@ const router = createBrowserRouter([
         <Explanation />
       </>
     ),
+    errorElement: <ErrorPage />,
   },
 ]);
 

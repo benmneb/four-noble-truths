@@ -8,10 +8,10 @@ export function wordToNumber(word) {
   if (word === 'origin') return '2';
   if (word === 'cessation') return '3';
   if (word === 'path') return '4';
-  console.error(
-    `Word must be 'suffering' | 'origin' | 'cessation' | 'path', received ${word}`
-  );
-  return false;
+  throw new Response('Bad Request', {
+    status: 400,
+    statusText: `Truth must be 'suffering' | 'origin' | 'cessation' | 'path'. Received: ${word}`,
+  });
 }
 
 /**
@@ -24,6 +24,8 @@ export function numberToWord(number) {
   if (number === 2) return 'origin';
   if (number === 3) return 'cessation';
   if (number === 4) return 'path';
-  console.error(`Number 1-4 not found, found: ${number}`);
-  return false;
+  throw new Response('Bad Request', {
+    status: 400,
+    statusText: `Number 1-4 not found, found: ${number}`,
+  });
 }

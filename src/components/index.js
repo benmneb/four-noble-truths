@@ -4,6 +4,7 @@ export { default as Elaboration } from './Elaboration';
 export { default as ElaborationContents } from './ElaborationContents';
 export { default as ElaborationDrawer } from './ElaborationDrawer';
 export { default as ElaborationNoContents } from './ElaborationNoContents';
+export { default as ErrorPage } from './ErrorPage';
 export { default as Explanation } from './Explanation';
 export { default as ExplanationContents } from './ExplanationContents';
 export { default as ExplanationDetails } from './ExplanationDetails';
