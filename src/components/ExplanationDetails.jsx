@@ -2,6 +2,8 @@ import { Box, Fade, Grid, Hidden, Typography } from '@material-ui/core';
 import { fade, makeStyles } from '@material-ui/core/styles';
 import { TreeView } from '@material-ui/lab';
 
+import Balancer from 'react-wrap-balancer';
+
 import { useParams } from 'react-router-dom';
 import { CloseSquare, MinusSquare, PlusSquare, TooltipChip } from '../utils';
 import { Elaboration, ElaborationDrawer, Tree } from './index';
@@ -15,7 +17,11 @@ const useStyles = makeStyles((theme) => ({
     },
     '& .quoteBox:first-of-type': {
       marginTop: theme.spacing(5),
+      maxWidth: '50ch',
     },
+  },
+  title: {
+    marginTop: theme.spacing(3),
   },
   figCaption: {
     marginTop: theme.spacing(1),
@@ -23,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'baseline',
     justifyContent: 'flex-end',
   },
-  title: {
+  treeTitle: {
     fontWeight: theme.typography.fontWeightMedium,
     marginBottom: theme.spacing(2),
   },
@@ -57,24 +63,46 @@ export default function ExplanationDetails(props) {
   return (
     <Fade in>
       <Box component="article" className={styles.root}>
-        <Typography variant="h4" component="h1">
-          {source.text}
-        </Typography>
-        <Box key={source.seeMore[0]} component="figure" className="quoteBox">
-          <Typography component="blockquote">"{source.explanation}"</Typography>
-          <Typography
-            className={styles.figCaption}
-            variant="subtitle2"
-            component="figcaption"
+        <Box
+          display="flex"
+          flexDirection="column"
+          alignItems="center"
+          marginX={2}
+        >
+          <Balancer>
+            <Typography
+              variant="h4"
+              component="h1"
+              align="center"
+              className={styles.title}
+            >
+              {source.text}
+            </Typography>
+          </Balancer>
+          <Box
+            key={source.seeMore[0]}
+            component="figure"
+            className="quoteBox"
+            display="flex"
+            flexDirection="column"
           >
-            - The Buddha
-            <TooltipChip sutta={source?.seeMore[0]} />
-          </Typography>
+            <Typography component="blockquote">
+              "{source.explanation}"
+            </Typography>
+            <Typography
+              className={styles.figCaption}
+              variant="subtitle2"
+              component="figcaption"
+            >
+              - The Buddha
+              <TooltipChip sutta={source?.seeMore[0]} />
+            </Typography>
+          </Box>
         </Box>
         <Grid container spacing={2}>
           <Grid item xs={12} sm={6}>
             {source.treeTitle && (
-              <Typography className={styles.title}>
+              <Typography className={styles.treeTitle}>
                 {source.treeTitle}:
               </Typography>
             )}

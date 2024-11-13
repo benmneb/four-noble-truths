@@ -17,6 +17,7 @@
     "react-router-dom": "^6.27.0",
     "react-scripts": "5.0.1",
     "react-window": "^1.8.6",
+    "react-wrap-balancer": "^1.1.1",
     "web-vitals": "^1.1.1",
     "workbox-background-sync": "^5.1.4",
     "workbox-broadcast-update": "^5.1.4",
