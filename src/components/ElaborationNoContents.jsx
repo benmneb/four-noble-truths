@@ -1,6 +1,8 @@
 import { Box, Button, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import { RestoreRounded } from '@material-ui/icons';
 
+import { useParams } from 'react-router-dom';
 import { handleContributeClick, useParamsData } from '../utils';
 
 const useStyles = makeStyles((theme) => ({
@@ -15,7 +17,28 @@ const useStyles = makeStyles((theme) => ({
 
 export default function ElaborationNoContents() {
   const styles = useStyles();
-  const { node } = useParamsData();
+  const { truth, node } = useParamsData();
+  const { explanation } = useParams();
+
+  if (!node?.id)
+    return (
+      <Box margin={2}>
+        <Typography paragraph>
+          No elaboration found for "<code>{explanation}</code>".
+        </Typography>
+        <Typography paragraph>You probably followed a bad link.</Typography>
+        <Box display="flex" justifyContent="flex-end">
+          <Button
+            href={`/${truth}`}
+            variant="outlined"
+            startIcon={<RestoreRounded />}
+            size="large"
+          >
+            Reset
+          </Button>
+        </Box>
+      </Box>
+    );
 
   return (
     <Box margin={2}>

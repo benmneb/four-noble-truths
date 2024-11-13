@@ -29,7 +29,7 @@ export default function Elaboration() {
       })}
     >
       {node?.id && <ElaborationContents />}
-      {!node?.id && <ElaborationNoContents />}
+      {!node?.elaborations?.length && <ElaborationNoContents />}
     </Paper>
   );
 }

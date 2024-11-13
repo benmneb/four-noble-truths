@@ -34,7 +34,7 @@ export default function ElaborationContents() {
 
   const { node } = useParamsData();
 
-  if (!node) return null;
+  if (!node?.elaborations?.length) return null;
 
   return (
     <Box>
