@@ -14,18 +14,19 @@ const useStyles = makeStyles((theme) => ({
   },
   treeItemLabel: {
     borderRadius: theme.spacing(0, 2, 2, 0),
+    padding: theme.spacing(0.5),
+    margin: theme.spacing(0.2),
   },
 }));
 
-export default function Tree(props) {
-  const { data } = props;
-
+export default function Tree({ data, expandedNodes }) {
   const styles = useStyles();
   const navigate = useNavigate();
   const { truth } = useParams();
 
   async function handleLabelClick(e, node) {
-    e.preventDefault();
+    // Open tree automatically on node click, but don't close it.
+    if (expandedNodes.includes(node.id)) return e.preventDefault();
     navigate(`/${truth}/${urlify(node.text)}`);
   }
 

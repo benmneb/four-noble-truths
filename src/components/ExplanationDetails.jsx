@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import { Box, Fade, Grid, Hidden, Typography } from '@material-ui/core';
 import { fade, makeStyles } from '@material-ui/core/styles';
 import { TreeView } from '@material-ui/lab';
@@ -60,6 +62,12 @@ export default function ExplanationDetails(props) {
   const styles = useStyles(source);
   const { elaboration } = useParams();
 
+  const [expandedNodes, setExpandedNodes] = useState([]);
+
+  function handleToggle(event, nodeIds) {
+    setExpandedNodes(nodeIds);
+  }
+
   return (
     <Fade in>
       <Box component="article" className={styles.root}>
@@ -112,8 +120,9 @@ export default function ExplanationDetails(props) {
                 defaultCollapseIcon={<MinusSquare />}
                 defaultExpandIcon={<PlusSquare />}
                 defaultEndIcon={<CloseSquare />}
+                onNodeToggle={handleToggle}
               >
-                <Tree data={source.children} />
+                <Tree data={source.children} expandedNodes={expandedNodes} />
               </TreeView>
             </nav>
             <Box className={styles.chipBox}>
