@@ -56,7 +56,7 @@ export default function TopBar() {
               aria-label="about"
               onClick={toggleAboutDrawer}
             >
-              <InfoRounded />
+              <InfoRounded fontSize="small" />
             </IconButton>
           </Tooltip>
           <Typography
@@ -73,7 +73,11 @@ export default function TopBar() {
               aria-label={tooltip}
               onClick={toggleThemeType}
             >
-              {darkTheme ? <BrightnessHighRounded /> : <Brightness3Rounded />}
+              {darkTheme ? (
+                <BrightnessHighRounded fontSize="small" />
+              ) : (
+                <Brightness3Rounded fontSize="small" />
+              )}
             </IconButton>
           </Tooltip>
         </Toolbar>
