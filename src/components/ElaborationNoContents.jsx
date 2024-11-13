@@ -19,7 +19,7 @@ export default function ElaborationNoContents() {
 
   return (
     <Box margin={2}>
-      <Typography className={styles.title}>{node.text}</Typography>
+      <Typography className={styles.title}>{node?.text}</Typography>
       <Typography paragraph>
         Do you know an appropriate reference elaborating on{' '}
         <Box component="span" fontStyle="italic">

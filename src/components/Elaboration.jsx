@@ -25,7 +25,7 @@ export default function Elaboration() {
       variant={smUp ? 'outlined' : 'elevation'}
       elevation={0}
       className={clsx({
-        [styles.displayNone]: hoverTruth || (!!node.text && !node?.id),
+        [styles.displayNone]: hoverTruth || (!!node?.text && !node?.id),
       })}
     >
       {node?.id && <ElaborationContents />}

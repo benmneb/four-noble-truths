@@ -1,7 +1,9 @@
 import { SwipeableDrawer } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
+import { useNavigate } from 'react-router-dom';
 import { useStore } from '../store';
+import { useParamsData } from '../utils';
 import { Elaboration } from './index';
 
 const useStyles = makeStyles({
@@ -12,13 +14,21 @@ const useStyles = makeStyles({
 
 export default function ElaborationDrawer() {
   const styles = useStyles();
+  const navigate = useNavigate();
+  const { truth } = useParamsData();
 
   const showElaborationDrawer = useStore(
     (state) => state.showElaborationDrawer
   );
+
   const toggleElaborationDrawer = useStore(
     (state) => state.toggleElaborationDrawer
   );
+
+  function handleClose() {
+    toggleElaborationDrawer();
+    navigate(`/${truth}`);
+  }
 
   return (
     <SwipeableDrawer
@@ -27,7 +37,7 @@ export default function ElaborationDrawer() {
       disableDiscovery
       disableSwipeToOpen
       open={showElaborationDrawer}
-      onClose={toggleElaborationDrawer}
+      onClose={handleClose}
       onOpen={toggleElaborationDrawer}
     >
       <Elaboration />
