@@ -28,7 +28,7 @@ export function useTheme() {
       fontSize: 20,
     },
     shape: {
-      borderRadius: 16,
+      borderRadius: 32,
     },
     props: {
       MuiSkeleton: {
