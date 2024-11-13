@@ -26,6 +26,9 @@ const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
     textAlign: 'center',
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
   },
 }));
 
@@ -40,9 +43,13 @@ export default function TopBar() {
 
   return (
     <Box className={styles.root}>
-      <AppBar position="static" color={darkTheme ? 'inherit' : 'primary'}>
+      <AppBar
+        position="static"
+        color={darkTheme ? 'inherit' : 'primary'}
+        elevation={0}
+      >
         <Toolbar>
-          <Tooltip title="About this site">
+          <Tooltip title="About this site" placement="right">
             <IconButton
               edge="start"
               color="inherit"
@@ -52,10 +59,14 @@ export default function TopBar() {
               <InfoRounded />
             </IconButton>
           </Tooltip>
-          <Typography variant="h6" component="h1" className={styles.title}>
+          <Typography
+            variant="subtitle2"
+            component="h1"
+            className={styles.title}
+          >
             The Four Noble Truths
           </Typography>
-          <Tooltip title={tooltip}>
+          <Tooltip title={tooltip} placement="left">
             <IconButton
               edge="start"
               color="inherit"

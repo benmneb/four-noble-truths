@@ -69,7 +69,7 @@ export default function TruthPaper(props) {
 
   const setHoverTruth = useStore((state) => state.setHoverTruth);
   const { truth } = useParamsData();
-  const [isHovering, setIsHovering] = useState(false);
+  const [, setIsHovering] = useState(false);
 
   function handleMouseEnter() {
     if (id !== truth) {
@@ -96,7 +96,7 @@ export default function TruthPaper(props) {
 
   return (
     <Paper
-      elevation={isHovering ? 6 : 3}
+      variant="outlined"
       className={styles.paper}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
