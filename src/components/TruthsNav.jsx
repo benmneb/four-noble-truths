@@ -60,10 +60,12 @@ const useStyles = makeStyles((theme) => ({
   },
   text: {
     zIndex: theme.zIndex.mobileStepper,
-    transition: `color ${theme.transitions.duration.standard}ms ${theme.transitions.easing.easeInOut}`,
+    transition: `all ${theme.transitions.duration.standard}ms ${theme.transitions.easing.easeInOut}`,
+    fontSize: '1.2rem',
   },
   selectedText: {
     color: theme.palette.type === 'dark' && theme.palette.primary.main,
+    fontSize: '1.3rem',
   },
   selectedNumber: {
     color: theme.palette.type === 'light' && theme.palette.primary.light,
