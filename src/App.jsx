@@ -19,8 +19,8 @@ const router = createBrowserRouter([
     path: '/:truth?/:elaboration?',
     element: (
       <>
-        <TruthsNav />
         <Explanation />
+        <TruthsNav />
       </>
     ),
     errorElement: <ErrorPage />,

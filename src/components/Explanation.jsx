@@ -11,13 +11,13 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     width: '90vw',
     maxWidth: theme.breakpoints.values.md,
-    minHeight: '70vh',
-    margin: theme.spacing(4, 3, 0, 3),
+    minHeight: `calc(100vh - ${theme.mixins.toolbar.minHeight * 3.799}px)`,
+    [theme.breakpoints.only('xs')]: {
+      minHeight: `calc(100vh - ${theme.mixins.toolbar.minHeight * 3.2}px)`,
+    },
+    margin: theme.spacing(0, 3),
     display: 'flex',
     justifyContent: 'center',
-    [theme.breakpoints.only('xs')]: {
-      marginTop: 0,
-    },
   },
 }));
 

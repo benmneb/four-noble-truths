@@ -4,34 +4,26 @@ import {
   BottomNavigation,
   BottomNavigationAction,
   Box,
-  Hidden,
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
-import { useStore } from '../store';
-
 import { useNavigate } from 'react-router-dom';
 import { TruthHelpers, useParamsData } from '../utils';
-import { TruthPaper } from './index';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    [theme.breakpoints.only('xs')]: {
-      position: 'fixed',
-      bottom: 0,
-      left: 0,
-      right: 0,
-      zIndex: theme.zIndex.mobileStepper,
-    },
-    [theme.breakpoints.up('sm')]: {
-      display: 'flex',
-      flexWrap: 'wrap',
-      justifyContent: 'center',
-    },
+    position: 'fixed',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    zIndex: theme.zIndex.mobileStepper,
   },
   bottomNav: {
     backdropFilter: 'blur(3000rem) saturate(130%)',
     backgroundColor: 'rgba(255,255,255,0.1)',
+    borderTop:
+      theme.palette.type === 'light' && `1px solid ${theme.palette.divider}`,
+    ...theme.mixins.toolbar,
   },
   selectedBottomNav: {
     color: theme.palette.text.primary,
@@ -112,12 +104,8 @@ export default function TruthsNav() {
   const navigate = useNavigate();
 
   const { truth } = useParamsData();
-  const hoverTruth = useStore((state) => state.hoverTruth);
-  const setHoverTruth = useStore((state) => state.setHoverTruth);
 
-  function handleMobileNavChange(value) {
-    if (hoverTruth !== 0) setHoverTruth(0);
-
+  function handleChange(value) {
     if (value !== truth) {
       window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
       navigate(`/${value}`);
@@ -128,44 +116,33 @@ export default function TruthsNav() {
 
   return (
     <Box className={styles.root} component="nav">
-      <Hidden smUp>
-        <BottomNavigation
-          className={styles.bottomNav}
-          value={truth}
-          onChange={(event, value) => handleMobileNavChange(value)}
-          showLabels
-        >
-          <BottomNavigationAction
-            classes={{ selected: styles.selectedBottomNav }}
-            label={<BottomNavLabel label="Suffering" number={1} />}
-            value="suffering"
-          />
-          <BottomNavigationAction
-            classes={{ selected: styles.selectedBottomNav }}
-            label={<BottomNavLabel label="Origin" number={2} />}
-            value="origin"
-          />
-          <BottomNavigationAction
-            classes={{ selected: styles.selectedBottomNav }}
-            label={<BottomNavLabel label="Cessation" number={3} />}
-            value="cessation"
-          />
-          <BottomNavigationAction
-            classes={{ selected: styles.selectedBottomNav }}
-            label={<BottomNavLabel label="Path" number={4} />}
-            value="path"
-          />
-        </BottomNavigation>
-      </Hidden>
-      <Hidden xsDown>
-        <TruthPaper label="Suffering" id="suffering" />
-        <TruthPaper label="The Origin of Suffering" id="origin" />
-        <TruthPaper label="The Cessation of Suffering" id="cessation" />
-        <TruthPaper
-          label="The Path Leading to the Cessation of Suffering"
-          id="path"
+      <BottomNavigation
+        className={styles.bottomNav}
+        value={truth}
+        onChange={(event, value) => handleChange(value)}
+        showLabels
+      >
+        <BottomNavigationAction
+          classes={{ selected: styles.selectedBottomNav }}
+          label={<BottomNavLabel label="Suffering" number={1} />}
+          value="suffering"
         />
-      </Hidden>
+        <BottomNavigationAction
+          classes={{ selected: styles.selectedBottomNav }}
+          label={<BottomNavLabel label="Origin" number={2} />}
+          value="origin"
+        />
+        <BottomNavigationAction
+          classes={{ selected: styles.selectedBottomNav }}
+          label={<BottomNavLabel label="Cessation" number={3} />}
+          value="cessation"
+        />
+        <BottomNavigationAction
+          classes={{ selected: styles.selectedBottomNav }}
+          label={<BottomNavLabel label="Path" number={4} />}
+          value="path"
+        />
+      </BottomNavigation>
     </Box>
   );
 }

@@ -9,9 +9,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     justifyContent: 'center',
     padding: theme.spacing(2),
-    [theme.breakpoints.only('xs')]: {
-      marginBottom: theme.mixins.toolbar.minHeight,
-    },
+    marginBottom: theme.mixins.toolbar.minHeight,
   },
 }));
 

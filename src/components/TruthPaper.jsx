@@ -8,7 +8,6 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import { useNavigate } from 'react-router-dom';
 
-import { useStore } from '../store';
 import { TruthHelpers, useParamsData } from '../utils';
 
 const useStyles = makeStyles((theme) => ({
@@ -67,27 +66,23 @@ export default function TruthPaper(props) {
   const styles = useStyles();
   const navigate = useNavigate();
 
-  const setHoverTruth = useStore((state) => state.setHoverTruth);
   const { truth } = useParamsData();
   const [, setIsHovering] = useState(false);
 
   function handleMouseEnter() {
     if (id !== truth) {
-      setHoverTruth(id);
       setIsHovering(true);
     }
   }
 
   function handleMouseLeave() {
     if (id !== truth) {
-      setHoverTruth(0);
       setIsHovering(false);
     }
   }
 
   function handleClick() {
     if (id !== truth) {
-      setHoverTruth(0);
       navigate(`/${id}`);
     } else {
       navigate('/');
