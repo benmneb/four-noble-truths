@@ -1,5 +1,5 @@
 import CssBaseline from '@material-ui/core/CssBaseline';
-import { ThemeProvider } from '@material-ui/core/styles';
+import { StylesProvider, ThemeProvider } from '@material-ui/core/styles';
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
@@ -12,6 +12,7 @@ import {
   TopBar,
   TruthsNav,
 } from './components';
+import { generateClassName } from './utils';
 
 const router = createBrowserRouter([
   {
@@ -30,12 +31,14 @@ export default function App() {
   const theme = useTheme();
 
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <TopBar />
-      <RouterProvider router={router} />
-      <Footer />
-      <AboutDrawer />
-    </ThemeProvider>
+    <StylesProvider generateClassName={generateClassName}>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <TopBar />
+        <RouterProvider router={router} />
+        <Footer />
+        <AboutDrawer />
+      </ThemeProvider>
+    </StylesProvider>
   );
 }
