@@ -4,8 +4,6 @@ import { Box, Fade, Grid, Hidden, Typography } from '@material-ui/core';
 import { fade, makeStyles } from '@material-ui/core/styles';
 import { TreeView } from '@material-ui/lab';
 
-import Balancer from 'react-wrap-balancer';
-
 import { useParams } from 'react-router-dom';
 import { CloseSquare, MinusSquare, PlusSquare, TooltipChip } from '../utils';
 import { Elaboration, ElaborationDrawer, Tree } from './index';
@@ -24,6 +22,7 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     marginTop: theme.spacing(3),
+    textWrap: 'balance',
   },
   figCaption: {
     marginTop: theme.spacing(1),
@@ -77,16 +76,14 @@ export default function ExplanationDetails(props) {
           alignItems="center"
           marginX={2}
         >
-          <Balancer>
-            <Typography
-              variant="h4"
-              component="h1"
-              align="center"
-              className={styles.title}
-            >
-              {source.text}
-            </Typography>
-          </Balancer>
+          <Typography
+            variant="h4"
+            component="h1"
+            align="center"
+            className={styles.title}
+          >
+            {source.text}
+          </Typography>
           <Box
             key={source.seeMore[0]}
             component="figure"

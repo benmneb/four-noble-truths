@@ -2,7 +2,6 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import { ThemeProvider } from '@material-ui/core/styles';
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { Provider } from 'react-wrap-balancer';
 
 import { useTheme } from './assets';
 import {
@@ -31,14 +30,12 @@ export default function App() {
   const theme = useTheme();
 
   return (
-    <Provider>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <TopBar />
-        <RouterProvider router={router} />
-        <Footer />
-        <AboutDrawer />
-      </ThemeProvider>
-    </Provider>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <TopBar />
+      <RouterProvider router={router} />
+      <Footer />
+      <AboutDrawer />
+    </ThemeProvider>
   );
 }
