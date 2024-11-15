@@ -11,7 +11,13 @@ import { Elaboration, ElaborationDrawer, Tree } from './index';
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
     margin: theme.spacing(0, 2),
+    [theme.breakpoints.only('xs')]: {
+      margin: theme.spacing(0),
+    },
     '& > *': {
       marginTop: theme.spacing(2),
     },
@@ -70,12 +76,7 @@ export default function ExplanationDetails(props) {
   return (
     <Fade in>
       <Box component="article" className={styles.root}>
-        <Box
-          display="flex"
-          flexDirection="column"
-          alignItems="center"
-          marginX={2}
-        >
+        <Box display="flex" flexDirection="column" alignItems="center">
           <Typography
             variant="h4"
             component="h1"
