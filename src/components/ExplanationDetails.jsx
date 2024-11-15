@@ -91,9 +91,7 @@ export default function ExplanationDetails(props) {
             display="flex"
             flexDirection="column"
           >
-            <Typography component="blockquote">
-              "{source.explanation}"
-            </Typography>
+            <Typography component="blockquote">{source.explanation}</Typography>
             <Typography
               className={styles.figCaption}
               variant="subtitle2"

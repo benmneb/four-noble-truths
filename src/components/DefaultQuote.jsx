@@ -30,10 +30,10 @@ export default function DefaultQuote() {
             onClick={() => handleSuttaLinkClick('SN 56.24')}
           >
             <Typography component="blockquote">
-              "Whatever perfected ones, fully awakened Buddhas, truly wake up
+              Whatever perfected ones, fully awakened Buddhas, truly wake up
               <br />
               — in the past, future, or present —<br />
-              all of them truly wake up to the Four Noble Truths."
+              all of them truly wake up to the Four Noble Truths.
             </Typography>
             <Typography variant="subtitle2" component="figcaption">
               - The Buddha

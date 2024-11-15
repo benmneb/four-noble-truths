@@ -36,10 +36,10 @@ export default function AboutDrawer() {
       <Box component="section" margin={1}>
         <Box component="figure" margin={2}>
           <Typography component="blockquote">
-            "The footprints of all creatures that walk can fit inside an
+            The footprints of all creatures that walk can fit inside an
             elephant’s footprint, so an elephant’s footprint is said to be the
             biggest of them all. In the same way, all skillful qualities can be
-            included in the four noble truths."
+            included in the four noble truths.
           </Typography>
           <Typography
             paragraph
@@ -53,11 +53,11 @@ export default function AboutDrawer() {
         </Box>
         <Box component="figure" margin={2}>
           <Typography component="blockquote">
-            "Because of not truly seeing the four noble truths, we have
+            Because of not truly seeing the four noble truths, we have
             transmigrated for a long time from one rebirth to the next. But now
             that these truths have been seen, the attachment to rebirth is
             eradicated. The root of suffering is cut off, now there are no more
-            future lives."
+            future lives.
           </Typography>
           <Typography
             paragraph

@@ -49,6 +49,19 @@ export function useTheme() {
           padding: 16,
         },
       },
+      MuiCssBaseline: {
+        '@global': {
+          blockquote: {
+            quotes: '"“" "”" "‘" "’"',
+          },
+          'blockquote::before': {
+            content: 'open-quote',
+          },
+          'blockquote::after': {
+            content: 'close-quote',
+          },
+        },
+      },
     },
   });
 
