@@ -15,9 +15,6 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     alignItems: 'center',
     margin: theme.spacing(0, 2),
-    [theme.breakpoints.only('xs')]: {
-      margin: theme.spacing(0),
-    },
     '& > *': {
       marginTop: theme.spacing(2),
     },
@@ -91,6 +88,7 @@ export default function ExplanationDetails(props) {
             className="quoteBox"
             display="flex"
             flexDirection="column"
+            marginX={0}
           >
             <Typography component="blockquote">{source.explanation}</Typography>
             <Typography

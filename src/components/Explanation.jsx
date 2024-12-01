@@ -12,10 +12,12 @@ const useStyles = makeStyles((theme) => ({
     width: '90vw',
     maxWidth: theme.breakpoints.values.md,
     minHeight: `calc(100vh - ${theme.mixins.toolbar.minHeight * 3.799}px)`,
+    margin: theme.spacing(0, 3),
     [theme.breakpoints.only('xs')]: {
+      margin: theme.spacing(0),
+      marginBottom: theme.mixins.toolbar.minHeight + theme.spacing(2),
       minHeight: `calc(100vh - ${theme.mixins.toolbar.minHeight * 3.2}px)`,
     },
-    margin: theme.spacing(0, 3),
     marginBottom: theme.mixins.toolbar.minHeight + theme.spacing(3),
     display: 'flex',
     justifyContent: 'center',
