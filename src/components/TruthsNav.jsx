@@ -17,6 +17,7 @@ const useStyles = makeStyles((theme) => ({
     left: 0,
     right: 0,
     zIndex: theme.zIndex.mobileStepper,
+    marginBottom: 'env(safe-area-inset-bottom)',
   },
   bottomNav: {
     backdropFilter: 'blur(3000rem) saturate(130%)',
