@@ -8,7 +8,6 @@ import {
   AboutDrawer,
   ErrorPage,
   Explanation,
-  Footer,
   TopBar,
   TruthsNav,
 } from './components';
@@ -37,7 +36,6 @@ export default function App() {
         <CssBaseline />
         <TopBar />
         <RouterProvider router={router} />
-        <Footer />
         <AboutDrawer />
         <Snackbars />
       </ThemeProvider>

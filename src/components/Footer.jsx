@@ -5,11 +5,6 @@ import { GitHub } from '@material-ui/icons';
 const useStyles = makeStyles((theme) => ({
   footer: {
     display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: theme.spacing(2),
-    marginBottom: theme.mixins.toolbar.minHeight,
   },
 }));
 

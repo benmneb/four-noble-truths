@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { useStore } from '../store';
 
 import { TooltipChip } from '../utils';
+import Footer from './Footer';
 
 const useStyles = makeStyles({
   drawerPaper: {
@@ -33,7 +34,14 @@ export default function AboutDrawer() {
       onClose={toggleAboutDrawer}
       onOpen={toggleAboutDrawer}
     >
-      <Box component="section" margin={1}>
+      <Box
+        component="section"
+        margin={1}
+        display="flex"
+        flexDirection="column"
+        justifyContent="space-between"
+        minHeight="100vh"
+      >
         <Box component="figure" margin={2}>
           <Typography component="blockquote">
             The footprints of all creatures that walk can fit inside an
@@ -52,22 +60,7 @@ export default function AboutDrawer() {
           </Typography>
         </Box>
         <Box component="figure" margin={2}>
-          <Typography component="blockquote">
-            Because of not truly seeing the four noble truths, we have
-            transmigrated for a long time from one rebirth to the next. But now
-            that these truths have been seen, the attachment to rebirth is
-            eradicated. The root of suffering is cut off, now there are no more
-            future lives.
-          </Typography>
-          <Typography
-            paragraph
-            variant="subtitle2"
-            component="figcaption"
-            className={styles.figCaption}
-          >
-            - The Buddha
-            <TooltipChip sutta="DN 16" />
-          </Typography>
+          <Footer />
         </Box>
       </Box>
     </SwipeableDrawer>
