@@ -104,7 +104,7 @@ export default function ExplanationDetails(props) {
           </Box>
         </Box>
         <Grid container spacing={2}>
-          <Grid item xs={12} sm={6}>
+          <Grid item xs={12} sm={6} width="100%">
             {source.treeTitle && (
               <Typography className={styles.treeTitle}>
                 {source.treeTitle}:

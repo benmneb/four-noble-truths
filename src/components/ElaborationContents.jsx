@@ -2,9 +2,17 @@ import { Fragment } from 'react';
 
 import clsx from 'clsx';
 
-import { Box, Button, Divider, Typography } from '@material-ui/core';
+import {
+  Box,
+  Divider,
+  IconButton,
+  Tooltip,
+  Typography,
+} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
+import { AddCircleOutlineRounded, LinkRounded } from '@material-ui/icons';
+import { useStore } from '../store';
 import { handleContributeClick, TooltipChip, useParamsData } from '../utils';
 
 const useStyles = makeStyles((theme) => ({
@@ -27,18 +35,67 @@ const useStyles = makeStyles((theme) => ({
   displayNone: {
     display: 'none',
   },
+  root: {
+    [theme.breakpoints.down('sm')]: {
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'space-between',
+    },
+  },
+  figure: {
+    margin: theme.spacing(2),
+    [theme.breakpoints.down('sm')]: {
+      marginBottom: 0,
+    },
+  },
+  buttonsContainer: {
+    margin: theme.spacing(2),
+    marginBottom: theme.spacing(1),
+    display: 'flex',
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+    [theme.breakpoints.down('sm')]: {
+      marginTop: 0,
+    },
+  },
 }));
 
 export default function ElaborationContents() {
   const styles = useStyles();
-
+  const showSnack = useStore((s) => s.showSnack);
   const { node } = useParamsData();
+
+  async function handleCopyToClipboard() {
+    const text = window.location;
+
+    if (navigator.clipboard) {
+      try {
+        await navigator.clipboard.writeText(text);
+        showSnack({
+          message: 'Link copied to clipboard',
+          severity: 'info',
+        });
+      } catch (error) {
+        showSnack({
+          message: 'Could not copy to clipboard.',
+          severity: 'error',
+        });
+        console.error('Error copying to clipboard:', error.message);
+      }
+    } else {
+      showSnack({
+        message: 'Could not access clipboard API.',
+        severity: 'error',
+      });
+      console.error('Could not access Clipboard API');
+    }
+  }
 
   if (!node?.elaborations?.length) return null;
 
   return (
-    <Box>
-      <Box margin={2} component="figure">
+    <Box className={styles.root}>
+      <Box component="figure" className={styles.figure}>
         <Typography className={styles.title}>{node?.text}</Typography>
         {node.elaborations?.map((elaboration, index) => (
           <Fragment key={elaboration.id || index}>
@@ -73,16 +130,26 @@ export default function ElaborationContents() {
           <TooltipChip key={ref} sutta={ref} />
         ))}
       </Box>
-      <Box
-        margin={2}
-        display="flex"
-        justifyContent="space-between"
-        alignItems="center"
-      >
-        <Typography variant="subtitle2">Know another sutta quote?</Typography>
-        <Button color="primary" onClick={() => handleContributeClick(node)}>
-          Contribute
-        </Button>
+      <Box className={styles.buttonsContainer}>
+        <Tooltip title="Contribute">
+          <IconButton
+            color="primary"
+            onClick={() => handleContributeClick(node)}
+            aria-label="Contribute"
+            edge="start"
+          >
+            <AddCircleOutlineRounded />
+          </IconButton>
+        </Tooltip>
+        <Tooltip title="Copy link">
+          <IconButton
+            aria-label="Copy link"
+            edge="end"
+            onClick={handleCopyToClipboard}
+          >
+            <LinkRounded />
+          </IconButton>
+        </Tooltip>
       </Box>
     </Box>
   );

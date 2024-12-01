@@ -1,6 +1,12 @@
-import { Box, Button, Typography } from '@material-ui/core';
+import {
+  Box,
+  Button,
+  IconButton,
+  Tooltip,
+  Typography,
+} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import { RestoreRounded } from '@material-ui/icons';
+import { AddCircleOutlineRounded, RestoreRounded } from '@material-ui/icons';
 
 import { handleContributeClick, useParamsData } from '../utils';
 
@@ -11,6 +17,14 @@ const useStyles = makeStyles((theme) => ({
   },
   displayNone: {
     display: 'none',
+  },
+  root: {
+    width: '100%',
+    margin: theme.spacing(2),
+    display: 'flex',
+    flexDirection: 'column',
+    flexGrow: 1,
+    justifyContent: 'space-between',
   },
 }));
 
@@ -39,23 +53,19 @@ export default function ElaborationNoContents() {
     );
 
   return (
-    <Box margin={2}>
+    <Box className={styles.root}>
       <Typography className={styles.title}>{node?.text}</Typography>
-      <Typography paragraph>
-        Do you know an appropriate reference elaborating on{' '}
-        <Box component="span" fontStyle="italic">
-          {node?.text?.toLowerCase()}
-        </Box>{' '}
-        from the suttas of the Pali Canon?
-      </Typography>
       <Box display="flex" justifyContent="flex-end">
-        <Button
-          variant="outlined"
-          color="primary"
-          onClick={() => handleContributeClick(node)}
-        >
-          Contribute
-        </Button>
+        <Tooltip title="Contribute" placement="left">
+          <IconButton
+            color="primary"
+            onClick={() => handleContributeClick(node)}
+            aria-label="Contribute"
+            edge="start"
+          >
+            <AddCircleOutlineRounded />
+          </IconButton>
+        </Tooltip>
       </Box>
     </Box>
   );

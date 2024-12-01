@@ -10,6 +10,10 @@ const useStyles = makeStyles((theme) => ({
   displayNone: {
     display: 'none',
   },
+  root: {
+    display: 'flex',
+    flexGrow: 1,
+  },
 }));
 
 export default function Elaboration() {
@@ -23,6 +27,7 @@ export default function Elaboration() {
       variant={smUp ? 'outlined' : 'elevation'}
       elevation={0}
       className={clsx({
+        [styles.root]: true,
         [styles.displayNone]: !!node?.text && !node?.id,
       })}
     >

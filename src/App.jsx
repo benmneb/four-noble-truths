@@ -12,6 +12,7 @@ import {
   TopBar,
   TruthsNav,
 } from './components';
+import Snackbars from './components/Snackbars';
 import { generateClassName } from './utils';
 
 const router = createBrowserRouter([
@@ -38,6 +39,7 @@ export default function App() {
         <RouterProvider router={router} />
         <Footer />
         <AboutDrawer />
+        <Snackbars />
       </ThemeProvider>
     </StylesProvider>
   );
