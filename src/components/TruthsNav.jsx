@@ -62,10 +62,16 @@ const useStyles = makeStyles((theme) => ({
     zIndex: theme.zIndex.mobileStepper,
     transition: `all ${theme.transitions.duration.standard}ms ${theme.transitions.easing.easeInOut}`,
     fontSize: '1.2rem',
+    [theme.breakpoints.up('sm')]: {
+      fontSize: theme.typography.h5.fontSize,
+    },
   },
   selectedText: {
     color: theme.palette.type === 'dark' && theme.palette.primary.main,
     fontSize: '1.3rem',
+    [theme.breakpoints.up('sm')]: {
+      fontSize: theme.typography.h5.fontSize,
+    },
   },
   selectedNumber: {
     color: theme.palette.type === 'light' && theme.palette.primary.light,
