@@ -18,9 +18,9 @@ import { useStore } from '../store';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    marginBottom: theme.spacing(4),
+    marginBottom: theme.spacing(2.2),
     [theme.breakpoints.only('xs')]: {
-      marginBottom: theme.spacing(3),
+      marginBottom: theme.spacing(2),
     },
   },
   title: {
