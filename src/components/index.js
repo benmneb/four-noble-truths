@@ -11,5 +11,4 @@ export { default as ExplanationDetails } from './ExplanationDetails';
 export { default as Footer } from './Footer';
 export { default as TopBar } from './TopBar';
 export { default as Tree } from './Tree';
-export { default as TruthPaper } from './TruthPaper';
 export { default as TruthsNav } from './TruthsNav';
