@@ -99,7 +99,9 @@ export const origin = {
       elaborations: [
         {
           reference: 'SN 12.2',
-          text: 'What are choices? There are three kinds of choices. Choices by way of body, speech, and mind. These are called choices.',
+          text: [
+            'What are choices? There are three kinds of choices. Choices by way of body, speech, and mind. These are called choices.',
+          ],
         },
       ],
     },
@@ -191,7 +193,9 @@ export const origin = {
       elaborations: [
         {
           reference: 'SN 12.2',
-          text: 'What are name and form? Feeling, perception, intention, contact, and attention. This is called mind. The four primary elements, and form derived from the four primary elements. This is called matter. Such is mind and such is matter. These are called name and form.',
+          text: [
+            'What are name and form? Feeling, perception, intention, contact, and attention. This is called mind. The four primary elements, and form derived from the four primary elements. This is called matter. Such is mind and such is matter. These are called name and form.',
+          ],
         },
       ],
     },
@@ -294,7 +298,9 @@ export const origin = {
           elaborations: [
             {
               reference: 'MN 44',
-              text: 'Anything felt physically or mentally as painful or unpleasant. This is painful feeling. Painful feeling is painful when it remains and pleasant when it perishes. The underlying tendency for repulsion underlies painful feeling. The underlying tendency to repulsion should be given up when it comes to painful feeling. Take a mendicant who reflects: ‘Oh, when will I enter and remain in the same dimension that the noble ones enter and remain in today?’ Nursing such a longing for the supreme liberations gives rise to sadness due to longing. With this they give up repulsion, and the underlying tendency to repulsion does not lie within that.',
+              text: [
+                'Anything felt physically or mentally as painful or unpleasant. This is painful feeling. Painful feeling is painful when it remains and pleasant when it perishes. The underlying tendency for repulsion underlies painful feeling. The underlying tendency to repulsion should be given up when it comes to painful feeling. Take a mendicant who reflects: ‘Oh, when will I enter and remain in the same dimension that the noble ones enter and remain in today?’ Nursing such a longing for the supreme liberations gives rise to sadness due to longing. With this they give up repulsion, and the underlying tendency to repulsion does not lie within that.',
+              ],
               spokenBy: 'Ven. Dhammadinnā',
             },
           ],
@@ -305,7 +311,9 @@ export const origin = {
           elaborations: [
             {
               reference: 'MN 44',
-              text: 'Anything felt physically or mentally as neither pleasurable nor painful. This is neutral feeling. Neutral feeling is pleasant when there is knowledge, and painful when there is ignorance. The underlying tendency for ignorance underlies neutral feeling. The underlying tendency to ignorance should be given up when it comes to neutral feeling. Take a mendicant who, giving up pleasure and pain, and ending former happiness and sadness, enters and remains in the fourth absorption, without pleasure or pain, with pure equanimity and mindfulness. With this they give up ignorance, and the underlying tendency to ignorance does not lie within that.',
+              text: [
+                'Anything felt physically or mentally as neither pleasurable nor painful. This is neutral feeling. Neutral feeling is pleasant when there is knowledge, and painful when there is ignorance. The underlying tendency for ignorance underlies neutral feeling. The underlying tendency to ignorance should be given up when it comes to neutral feeling. Take a mendicant who, giving up pleasure and pain, and ending former happiness and sadness, enters and remains in the fourth absorption, without pleasure or pain, with pure equanimity and mindfulness. With this they give up ignorance, and the underlying tendency to ignorance does not lie within that.',
+              ],
               spokenBy: 'Ven. Dhammadinnā',
             },
           ],
@@ -420,7 +428,9 @@ export const origin = {
               elaborations: [
                 {
                   reference: 'MN 11',
-                  text: 'Any ascetics or brahmins who cling, hold, and attach to a view favoring continued existence will oppose a view favoring ending existence. There are some ascetics and brahmins who don’t truly understand these two views’ origin, ending, gratification, drawback, and escape. They’re greedy, hateful, delusional, craving, grasping, and ignorant. They favor and oppose, and they enjoy proliferation. They’re not freed from rebirth, old age, and death, from sorrow, lamentation, pain, sadness, and distress. They’re not freed from suffering, I say.',
+                  text: [
+                    'Any ascetics or brahmins who cling, hold, and attach to a view favoring continued existence will oppose a view favoring ending existence. There are some ascetics and brahmins who don’t truly understand these two views’ origin, ending, gratification, drawback, and escape. They’re greedy, hateful, delusional, craving, grasping, and ignorant. They favor and oppose, and they enjoy proliferation. They’re not freed from rebirth, old age, and death, from sorrow, lamentation, pain, sadness, and distress. They’re not freed from suffering, I say.',
+                  ],
                 },
               ],
             },

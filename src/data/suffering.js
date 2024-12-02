@@ -101,7 +101,9 @@ export const suffering = {
       elaborations: [
         {
           reference: 'MN 141',
-          text: 'What is distress? The stress, distress, state of stress and distress in someone who has undergone misfortune, who has experienced suffering. This is called distress.',
+          text: [
+            'What is distress? The stress, distress, state of stress and distress in someone who has undergone misfortune, who has experienced suffering. This is called distress.',
+          ],
           spokenBy: 'Ven. Sariputta',
         },
       ],
@@ -112,7 +114,9 @@ export const suffering = {
       elaborations: [
         {
           reference: 'MN 141',
-          text: 'What is ‘not getting what you wish for is suffering’? In sentient beings who are liable to be reborn, such a wish arises: ‘Oh, if only we were not liable to be reborn! If only rebirth would not come to us!’ But you can’t get that by wishing. This is: ‘not getting what you wish for is suffering.’ In sentient beings who are liable to grow old … fall ill … die … experience sorrow, lamentation, pain, sadness, and distress, such a wish arises: ‘Oh, if only we were not liable to experience sorrow, lamentation, pain, sadness, and distress! If only sorrow, lamentation, pain, sadness, and distress would not come to us!’ But you can’t get that by wishing. This is: ‘not getting what you wish for is suffering.’',
+          text: [
+            'What is ‘not getting what you wish for is suffering’? In sentient beings who are liable to be reborn, such a wish arises: ‘Oh, if only we were not liable to be reborn! If only rebirth would not come to us!’ But you can’t get that by wishing. This is: ‘not getting what you wish for is suffering.’ In sentient beings who are liable to grow old … fall ill … die … experience sorrow, lamentation, pain, sadness, and distress, such a wish arises: ‘Oh, if only we were not liable to experience sorrow, lamentation, pain, sadness, and distress! If only sorrow, lamentation, pain, sadness, and distress would not come to us!’ But you can’t get that by wishing. This is: ‘not getting what you wish for is suffering.’',
+          ],
           spokenBy: 'Ven. Sariputta',
         },
       ],
@@ -134,7 +138,9 @@ export const suffering = {
               elaborations: [
                 {
                   reference: 'MN 28',
-                  text: 'What is the earth element? The earth element may be interior or exterior. And what is the interior earth element? Anything hard, solid, and appropriated that’s internal, pertaining to an individual. This includes: head hair, body hair, nails, teeth, skin, flesh, sinews, bones, bone marrow, kidneys, heart, liver, diaphragm, spleen, lungs, intestines, mesentery, undigested food, feces, or anything else hard, solid, and appropriated that’s internal, pertaining to an individual. This is called the interior earth element. The interior earth element and the exterior earth element are just the earth element. This should be truly seen with right understanding like this: ‘This is not mine, I am not this, this is not my self.’ When you truly see with right understanding, you grow disillusioned with the earth element, detaching the mind from the earth element.',
+                  text: [
+                    'What is the earth element? The earth element may be interior or exterior. And what is the interior earth element? Anything hard, solid, and appropriated that’s internal, pertaining to an individual. This includes: head hair, body hair, nails, teeth, skin, flesh, sinews, bones, bone marrow, kidneys, heart, liver, diaphragm, spleen, lungs, intestines, mesentery, undigested food, feces, or anything else hard, solid, and appropriated that’s internal, pertaining to an individual. This is called the interior earth element. The interior earth element and the exterior earth element are just the earth element. This should be truly seen with right understanding like this: ‘This is not mine, I am not this, this is not my self.’ When you truly see with right understanding, you grow disillusioned with the earth element, detaching the mind from the earth element.',
+                  ],
                 },
               ],
             },
@@ -171,14 +177,18 @@ export const suffering = {
               elaborations: [
                 {
                   reference: 'MN 28',
-                  text: 'What is the air element? The air element may be interior or exterior. And what is the interior air element? Anything that’s wind, windy, and appropriated that’s internal, pertaining to an individual. This includes: winds that go up or down, winds in the belly or the bowels, winds that flow through the limbs, in-breaths and out-breaths, or anything else that’s wind, windy, and appropriated that’s internal, pertaining to an individual. This is called the interior air element. The interior air element and the exterior air element are just the air element. This should be truly seen with right understanding like this: ‘This is not mine, I am not this, this is not my self.’ When you truly see with right understanding, you reject the air element, detaching the mind from the air element.',
+                  text: [
+                    'What is the air element? The air element may be interior or exterior. And what is the interior air element? Anything that’s wind, windy, and appropriated that’s internal, pertaining to an individual. This includes: winds that go up or down, winds in the belly or the bowels, winds that flow through the limbs, in-breaths and out-breaths, or anything else that’s wind, windy, and appropriated that’s internal, pertaining to an individual. This is called the interior air element. The interior air element and the exterior air element are just the air element. This should be truly seen with right understanding like this: ‘This is not mine, I am not this, this is not my self.’ When you truly see with right understanding, you reject the air element, detaching the mind from the air element.',
+                  ],
                 },
               ],
             },
           ],
           elaborations: [
             {
-              text: 'What is form? The four primary elements, and form derived from the four primary elements. This is called form. Form originates from food. When food ceases, form ceases. The practice that leads to the cessation of form is simply this noble eightfold path.',
+              text: [
+                'What is form? The four primary elements, and form derived from the four primary elements. This is called form. Form originates from food. When food ceases, form ceases. The practice that leads to the cessation of form is simply this noble eightfold path.',
+              ],
               reference: 'SN 22.56',
             },
           ],
@@ -239,7 +249,9 @@ export const suffering = {
       elaborations: [
         {
           reference: 'SN 56.13',
-          text: 'What is the noble truth of suffering? You should say: ‘The five grasping aggregates’. That is: form, feeling, perception, choices, and consciousness. This is called the noble truth of suffering.',
+          text: [
+            'What is the noble truth of suffering? You should say: ‘The five grasping aggregates’. That is: form, feeling, perception, choices, and consciousness. This is called the noble truth of suffering.',
+          ],
         },
       ],
     },

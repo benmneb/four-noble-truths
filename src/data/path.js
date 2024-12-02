@@ -1,4 +1,4 @@
-import { origin } from './index';
+// import { origin } from './index';
 
 export const path = {
   text: 'The Path Leading to the Cessation of Suffering',
@@ -119,7 +119,9 @@ export const path = {
               elaborations: [
                 {
                   reference: 'MN 9',
-                  text: 'What is the unskillful? Killing living creatures, stealing, and sexual misconduct; speech that’s false, divisive, harsh, or nonsensical; and covetousness, ill will, and wrong view. This is called the unskillful.',
+                  text: [
+                    'What is the unskillful? Killing living creatures, stealing, and sexual misconduct; speech that’s false, divisive, harsh, or nonsensical; and covetousness, ill will, and wrong view. This is called the unskillful.',
+                  ],
                 },
               ],
             },
@@ -242,7 +244,9 @@ export const path = {
               seeMore: [],
               elaborations: [
                 {
-                  text: 'And how should you regard solid food? Suppose a couple who were husband and wife set out to cross a desert, taking limited supplies. They had an only child, dear and beloved. As the couple were crossing the desert their limited quantity of supplies would run out, and they’d still have the rest of the desert to cross. Then it would occur to that couple: ‘Our limited quantity of supplies has run out, and we still have the rest of the desert to cross. Why don’t we kill our only child, so dear and beloved, and prepare dried and spiced meat? Then we can make it across the desert by eating our child’s flesh. Let not all three perish.’ Then that couple would kill their only child, so dear and beloved, and prepare dried and spiced meat. They’d make it across the desert by eating their child’s flesh. And as they’d eat their child’s flesh, they’d beat their breasts and cry: ‘Where are you, our only child? Where are you, our only child?’ What do you think? Would they eat that food for fun, indulgence, adornment, or decoration? Wouldn’t they eat that food just so they could make it across the desert? I say that this is how you should regard solid food. When solid food is completely understood, desire for the five kinds of sensual stimulation is completely understood. When desire for the five kinds of sensual stimulation is completely understood, a noble disciple is bound by no fetter that might return them again to this world.',
+                  text: [
+                    'And how should you regard solid food? Suppose a couple who were husband and wife set out to cross a desert, taking limited supplies. They had an only child, dear and beloved. As the couple were crossing the desert their limited quantity of supplies would run out, and they’d still have the rest of the desert to cross. Then it would occur to that couple: ‘Our limited quantity of supplies has run out, and we still have the rest of the desert to cross. Why don’t we kill our only child, so dear and beloved, and prepare dried and spiced meat? Then we can make it across the desert by eating our child’s flesh. Let not all three perish.’ Then that couple would kill their only child, so dear and beloved, and prepare dried and spiced meat. They’d make it across the desert by eating their child’s flesh. And as they’d eat their child’s flesh, they’d beat their breasts and cry: ‘Where are you, our only child? Where are you, our only child?’ What do you think? Would they eat that food for fun, indulgence, adornment, or decoration? Wouldn’t they eat that food just so they could make it across the desert? I say that this is how you should regard solid food. When solid food is completely understood, desire for the five kinds of sensual stimulation is completely understood. When desire for the five kinds of sensual stimulation is completely understood, a noble disciple is bound by no fetter that might return them again to this world.',
+                  ],
                   reference: 'SN 12.63',
                 },
               ],
@@ -300,11 +304,13 @@ export const path = {
           id: 'P-1.4',
           text: 'Dependent Origination',
           seeMore: ['SN 12.15', 'MN 9'],
-          children: [...origin.children],
+          // children: [...origin.children],
           elaborations: [
             {
               reference: 'SN 12.2',
-              text: 'What is dependent origination? Ignorance is a condition for choices. Choices are a condition for consciousness. Consciousness is a condition for name and form. Name and form are conditions for the six sense fields. The six sense fields are conditions for contact. Contact is a condition for feeling. Feeling is a condition for craving. Craving is a condition for grasping. Grasping is a condition for continued existence. Continued existence is a condition for rebirth. Rebirth is a condition for old age and death, sorrow, lamentation, pain, sadness, and distress to come to be. That is how this entire mass of suffering originates.',
+              text: [
+                'What is dependent origination? Ignorance is a condition for choices. Choices are a condition for consciousness. Consciousness is a condition for name and form. Name and form are conditions for the six sense fields. The six sense fields are conditions for contact. Contact is a condition for feeling. Feeling is a condition for craving. Craving is a condition for grasping. Grasping is a condition for continued existence. Continued existence is a condition for rebirth. Rebirth is a condition for old age and death, sorrow, lamentation, pain, sadness, and distress to come to be. That is how this entire mass of suffering originates.',
+              ],
             },
           ],
         },
@@ -452,7 +458,9 @@ export const path = {
       elaborations: [
         {
           reference: 'MN 9',
-          text: 'What is right view? Knowing about suffering, the origin of suffering, the cessation of suffering, and the practice that leads to the cessation of suffering. This is called right view.',
+          text: [
+            'What is right view? Knowing about suffering, the origin of suffering, the cessation of suffering, and the practice that leads to the cessation of suffering. This is called right view.',
+          ],
         },
       ],
     },
@@ -1216,413 +1224,20 @@ export const path = {
               children: [
                 {
                   id: 'P-7.1.4.1',
-                  text: 'Head hairs',
-                  seeMore: ['DN 22'],
-                  elaborations: [
-                    {
-                      reference: 'MN 10',
-                      text: [
-                        'Furthermore, a mendicant examines their own body, up from the soles of the feet and down from the tips of the hairs, wrapped in skin and full of many kinds of filth. ‘In this body there is head hair, body hair, nails, teeth, skin, flesh, sinews, bones, bone marrow, kidneys, heart, liver, diaphragm, spleen, lungs, intestines, mesentery, undigested food, feces, bile, phlegm, pus, blood, sweat, fat, tears, grease, saliva, snot, synovial fluid, urine.’ It’s as if there were a bag with openings at both ends, filled with various kinds of grains, such as fine rice, wheat, mung beans, peas, sesame, and ordinary rice. And someone with good eyesight were to open it and examine the contents: ‘These grains are fine rice, these are wheat, these are mung beans, these are peas, these are sesame, and these are ordinary rice.’ And so they meditate observing an aspect of the body internally, externally, and both internally and externally. That too is how a mendicant meditates by observing an aspect of the body.',
-                      ],
-                    },
+                  text: [
+                    'Head hair, body hair, nails, teeth, skin, flesh, sinews, bones, bone marrow, kidneys, heart, liver, diaphragm, spleen, lungs, intestines, mesentery, undigested food, feces, bile, phlegm, pus, blood, sweat, fat, tears, grease, saliva, snot, synovial fluid, urine.',
                   ],
-                },
-                {
-                  id: 'P-7.1.4.2',
-                  text: 'Body hairs',
                   seeMore: ['DN 22'],
-                  elaborations: [
-                    {
-                      reference: 'MN 10',
-                      text: [
-                        'Furthermore, a mendicant examines their own body, up from the soles of the feet and down from the tips of the hairs, wrapped in skin and full of many kinds of filth. ‘In this body there is head hair, body hair, nails, teeth, skin, flesh, sinews, bones, bone marrow, kidneys, heart, liver, diaphragm, spleen, lungs, intestines, mesentery, undigested food, feces, bile, phlegm, pus, blood, sweat, fat, tears, grease, saliva, snot, synovial fluid, urine.’ It’s as if there were a bag with openings at both ends, filled with various kinds of grains, such as fine rice, wheat, mung beans, peas, sesame, and ordinary rice. And someone with good eyesight were to open it and examine the contents: ‘These grains are fine rice, these are wheat, these are mung beans, these are peas, these are sesame, and these are ordinary rice.’ And so they meditate observing an aspect of the body internally, externally, and both internally and externally. That too is how a mendicant meditates by observing an aspect of the body.',
-                      ],
-                    },
-                  ],
-                },
-                {
-                  id: 'P-7.1.4.3',
-                  text: 'Nails',
-                  seeMore: ['DN 22'],
-                  elaborations: [
-                    {
-                      reference: 'MN 10',
-                      text: [
-                        'Furthermore, a mendicant examines their own body, up from the soles of the feet and down from the tips of the hairs, wrapped in skin and full of many kinds of filth. ‘In this body there is head hair, body hair, nails, teeth, skin, flesh, sinews, bones, bone marrow, kidneys, heart, liver, diaphragm, spleen, lungs, intestines, mesentery, undigested food, feces, bile, phlegm, pus, blood, sweat, fat, tears, grease, saliva, snot, synovial fluid, urine.’ It’s as if there were a bag with openings at both ends, filled with various kinds of grains, such as fine rice, wheat, mung beans, peas, sesame, and ordinary rice. And someone with good eyesight were to open it and examine the contents: ‘These grains are fine rice, these are wheat, these are mung beans, these are peas, these are sesame, and these are ordinary rice.’ And so they meditate observing an aspect of the body internally, externally, and both internally and externally. That too is how a mendicant meditates by observing an aspect of the body.',
-                      ],
-                    },
-                  ],
-                },
-                {
-                  id: 'P-7.1.4.4',
-                  text: 'Teeth',
-                  seeMore: ['DN 22'],
-                  elaborations: [
-                    {
-                      reference: 'MN 10',
-                      text: [
-                        'Furthermore, a mendicant examines their own body, up from the soles of the feet and down from the tips of the hairs, wrapped in skin and full of many kinds of filth. ‘In this body there is head hair, body hair, nails, teeth, skin, flesh, sinews, bones, bone marrow, kidneys, heart, liver, diaphragm, spleen, lungs, intestines, mesentery, undigested food, feces, bile, phlegm, pus, blood, sweat, fat, tears, grease, saliva, snot, synovial fluid, urine.’ It’s as if there were a bag with openings at both ends, filled with various kinds of grains, such as fine rice, wheat, mung beans, peas, sesame, and ordinary rice. And someone with good eyesight were to open it and examine the contents: ‘These grains are fine rice, these are wheat, these are mung beans, these are peas, these are sesame, and these are ordinary rice.’ And so they meditate observing an aspect of the body internally, externally, and both internally and externally. That too is how a mendicant meditates by observing an aspect of the body.',
-                      ],
-                    },
-                  ],
-                },
-                {
-                  id: 'P-7.1.4.5',
-                  text: 'Skin',
-                  seeMore: ['DN 22'],
-                  elaborations: [
-                    {
-                      reference: 'MN 10',
-                      text: [
-                        'Furthermore, a mendicant examines their own body, up from the soles of the feet and down from the tips of the hairs, wrapped in skin and full of many kinds of filth. ‘In this body there is head hair, body hair, nails, teeth, skin, flesh, sinews, bones, bone marrow, kidneys, heart, liver, diaphragm, spleen, lungs, intestines, mesentery, undigested food, feces, bile, phlegm, pus, blood, sweat, fat, tears, grease, saliva, snot, synovial fluid, urine.’ It’s as if there were a bag with openings at both ends, filled with various kinds of grains, such as fine rice, wheat, mung beans, peas, sesame, and ordinary rice. And someone with good eyesight were to open it and examine the contents: ‘These grains are fine rice, these are wheat, these are mung beans, these are peas, these are sesame, and these are ordinary rice.’ And so they meditate observing an aspect of the body internally, externally, and both internally and externally. That too is how a mendicant meditates by observing an aspect of the body.',
-                      ],
-                    },
-                  ],
-                },
-                {
-                  id: 'P-7.1.4.6',
-                  text: 'Flesh',
-                  seeMore: ['DN 22'],
-                  elaborations: [
-                    {
-                      reference: 'MN 10',
-                      text: [
-                        'Furthermore, a mendicant examines their own body, up from the soles of the feet and down from the tips of the hairs, wrapped in skin and full of many kinds of filth. ‘In this body there is head hair, body hair, nails, teeth, skin, flesh, sinews, bones, bone marrow, kidneys, heart, liver, diaphragm, spleen, lungs, intestines, mesentery, undigested food, feces, bile, phlegm, pus, blood, sweat, fat, tears, grease, saliva, snot, synovial fluid, urine.’ It’s as if there were a bag with openings at both ends, filled with various kinds of grains, such as fine rice, wheat, mung beans, peas, sesame, and ordinary rice. And someone with good eyesight were to open it and examine the contents: ‘These grains are fine rice, these are wheat, these are mung beans, these are peas, these are sesame, and these are ordinary rice.’ And so they meditate observing an aspect of the body internally, externally, and both internally and externally. That too is how a mendicant meditates by observing an aspect of the body.',
-                      ],
-                    },
-                  ],
-                },
-                {
-                  id: 'P-7.1.4.7',
-                  text: 'Sinews',
-                  seeMore: ['DN 22'],
-                  elaborations: [
-                    {
-                      reference: 'MN 10',
-                      text: [
-                        'Furthermore, a mendicant examines their own body, up from the soles of the feet and down from the tips of the hairs, wrapped in skin and full of many kinds of filth. ‘In this body there is head hair, body hair, nails, teeth, skin, flesh, sinews, bones, bone marrow, kidneys, heart, liver, diaphragm, spleen, lungs, intestines, mesentery, undigested food, feces, bile, phlegm, pus, blood, sweat, fat, tears, grease, saliva, snot, synovial fluid, urine.’ It’s as if there were a bag with openings at both ends, filled with various kinds of grains, such as fine rice, wheat, mung beans, peas, sesame, and ordinary rice. And someone with good eyesight were to open it and examine the contents: ‘These grains are fine rice, these are wheat, these are mung beans, these are peas, these are sesame, and these are ordinary rice.’ And so they meditate observing an aspect of the body internally, externally, and both internally and externally. That too is how a mendicant meditates by observing an aspect of the body.',
-                      ],
-                    },
-                  ],
-                },
-                {
-                  id: 'P-7.1.4.8',
-                  text: 'Bones',
-                  seeMore: ['DN 22'],
-                  elaborations: [
-                    {
-                      reference: 'MN 10',
-                      text: [
-                        'Furthermore, a mendicant examines their own body, up from the soles of the feet and down from the tips of the hairs, wrapped in skin and full of many kinds of filth. ‘In this body there is head hair, body hair, nails, teeth, skin, flesh, sinews, bones, bone marrow, kidneys, heart, liver, diaphragm, spleen, lungs, intestines, mesentery, undigested food, feces, bile, phlegm, pus, blood, sweat, fat, tears, grease, saliva, snot, synovial fluid, urine.’ It’s as if there were a bag with openings at both ends, filled with various kinds of grains, such as fine rice, wheat, mung beans, peas, sesame, and ordinary rice. And someone with good eyesight were to open it and examine the contents: ‘These grains are fine rice, these are wheat, these are mung beans, these are peas, these are sesame, and these are ordinary rice.’ And so they meditate observing an aspect of the body internally, externally, and both internally and externally. That too is how a mendicant meditates by observing an aspect of the body.',
-                      ],
-                    },
-                  ],
-                },
-                {
-                  id: 'P-7.1.4.9',
-                  text: 'Bone marrow',
-                  seeMore: ['DN 22'],
-                  elaborations: [
-                    {
-                      reference: 'MN 10',
-                      text: [
-                        'Furthermore, a mendicant examines their own body, up from the soles of the feet and down from the tips of the hairs, wrapped in skin and full of many kinds of filth. ‘In this body there is head hair, body hair, nails, teeth, skin, flesh, sinews, bones, bone marrow, kidneys, heart, liver, diaphragm, spleen, lungs, intestines, mesentery, undigested food, feces, bile, phlegm, pus, blood, sweat, fat, tears, grease, saliva, snot, synovial fluid, urine.’ It’s as if there were a bag with openings at both ends, filled with various kinds of grains, such as fine rice, wheat, mung beans, peas, sesame, and ordinary rice. And someone with good eyesight were to open it and examine the contents: ‘These grains are fine rice, these are wheat, these are mung beans, these are peas, these are sesame, and these are ordinary rice.’ And so they meditate observing an aspect of the body internally, externally, and both internally and externally. That too is how a mendicant meditates by observing an aspect of the body.',
-                      ],
-                    },
-                  ],
-                },
-                {
-                  id: 'P-7.1.4.10',
-                  text: 'Kidneys',
-                  seeMore: ['DN 22'],
-                  elaborations: [
-                    {
-                      reference: 'MN 10',
-                      text: [
-                        'Furthermore, a mendicant examines their own body, up from the soles of the feet and down from the tips of the hairs, wrapped in skin and full of many kinds of filth. ‘In this body there is head hair, body hair, nails, teeth, skin, flesh, sinews, bones, bone marrow, kidneys, heart, liver, diaphragm, spleen, lungs, intestines, mesentery, undigested food, feces, bile, phlegm, pus, blood, sweat, fat, tears, grease, saliva, snot, synovial fluid, urine.’ It’s as if there were a bag with openings at both ends, filled with various kinds of grains, such as fine rice, wheat, mung beans, peas, sesame, and ordinary rice. And someone with good eyesight were to open it and examine the contents: ‘These grains are fine rice, these are wheat, these are mung beans, these are peas, these are sesame, and these are ordinary rice.’ And so they meditate observing an aspect of the body internally, externally, and both internally and externally. That too is how a mendicant meditates by observing an aspect of the body.',
-                      ],
-                    },
-                  ],
-                },
-                {
-                  id: 'P-7.1.4.11',
-                  text: 'Heart',
-                  seeMore: ['DN 22'],
-                  elaborations: [
-                    {
-                      reference: 'MN 10',
-                      text: [
-                        'Furthermore, a mendicant examines their own body, up from the soles of the feet and down from the tips of the hairs, wrapped in skin and full of many kinds of filth. ‘In this body there is head hair, body hair, nails, teeth, skin, flesh, sinews, bones, bone marrow, kidneys, heart, liver, diaphragm, spleen, lungs, intestines, mesentery, undigested food, feces, bile, phlegm, pus, blood, sweat, fat, tears, grease, saliva, snot, synovial fluid, urine.’ It’s as if there were a bag with openings at both ends, filled with various kinds of grains, such as fine rice, wheat, mung beans, peas, sesame, and ordinary rice. And someone with good eyesight were to open it and examine the contents: ‘These grains are fine rice, these are wheat, these are mung beans, these are peas, these are sesame, and these are ordinary rice.’ And so they meditate observing an aspect of the body internally, externally, and both internally and externally. That too is how a mendicant meditates by observing an aspect of the body.',
-                      ],
-                    },
-                  ],
-                },
-                {
-                  id: 'P-7.1.4.12',
-                  text: 'Liver',
-                  seeMore: ['DN 22'],
-                  elaborations: [
-                    {
-                      reference: 'MN 10',
-                      text: [
-                        'Furthermore, a mendicant examines their own body, up from the soles of the feet and down from the tips of the hairs, wrapped in skin and full of many kinds of filth. ‘In this body there is head hair, body hair, nails, teeth, skin, flesh, sinews, bones, bone marrow, kidneys, heart, liver, diaphragm, spleen, lungs, intestines, mesentery, undigested food, feces, bile, phlegm, pus, blood, sweat, fat, tears, grease, saliva, snot, synovial fluid, urine.’ It’s as if there were a bag with openings at both ends, filled with various kinds of grains, such as fine rice, wheat, mung beans, peas, sesame, and ordinary rice. And someone with good eyesight were to open it and examine the contents: ‘These grains are fine rice, these are wheat, these are mung beans, these are peas, these are sesame, and these are ordinary rice.’ And so they meditate observing an aspect of the body internally, externally, and both internally and externally. That too is how a mendicant meditates by observing an aspect of the body.',
-                      ],
-                    },
-                  ],
-                },
-                {
-                  id: 'P-7.1.4.13',
-                  text: 'Diaphragm',
-                  seeMore: ['DN 22'],
-                  elaborations: [
-                    {
-                      reference: 'MN 10',
-                      text: [
-                        'Furthermore, a mendicant examines their own body, up from the soles of the feet and down from the tips of the hairs, wrapped in skin and full of many kinds of filth. ‘In this body there is head hair, body hair, nails, teeth, skin, flesh, sinews, bones, bone marrow, kidneys, heart, liver, diaphragm, spleen, lungs, intestines, mesentery, undigested food, feces, bile, phlegm, pus, blood, sweat, fat, tears, grease, saliva, snot, synovial fluid, urine.’ It’s as if there were a bag with openings at both ends, filled with various kinds of grains, such as fine rice, wheat, mung beans, peas, sesame, and ordinary rice. And someone with good eyesight were to open it and examine the contents: ‘These grains are fine rice, these are wheat, these are mung beans, these are peas, these are sesame, and these are ordinary rice.’ And so they meditate observing an aspect of the body internally, externally, and both internally and externally. That too is how a mendicant meditates by observing an aspect of the body.',
-                      ],
-                    },
-                  ],
-                },
-                {
-                  id: 'P-7.1.4.14',
-                  text: 'Spleen',
-                  seeMore: ['DN 22'],
-                  elaborations: [
-                    {
-                      reference: 'MN 10',
-                      text: [
-                        'Furthermore, a mendicant examines their own body, up from the soles of the feet and down from the tips of the hairs, wrapped in skin and full of many kinds of filth. ‘In this body there is head hair, body hair, nails, teeth, skin, flesh, sinews, bones, bone marrow, kidneys, heart, liver, diaphragm, spleen, lungs, intestines, mesentery, undigested food, feces, bile, phlegm, pus, blood, sweat, fat, tears, grease, saliva, snot, synovial fluid, urine.’ It’s as if there were a bag with openings at both ends, filled with various kinds of grains, such as fine rice, wheat, mung beans, peas, sesame, and ordinary rice. And someone with good eyesight were to open it and examine the contents: ‘These grains are fine rice, these are wheat, these are mung beans, these are peas, these are sesame, and these are ordinary rice.’ And so they meditate observing an aspect of the body internally, externally, and both internally and externally. That too is how a mendicant meditates by observing an aspect of the body.',
-                      ],
-                    },
-                  ],
-                },
-                {
-                  id: 'P-7.1.4.15',
-                  text: 'Lungs',
-                  seeMore: ['DN 22'],
-                  elaborations: [
-                    {
-                      reference: 'MN 10',
-                      text: [
-                        'Furthermore, a mendicant examines their own body, up from the soles of the feet and down from the tips of the hairs, wrapped in skin and full of many kinds of filth. ‘In this body there is head hair, body hair, nails, teeth, skin, flesh, sinews, bones, bone marrow, kidneys, heart, liver, diaphragm, spleen, lungs, intestines, mesentery, undigested food, feces, bile, phlegm, pus, blood, sweat, fat, tears, grease, saliva, snot, synovial fluid, urine.’ It’s as if there were a bag with openings at both ends, filled with various kinds of grains, such as fine rice, wheat, mung beans, peas, sesame, and ordinary rice. And someone with good eyesight were to open it and examine the contents: ‘These grains are fine rice, these are wheat, these are mung beans, these are peas, these are sesame, and these are ordinary rice.’ And so they meditate observing an aspect of the body internally, externally, and both internally and externally. That too is how a mendicant meditates by observing an aspect of the body.',
-                      ],
-                    },
-                  ],
-                },
-                {
-                  id: 'P-7.1.4.16',
-                  text: 'Intestines',
-                  seeMore: ['DN 22'],
-                  elaborations: [
-                    {
-                      reference: 'MN 10',
-                      text: [
-                        'Furthermore, a mendicant examines their own body, up from the soles of the feet and down from the tips of the hairs, wrapped in skin and full of many kinds of filth. ‘In this body there is head hair, body hair, nails, teeth, skin, flesh, sinews, bones, bone marrow, kidneys, heart, liver, diaphragm, spleen, lungs, intestines, mesentery, undigested food, feces, bile, phlegm, pus, blood, sweat, fat, tears, grease, saliva, snot, synovial fluid, urine.’ It’s as if there were a bag with openings at both ends, filled with various kinds of grains, such as fine rice, wheat, mung beans, peas, sesame, and ordinary rice. And someone with good eyesight were to open it and examine the contents: ‘These grains are fine rice, these are wheat, these are mung beans, these are peas, these are sesame, and these are ordinary rice.’ And so they meditate observing an aspect of the body internally, externally, and both internally and externally. That too is how a mendicant meditates by observing an aspect of the body.',
-                      ],
-                    },
-                  ],
-                },
-                {
-                  id: 'P-7.1.4.17',
-                  text: 'Mesentery',
-                  seeMore: ['DN 22'],
-                  elaborations: [
-                    {
-                      reference: 'MN 10',
-                      text: [
-                        'Furthermore, a mendicant examines their own body, up from the soles of the feet and down from the tips of the hairs, wrapped in skin and full of many kinds of filth. ‘In this body there is head hair, body hair, nails, teeth, skin, flesh, sinews, bones, bone marrow, kidneys, heart, liver, diaphragm, spleen, lungs, intestines, mesentery, undigested food, feces, bile, phlegm, pus, blood, sweat, fat, tears, grease, saliva, snot, synovial fluid, urine.’ It’s as if there were a bag with openings at both ends, filled with various kinds of grains, such as fine rice, wheat, mung beans, peas, sesame, and ordinary rice. And someone with good eyesight were to open it and examine the contents: ‘These grains are fine rice, these are wheat, these are mung beans, these are peas, these are sesame, and these are ordinary rice.’ And so they meditate observing an aspect of the body internally, externally, and both internally and externally. That too is how a mendicant meditates by observing an aspect of the body.',
-                      ],
-                    },
-                  ],
-                },
-                {
-                  id: 'P-7.1.4.18',
-                  text: 'Undigested food',
-                  seeMore: ['DN 22'],
-                  elaborations: [
-                    {
-                      reference: 'MN 10',
-                      text: [
-                        'Furthermore, a mendicant examines their own body, up from the soles of the feet and down from the tips of the hairs, wrapped in skin and full of many kinds of filth. ‘In this body there is head hair, body hair, nails, teeth, skin, flesh, sinews, bones, bone marrow, kidneys, heart, liver, diaphragm, spleen, lungs, intestines, mesentery, undigested food, feces, bile, phlegm, pus, blood, sweat, fat, tears, grease, saliva, snot, synovial fluid, urine.’ It’s as if there were a bag with openings at both ends, filled with various kinds of grains, such as fine rice, wheat, mung beans, peas, sesame, and ordinary rice. And someone with good eyesight were to open it and examine the contents: ‘These grains are fine rice, these are wheat, these are mung beans, these are peas, these are sesame, and these are ordinary rice.’ And so they meditate observing an aspect of the body internally, externally, and both internally and externally. That too is how a mendicant meditates by observing an aspect of the body.',
-                      ],
-                    },
-                  ],
-                },
-                {
-                  id: 'P-7.1.4.19',
-                  text: 'Feces',
-                  seeMore: ['DN 22'],
-                  elaborations: [
-                    {
-                      reference: 'MN 10',
-                      text: [
-                        'Furthermore, a mendicant examines their own body, up from the soles of the feet and down from the tips of the hairs, wrapped in skin and full of many kinds of filth. ‘In this body there is head hair, body hair, nails, teeth, skin, flesh, sinews, bones, bone marrow, kidneys, heart, liver, diaphragm, spleen, lungs, intestines, mesentery, undigested food, feces, bile, phlegm, pus, blood, sweat, fat, tears, grease, saliva, snot, synovial fluid, urine.’ It’s as if there were a bag with openings at both ends, filled with various kinds of grains, such as fine rice, wheat, mung beans, peas, sesame, and ordinary rice. And someone with good eyesight were to open it and examine the contents: ‘These grains are fine rice, these are wheat, these are mung beans, these are peas, these are sesame, and these are ordinary rice.’ And so they meditate observing an aspect of the body internally, externally, and both internally and externally. That too is how a mendicant meditates by observing an aspect of the body.',
-                      ],
-                    },
-                  ],
-                },
-                {
-                  id: 'P-7.1.4.20',
-                  text: 'Bile',
-                  seeMore: ['DN 22'],
-                  elaborations: [
-                    {
-                      reference: 'MN 10',
-                      text: [
-                        'Furthermore, a mendicant examines their own body, up from the soles of the feet and down from the tips of the hairs, wrapped in skin and full of many kinds of filth. ‘In this body there is head hair, body hair, nails, teeth, skin, flesh, sinews, bones, bone marrow, kidneys, heart, liver, diaphragm, spleen, lungs, intestines, mesentery, undigested food, feces, bile, phlegm, pus, blood, sweat, fat, tears, grease, saliva, snot, synovial fluid, urine.’ It’s as if there were a bag with openings at both ends, filled with various kinds of grains, such as fine rice, wheat, mung beans, peas, sesame, and ordinary rice. And someone with good eyesight were to open it and examine the contents: ‘These grains are fine rice, these are wheat, these are mung beans, these are peas, these are sesame, and these are ordinary rice.’ And so they meditate observing an aspect of the body internally, externally, and both internally and externally. That too is how a mendicant meditates by observing an aspect of the body.',
-                      ],
-                    },
-                  ],
-                },
-                {
-                  id: 'P-7.1.4.21',
-                  text: 'Phlegm',
-                  seeMore: ['DN 22'],
-                  elaborations: [
-                    {
-                      reference: 'MN 10',
-                      text: [
-                        'Furthermore, a mendicant examines their own body, up from the soles of the feet and down from the tips of the hairs, wrapped in skin and full of many kinds of filth. ‘In this body there is head hair, body hair, nails, teeth, skin, flesh, sinews, bones, bone marrow, kidneys, heart, liver, diaphragm, spleen, lungs, intestines, mesentery, undigested food, feces, bile, phlegm, pus, blood, sweat, fat, tears, grease, saliva, snot, synovial fluid, urine.’ It’s as if there were a bag with openings at both ends, filled with various kinds of grains, such as fine rice, wheat, mung beans, peas, sesame, and ordinary rice. And someone with good eyesight were to open it and examine the contents: ‘These grains are fine rice, these are wheat, these are mung beans, these are peas, these are sesame, and these are ordinary rice.’ And so they meditate observing an aspect of the body internally, externally, and both internally and externally. That too is how a mendicant meditates by observing an aspect of the body.',
-                      ],
-                    },
-                  ],
-                },
-                {
-                  id: 'P-7.1.4.22',
-                  text: 'Pus',
-                  seeMore: ['DN 22'],
-                  elaborations: [
-                    {
-                      reference: 'MN 10',
-                      text: [
-                        'Furthermore, a mendicant examines their own body, up from the soles of the feet and down from the tips of the hairs, wrapped in skin and full of many kinds of filth. ‘In this body there is head hair, body hair, nails, teeth, skin, flesh, sinews, bones, bone marrow, kidneys, heart, liver, diaphragm, spleen, lungs, intestines, mesentery, undigested food, feces, bile, phlegm, pus, blood, sweat, fat, tears, grease, saliva, snot, synovial fluid, urine.’ It’s as if there were a bag with openings at both ends, filled with various kinds of grains, such as fine rice, wheat, mung beans, peas, sesame, and ordinary rice. And someone with good eyesight were to open it and examine the contents: ‘These grains are fine rice, these are wheat, these are mung beans, these are peas, these are sesame, and these are ordinary rice.’ And so they meditate observing an aspect of the body internally, externally, and both internally and externally. That too is how a mendicant meditates by observing an aspect of the body.',
-                      ],
-                    },
-                  ],
-                },
-                {
-                  id: 'P-7.1.4.23',
-                  text: 'Blood',
-                  seeMore: ['DN 22'],
-                  elaborations: [
-                    {
-                      reference: 'MN 10',
-                      text: [
-                        'Furthermore, a mendicant examines their own body, up from the soles of the feet and down from the tips of the hairs, wrapped in skin and full of many kinds of filth. ‘In this body there is head hair, body hair, nails, teeth, skin, flesh, sinews, bones, bone marrow, kidneys, heart, liver, diaphragm, spleen, lungs, intestines, mesentery, undigested food, feces, bile, phlegm, pus, blood, sweat, fat, tears, grease, saliva, snot, synovial fluid, urine.’ It’s as if there were a bag with openings at both ends, filled with various kinds of grains, such as fine rice, wheat, mung beans, peas, sesame, and ordinary rice. And someone with good eyesight were to open it and examine the contents: ‘These grains are fine rice, these are wheat, these are mung beans, these are peas, these are sesame, and these are ordinary rice.’ And so they meditate observing an aspect of the body internally, externally, and both internally and externally. That too is how a mendicant meditates by observing an aspect of the body.',
-                      ],
-                    },
-                  ],
-                },
-                {
-                  id: 'P-7.1.4.24',
-                  text: 'Sweat',
-                  seeMore: ['DN 22'],
-                  elaborations: [
-                    {
-                      reference: 'MN 10',
-                      text: [
-                        'Furthermore, a mendicant examines their own body, up from the soles of the feet and down from the tips of the hairs, wrapped in skin and full of many kinds of filth. ‘In this body there is head hair, body hair, nails, teeth, skin, flesh, sinews, bones, bone marrow, kidneys, heart, liver, diaphragm, spleen, lungs, intestines, mesentery, undigested food, feces, bile, phlegm, pus, blood, sweat, fat, tears, grease, saliva, snot, synovial fluid, urine.’ It’s as if there were a bag with openings at both ends, filled with various kinds of grains, such as fine rice, wheat, mung beans, peas, sesame, and ordinary rice. And someone with good eyesight were to open it and examine the contents: ‘These grains are fine rice, these are wheat, these are mung beans, these are peas, these are sesame, and these are ordinary rice.’ And so they meditate observing an aspect of the body internally, externally, and both internally and externally. That too is how a mendicant meditates by observing an aspect of the body.',
-                      ],
-                    },
-                  ],
-                },
-                {
-                  id: 'P-7.1.4.25',
-                  text: 'Fat',
-                  seeMore: ['DN 22'],
-                  elaborations: [
-                    {
-                      reference: 'MN 10',
-                      text: [
-                        'Furthermore, a mendicant examines their own body, up from the soles of the feet and down from the tips of the hairs, wrapped in skin and full of many kinds of filth. ‘In this body there is head hair, body hair, nails, teeth, skin, flesh, sinews, bones, bone marrow, kidneys, heart, liver, diaphragm, spleen, lungs, intestines, mesentery, undigested food, feces, bile, phlegm, pus, blood, sweat, fat, tears, grease, saliva, snot, synovial fluid, urine.’ It’s as if there were a bag with openings at both ends, filled with various kinds of grains, such as fine rice, wheat, mung beans, peas, sesame, and ordinary rice. And someone with good eyesight were to open it and examine the contents: ‘These grains are fine rice, these are wheat, these are mung beans, these are peas, these are sesame, and these are ordinary rice.’ And so they meditate observing an aspect of the body internally, externally, and both internally and externally. That too is how a mendicant meditates by observing an aspect of the body.',
-                      ],
-                    },
-                  ],
-                },
-                {
-                  id: 'P-7.1.4.26',
-                  text: 'Tears',
-                  seeMore: ['DN 22'],
-                  elaborations: [
-                    {
-                      reference: 'MN 10',
-                      text: [
-                        'Furthermore, a mendicant examines their own body, up from the soles of the feet and down from the tips of the hairs, wrapped in skin and full of many kinds of filth. ‘In this body there is head hair, body hair, nails, teeth, skin, flesh, sinews, bones, bone marrow, kidneys, heart, liver, diaphragm, spleen, lungs, intestines, mesentery, undigested food, feces, bile, phlegm, pus, blood, sweat, fat, tears, grease, saliva, snot, synovial fluid, urine.’ It’s as if there were a bag with openings at both ends, filled with various kinds of grains, such as fine rice, wheat, mung beans, peas, sesame, and ordinary rice. And someone with good eyesight were to open it and examine the contents: ‘These grains are fine rice, these are wheat, these are mung beans, these are peas, these are sesame, and these are ordinary rice.’ And so they meditate observing an aspect of the body internally, externally, and both internally and externally. That too is how a mendicant meditates by observing an aspect of the body.',
-                      ],
-                    },
-                  ],
-                },
-                {
-                  id: 'P-7.1.4.27',
-                  text: 'Grease',
-                  seeMore: ['DN 22'],
-                  elaborations: [
-                    {
-                      reference: 'MN 10',
-                      text: [
-                        'Furthermore, a mendicant examines their own body, up from the soles of the feet and down from the tips of the hairs, wrapped in skin and full of many kinds of filth. ‘In this body there is head hair, body hair, nails, teeth, skin, flesh, sinews, bones, bone marrow, kidneys, heart, liver, diaphragm, spleen, lungs, intestines, mesentery, undigested food, feces, bile, phlegm, pus, blood, sweat, fat, tears, grease, saliva, snot, synovial fluid, urine.’ It’s as if there were a bag with openings at both ends, filled with various kinds of grains, such as fine rice, wheat, mung beans, peas, sesame, and ordinary rice. And someone with good eyesight were to open it and examine the contents: ‘These grains are fine rice, these are wheat, these are mung beans, these are peas, these are sesame, and these are ordinary rice.’ And so they meditate observing an aspect of the body internally, externally, and both internally and externally. That too is how a mendicant meditates by observing an aspect of the body.',
-                      ],
-                    },
-                  ],
-                },
-                {
-                  id: 'P-7.1.4.28',
-                  text: 'Saliva',
-                  seeMore: ['DN 22'],
-                  elaborations: [
-                    {
-                      reference: 'MN 10',
-                      text: [
-                        'Furthermore, a mendicant examines their own body, up from the soles of the feet and down from the tips of the hairs, wrapped in skin and full of many kinds of filth. ‘In this body there is head hair, body hair, nails, teeth, skin, flesh, sinews, bones, bone marrow, kidneys, heart, liver, diaphragm, spleen, lungs, intestines, mesentery, undigested food, feces, bile, phlegm, pus, blood, sweat, fat, tears, grease, saliva, snot, synovial fluid, urine.’ It’s as if there were a bag with openings at both ends, filled with various kinds of grains, such as fine rice, wheat, mung beans, peas, sesame, and ordinary rice. And someone with good eyesight were to open it and examine the contents: ‘These grains are fine rice, these are wheat, these are mung beans, these are peas, these are sesame, and these are ordinary rice.’ And so they meditate observing an aspect of the body internally, externally, and both internally and externally. That too is how a mendicant meditates by observing an aspect of the body.',
-                      ],
-                    },
-                  ],
-                },
-                {
-                  id: 'P-7.1.4.29',
-                  text: 'Snot',
-                  seeMore: ['DN 22'],
-                  elaborations: [
-                    {
-                      reference: 'MN 10',
-                      text: [
-                        'Furthermore, a mendicant examines their own body, up from the soles of the feet and down from the tips of the hairs, wrapped in skin and full of many kinds of filth. ‘In this body there is head hair, body hair, nails, teeth, skin, flesh, sinews, bones, bone marrow, kidneys, heart, liver, diaphragm, spleen, lungs, intestines, mesentery, undigested food, feces, bile, phlegm, pus, blood, sweat, fat, tears, grease, saliva, snot, synovial fluid, urine.’ It’s as if there were a bag with openings at both ends, filled with various kinds of grains, such as fine rice, wheat, mung beans, peas, sesame, and ordinary rice. And someone with good eyesight were to open it and examine the contents: ‘These grains are fine rice, these are wheat, these are mung beans, these are peas, these are sesame, and these are ordinary rice.’ And so they meditate observing an aspect of the body internally, externally, and both internally and externally. That too is how a mendicant meditates by observing an aspect of the body.',
-                      ],
-                    },
-                  ],
-                },
-                {
-                  id: 'P-7.1.4.30',
-                  text: 'Synovial fluid',
-                  seeMore: ['DN 22'],
-                  elaborations: [
-                    {
-                      reference: 'MN 10',
-                      text: [
-                        'Furthermore, a mendicant examines their own body, up from the soles of the feet and down from the tips of the hairs, wrapped in skin and full of many kinds of filth. ‘In this body there is head hair, body hair, nails, teeth, skin, flesh, sinews, bones, bone marrow, kidneys, heart, liver, diaphragm, spleen, lungs, intestines, mesentery, undigested food, feces, bile, phlegm, pus, blood, sweat, fat, tears, grease, saliva, snot, synovial fluid, urine.’ It’s as if there were a bag with openings at both ends, filled with various kinds of grains, such as fine rice, wheat, mung beans, peas, sesame, and ordinary rice. And someone with good eyesight were to open it and examine the contents: ‘These grains are fine rice, these are wheat, these are mung beans, these are peas, these are sesame, and these are ordinary rice.’ And so they meditate observing an aspect of the body internally, externally, and both internally and externally. That too is how a mendicant meditates by observing an aspect of the body.',
-                      ],
-                    },
-                  ],
-                },
-                {
-                  id: 'P-7.1.4.31',
-                  text: 'Urine',
-                  seeMore: ['DN 22'],
-                  elaborations: [
-                    {
-                      reference: 'MN 10',
-                      text: [
-                        'Furthermore, a mendicant examines their own body, up from the soles of the feet and down from the tips of the hairs, wrapped in skin and full of many kinds of filth. ‘In this body there is head hair, body hair, nails, teeth, skin, flesh, sinews, bones, bone marrow, kidneys, heart, liver, diaphragm, spleen, lungs, intestines, mesentery, undigested food, feces, bile, phlegm, pus, blood, sweat, fat, tears, grease, saliva, snot, synovial fluid, urine.’ It’s as if there were a bag with openings at both ends, filled with various kinds of grains, such as fine rice, wheat, mung beans, peas, sesame, and ordinary rice. And someone with good eyesight were to open it and examine the contents: ‘These grains are fine rice, these are wheat, these are mung beans, these are peas, these are sesame, and these are ordinary rice.’ And so they meditate observing an aspect of the body internally, externally, and both internally and externally. That too is how a mendicant meditates by observing an aspect of the body.',
-                      ],
-                    },
-                  ],
                 },
               ],
               elaborations: [
                 {
                   reference: 'MN 10',
                   text: [
-                    'Furthermore, a mendicant examines their own body, up from the soles of the feet and down from the tips of the hairs, wrapped in skin and full of many kinds of filth. ‘In this body there is head hair, body hair, nails, teeth, skin, flesh, sinews, bones, bone marrow, kidneys, heart, liver, diaphragm, spleen, lungs, intestines, mesentery, undigested food, feces, bile, phlegm, pus, blood, sweat, fat, tears, grease, saliva, snot, synovial fluid, urine.’ It’s as if there were a bag with openings at both ends, filled with various kinds of grains, such as fine rice, wheat, mung beans, peas, sesame, and ordinary rice. And someone with good eyesight were to open it and examine the contents: ‘These grains are fine rice, these are wheat, these are mung beans, these are peas, these are sesame, and these are ordinary rice.’ And so they meditate observing an aspect of the body internally, externally, and both internally and externally. That too is how a mendicant meditates by observing an aspect of the body.',
+                    'Furthermore, a mendicant examines their own body, up from the soles of the feet and down from the tips of the hairs, wrapped in skin and full of many kinds of filth. ‘In this body there is head hair, body hair, nails, teeth, skin, flesh, sinews, bones, bone marrow, kidneys, heart, liver, diaphragm, spleen, lungs, intestines, mesentery, undigested food, feces, bile, phlegm, pus, blood, sweat, fat, tears, grease, saliva, snot, synovial fluid, urine.’',
+                    'It’s as if there were a bag with openings at both ends, filled with various kinds of grains, such as fine rice, wheat, mung beans, peas, sesame, and ordinary rice. And someone with good eyesight were to open it and examine the contents: ‘These grains are fine rice, these are wheat, these are mung beans, these are peas, these are sesame, and these are ordinary rice.’',
+                    'And so they meditate observing an aspect of the body internally, externally, and both internally and externally.',
+                    'That too is how a mendicant meditates by observing an aspect of the body.',
                   ],
                 },
               ],

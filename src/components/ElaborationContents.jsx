@@ -100,7 +100,16 @@ export default function ElaborationContents() {
         {node.elaborations?.map((elaboration, index) => (
           <Fragment key={elaboration.id || index}>
             <Box marginY={2}>
-              <Typography component="blockquote">{elaboration.text}</Typography>
+              <Typography component="blockquote">
+                {elaboration?.text?.map((text, i, arr) => (
+                  <>
+                    <Typography display="inline">{text}</Typography>
+                    {i !== arr.length - 1 && (
+                      <Typography paragraph>{''}</Typography>
+                    )}
+                  </>
+                ))}
+              </Typography>
               <Typography
                 variant="subtitle2"
                 component="figcaption"
