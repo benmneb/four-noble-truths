@@ -4,5 +4,5 @@
  */
 export function urlify(text) {
   if (typeof text !== 'string') return null;
-  return text.toLowerCase().replaceAll(' ', '-').replaceAll('/', '-');
+  return text.toLowerCase().replace(/[^a-z]/gi, '-');
 }
