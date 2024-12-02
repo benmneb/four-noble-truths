@@ -1224,9 +1224,7 @@ export const path = {
               children: [
                 {
                   id: 'P-7.1.4.1',
-                  text: [
-                    'Head hair, body hair, nails, teeth, skin, flesh, sinews, bones, bone marrow, kidneys, heart, liver, diaphragm, spleen, lungs, intestines, mesentery, undigested food, feces, bile, phlegm, pus, blood, sweat, fat, tears, grease, saliva, snot, synovial fluid, urine.',
-                  ],
+                  text: 'Head hair, body hair, nails, teeth, skin, flesh, sinews, bones, bone marrow, kidneys, heart, liver, diaphragm, spleen, lungs, intestines, mesentery, undigested food, feces, bile, phlegm, pus, blood, sweat, fat, tears, grease, saliva, snot, synovial fluid, urine.',
                   seeMore: ['DN 22'],
                 },
               ],
