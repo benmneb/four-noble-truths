@@ -57,7 +57,7 @@ export const path = {
             },
             {
               id: 'P-1.1.4',
-              text: 'The path leading to the cessation of suffering',
+              text: 'The practice leading to the cessation of suffering',
               elaborations: [
                 {
                   reference: 'MN 9',
@@ -178,7 +178,7 @@ export const path = {
                 },
                 {
                   id: 'P-1.2.3.6',
-                  text: 'Good-will',
+                  text: 'Good-will ', // Trailing space to make it unique
                 },
                 {
                   id: 'P-1.2.3.7',
