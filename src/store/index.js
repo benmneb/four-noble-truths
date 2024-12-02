@@ -2,7 +2,7 @@ import { create } from 'zustand';
 
 export const useStore = create((set) => ({
   showAboutDrawer: false,
-  themeType: 'dark',
+  themeType: 'light',
   snackPack: [],
 
   toggleAboutDrawer: () =>
