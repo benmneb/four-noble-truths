@@ -109,7 +109,7 @@ export const path = {
                 },
                 {
                   id: 'P-1.2.1.6',
-                  text: 'Ill-will',
+                  text: 'Ill-will ', // Trailing space to make it unique
                 },
                 {
                   id: 'P-1.2.1.7',
@@ -899,7 +899,9 @@ export const path = {
                     {
                       reference: 'MN 118',
                       text: [
-                        'And how is mindfulness of breathing developed and cultivated to be very fruitful and beneficial? It’s when a mendicant has gone to a wilderness, or to the root of a tree, or to an empty hut. They sit down cross-legged, with their body straight, and establish mindfulness right there. Just mindful, they breathe in. Mindful, they breathe out. When breathing in heavily they know: ‘I’m breathing in heavily.’ When breathing out heavily they know: ‘I’m breathing out heavily.’ When breathing in lightly they know: ‘I’m breathing in lightly.’ When breathing out lightly they know: ‘I’m breathing out lightly.’ They practice breathing in experiencing the whole body. They practice breathing out experiencing the whole body. They practice breathing in stilling the body’s motion. They practice breathing out stilling the body’s motion.',
+                        'And how is mindfulness of breathing developed and cultivated to be very fruitful and beneficial?',
+                        'It’s when a mendicant has gone to a wilderness, or to the root of a tree, or to an empty hut. They sit down cross-legged, with their body straight, and establish mindfulness right there. Just mindful, they breathe in. Mindful, they breathe out.',
+                        'When breathing in heavily they know: ‘I’m breathing in heavily.’ When breathing out heavily they know: ‘I’m breathing out heavily.’ When breathing in lightly they know: ‘I’m breathing in lightly.’ When breathing out lightly they know: ‘I’m breathing out lightly.’ They practice breathing in experiencing the whole body. They practice breathing out experiencing the whole body. They practice breathing in stilling the body’s motion. They practice breathing out stilling the body’s motion.',
                       ],
                     },
                   ],
@@ -912,7 +914,9 @@ export const path = {
                     {
                       reference: 'MN 118',
                       text: [
-                        'And how is mindfulness of breathing developed and cultivated to be very fruitful and beneficial? It’s when a mendicant has gone to a wilderness, or to the root of a tree, or to an empty hut. They sit down cross-legged, with their body straight, and establish mindfulness right there. Just mindful, they breathe in. Mindful, they breathe out. When breathing in heavily they know: ‘I’m breathing in heavily.’ When breathing out heavily they know: ‘I’m breathing out heavily.’ When breathing in lightly they know: ‘I’m breathing in lightly.’ When breathing out lightly they know: ‘I’m breathing out lightly.’ They practice breathing in experiencing the whole body. They practice breathing out experiencing the whole body. They practice breathing in stilling the body’s motion. They practice breathing out stilling the body’s motion.',
+                        'And how is mindfulness of breathing developed and cultivated to be very fruitful and beneficial?',
+                        'It’s when a mendicant has gone to a wilderness, or to the root of a tree, or to an empty hut. They sit down cross-legged, with their body straight, and establish mindfulness right there. Just mindful, they breathe in. Mindful, they breathe out.',
+                        'When breathing in heavily they know: ‘I’m breathing in heavily.’ When breathing out heavily they know: ‘I’m breathing out heavily.’ When breathing in lightly they know: ‘I’m breathing in lightly.’ When breathing out lightly they know: ‘I’m breathing out lightly.’ They practice breathing in experiencing the whole body. They practice breathing out experiencing the whole body. They practice breathing in stilling the body’s motion. They practice breathing out stilling the body’s motion.',
                       ],
                     },
                   ],
@@ -925,7 +929,9 @@ export const path = {
                     {
                       reference: 'MN 118',
                       text: [
-                        'And how is mindfulness of breathing developed and cultivated to be very fruitful and beneficial? It’s when a mendicant has gone to a wilderness, or to the root of a tree, or to an empty hut. They sit down cross-legged, with their body straight, and establish mindfulness right there. Just mindful, they breathe in. Mindful, they breathe out. When breathing in heavily they know: ‘I’m breathing in heavily.’ When breathing out heavily they know: ‘I’m breathing out heavily.’ When breathing in lightly they know: ‘I’m breathing in lightly.’ When breathing out lightly they know: ‘I’m breathing out lightly.’ They practice breathing in experiencing the whole body. They practice breathing out experiencing the whole body. They practice breathing in stilling the body’s motion. They practice breathing out stilling the body’s motion.',
+                        'And how is mindfulness of breathing developed and cultivated to be very fruitful and beneficial?',
+                        'It’s when a mendicant has gone to a wilderness, or to the root of a tree, or to an empty hut. They sit down cross-legged, with their body straight, and establish mindfulness right there. Just mindful, they breathe in. Mindful, they breathe out.',
+                        'When breathing in heavily they know: ‘I’m breathing in heavily.’ When breathing out heavily they know: ‘I’m breathing out heavily.’ When breathing in lightly they know: ‘I’m breathing in lightly.’ When breathing out lightly they know: ‘I’m breathing out lightly.’ They practice breathing in experiencing the whole body. They practice breathing out experiencing the whole body. They practice breathing in stilling the body’s motion. They practice breathing out stilling the body’s motion.',
                       ],
                     },
                   ],
@@ -938,7 +944,9 @@ export const path = {
                     {
                       reference: 'MN 118',
                       text: [
-                        'And how is mindfulness of breathing developed and cultivated to be very fruitful and beneficial? It’s when a mendicant has gone to a wilderness, or to the root of a tree, or to an empty hut. They sit down cross-legged, with their body straight, and establish mindfulness right there. Just mindful, they breathe in. Mindful, they breathe out. When breathing in heavily they know: ‘I’m breathing in heavily.’ When breathing out heavily they know: ‘I’m breathing out heavily.’ When breathing in lightly they know: ‘I’m breathing in lightly.’ When breathing out lightly they know: ‘I’m breathing out lightly.’ They practice breathing in experiencing the whole body. They practice breathing out experiencing the whole body. They practice breathing in stilling the body’s motion. They practice breathing out stilling the body’s motion.',
+                        'And how is mindfulness of breathing developed and cultivated to be very fruitful and beneficial?',
+                        'It’s when a mendicant has gone to a wilderness, or to the root of a tree, or to an empty hut. They sit down cross-legged, with their body straight, and establish mindfulness right there. Just mindful, they breathe in. Mindful, they breathe out.',
+                        'When breathing in heavily they know: ‘I’m breathing in heavily.’ When breathing out heavily they know: ‘I’m breathing out heavily.’ When breathing in lightly they know: ‘I’m breathing in lightly.’ When breathing out lightly they know: ‘I’m breathing out lightly.’ They practice breathing in experiencing the whole body. They practice breathing out experiencing the whole body. They practice breathing in stilling the body’s motion. They practice breathing out stilling the body’s motion.',
                       ],
                     },
                   ],
@@ -1029,190 +1037,79 @@ export const path = {
                   id: 'P-7.1.3.1',
                   text: 'Going out and coming back',
                   seeMore: ['DN 22'],
-                  elaborations: [
-                    {
-                      reference: 'MN 10',
-                      text: [
-                        'Furthermore, a mendicant acts with situational awareness when going out and coming back; when looking ahead and aside; when bending and extending the limbs; when bearing the outer robe, bowl, and robes; when eating, drinking, chewing, and tasting; when urinating and defecating; when walking, standing, sitting, sleeping, waking, speaking, and keeping silent. That too is how a mendicant meditates by observing an aspect of the body.',
-                      ],
-                    },
-                  ],
                 },
                 {
                   id: 'P-7.1.3.2',
                   text: 'Looking ahead and looking aside',
                   seeMore: ['DN 22'],
-                  elaborations: [
-                    {
-                      reference: 'MN 10',
-                      text: [
-                        'Furthermore, a mendicant acts with situational awareness when going out and coming back; when looking ahead and aside; when bending and extending the limbs; when bearing the outer robe, bowl, and robes; when eating, drinking, chewing, and tasting; when urinating and defecating; when walking, standing, sitting, sleeping, waking, speaking, and keeping silent. That too is how a mendicant meditates by observing an aspect of the body.',
-                      ],
-                    },
-                  ],
                 },
                 {
                   id: 'P-7.1.3.3',
                   text: 'Bending and extending limbs',
                   seeMore: ['DN 22'],
-                  elaborations: [
-                    {
-                      reference: 'MN 10',
-                      text: [
-                        'Furthermore, a mendicant acts with situational awareness when going out and coming back; when looking ahead and aside; when bending and extending the limbs; when bearing the outer robe, bowl, and robes; when eating, drinking, chewing, and tasting; when urinating and defecating; when walking, standing, sitting, sleeping, waking, speaking, and keeping silent. That too is how a mendicant meditates by observing an aspect of the body.',
-                      ],
-                    },
-                  ],
                 },
                 {
                   id: 'P-7.1.3.4',
                   text: 'Dressing',
                   seeMore: ['DN 22'],
-                  elaborations: [
-                    {
-                      reference: 'MN 10',
-                      text: [
-                        'Furthermore, a mendicant acts with situational awareness when going out and coming back; when looking ahead and aside; when bending and extending the limbs; when bearing the outer robe, bowl, and robes; when eating, drinking, chewing, and tasting; when urinating and defecating; when walking, standing, sitting, sleeping, waking, speaking, and keeping silent. That too is how a mendicant meditates by observing an aspect of the body.',
-                      ],
-                    },
-                  ],
                 },
                 {
                   id: 'P-7.1.3.5',
                   text: 'Eating',
                   seeMore: ['DN 22'],
-                  elaborations: [
-                    {
-                      reference: 'MN 10',
-                      text: [
-                        'Furthermore, a mendicant acts with situational awareness when going out and coming back; when looking ahead and aside; when bending and extending the limbs; when bearing the outer robe, bowl, and robes; when eating, drinking, chewing, and tasting; when urinating and defecating; when walking, standing, sitting, sleeping, waking, speaking, and keeping silent. That too is how a mendicant meditates by observing an aspect of the body.',
-                      ],
-                    },
-                  ],
                 },
                 {
                   id: 'P-7.1.3.6',
                   text: 'Drinking',
                   seeMore: ['DN 22'],
-                  elaborations: [
-                    {
-                      reference: 'MN 10',
-                      text: [
-                        'Furthermore, a mendicant acts with situational awareness when going out and coming back; when looking ahead and aside; when bending and extending the limbs; when bearing the outer robe, bowl, and robes; when eating, drinking, chewing, and tasting; when urinating and defecating; when walking, standing, sitting, sleeping, waking, speaking, and keeping silent. That too is how a mendicant meditates by observing an aspect of the body.',
-                      ],
-                    },
-                  ],
                 },
                 {
                   id: 'P-7.1.3.7',
                   text: 'Chewing',
                   seeMore: ['DN 22'],
-                  elaborations: [
-                    {
-                      reference: 'MN 10',
-                      text: [
-                        'Furthermore, a mendicant acts with situational awareness when going out and coming back; when looking ahead and aside; when bending and extending the limbs; when bearing the outer robe, bowl, and robes; when eating, drinking, chewing, and tasting; when urinating and defecating; when walking, standing, sitting, sleeping, waking, speaking, and keeping silent. That too is how a mendicant meditates by observing an aspect of the body.',
-                      ],
-                    },
-                  ],
                 },
                 {
                   id: 'P-7.1.3.8',
                   text: 'Tasting',
                   seeMore: ['DN 22'],
-                  elaborations: [
-                    {
-                      reference: 'MN 10',
-                      text: [
-                        'Furthermore, a mendicant acts with situational awareness when going out and coming back; when looking ahead and aside; when bending and extending the limbs; when bearing the outer robe, bowl, and robes; when eating, drinking, chewing, and tasting; when urinating and defecating; when walking, standing, sitting, sleeping, waking, speaking, and keeping silent. That too is how a mendicant meditates by observing an aspect of the body.',
-                      ],
-                    },
-                  ],
                 },
                 {
                   id: 'P-7.1.3.9',
                   text: 'Urinating',
                   seeMore: ['DN 22'],
-                  elaborations: [
-                    {
-                      reference: 'MN 10',
-                      text: [
-                        'Furthermore, a mendicant acts with situational awareness when going out and coming back; when looking ahead and aside; when bending and extending the limbs; when bearing the outer robe, bowl, and robes; when eating, drinking, chewing, and tasting; when urinating and defecating; when walking, standing, sitting, sleeping, waking, speaking, and keeping silent. That too is how a mendicant meditates by observing an aspect of the body.',
-                      ],
-                    },
-                  ],
                 },
                 {
                   id: 'P-7.1.3.10',
                   text: 'Defecating',
                   seeMore: ['DN 22'],
-                  elaborations: [
-                    {
-                      reference: 'MN 10',
-                      text: [
-                        'Furthermore, a mendicant acts with situational awareness when going out and coming back; when looking ahead and aside; when bending and extending the limbs; when bearing the outer robe, bowl, and robes; when eating, drinking, chewing, and tasting; when urinating and defecating; when walking, standing, sitting, sleeping, waking, speaking, and keeping silent. That too is how a mendicant meditates by observing an aspect of the body.',
-                      ],
-                    },
-                  ],
                 },
                 {
                   id: 'P-7.1.3.11',
                   text: 'Falling asleep',
                   seeMore: ['DN 22'],
-                  elaborations: [
-                    {
-                      reference: 'MN 10',
-                      text: [
-                        'Furthermore, a mendicant acts with situational awareness when going out and coming back; when looking ahead and aside; when bending and extending the limbs; when bearing the outer robe, bowl, and robes; when eating, drinking, chewing, and tasting; when urinating and defecating; when walking, standing, sitting, sleeping, waking, speaking, and keeping silent. That too is how a mendicant meditates by observing an aspect of the body.',
-                      ],
-                    },
-                  ],
                 },
                 {
                   id: 'P-7.1.3.12',
                   text: 'Waking up',
                   seeMore: ['DN 22'],
-                  elaborations: [
-                    {
-                      reference: 'MN 10',
-                      text: [
-                        'Furthermore, a mendicant acts with situational awareness when going out and coming back; when looking ahead and aside; when bending and extending the limbs; when bearing the outer robe, bowl, and robes; when eating, drinking, chewing, and tasting; when urinating and defecating; when walking, standing, sitting, sleeping, waking, speaking, and keeping silent. That too is how a mendicant meditates by observing an aspect of the body.',
-                      ],
-                    },
-                  ],
                 },
                 {
                   id: 'P-7.1.3.13',
                   text: 'Speaking',
                   seeMore: ['DN 22'],
-                  elaborations: [
-                    {
-                      reference: 'MN 10',
-                      text: [
-                        'Furthermore, a mendicant acts with situational awareness when going out and coming back; when looking ahead and aside; when bending and extending the limbs; when bearing the outer robe, bowl, and robes; when eating, drinking, chewing, and tasting; when urinating and defecating; when walking, standing, sitting, sleeping, waking, speaking, and keeping silent. That too is how a mendicant meditates by observing an aspect of the body.',
-                      ],
-                    },
-                  ],
                 },
                 {
                   id: 'P-7.1.3.14',
                   text: 'Remaining silent',
                   seeMore: ['DN 22'],
-                  elaborations: [
-                    {
-                      reference: 'MN 10',
-                      text: [
-                        'Furthermore, a mendicant acts with situational awareness when going out and coming back; when looking ahead and aside; when bending and extending the limbs; when bearing the outer robe, bowl, and robes; when eating, drinking, chewing, and tasting; when urinating and defecating; when walking, standing, sitting, sleeping, waking, speaking, and keeping silent. That too is how a mendicant meditates by observing an aspect of the body.',
-                      ],
-                    },
-                  ],
                 },
               ],
               elaborations: [
                 {
                   reference: 'MN 10',
                   text: [
-                    'Furthermore, a mendicant acts with situational awareness when going out and coming back; when looking ahead and aside; when bending and extending the limbs; when bearing the outer robe, bowl, and robes; when eating, drinking, chewing, and tasting; when urinating and defecating; when walking, standing, sitting, sleeping, waking, speaking, and keeping silent. That too is how a mendicant meditates by observing an aspect of the body.',
+                    'Furthermore, a mendicant acts with situational awareness when going out and coming back; when looking ahead and aside; when bending and extending the limbs; when bearing the outer robe, bowl, and robes; when eating, drinking, chewing, and tasting; when urinating and defecating; when walking, standing, sitting, sleeping, waking, speaking, and keeping silent.',
+                    'That too is how a mendicant meditates by observing an aspect of the body.',
                   ],
                 },
               ],
@@ -1302,7 +1199,8 @@ export const path = {
                 {
                   reference: 'MN 10',
                   text: [
-                    'Furthermore, a mendicant examines their own body, whatever its placement or posture, according to the elements: ‘In this body there is the earth element, the water element, the fire element, and the air element.’ It’s as if a deft butcher or butcher’s apprentice were to kill a cow and sit down at the crossroads with the meat cut into portions. That too is how a mendicant meditates by observing an aspect of the body.',
+                    'Furthermore, a mendicant examines their own body, whatever its placement or posture, according to the elements: ‘In this body there is the earth element, the water element, the fire element, and the air element.’ It’s as if a deft butcher or butcher’s apprentice were to kill a cow and sit down at the crossroads with the meat cut into portions.',
+                    'That too is how a mendicant meditates by observing an aspect of the body.',
                   ],
                 },
               ],
@@ -1433,7 +1331,9 @@ export const path = {
               elaborations: [
                 {
                   text: [
-                    'Suppose a mendicant were to see a corpse discarded in a charnel ground, they’d compare it with their own body: ‘This body is also of that same nature, that same kind, and cannot go beyond that.’ And so they meditate observing an aspect of the body internally, externally, and both internally and externally. They meditate observing the body as liable to originate, as liable to vanish, and as liable to both originate and vanish. Or mindfulness is established that the body exists, to the extent necessary for knowledge and mindfulness. They meditate independent, not grasping at anything in the world. That too is how a mendicant meditates by observing an aspect of the body.',
+                    'Suppose a mendicant were to see a corpse discarded in a charnel ground, they’d compare it with their own body: ‘This body is also of that same nature, that same kind, and cannot go beyond that.’',
+                    'And so they meditate observing an aspect of the body internally, externally, and both internally and externally. They meditate observing the body as liable to originate, as liable to vanish, and as liable to both originate and vanish. Or mindfulness is established that the body exists, to the extent necessary for knowledge and mindfulness. They meditate independent, not grasping at anything in the world.',
+                    'That too is how a mendicant meditates by observing an aspect of the body.',
                   ],
                   reference: 'MN 10',
                 },
@@ -1444,7 +1344,10 @@ export const path = {
             {
               reference: 'MN 10',
               text: [
-                'And how does a mendicant meditate observing an aspect of the body? It’s when a mendicant—gone to a wilderness, or to the root of a tree, or to an empty hut—sits down cross-legged, with their body straight, and focuses their mindfulness right there. Just mindful, they breathe in. Mindful, they breathe out. And so they meditate observing an aspect of the body internally, externally, and both internally and externally. They meditate observing the body as liable to originate, as liable to vanish, and as liable to both originate and vanish. Or mindfulness is established that the body exists, to the extent necessary for knowledge and mindfulness. They meditate independent, not grasping at anything in the world. That’s how a mendicant meditates by observing an aspect of the body.',
+                'And how does a mendicant meditate observing an aspect of the body?',
+                'It’s when a mendicant—gone to a wilderness, or to the root of a tree, or to an empty hut—sits down cross-legged, with their body straight, and focuses their mindfulness right there. Just mindful, they breathe in. Mindful, they breathe out.',
+                'And so they meditate observing an aspect of the body internally, externally, and both internally and externally. They meditate observing the body as liable to originate, as liable to vanish, and as liable to both originate and vanish. Or mindfulness is established that the body exists, to the extent necessary for knowledge and mindfulness. They meditate independent, not grasping at anything in the world.',
+                'That’s how a mendicant meditates by observing an aspect of the body.',
               ],
             },
           ],
@@ -1462,7 +1365,9 @@ export const path = {
                 {
                   reference: 'MN 10',
                   text: [
-                    'And how does a mendicant meditate observing an aspect of feelings? It’s when a mendicant who feels a pleasant feeling knows: ‘I feel a pleasant feeling.’ That’s how a mendicant meditates by observing an aspect of feelings.',
+                    'And how does a mendicant meditate observing an aspect of feelings?',
+                    'It’s when a mendicant who feels a pleasant feeling knows: ‘I feel a pleasant feeling.’',
+                    'That’s how a mendicant meditates by observing an aspect of feelings.',
                   ],
                 },
               ],
@@ -1576,7 +1481,9 @@ export const path = {
             {
               reference: 'MN 10',
               text: [
-                'And how does a mendicant meditate observing an aspect of feelings? They meditate observing an aspect of feelings internally, externally, and both internally and externally. They meditate observing feelings as liable to originate, as liable to vanish, and as liable to both originate and vanish. Or mindfulness is established that feelings exist, to the extent necessary for knowledge and mindfulness. They meditate independent, not grasping at anything in the world. That’s how a mendicant meditates by observing an aspect of feelings.',
+                'And how does a mendicant meditate observing an aspect of feelings?',
+                'They meditate observing an aspect of feelings internally, externally, and both internally and externally. They meditate observing feelings as liable to originate, as liable to vanish, and as liable to both originate and vanish. Or mindfulness is established that feelings exist, to the extent necessary for knowledge and mindfulness. They meditate independent, not grasping at anything in the world.',
+                'That’s how a mendicant meditates by observing an aspect of feelings.',
               ],
             },
           ],
@@ -1695,7 +1602,9 @@ export const path = {
             {
               reference: 'MN 10',
               text: [
-                'And how does a mendicant meditate observing an aspect of the mind? They meditate observing an aspect of the mind internally, externally, and both internally and externally. They meditate observing the mind as liable to originate, as liable to vanish, and as liable to both originate and vanish. Or mindfulness is established that the mind exists, to the extent necessary for knowledge and mindfulness. They meditate independent, not grasping at anything in the world. That’s how a mendicant meditates by observing an aspect of the mind.',
+                'And how does a mendicant meditate observing an aspect of the mind?',
+                'They meditate observing an aspect of the mind internally, externally, and both internally and externally. They meditate observing the mind as liable to originate, as liable to vanish, and as liable to both originate and vanish. Or mindfulness is established that the mind exists, to the extent necessary for knowledge and mindfulness. They meditate independent, not grasping at anything in the world.',
+                'That’s how a mendicant meditates by observing an aspect of the mind.',
               ],
             },
           ],
@@ -1712,7 +1621,7 @@ export const path = {
               children: [
                 {
                   id: 'P-7.4.1.1',
-                  text: 'Sensual desire',
+                  text: 'Sensory desire',
                   seeMore: ['DN 22'],
                   elaborations: [
                     {
@@ -1780,7 +1689,9 @@ export const path = {
                 {
                   reference: 'MN 10',
                   text: [
-                    'And how does a mendicant meditate observing an aspect of principles? It’s when a mendicant meditates by observing an aspect of principles with respect to the five hindrances. And so they meditate observing an aspect of principles internally, externally, and both internally and externally. They meditate observing the principles as liable to originate, as liable to vanish, and as liable to both originate and vanish. Or mindfulness is established that principles exist, to the extent necessary for knowledge and mindfulness. They meditate independent, not grasping at anything in the world. That’s how a mendicant meditates by observing an aspect of principles with respect to the five hindrances.',
+                    'And how does a mendicant meditate observing an aspect of principles?',
+                    'It’s when a mendicant meditates by observing an aspect of principles with respect to the five hindrances. And so they meditate observing an aspect of principles internally, externally, and both internally and externally. They meditate observing the principles as liable to originate, as liable to vanish, and as liable to both originate and vanish. Or mindfulness is established that principles exist, to the extent necessary for knowledge and mindfulness. They meditate independent, not grasping at anything in the world.',
+                    'That’s how a mendicant meditates by observing an aspect of principles with respect to the five hindrances.',
                   ],
                 },
               ],
@@ -2194,7 +2105,9 @@ export const path = {
             {
               reference: 'MN 10',
               text: [
-                'And how does a mendicant meditate observing an aspect of principles? It’s when a mendicant meditates by observing an aspect of principles with respect to the five hindrances, the five aggregates, the six sense fields, the seven awakening factors, or the four noble truths. And so they meditate observing an aspect of principles internally, externally, and both internally and externally. They meditate observing the principles as liable to originate, as liable to vanish, and as liable to both originate and vanish. Or mindfulness is established that principles exist, to the extent necessary for knowledge and mindfulness. They meditate independent, not grasping at anything in the world. That’s how a mendicant meditates by observing an aspect of principles with respect to the five hindrances.',
+                'And how does a mendicant meditate observing an aspect of principles?',
+                'It’s when a mendicant meditates by observing an aspect of principles with respect to the five hindrances, the five aggregates, the six sense fields, the seven awakening factors, or the four noble truths. And so they meditate observing an aspect of principles internally, externally, and both internally and externally. They meditate observing the principles as liable to originate, as liable to vanish, and as liable to both originate and vanish. Or mindfulness is established that principles exist, to the extent necessary for knowledge and mindfulness. They meditate independent, not grasping at anything in the world.',
+                'That’s how a mendicant meditates by observing an aspect of principles with respect to the five hindrances.',
               ],
             },
           ],
