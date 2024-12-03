@@ -17,10 +17,10 @@ const useStyles = makeStyles((theme) => ({
     left: 0,
     right: 0,
     zIndex: theme.zIndex.mobileStepper,
-    marginBottom: 'env(safe-area-inset-bottom)',
+    paddingBottom: 'env(safe-area-inset-bottom)',
   },
   bottomNav: {
-    backdropFilter: 'blur(3000rem) saturate(130%)',
+    backdropFilter: 'blur(3rem) saturate(130%)',
     backgroundColor: 'rgba(255,255,255,0.1)',
     borderTop:
       theme.palette.type === 'light' && `1px solid ${theme.palette.divider}`,
