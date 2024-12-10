@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import { Box, Fade, Grid, Hidden, Typography } from '@material-ui/core';
-import { fade, makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import { TreeView } from '@material-ui/lab';
 
 import { useParams } from 'react-router-dom';
@@ -39,11 +39,6 @@ const useStyles = makeStyles((theme) => ({
   },
   treeView: {
     flexGrow: 1,
-  },
-  treeItemGroup: {
-    marginLeft: 7,
-    paddingLeft: 18,
-    borderLeft: `1px dashed ${fade(theme.palette.text.primary, 0.4)}`,
   },
   chipBox: {
     display: 'flex',

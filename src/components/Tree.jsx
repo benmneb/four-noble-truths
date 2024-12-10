@@ -1,4 +1,4 @@
-import { fade, makeStyles } from '@material-ui/core/styles';
+import { alpha, makeStyles } from '@material-ui/core/styles';
 import { TreeItem } from '@material-ui/lab';
 
 import { useNavigate } from 'react-router-dom';
@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
   treeItemGroup: {
     marginLeft: 7,
     paddingLeft: 18,
-    borderLeft: `1px dashed ${fade(theme.palette.text.primary, 0.4)}`,
+    borderLeft: `1px dashed ${alpha(theme.palette.text.primary, 0.4)}`,
   },
   treeItemLabel: {
     borderRadius: theme.spacing(0, 2, 2, 0),
