@@ -18,6 +18,7 @@ export default function Footer() {
           href="https://github.com/benmneb/four-noble-truths"
           target="_blank"
           rel="noopener"
+          edge="start"
         >
           <GitHub />
         </IconButton>
