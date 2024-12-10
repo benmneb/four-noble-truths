@@ -37,7 +37,7 @@ export default function Snackbars() {
   const key = latestSnack ? latestSnack.key : undefined;
   const severity = latestSnack?.severity ? latestSnack.severity : 'info';
   const message = latestSnack ? latestSnack?.message : undefined;
-  const autoHideDuration = latestSnack?.disableHide ? null : 6000;
+  const autoHideDuration = latestSnack?.disableHide ? null : 3000;
   const actions = [
     <IconButton key="2" size="small" color="inherit" onClick={handleClose}>
       <CloseRounded fontSize="small" />
